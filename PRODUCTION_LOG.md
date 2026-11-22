@@ -34,7 +34,9 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - [x] EP01 1. perde animasyonu (22.11) onaylandı; Claude stiline göre güncellendi → ep01_perde1_v2.mp4
 - [x] EP01 2. perde animasyonu (22.11): scenes/ep01_act2.html → ep01_perde2_v2.mp4 (pil/taş, internet bölünmüş ekran, İngilizce geri sayım, kibar ateş, Claude güncellemesi + patch notes, dinozor X + devekuşu)
 - [x] EP01 3. perde (22.11): scenes/ep01_act3.html → ep01_perde3_v1.mp4 (3:15). Gündüz kampı, kadro (şef/kuzen/nine/kardeş + kalabalık), Claude sohbet penceresi, Claude Code terminali + çizimler, toplantı tableti, sözlük kartları, su kaynatma diyagramı, patlama + Claude notu, sabun tarifi, çocuk hayatta kalma (gri ekran), bal + arılar, çetele kemiği, 1. yıl tacı, dinozor/devekuşu. Real Fact'ler: taşla kaynatma; ~4.800 yıllık sabun tarifi; avcı-toplayıcılarda çocukların ~%55–60'ı 15 yaşına ulaşırdı (Gurven & Kaplan 2007; Kaplan vd. 2000); bal; ~43.000 yıllık sayma kemiği; kuşlar = dinozor
-- [ ] EP01 4. perde (sıradaki)
+- [~] EP01 4. perde (22.11): scenes/ep01_act4.html hazır (17 sahne: yazı, mağara kütüphanesi, okul, tarım+bedeli, komşular/sulama, oylama, 1.000 A.C., mamutlar, Neandertal, elektrik, ilk bilgisayar + Claude Code nasıl çalışır, ağ, ajan takımı + insan kontrolü, bedel: hata/ağ çöküşü/elle ateş, iyi taraf, Ay/Mars/tabela, müze). Render 3 parça (0–92, 92–184, 184–276.05) → birleştir + ses → 04_renders/ep01_perde4_v1.mp4 (render yarıda kaldıysa yeniden çalıştır)
+- [~] EP01 5. perde: scenes/ep01_act5.html hazır (10 fark + 'Do It Yourself' bedeli + su kaynatma finali), test kareleri iyi; render edilmedi
+- [~] EP01 6. perde: scenes/ep01_act6.html hazır ("Good?" → "You did good.", devekuşu uzay programı, yorum sorusu, sonraki bölüm: araba + abone ol); render edilmedi
 - [ ] EP01 4–5. perde: yeni metin onayı + yeniden seslendirme sonrası
 - [ ] EP01 6. perde
 - PC senkronu: Desktop\StoneAgeUpgrade masaüstü uygulamasıyla bağlandı; her adımda dosyalar oraya da yazılır
@@ -72,6 +74,12 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - Ana müzik yatağı: YouTube Studio Ses Kitaplığı (Attribution not required)
 - Meme efektleri (boom, plak cızırtısı, korna, boing, cırcır böceği, ding...): YouTube Ses Kitaplığı + ElevenLabs ses efekti aracıyla kendi versiyonlarımız (Buğra'nın aboneliği)
 - Amaç: güncel/modern internet dili, ama tamamen telifsiz
+
+## KALDIĞIM YER (22.11 ~21:00, limit doldu)
+1. 4. perde render: `cd 03_engine; node render.mjs scenes/ep01_act4.html /tmp/r4/a.mp4 --from 0 --to 92` (b: 92–184, c: 184–276.05), sonra concat + `02_audio/ep01_perde4.mp3` → `04_renders/ep01_perde4_v1.mp4`
+2. 5. perde (112.65 sn, 2 parça) ve 6. perde (40.75 sn) render + ses
+3. Önizlemeleri Buğra'ya gönder, PC'ye kopyala (device_commit_files), GitHub'a kaydet
+4. Müzik/efekt topla ve miks → tam bölüm 11:45, sonra thumbnail, açıklama, Shorts
 
 ## Sıradaki adım (yeni sohbette buradan devam)
 1. 3. perdeyi canlandır (zamanlar 01_script/ep01_timing.md), sonra 4, 5, 6

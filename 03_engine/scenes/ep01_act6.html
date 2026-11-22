@@ -1,0 +1,132 @@
+<!doctype html>
+<html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;padding:0;background:#0B0A12;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script>
+<script src="../lib/animals.js"></script><script src="../lib/you.js"></script><script src="../lib/kit.js"></script>
+</head><body><script>
+// EP01 · Perde 6 — Kapanış (0:41). Zamanlar: 02_audio/ep01_perde6.timing.json
+SAU.duration = 40.75;
+SAU.init((svg, S) => {
+  const { W, H, el, set, p, E, boil, BRAND: B, clamp, hash, lerp } = S;
+  const CL = SAU.CL;
+  const rc = rough.svg(svg);
+  SAU.kitDefs(svg).insertAdjacentHTML('beforeend', '<linearGradient id="gSpace" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05070D"/><stop offset="1" stop-color="#141826"/></linearGradient>');
+  const R = (seed, extra = {}) => Object.assign({ seed, stroke: B.ink, strokeWidth: 3, roughness: 1, bowing: .5 }, extra);
+  const clr = g => { while (g.firstChild) g.removeChild(g.firstChild); };
+  const txt = (g, x, y, s, o = {}) => { const e = el('text', Object.assign({ x, y, 'text-anchor': 'middle', fill: B.bone, 'font-family': B.fontDisplay, 'font-size': 56 }, o), g); e.textContent = s; return e; };
+  const horizon = H * .62, FX = W * .6, FY = H * .86, YX = W * .38, YY = H * .93, YS = .82;
+  const phX = YX + 45 * YS, phY = YY - 228 * YS;
+
+  // camp (same as act 1)
+  const world = el('g', {}, svg);
+  el('rect', { x: -W, y: -H, width: W * 3, height: H * 3, fill: 'url(#kNight)' }, world);
+  const stars = el('g', {}, world); SAU.drawStars(stars, W, H, 80);
+  const bg = el('g', {}, world);
+  const fireLight = el('circle', { cx: FX, cy: FY - 60, r: 700, fill: 'url(#kFireLight)' }, world);
+  const fire = el('g', {}, world), sparks = el('g', {}, world);
+  const youRot = el('g', {}, world); const you = SAU.makeYou(youRot, rc, Object.assign({ seed: 5 }, SAU.CAST.you));
+  const phoneLight = el('circle', { r: 320, fill: 'url(#kClaudeLight)', opacity: 0 }, world);
+  const zzz = el('g', {}, world);
+  const dark = SAU.makeDarkness(svg, W, H, '#07060C', 'm6'); world.appendChild(dark.node);
+  set(dark.node, { x: -W, y: -H, width: W * 3, height: H * 3 });
+  set(svg.querySelector('#m6'), { x: -W, y: -H, width: W * 3, height: H * 3 });
+  set(svg.querySelector('#m6 rect'), { x: -W, y: -H, width: W * 3, height: H * 3 });
+  const chat = SAU.makeChatWindow(svg, 620, 330);
+  // ostrich space program
+  const space = el('g', {}, svg);
+  // CTA + next episode
+  const cta = el('g', {}, svg);
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .07, 8), preserveAspectRatio: 'none', opacity: .8 }, svg);
+  el('rect', { width: W, height: H, fill: 'url(#kVig)' }, svg);
+  const you2G = el('g', {}, svg); const you2 = SAU.makeYou(you2G, rc, Object.assign({ seed: 6 }, SAU.CAST.you));
+  const toast = SAU.makeToast(svg, 'Next: CAR', 'episode 2');
+  const flash = el('rect', { width: W, height: H, fill: '#FFF7E6', opacity: 0 }, svg);
+
+  return {
+    update(t) {
+      const s = Math.floor(t / .125) + 1;
+      const camp = t < 13.2;
+      set(world, { display: camp ? 'inline' : 'none' });
+      if (camp) {
+        const z = lerp(1.36, 1.7, p(t, 0, 13, E.inOut));
+        SAU.cam(world, W, H, lerp(W * .49, YX + 120, p(t, 0, 13, E.inOut)), lerp(H * .63, H * .6, p(t, 0, 13)), z, 0, t);
+        SAU.twinkle(stars, t);
+        boil(bg, (r, ss, g) => SAU.drawNightCamp(r, ss, g, W, H, horizon), t, .25);
+        const fk = .45 + (hash(Math.floor(t * 12)) - .5) * .06;
+        boil(fire, (r, ss, g) => SAU.drawCampfire(r, ss, g, FX, FY, fk), t, .083);
+        SAU.sparks(sparks, FX, FY, t, 8, .8);
+        const asleep = t > 12.9;
+        const lift = p(t, 7.6, 8.4, E.back) * (1 - p(t, 12.0, 12.6));
+        you.pose({ x: YX, y: YY, scale: YS, holding: true, expr: t > 12.0 ? 'smile' : t > 9.7 ? 'thinking' : 'neutral', blink: asleep || (t > 4.0 && t < 4.1), look: [8, 12 - lift * 20], bob: Math.sin(t * 2.4) * 2.5 - lift * 30, head: asleep ? 8 : 0 }, t);
+        set(phoneLight, { cx: phX, cy: phY - lift * 30, opacity: .9 });
+        dark.update([{ x: FX, y: FY - 60, r: 680, k: 1 }, { x: phX, y: phY, r: 300, k: 1 }], .7);
+        clr(zzz);
+        if (t > 12.6) for (let i = 0; i < 3; i++) { const ph = ((t * .7 + i / 3) % 1); el('text', { x: YX + 80 + ph * 60, y: YY - 470 * YS - ph * 140, fill: B.bone, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 36 + ph * 24, opacity: 1 - ph }, zzz).textContent = 'z'; }
+      }
+      const ck = p(t, 9.0, 9.3, E.out) * (1 - p(t, 12.9, 13.2));
+      set(chat.g, { display: ck > 0 ? 'inline' : 'none', opacity: ck, transform: `translate(${W - 680},${240})` });
+      if (ck > 0) chat.show([{ t: 9.7, who: 'you', text: 'GOOD?' }, { t: 12.0, who: 'claude', text: 'You did good.' }], t);
+
+      // ---------- ostrich space program 13.2–20.5 ----------
+      clr(space);
+      if (t >= 13.2 && t < 20.5) {
+        el('rect', { width: W, height: H, fill: t < 17.2 ? '#E9A35C' : 'url(#gSpace)' }, space);
+        if (t < 17.2) {
+          // dinosaur none, except ostrich
+          txt(space, W / 2, 300, t < 15.9 ? 'DINOSAURS: 0' : 'DINOSAURS: 1 (technically)', { fill: B.ink, 'font-size': 70 });
+          if (t > 15.9) { const og = el('g', { transform: `translate(${W / 2},${H * .95}) scale(1.1)` }, space); SAU.drawOstrich(SAU.makePen(1, rc, og, { seed: s, sw: 4 })); }
+          space.appendChild(rc.rectangle(-30, H * .9, W + 60, H * .2, R(s + 1, { fill: '#D9A566', fillStyle: 'solid' })));
+        } else {
+          for (let i = 0; i < 80; i++) el('circle', { cx: hash(i * 3.3) * W, cy: hash(i * 7.1) * H, r: 1 + hash(i) * 2, fill: '#F3E6CF', opacity: .6 }, space);
+          const up = p(t, 17.5, 20.5, E.in);
+          const rg = el('g', { transform: `translate(${W / 2},${lerp(H * .78, -H * .3, up)}) rotate(-6)` }, space);
+          rg.appendChild(rc.path('M -70 120 L -70 -120 Q 0 -260 70 -120 L 70 120 Z', R(s, { fill: '#F3F3F0', fillStyle: 'solid', strokeWidth: 5 })));
+          rg.appendChild(rc.circle(0, -60, 70, R(s + 1, { fill: '#9AC2D0', fillStyle: 'solid' })));
+          rg.appendChild(rc.polygon([[-70, 60], [-130, 140], [-70, 120]], R(s + 2, { fill: CL.orange, fillStyle: 'solid' })));
+          rg.appendChild(rc.polygon([[70, 60], [130, 140], [70, 120]], R(s + 3, { fill: CL.orange, fillStyle: 'solid' })));
+          for (let i = 0; i < 3; i++) el('path', { d: `M ${-30 + i * 30} 130 q ${(hash(s + i) - .5) * 30} 60 0 ${120 + hash(s * 2 + i) * 60}`, stroke: i === 1 ? '#FFE07A' : '#F59B2F', 'stroke-width': 18, fill: 'none', 'stroke-linecap': 'round' }, rg);
+          const og = el('g', { transform: 'translate(10,-30) scale(.28)' }, rg); SAU.drawOstrich(SAU.makePen(1, rc, og, { seed: s + 5, sw: 8 }));
+          el('circle', { cx: -4, cy: -110, r: 30, fill: 'rgba(200,230,255,.5)', stroke: B.ink, 'stroke-width': 3 }, rg);
+          txt(space, W / 2, 300, 'OSTRICH SPACE PROGRAM', { fill: B.tech, 'font-size': 64, filter: 'url(#kGlow)' });
+        }
+      }
+
+      // ---------- CTA 20.5–31.3 & next time 31.3– ----------
+      clr(cta);
+      if (t >= 20.5) {
+        el('rect', { width: W, height: H, fill: '#1E1612' }, cta);
+        if (t < 31.4) {
+          const k = p(t, 20.6, 21.0, E.back);
+          const cg = el('g', { transform: `translate(${W / 2},${H * .46}) scale(${k})` }, cta);
+          el('rect', { x: -700, y: -250, width: 1400, height: 500, rx: 30, fill: CL.cream, stroke: CL.orange, 'stroke-width': 6 }, cg);
+          txt(cg, 0, -150, 'YOUR TURN', { fill: CL.orangeDeep, 'font-family': CL.sans, 'font-weight': 700, 'font-size': 40 });
+          txt(cg, 0, -60, '300,000 years ago, Claude in your hand.', { fill: CL.dark, 'font-family': CL.serif, 'font-size': 56 });
+          txt(cg, 0, 30, 'What would you ask first?', { fill: CL.dark, 'font-family': CL.serif, 'font-weight': 700, 'font-size': 72 });
+          if (t > 27.6) { const kk = p(t, 27.6, 28, E.back); const bg = el('g', { transform: `translate(0,150) scale(${kk})` }, cg); el('rect', { x: -300, y: -50, width: 600, height: 100, rx: 50, fill: CL.dark }, bg); txt(bg, 0, 16, '↓ tell me in the comments', { fill: CL.cream, 'font-family': CL.sans, 'font-weight': 500, 'font-size': 36 }); }
+          if (t > 28.8) txt(cta, W / 2, H * .92, 'best answer → a future episode', { fill: B.tech, 'font-family': B.fontMono, 'font-size': 40, filter: 'url(#kGlow)' });
+        } else {
+          // next time: a car, no roads
+          el('rect', { width: W, height: H, fill: '#E9A35C' }, cta);
+          cta.appendChild(rc.rectangle(-30, H * .7, W + 60, H * .4, R(s, { fill: '#D9A566', fillStyle: 'solid' })));
+          const car = el('g', { transform: `translate(${W * .6},${H * .8})` }, cta);
+          car.appendChild(rc.path('M -260 0 L -260 -90 L -150 -100 L -90 -190 L 110 -190 L 180 -100 L 260 -80 L 260 0 Z', R(s + 1, { fill: '#C0452B', fillStyle: 'solid', strokeWidth: 5 })));
+          car.appendChild(rc.path('M -70 -175 L 90 -175 L 145 -105 L -125 -105 Z', R(s + 2, { fill: '#9AC2D0', fillStyle: 'solid' })));
+          [-150, 150].forEach((x, i) => car.appendChild(rc.circle(x, 0, 110, R(s + 3 + i, { fill: '#2B2420', fillStyle: 'solid' }))));
+          txt(cta, W * .22, H * .3, '?', { fill: B.ink, 'font-family': '"Comic Relief"', 'font-size': 140, transform: `rotate(${Math.sin(t * 3) * 8} ${W * .22} ${H * .3})` });
+          [['no roads', 33.6], ['no gas stations', 34.4], ['steering wheel = ???', 35.7]].forEach(([l, a], i) => { if (t > a) txt(cta, W * .6, 300 + i * 70, l, { fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 48, opacity: p(t, a, a + .2) }); });
+          if (t > 38.0) { const k = p(t, 38.0, 38.35, E.back); const sb = el('g', { transform: `translate(${W / 2},${H * .5}) scale(${k})` }, cta); el('rect', { x: -260, y: -60, width: 520, height: 120, rx: 60, fill: '#CC2A1E', stroke: B.ink, 'stroke-width': 5 }, sb); txt(sb, 0, 20, 'SUBSCRIBE', { fill: '#FFFFFF', 'font-size': 56 }); }
+        }
+      }
+      const nx = t >= 31.4;
+      set(you2G, { display: nx ? 'inline' : 'none' });
+      if (nx) you2.pose({ x: W * .22, y: H * .97, scale: .85, holding: true, expr: t > 38 ? 'smile' : 'thinking', look: [16, 4], head: Math.sin(t * 2) * 6, bob: Math.sin(t * 2.4) * 2.5, blink: t > 35 && t < 35.1 }, t);
+      const ti = p(t, 31.5, 31.9, E.back), to = p(t, 37.6, 38.0, E.in);
+      set(toast.g, { display: t > 31.4 && t < 38.0 ? 'inline' : 'none', transform: `translate(${W - 40 - toast.w + (1 - ti) * (toast.w + 80)},${60 - to * 60})`, opacity: 1 - to });
+      toast.set(t < 33.4 ? 0 : 0);
+      set(flash, { opacity: (t > 13.2 && t < 13.5 ? (13.5 - t) / .3 : 0) + (t > 20.5 && t < 20.8 ? (20.8 - t) / .3 * .6 : 0) });
+    },
+  };
+});
+</script></body></html>

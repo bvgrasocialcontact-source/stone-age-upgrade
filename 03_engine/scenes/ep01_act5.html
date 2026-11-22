@@ -1,0 +1,163 @@
+<!doctype html>
+<html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;padding:0;background:#07131C;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script>
+<script src="../lib/animals.js"></script><script src="../lib/you.js"></script><script src="../lib/kit.js"></script>
+</head><body><script>
+// EP01 · Perde 5 — Bugün (1:53, v3 ses). Zamanlar: 02_audio/ep01_perde5.timing.json
+SAU.duration = 112.65;
+SAU.init((svg, S) => {
+  const { W, H, el, set, p, E, BRAND: B, clamp, hash, lerp, fmt } = S;
+  const CL = SAU.CL;
+  const rc = rough.svg(svg);
+  SAU.kitDefs(svg);
+  const R = (seed, extra = {}) => Object.assign({ seed, stroke: B.ink, strokeWidth: 3, roughness: 1, bowing: .5 }, extra);
+  const seedOf = t => Math.floor(t / .125) + 1;
+  const clr = g => { while (g.firstChild) g.removeChild(g.firstChild); };
+  const txt = (g, x, y, s, o = {}) => { const e = el('text', Object.assign({ x, y, 'text-anchor': 'middle', fill: B.bone, 'font-family': B.fontDisplay, 'font-size': 56 }, o), g); e.textContent = s; return e; };
+
+  const city = el('g', {}, svg);                  // TODAY? world background (thumbnail language)
+  const cityDim = el('rect', { width: W, height: H, fill: '#07131C', opacity: .55 }, svg);
+  const stage = el('g', {}, svg);
+  const chars = el('g', {}, svg);
+  const nb = SAU.makeYou(el('g', {}, chars), rc, Object.assign({ seed: 91 }, SAU.CAST.neanderthal));
+  const yu = SAU.makeYou(el('g', {}, chars), rc, { seed: 5, colors: { hide: '#3A4A56' } });
+  const p1 = SAU.makeYou(el('g', {}, chars), rc, { seed: 33, hair: 'bun', colors: { hide: '#3A4A56' } });
+  const p2 = SAU.makeYou(el('g', {}, chars), rc, { seed: 35, hair: 'short', colors: { hide: '#2E5A5E' } });
+  const kidG = SAU.makeYou(el('g', {}, chars), rc, { seed: 37, hair: 'wild', colors: { hide: '#3A4A56' } });
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .07, 7), preserveAspectRatio: 'none', opacity: .5 }, svg);
+  el('rect', { width: W, height: H, fill: 'url(#kVig)', opacity: .6 }, svg);
+  const badge = el('g', {}, svg);
+  el('circle', { r: 74, fill: B.tech, filter: 'url(#kGlow)' }, badge);
+  const badgeT = txt(badge, 0, 26, '1', { fill: '#06282C', 'font-size': 80 });
+  const titleT = txt(svg, W / 2, 330, '', { 'font-size': 60, stroke: '#06282C', 'stroke-width': 10, 'paint-order': 'stroke' });
+  const hud = el('g', {}, svg);
+  const yp = SAU.makeYearPanel(hud, 40, 40);
+  const flash = el('rect', { width: W, height: H, fill: '#FFF7E6', opacity: 0 }, svg);
+
+  const ITEMS = [
+    [10.7, 21.9, '1', 'A different universe ahead'], [22.0, 30.6, '2', 'Dozens of star systems'], [30.7, 35.8, '3', 'Neanderthal neighbors'],
+    [35.9, 42.9, '4', 'Dirty water? Never heard of it'], [43.0, 52.1, '5', 'One first language'], [52.2, 59.0, '6', 'History starts with a kid'],
+    [59.1, 69.8, '7', 'Stone Age Day'], [69.9, 78.6, '8', 'No Dark Ages'], [78.7, 89.1, '9', 'Top job: teacher'], [89.2, 95.4, '10', 'Gazelles: doing great'],
+    [95.5, 104.0, '–', 'Not everything is better'], [104.1, 112.65, '', ''],
+  ];
+  const win = (t, a, b, fi = .3, fo = .3) => p(t, a, a + fi, E.out) * (1 - p(t, b - fo, b, E.in));
+
+  return {
+    update(t) {
+      const s = seedOf(t);
+      // background city (light boil), quiet ending
+      if (city.__s !== s) { city.__s = s; clr(city); SAU.drawStoneCity(rc, s, city, W, H, t); }
+      const quiet = t > 104.1;
+      set(cityDim, { opacity: t < 10.6 ? .2 : quiet ? .85 : .55 });
+      clr(stage); set(chars, { display: 'none' });
+      [nb, yu, p1, p2, kidG].forEach(c => set(c.root, { display: 'none' }));
+      const show = c => set(c.root, { display: 'inline' });
+      const g = stage;
+
+      // intro 0–10.6: split + year flip
+      if (t < 10.6) {
+        const k = p(t, 0, .6, E.out);
+        const lg = el('g', {}, g);
+        el('path', { d: `M 0 0 L ${W * .55} 0 L ${W * .45} ${H} L 0 ${H} Z`, fill: '#E9A35C', opacity: k }, lg);
+        el('path', { d: `M ${W * .55} 0 L ${W * .45} ${H}`, stroke: B.bone, 'stroke-width': 14 }, lg);
+        const pg = el('g', { transform: `translate(${W * .22},${H * .95})` }, lg);
+        SAU.drawCrowd(rc, s, pg, [0], 0, 1.6, '#8B5A3C');
+        txt(g, W * .22, 290, '300,000 BC', { fill: B.bone, 'font-size': 70, stroke: B.ink, 'stroke-width': 10, 'paint-order': 'stroke' });
+        txt(g, W * .76, 290, 'TODAY?', { fill: B.tech, 'font-size': 80, stroke: '#06282C', 'stroke-width': 10, 'paint-order': 'stroke', filter: 'url(#kGlow)' });
+        if (t > 4.3) { const kk = p(t, 4.3, 4.7, E.back); const bg = el('g', { transform: `translate(${W * .72},${H * .62}) scale(${kk})` }, g); el('rect', { x: -360, y: -70, width: 720, height: 140, rx: 16, fill: '#0E1416', stroke: B.tech, 'stroke-width': 4, filter: 'url(#kGlow)' }, bg); txt(bg, 0, 22, t < 7.5 ? 'YEAR 300,000' : 'YEAR 300,000 A.C.', { fill: B.tech, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 56 }); }
+        if (t > 8.6) txt(g, W / 2, H * .9, "Here's what's different.", { fill: B.bone, 'font-family': CL.serif, 'font-size': 52 });
+      }
+
+      // ---------- list items ----------
+      const it = ITEMS.find(x => t >= x[0] && t < x[1]);
+      const ik = it ? win(t, it[0], it[1], .3, .25) : 0;
+      set(badge, { display: it && it[2] ? 'inline' : 'none', opacity: ik, transform: `translate(${W / 2},${200}) scale(${.6 + .4 * p(t, it ? it[0] : 0, (it ? it[0] : 0) + .3, E.back)})` });
+      if (it) { badgeT.textContent = it[2]; titleT.textContent = it[3]; set(titleT, { opacity: ik, y: 330 }); } else titleT.textContent = '';
+      set(badge.firstChild, { fill: it && it[2] === '–' ? '#FF5A3D' : B.tech });
+
+      if (it && it[2] === '1') {
+        const k1 = p(t, 15.9, 16.6, E.out), k2 = p(t, 11.4, 13.5, E.out);
+        const bar = (y, w, col, label, val) => { el('rect', { x: 200, y, width: w, height: 70, rx: 12, fill: col }, g); txt(g, 210, y - 18, label, { 'text-anchor': 'start', 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 30 }); txt(g, 220 + w, y + 48, val, { 'text-anchor': 'start', 'font-family': B.fontMono, 'font-size': 40, fill: B.bone }); };
+        bar(560, 1450 * k2, B.tech, 'THEIR CIVILIZATION', '300,000 yrs');
+        bar(760, 58 * k1, B.sand, 'YOURS', '12,000 yrs');
+      }
+      if (it && it[2] === '2') {
+        if (t < 25.5) { for (let i = 0; i < 40; i++) { const x = W * (.1 + hash(i * 2.1) * .8), y = H * (.4 + hash(i * 5.3) * .5); el('circle', { cx: x, cy: y, r: 8, fill: B.tech, filter: 'url(#kGlow)', opacity: p(t, 22.8 + i * .05, 23 + i * .05) }, g); if (i) el('path', { d: `M ${x} ${y} L ${W * (.1 + hash((i - 1) * 2.1) * .8)} ${H * (.4 + hash((i - 1) * 5.3) * .5)}`, stroke: B.tech, 'stroke-width': 2, opacity: .4 * p(t, 23 + i * .05, 23.2 + i * .05) }, g); } }
+        else { el('circle', { cx: W / 2, cy: H * 1.35, r: H * .75, fill: '#3E7A3A', stroke: B.ink, 'stroke-width': 5 }, g); for (let i = 0; i < 3; i++) { const mg = el('g', { transform: `translate(${W * (.3 + i * .2) + Math.sin(t + i) * 10},${H * .72 + (i % 2) * 20}) scale(.45)` }, g); SAU.drawMammoth(SAU.makePen(1, rc, mg, { seed: s + i * 7, sw: 5 })); } txt(g, W / 2, H * .5, 'EARTH: NATURE RESERVE', { fill: '#E8F5D8', 'font-size': 44, stroke: B.ink, 'stroke-width': 8, 'paint-order': 'stroke' }); }
+      }
+      if (it && it[2] === '3') {
+        set(chars, { display: 'inline' }); show(nb); show(yu);
+        nb.pose({ x: W * .68, y: H * .98, scale: .8, expr: 'smug', armL: 150, look: [-16, 0] }, t);
+        yu.pose({ x: W * .32, y: H * .98, scale: .8, expr: 'scared', look: [16, 0], head: 6 }, t);
+        const sg = el('g', { transform: `translate(${W / 2},${H * .5})` }, g); el('rect', { x: -330, y: -56, width: 660, height: 112, rx: 14, fill: '#0E1416', stroke: B.tech, 'stroke-width': 4 }, sg); txt(sg, 0, 18, 'WINS: 9,999,999 – 0', { fill: B.tech, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 46 });
+      }
+      if (it && (it[2] === '4' || it[2] === '6')) {
+        const bk = el('g', { transform: `translate(${W / 2},${H * .66})` }, g);
+        bk.appendChild(rc.rectangle(-520, -230, 1040, 460, R(s, { fill: '#F3E6CF', fillStyle: 'solid', strokeWidth: 6 })));
+        bk.appendChild(rc.line(0, -230, 0, 230, R(s + 1, { strokeWidth: 4 })));
+        if (it[2] === '4') { txt(bk, -260, -150, 'Causes of death', { fill: B.ink, 'font-family': CL.serif, 'font-size': 40 }); txt(bk, -260, -60, 'dirty water: —', { fill: '#8A847C', 'font-family': CL.serif, 'font-size': 36 }); txt(bk, 260, -150, 'page intentionally', { fill: '#8A847C', 'font-family': CL.serif, 'font-size': 36 }); txt(bk, 260, -100, 'left blank', { fill: '#8A847C', 'font-family': CL.serif, 'font-size': 36 }); }
+        else { txt(bk, -260, -150, 'HISTORY, Vol. 1', { fill: B.ink, 'font-size': 44 }); const kg = el('g', { transform: 'translate(-300,190) scale(1.1)' }, bk); SAU.drawCrowd(rc, s + 3, kg, [0], 0, 1, '#8B5A3C'); const fg = el('g', {}, bk); SAU.drawCampfire(rc, s + 5, fg, -150, 190, .6); txt(bk, 260, 40, '?', { fill: CL.orange, 'font-family': CL.serif, 'font-size': 240 }); txt(bk, 260, 170, 'a kid, a fire, a question', { fill: B.ink, 'font-family': CL.serif, 'font-size': 34 }); }
+      }
+      if (it && it[2] === '5') {
+        set(chars, { display: 'inline' }); show(p1); show(p2);
+        const gr = t > 48.4;
+        p1.pose({ x: W * .34, y: H * .98, scale: .8, expr: gr ? 'angry' : 'smile', look: [16, 0], armR: gr ? 60 : 0 }, t);
+        p2.pose({ x: W * .66, y: H * .98, scale: .8, expr: gr ? 'angry' : 'smile', look: [-16, 0], armL: gr ? 60 : 0, flip: true }, t);
+        if (gr) { txt(g, W * .34, H * .5, 'HNNGH!', { fill: B.bone, 'font-family': '"Comic Relief"', 'font-size': 60, stroke: B.ink, 'stroke-width': 8, 'paint-order': 'stroke' }); txt(g, W * .66, H * .5, 'HNNGH!', { fill: B.bone, 'font-family': '"Comic Relief"', 'font-size': 60, stroke: B.ink, 'stroke-width': 8, 'paint-order': 'stroke' }); txt(g, W / 2, H * .62, '(= "hello")', { fill: B.tech, 'font-family': CL.serif, 'font-size': 40 }); }
+      }
+      if (it && it[2] === '7') {
+        const fg = el('g', {}, g); SAU.drawCampfire(rc, s, fg, W / 2, H * .9, t > 65.8 ? .9 : .3);
+        g.appendChild(rc.path(`M ${W * .2} ${H * .44} L ${W * .8} ${H * .44} L ${W * .78} ${H * .52} L ${W * .8} ${H * .6} L ${W * .2} ${H * .6} L ${W * .22} ${H * .52} Z`, R(s + 9, { fill: '#C8956A', fillStyle: 'solid', strokeWidth: 5 })));
+        txt(g, W / 2, H * .545, 'HAPPY STONE AGE DAY!', { fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 58 });
+        set(chars, { display: 'inline' }); show(p1); show(p2); show(kidG);
+        p1.pose({ x: W * .28, y: H * .98, scale: .7, expr: 'smile', armL: t > 64 && t < 65.6 ? 100 : 0, look: [16, 6] }, t);
+        p2.pose({ x: W * .72, y: H * .98, scale: .7, expr: 'smile', look: [-16, 6], flip: true }, t);
+        kidG.pose({ x: W * .58, y: H * 1.0, scale: .5, expr: t > 66.9 ? 'shock' : 'smile', look: [-10, 10] }, t);
+        if (t > 64.0 && t < 65.8) txt(g, W * .28, H * .7, 'tech: OFF', { fill: '#FF7A3D', 'font-family': B.fontMono, 'font-size': 36 });
+        if (t > 66.9) for (let i = 0; i < 4; i++) { const k = (t * .7 + i / 4) % 1; el('path', { d: `M ${W / 2 - 60 + i * 40} ${H * .82 - k * 140} q 12 -20 0 -40 q -12 -20 0 -40`, stroke: '#FFFFFF', 'stroke-width': 6, fill: 'none', opacity: 1 - k }, g); }
+      }
+      if (it && it[2] === '8') {
+        txt(g, W / 2, H * .55, 'THE DARK AGES', { fill: '#8A847C', 'font-size': 90 });
+        const k = p(t, 71.5, 72.1);
+        el('path', { d: `M ${W * .2} ${H * .53} L ${W * .2 + W * .6 * k} ${H * .5}`, stroke: '#FF5A3D', 'stroke-width': 16, 'stroke-linecap': 'round' }, g);
+        if (t > 76.0) { for (let i = 0; i < 8; i++) { const kk = p(t, 77.1 + i * .08, 77.4 + i * .08, E.back); const tg = el('g', { transform: `translate(${W * (.2 + i * .085)},${H * .78}) scale(${kk})` }, g); tg.appendChild(rc.rectangle(-36, -48, 72, 96, R(s + i, { fill: '#B79A78', fillStyle: 'solid' }))); } txt(g, W / 2, H * .92, 'rule #1: copy the library', { fill: B.bone, 'font-family': CL.serif, 'font-size': 44 }); }
+      }
+      if (it && it[2] === '9') {
+        const pod = [[W * .5, 0, 'TEACHER', 84.2], [W * .3, 90, 'king', 0], [W * .7, 130, 'soldier', 0], [W * .88, 170, 'influencer', 0]];
+        pod.forEach(([x, dy, l, a], i) => { if (i === 0 && t < a) return; g.appendChild(rc.rectangle(x - 120, H * .62 + dy, 240, H * .4, R(s + i, { fill: i === 0 ? CL.orange : '#5A5955', fillStyle: 'solid', strokeWidth: 4 }))); txt(g, x, H * .62 + dy + 70, i === 0 ? '#1' : '#' + (i + 1), { fill: B.bone, 'font-size': 54 }); txt(g, x, H * .62 + dy - 24, l, { fill: i === 0 ? CL.cream : '#B0AEA5', 'font-family': i === 0 ? B.fontDisplay : CL.serif, 'font-size': i === 0 ? 52 : 36 }); });
+      }
+      if (it && it[2] === '10') {
+        g.appendChild(rc.rectangle(-30, H * .7, W + 60, H * .4, R(s, { fill: '#6E9A3A', fillStyle: 'solid' })));
+        for (let i = 0; i < 6; i++) { const gg = el('g', { transform: `translate(${W * (.12 + i * .15) + Math.sin(t * 2 + i) * 10},${H * .82 + (i % 2) * 40 - Math.abs(Math.sin(t * 5 + i)) * 20}) scale(.45)` }, g); SAU.drawGazelle(SAU.makePen(1, rc, gg, { seed: s + i * 5, sw: 5 })); }
+        const sg = el('g', { transform: `translate(${W / 2},${H * .5})` }, g); el('rect', { x: -330, y: -56, width: 660, height: 112, rx: 14, fill: '#0E1416', stroke: B.tech, 'stroke-width': 4 }, sg); txt(sg, 0, 18, 'GAZELLES: THRIVING', { fill: B.tech, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 48 });
+      }
+      if (it && it[2] === '–') {
+        const pg = el('g', { transform: `translate(${W / 2},${H * .66}) rotate(-3)` }, g);
+        pg.appendChild(rc.rectangle(-420, -230, 840, 470, R(s, { fill: '#FFFFFF', fillStyle: 'solid', strokeWidth: 5 })));
+        txt(pg, 0, -150, 'FINAL EXAM: "DO IT YOURSELF"', { fill: B.ink, 'font-family': CL.serif, 'font-size': 40 });
+        ['1. Light a fire without asking.', '2. Do math without asking.', '3. Write this sentence yourself.'].forEach((l, i) => txt(pg, -360, -70 + i * 70, l, { 'text-anchor': 'start', fill: '#3D3929', 'font-family': CL.serif, 'font-size': 34 }));
+        if (t > 102.6) { const k = p(t, 102.6, 102.9, E.back); const fg = el('g', { transform: `translate(260,140) rotate(-12) scale(${k * 1.2})` }, pg); fg.appendChild(rc.circle(0, 0, 180, R(s + 2, { stroke: '#E0402E', strokeWidth: 10 }))); txt(fg, 0, 40, 'F', { fill: '#E0402E', 'font-family': B.fontDisplay, 'font-size': 120 }); }
+        if (t > 102.6) txt(g, W / 2, H * .97, 'pass rate: 12%', { fill: '#FF7A3D', 'font-family': B.fontMono, 'font-size': 40 });
+      }
+      if (quiet) {
+        const k = p(t, 104.1, 105.5);
+        const pit = el('g', { opacity: k }, g);
+        pit.appendChild(rc.ellipse(W / 2, H * .8, 900, 230, R(s, { fill: '#6B4A33', fillStyle: 'solid', strokeWidth: 4 })));
+        pit.appendChild(rc.ellipse(W / 2, H * .8, 780, 170, R(s + 1, { fill: '#9AC2D0', fillStyle: 'solid', strokeWidth: 3 })));
+        for (let i = 0; i < 6; i++) { const kk = (t * .5 + i / 6) % 1; el('path', { d: `M ${W / 2 - 200 + i * 80} ${H * .74 - kk * 260} q 16 -30 0 -60 q -16 -30 0 -60`, stroke: '#FFFFFF', 'stroke-width': 8, fill: 'none', opacity: (1 - kk) * .8 }, pit); }
+        for (let i = 0; i < 3; i++) pit.appendChild(rc.circle(W / 2 - 120 + i * 120, H * .8 + Math.sin(t * 3 + i) * 6, 60, R(s + 5 + i, { fill: '#8F857A', fillStyle: 'solid' })));
+        if (t > 107.1) txt(g, W / 2, H * .3, 'not how to fight', { fill: '#8A847C', 'font-family': CL.serif, 'font-size': 56, opacity: p(t, 107.1, 107.6) });
+        if (t > 111.0) txt(g, W / 2, H * .42, 'how to boil water', { fill: B.bone, 'font-family': CL.serif, 'font-size': 72, opacity: p(t, 111.0, 111.6) });
+      }
+
+      // HUD
+      yp.set(t < 4.3 ? '2026 AD' : '300,000 A.C.', t < 4.3 ? 'YOUR WORLD' : 'THEIR WORLD');
+      set(hud, { opacity: quiet ? 1 - p(t, 104.1, 105) : 1 });
+      set(flash, { opacity: Math.max(...ITEMS.map(x => t >= x[0] && t < x[0] + .2 ? (1 - (t - x[0]) / .2) * .35 : 0), 0) });
+    },
+  };
+});
+</script></body></html>
