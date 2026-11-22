@@ -3,6 +3,9 @@
 (function () {
   const { el, set, hash, clamp, p, E, BRAND: B } = SAU;
   const ROUGH = (seed, extra = {}) => Object.assign({ seed, stroke: B.ink, strokeWidth: 3, roughness: 1, bowing: .5 }, extra);
+  // Claude's own look (colours only — NO Anthropic/Claude logo without Anthropic's written approval)
+  const CL = SAU.CL = { orange: '#D97757', orangeDeep: '#C15F3C', cream: '#FAF9F5', paper: '#F0EEE6', line: '#E3DFD3', dark: '#141413', text: '#3D3929', mid: '#8A877D', green: '#788C5D', blue: '#6A9BCC',
+    serif: '"Lora", Georgia, serif', sans: '"Poppins", "Inter", sans-serif' };
 
   // ---------- shared <defs> ----------
   SAU.kitDefs = function (svg) {
@@ -13,6 +16,8 @@
       <filter id="kBlur"><feGaussianBlur stdDeviation="10"/></filter>
       <radialGradient id="kFireLight"><stop offset="0" stop-color="#FFB45A" stop-opacity=".55"/><stop offset=".45" stop-color="#E2572C" stop-opacity=".18"/><stop offset="1" stop-color="#E2572C" stop-opacity="0"/></radialGradient>
       <radialGradient id="kTechLight"><stop offset="0" stop-color="#3DF5FF" stop-opacity=".6"/><stop offset=".5" stop-color="#3DF5FF" stop-opacity=".15"/><stop offset="1" stop-color="#3DF5FF" stop-opacity="0"/></radialGradient>
+      <radialGradient id="kClaudeLight"><stop offset="0" stop-color="#FFE9D6" stop-opacity=".7"/><stop offset=".45" stop-color="#D97757" stop-opacity=".2"/><stop offset="1" stop-color="#D97757" stop-opacity="0"/></radialGradient>
+      <filter id="kGlowWarm" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
       <radialGradient id="kHole"><stop offset="0" stop-color="#000"/><stop offset=".55" stop-color="#000" stop-opacity=".75"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
       <radialGradient id="kVig" cx=".5" cy=".5" r=".75"><stop offset=".55" stop-color="#1E1612" stop-opacity="0"/><stop offset="1" stop-color="#1E1612" stop-opacity=".5"/></radialGradient>
       <linearGradient id="kNight" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#141826"/><stop offset=".7" stop-color="#2A2230"/><stop offset="1" stop-color="#3B2A2A"/></linearGradient>
@@ -103,36 +108,42 @@
     };
   };
 
-  // ---------- phone prop (close-up) ----------
-  // centred at (0,0); w = width. returns { root, screen, text, status }
+  // ---------- phone prop (close-up) — Claude app look (no logo) ----------
+  // centred at (0,0); w = width.
   SAU.makePhoneCloseup = function (parent, w = 620) {
     const h = w * 1.95, root = el('g', {}, parent);
     const body = el('g', {}, root);
     const scr = el('g', {}, root);
     const sw = w - 56, sh = h - 70;
-    el('rect', { x: -sw / 2, y: -sh / 2, width: sw, height: sh, rx: 34, fill: '#081316' }, scr);
-    const glow = el('rect', { x: -sw / 2, y: -sh / 2, width: sw, height: sh, rx: 34, fill: B.tech, opacity: .0, filter: 'url(#kGlowBig)' }, scr);
+    el('rect', { x: -sw / 2, y: -sh / 2, width: sw, height: sh, rx: 34, fill: '#0C0B0A' }, scr);
+    const glow = el('rect', { x: -sw / 2, y: -sh / 2, width: sw, height: sh, rx: 34, fill: '#FFE9D6', opacity: 0, filter: 'url(#kGlowBig)' }, scr);
     const ui = el('g', {}, scr);
+    el('rect', { x: -sw / 2, y: -sh / 2, width: sw, height: sh, rx: 34, fill: CL.cream }, ui);
     // status bar
     const status = el('g', {}, ui);
-    const tm = el('text', { x: -sw / 2 + 40, y: -sh / 2 + 60, fill: B.bone, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 30 }, status);
-    tm.textContent = '??:??';
+    el('text', { x: -sw / 2 + 40, y: -sh / 2 + 60, fill: CL.dark, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 30 }, status).textContent = '??:??';
     const bars = el('g', { transform: `translate(${sw / 2 - 360},${-sh / 2 + 36})` }, status);
-    [0, 1, 2, 3].forEach(i => el('rect', { x: i * 14, y: 24 - i * 7, width: 9, height: 6 + i * 7, rx: 2, fill: B.bone, opacity: .22 }, bars));
-    el('text', { x: 66, y: 24, fill: B.bone, opacity: .6, 'font-family': B.fontUI, 'font-weight': 600, 'font-size': 22 }, bars).textContent = 'No service';
+    [0, 1, 2, 3].forEach(i => el('rect', { x: i * 14, y: 24 - i * 7, width: 9, height: 6 + i * 7, rx: 2, fill: CL.dark, opacity: .18 }, bars));
+    el('text', { x: 66, y: 24, fill: CL.mid, 'font-family': B.fontUI, 'font-weight': 600, 'font-size': 22 }, bars).textContent = 'No service';
     const batt = el('g', { transform: `translate(${sw / 2 - 96},${-sh / 2 + 38})` }, status);
-    el('rect', { width: 54, height: 26, rx: 6, fill: 'none', stroke: B.bone, 'stroke-width': 3 }, batt);
-    const battFill = el('rect', { x: 5, y: 5, width: 44, height: 16, rx: 3, fill: '#7CF29A' }, batt);
-    el('rect', { x: 56, y: 8, width: 5, height: 10, rx: 2, fill: B.bone }, batt);
-    const battT = el('text', { x: -10, y: 21, 'text-anchor': 'end', fill: B.bone, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 24 }, batt);
-    // generic assistant: sparkle mark (not a brand logo) + one line
-    const mark = el('g', { transform: `translate(0,${-sh * .14})` }, ui);
-    el('path', { d: 'M 0 -64 C 8 -14 14 -8 64 0 C 14 8 8 14 0 64 C -8 14 -14 8 -64 0 C -14 -8 -8 -14 0 -64 Z', fill: B.tech, filter: 'url(#kGlow)' }, mark);
-    const text = el('text', { x: 0, y: sh * .03, 'text-anchor': 'middle', fill: B.bone, 'font-family': B.fontUI, 'font-weight': 600, 'font-size': 44 }, ui);
-    const caret = el('rect', { width: 4, height: 46, fill: B.tech }, ui);
-    // input box
-    el('rect', { x: -sw / 2 + 36, y: sh / 2 - 150, width: sw - 72, height: 96, rx: 48, fill: '#13262B', stroke: B.techDeep, 'stroke-width': 3 }, ui);
-    el('text', { x: -sw / 2 + 76, y: sh / 2 - 90, fill: B.bone, opacity: .4, 'font-family': B.fontUI, 'font-size': 30 }, ui).textContent = 'Ask anything…';
+    el('rect', { width: 54, height: 26, rx: 6, fill: 'none', stroke: CL.dark, 'stroke-width': 3 }, batt);
+    const battFill = el('rect', { x: 5, y: 5, width: 44, height: 16, rx: 3, fill: '#5FA55A' }, batt);
+    el('rect', { x: 56, y: 8, width: 5, height: 10, rx: 2, fill: CL.dark }, batt);
+    const battT = el('text', { x: -10, y: 21, 'text-anchor': 'end', fill: CL.dark, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 24 }, batt);
+    // app header: name as plain text (nominative use), menu + new-chat glyphs
+    el('path', { d: `M ${-sw / 2 + 44} ${-sh / 2 + 128} h 34 M ${-sw / 2 + 44} ${-sh / 2 + 140} h 26`, stroke: CL.text, 'stroke-width': 4, 'stroke-linecap': 'round' }, ui);
+    el('text', { x: 0, y: -sh / 2 + 146, 'text-anchor': 'middle', fill: CL.dark, 'font-family': CL.sans, 'font-weight': 500, 'font-size': 34 }, ui).textContent = 'Claude';
+    el('path', { d: `M ${sw / 2 - 74} ${-sh / 2 + 118} v 30 M ${sw / 2 - 89} ${-sh / 2 + 133} h 30`, stroke: CL.text, 'stroke-width': 4, 'stroke-linecap': 'round' }, ui);
+    el('line', { x1: -sw / 2, y1: -sh / 2 + 182, x2: sw / 2, y2: -sh / 2 + 182, stroke: CL.line, 'stroke-width': 2 }, ui);
+    // greeting (serif, like the app's warm greeting)
+    const text = el('text', { x: 0, y: -sh * .02, 'text-anchor': 'middle', fill: CL.dark, 'font-family': CL.serif, 'font-weight': 500, 'font-size': 50 }, ui);
+    const caret = el('rect', { width: 4, height: 50, fill: CL.orange }, ui);
+    // input box + orange send button
+    el('rect', { x: -sw / 2 + 30, y: sh / 2 - 190, width: sw - 60, height: 150, rx: 30, fill: '#FFFFFF', stroke: CL.line, 'stroke-width': 3 }, ui);
+    el('text', { x: -sw / 2 + 64, y: sh / 2 - 132, fill: CL.mid, 'font-family': CL.sans, 'font-size': 28 }, ui).textContent = 'Ask Claude anything…';
+    el('text', { x: -sw / 2 + 64, y: sh / 2 - 66, fill: CL.mid, 'font-family': CL.sans, 'font-size': 40 }, ui).textContent = '+';
+    el('rect', { x: sw / 2 - 118, y: sh / 2 - 112, width: 60, height: 54, rx: 14, fill: CL.orange }, ui);
+    el('path', { d: `M ${sw / 2 - 88} ${sh / 2 - 70} v -28 M ${sw / 2 - 100} ${sh / 2 - 86} l 12 -12 l 12 12`, stroke: '#fff', 'stroke-width': 5, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, ui);
     return {
       root, body, sw, sh, w, h, glow, ui, battT, battFill,
       drawBody(rc, seed) {
@@ -142,17 +153,16 @@
         P.shape(SAU.rrectPath(-w / 2 + 18, -h / 2 + 18, w - 36, h - 36, 56), '#2E363C', 3);
       },
       setText(s, showCaret, t) {
-        // wraps to lines that fit the screen
         while (text.firstChild) text.removeChild(text.firstChild);
-        const words = s.split(' '), lines = ['']; text.textContent = '';
+        const words = s.split(' '), lines = [''];
         const probe = el('tspan', {}, text);
-        for (const wd of words) { const tryL = (lines[lines.length - 1] + ' ' + wd).trim(); probe.textContent = tryL; if (probe.getComputedTextLength() > sw - 90 && lines[lines.length - 1]) lines.push(wd); else lines[lines.length - 1] = tryL; }
+        for (const wd of words) { const tryL = (lines[lines.length - 1] + ' ' + wd).trim(); probe.textContent = tryL; if (probe.getComputedTextLength() > sw - 110 && lines[lines.length - 1]) lines.push(wd); else lines[lines.length - 1] = tryL; }
         text.removeChild(probe);
-        lines.forEach((ln, i) => { const ts = el('tspan', { x: 0, dy: i ? 58 : 0 }, text); ts.textContent = ln; });
+        lines.forEach((ln, i) => { const ts = el('tspan', { x: 0, dy: i ? 64 : 0 }, text); ts.textContent = ln; });
         const last = text.lastChild, bb = last ? last.getComputedTextLength() : 0;
-        set(caret, { x: bb / 2 + 6, y: sh * .03 - 38 + (lines.length - 1) * 58, opacity: showCaret && Math.floor(t * 2.5) % 2 === 0 ? 1 : 0 });
+        set(caret, { x: bb / 2 + 8, y: -sh * .02 - 42 + (lines.length - 1) * 64, opacity: showCaret && Math.floor(t * 2.5) % 2 === 0 ? 1 : 0 });
       },
-      setBattery(pct) { battT.textContent = Math.round(pct) + '%'; set(battFill, { width: 44 * pct / 100, fill: pct > 20 ? '#7CF29A' : '#FF5A3D' }); },
+      setBattery(pct) { battT.textContent = Math.round(pct) + '%'; set(battFill, { width: 44 * pct / 100, fill: pct > 20 ? '#5FA55A' : '#D9472B' }); },
     };
   };
 
@@ -210,15 +220,17 @@
     return g;
   };
 
-  // ---------- neon callout label ----------
+  // ---------- callout label (Claude style: cream card, orange accent, no logo) ----------
   SAU.makeCallout = function (parent, title, sub) {
     const g = el('g', {}, parent);
-    const line = el('path', { fill: 'none', stroke: B.tech, 'stroke-width': 4, 'stroke-linecap': 'round', filter: 'url(#kGlow)' }, g);
+    const line = el('path', { fill: 'none', stroke: CL.orange, 'stroke-width': 5, 'stroke-linecap': 'round', filter: 'url(#kGlowWarm)' }, g);
     const box = el('g', {}, g);
-    const bw = Math.max(260, title.length * 30 + 60);
-    el('rect', { width: bw, height: sub ? 104 : 70, rx: 12, fill: '#0E1416', stroke: B.tech, 'stroke-width': 3, filter: 'url(#kGlow)' }, box);
-    el('text', { x: 24, y: 48, fill: B.tech, 'font-family': B.fontDisplay, 'font-size': 38 }, box).textContent = title;
-    if (sub) el('text', { x: 24, y: 86, fill: B.bone, 'font-family': B.fontUI, 'font-weight': 600, 'font-size': 24 }, box).textContent = sub;
+    const bw = Math.max(300, title.length * 28 + 80);
+    el('rect', { x: 6, y: 8, width: bw, height: sub ? 112 : 76, rx: 14, fill: '#000', opacity: .3 }, box);
+    el('rect', { width: bw, height: sub ? 112 : 76, rx: 14, fill: CL.cream, stroke: CL.orange, 'stroke-width': 4 }, box);
+    el('rect', { x: 0, y: 0, width: 12, height: sub ? 112 : 76, rx: 6, fill: CL.orange }, box);
+    el('text', { x: 32, y: 52, fill: CL.dark, 'font-family': CL.serif, 'font-weight': 600, 'font-size': 44 }, box).textContent = title;
+    if (sub) el('text', { x: 33, y: 92, fill: CL.orangeDeep, 'font-family': CL.sans, 'font-weight': 500, 'font-size': 24 }, box).textContent = sub;
     return { g, box, line, bw };
   };
 
@@ -258,5 +270,99 @@
     math: 'M -36 -20 H -8 M -22 -34 V -6 M 10 -20 H 38 M -36 22 H -8 M 10 14 H 38 M 10 28 H 38',
     moon: 'M 14 -38 A 40 40 0 1 0 14 38 A 30 30 0 1 1 14 -38 Z',
     atom: 'M -40 0 A 40 14 0 1 0 40 0 A 40 14 0 1 0 -40 0 M -20 -35 A 40 14 60 1 0 20 35 A 40 14 60 1 0 -20 -35 M 20 -35 A 40 14 -60 1 0 -20 35 A 40 14 -60 1 0 20 -35',
+  };
+})();
+
+// ================= Act 2 additions =================
+(function () {
+  const { el, set, hash, BRAND: B } = SAU;
+  const CL = SAU.CL;
+  const ROUGH = (seed, extra = {}) => Object.assign({ seed, stroke: B.ink, strokeWidth: 3, roughness: 1, bowing: .5 }, extra);
+
+  // "PROBLEM #n" banner (top centre). set(n,label)
+  SAU.makeProblemCard = function (parent) {
+    const g = el('g', {}, parent), bg = el('g', {}, g);
+    const small = el('text', { x: 0, y: -28, 'text-anchor': 'middle', fill: '#FFD36B', 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 34, 'letter-spacing': 6 }, g);
+    const big = el('text', { x: 0, y: 46, 'text-anchor': 'middle', fill: B.bone, 'font-family': B.fontDisplay, 'font-size': 76 }, g);
+    return {
+      g, set(n, label) { small.textContent = 'PROBLEM #' + n; big.textContent = label; },
+      draw(rc, seed, w = 620) {
+        while (bg.firstChild) bg.removeChild(bg.firstChild);
+        const sg = el('g', { opacity: .35 }, bg);
+        sg.appendChild(rc.rectangle(-w / 2 + 10, -78, w, 160, ROUGH(seed + 3, { fill: '#000', fillStyle: 'solid', stroke: 'none' })));
+        bg.appendChild(rc.rectangle(-w / 2, -88, w, 160, ROUGH(seed, { fill: B.rust, fillStyle: 'solid', strokeWidth: 5, roughness: 1.5 })));
+      },
+    };
+  };
+
+  // update toast (Claude style: dark card, orange accents, no logo)
+  SAU.makeToast = function (parent, title = 'Claude v1.0', sub = 'for Homo sapiens') {
+    const w = 660, h = 176, g = el('g', {}, parent);
+    el('rect', { x: 8, y: 10, width: w, height: h, rx: 20, fill: '#000', opacity: .35 }, g);
+    el('rect', { width: w, height: h, rx: 20, fill: CL.dark }, g);
+    el('rect', { width: w, height: h, rx: 20, fill: 'none', stroke: CL.orange, 'stroke-width': 3 }, g);
+    el('circle', { cx: 56, cy: 84, r: 30, fill: CL.orange }, g);
+    el('path', { d: 'M 56 100 L 56 68 M 42 82 L 56 66 L 70 82', stroke: '#fff', 'stroke-width': 6, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, g);
+    const head = el('text', { x: 110, y: 56, fill: CL.orange, 'font-family': CL.sans, 'font-weight': 700, 'font-size': 22, 'letter-spacing': 3 }, g);
+    el('text', { x: 110, y: 102, fill: CL.cream, 'font-family': CL.serif, 'font-weight': 600, 'font-size': 40 }, g).textContent = title;
+    el('text', { x: 360, y: 102, fill: '#B0AEA5', 'font-family': CL.sans, 'font-size': 22 }, g).textContent = sub;
+    el('rect', { x: 110, y: 128, width: 510, height: 14, rx: 7, fill: '#2B2A27' }, g);
+    const bar = el('rect', { x: 110, y: 128, width: 0, height: 14, rx: 7, fill: CL.orange }, g);
+    const pct = el('text', { x: 620, y: 56, 'text-anchor': 'end', fill: '#B0AEA5', 'font-family': B.fontMono, 'font-size': 22 }, g);
+    return { g, w, h, set(k) { set(bar, { width: 510 * k }); head.textContent = k <= 0 ? 'UPDATE AVAILABLE' : k < 1 ? 'INSTALLING...' : 'INSTALLED  ✓'; pct.textContent = k <= 0 ? '' : Math.round(k * 100) + '%'; } };
+  };
+
+  // server room (data centre) filling a w×h panel
+  SAU.drawServerRoom = function (rc, seed, g, w, h, t) {
+    el('rect', { width: w, height: h, fill: '#0A1418' }, g);
+    // floor perspective
+    g.appendChild(rc.polygon([[0, h * .78], [w, h * .78], [w, h], [0, h]], ROUGH(seed, { fill: '#121E22', fillStyle: 'solid', strokeWidth: 3 })));
+    const n = 5, rw = w / (n + 1.2);
+    for (let i = 0; i < n; i++) {
+      const x = rw * .6 + i * rw * 1.04, y = h * .14, rh = h * .66;
+      g.appendChild(rc.rectangle(x, y, rw * .86, rh, ROUGH(seed + i, { fill: '#1C2A30', fillStyle: 'solid', strokeWidth: 3 })));
+      for (let r = 0; r < 9; r++) {
+        const ry = y + 22 + r * (rh - 30) / 9;
+        g.appendChild(rc.line(x + 10, ry + 26, x + rw * .86 - 10, ry + 26, ROUGH(seed + i * 9 + r, { stroke: '#0A1418', strokeWidth: 2 })));
+        for (let l = 0; l < 3; l++) {
+          const on = hash(i * 31 + r * 7 + l + Math.floor(t * (6 + l * 3)) * 13) > .45;
+          el('circle', { cx: x + 18 + l * 16, cy: ry + 12, r: 4, fill: l === 2 ? '#7CF29A' : B.tech, opacity: on ? 1 : .15, filter: on ? 'url(#kGlow)' : '' }, g);
+        }
+      }
+    }
+    el('text', { x: w / 2, y: h * .93, 'text-anchor': 'middle', fill: B.tech, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 34, 'letter-spacing': 6, filter: 'url(#kGlow)' }, g).textContent = 'DATA CENTER';
+  };
+
+  // valley with two cliffs (characters added by scene)
+  SAU.drawValley = function (rc, seed, g, w, h) {
+    el('rect', { width: w, height: h, fill: '#E9A35C' }, g);
+    el('rect', { y: h * .45, width: w, height: h * .55, fill: '#F2C27F' }, g);
+    g.appendChild(rc.polygon([[-20, h * .52], [w * .3, h * .5], [w * .38, h + 20], [-20, h + 20]], ROUGH(seed, { fill: '#B8693E', fillStyle: 'solid', strokeWidth: 4, roughness: 1.6 })));
+    g.appendChild(rc.polygon([[w + 20, h * .5], [w * .7, h * .48], [w * .62, h + 20], [w + 20, h + 20]], ROUGH(seed + 1, { fill: '#A85E36', fillStyle: 'solid', strokeWidth: 4, roughness: 1.6 })));
+    g.appendChild(rc.polygon([[w * .36, h + 20], [w * .5, h * .86], [w * .64, h + 20]], ROUGH(seed + 2, { fill: '#7E4A2E', fillStyle: 'solid', strokeWidth: 3 })));
+    for (let i = 0; i < 5; i++) g.appendChild(rc.line(w * (.05 + i * .05), h * (.6 + i * .07), w * (.15 + i * .04), h * (.6 + i * .07), ROUGH(seed + 9 + i, { stroke: '#8C4A2A', strokeWidth: 2, roughness: 2 })));
+  };
+
+  // generic dinosaur silhouette (long-neck sauropod, no franchise look), feet at (0,0), faces right
+  SAU.drawDino = function (rc, seed, g, fill = '#3B2418') {
+    const d = 'M -260 -150 Q -330 -170 -380 -120 Q -340 -150 -280 -120 Q -250 -230 -120 -240 Q 0 -250 80 -200 Q 130 -260 160 -360 Q 175 -420 220 -430 Q 262 -432 262 -405 Q 250 -390 215 -395 Q 196 -330 170 -230 Q 160 -180 130 -150 L 130 0 L 90 0 L 80 -110 L 0 -110 L -10 0 L -50 0 L -60 -110 L -130 -110 L -140 0 L -180 0 L -190 -120 Q -230 -120 -260 -150 Z';
+    g.appendChild(rc.path(d, ROUGH(seed, { fill, fillStyle: 'solid', strokeWidth: 4 })));
+  };
+
+  // little flame with a polite face (for thought bubbles)
+  SAU.drawPoliteFlame = function (rc, seed, g) {
+    g.appendChild(rc.path('M -40 30 Q -50 -20 0 -70 Q 50 -20 40 30 Q 0 46 -40 30 Z', ROUGH(seed, { fill: '#F59B2F', fillStyle: 'solid' })));
+    g.appendChild(rc.path('M -20 30 Q -24 0 0 -30 Q 24 0 20 30 Q 0 38 -20 30 Z', ROUGH(seed + 1, { fill: '#FFE07A', fillStyle: 'solid', strokeWidth: 2 })));
+    el('circle', { cx: -10, cy: 8, r: 4, fill: B.ink }, g); el('circle', { cx: 10, cy: 8, r: 4, fill: B.ink }, g);
+    el('path', { d: 'M -8 20 Q 0 26 8 20', stroke: B.ink, 'stroke-width': 3, fill: 'none', 'stroke-linecap': 'round' }, g);
+    // tiny bow tie = very polite
+    el('path', { d: 'M -16 40 L -2 46 L -16 52 Z M 16 40 L 2 46 L 16 52 Z', fill: B.rust, stroke: B.ink, 'stroke-width': 2 }, g);
+  };
+
+  // stone overlay for a dead phone (world coords of phone centre)
+  SAU.drawPhoneRock = function (rc, seed, g, x, y, s = 1) {
+    g.appendChild(rc.path(`M ${x - 34 * s} ${y + 30 * s} Q ${x - 44 * s} ${y - 20 * s} ${x - 24 * s} ${y - 46 * s} Q ${x + 6 * s} ${y - 60 * s} ${x + 30 * s} ${y - 40 * s} Q ${x + 44 * s} ${y} ${x + 34 * s} ${y + 32 * s} Q ${x} ${y + 48 * s} ${x - 34 * s} ${y + 30 * s} Z`, ROUGH(seed, { fill: '#8A847C', fillStyle: 'solid', strokeWidth: 3 })));
+    g.appendChild(rc.line(x - 14 * s, y - 20 * s, x + 6 * s, y - 4 * s, ROUGH(seed + 1, { stroke: '#5E5852', strokeWidth: 2 })));
+    g.appendChild(rc.line(x + 10 * s, y + 10 * s, x + 20 * s, y + 22 * s, ROUGH(seed + 2, { stroke: '#5E5852', strokeWidth: 2 })));
   };
 })();

@@ -26,8 +26,8 @@ SAU.init((svg, S) => {
   const sparks = el('g', {}, world);
   const zzz = el('g', {}, world);
   const youRot = el('g', {}, world);
-  const you = SAU.makeYou(youRot, rc, { seed: 5 });
-  const phoneLight = el('circle', { r: 320, fill: 'url(#kTechLight)', opacity: 0 }, world);
+  const you = SAU.makeYou(youRot, rc, { seed: 5, colors: { tech: '#FBEFE2' } });
+  const phoneLight = el('circle', { r: 320, fill: 'url(#kClaudeLight)', opacity: 0 }, world);
   const dark = SAU.makeDarkness(svg, W, H, '#07060C', 'm1');
   world.appendChild(dark.node);                   // darkness lives in world space
   set(dark.node, { x: -W, y: -H, width: W * 3, height: H * 3 });
@@ -37,11 +37,11 @@ SAU.init((svg, S) => {
   const icons = el('g', {}, world);
   const bubble = el('g', {}, world); const bubbleRough = el('g', {}, bubble);
   const qMark = el('text', { x: 0, y: 40, 'text-anchor': 'middle', fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 130 }, bubble); qMark.textContent = '?';
-  const callout = SAU.makeCallout(world, 'CLAUDE', 'an AI assistant');
+  const callout = SAU.makeCallout(world, 'Claude', 'an AI assistant');
 
   // icons ("explain almost anything")
   const iconNames = ['sun', 'star', 'fish', 'leaf', 'drop', 'math', 'moon', 'atom'];
-  const iconEls = iconNames.map(n => el('path', { d: SAU.ICONS[n], fill: 'none', stroke: B.tech, 'stroke-width': 5, 'stroke-linejoin': 'round', 'stroke-linecap': 'round', filter: 'url(#kGlow)' }, icons));
+  const iconEls = iconNames.map(n => el('path', { d: SAU.ICONS[n], fill: 'none', stroke: SAU.CL.orange, 'stroke-width': 6, 'stroke-linejoin': 'round', 'stroke-linecap': 'round', filter: 'url(#kGlowWarm)' }, icons));
 
   // ================= CLOSE-UP (phone screen) =================
   const close = el('g', { opacity: 0 }, svg);
@@ -186,9 +186,9 @@ SAU.init((svg, S) => {
         close.querySelectorAll('.bk').forEach(b => { const i = +b.dataset.i; b.setAttribute('opacity', .1 + .16 * (0.5 + .5 * Math.sin(t * 3 + i))); });
         boil(phone.body, (r, s) => phone.drawBody(r, s), t, .125);
         const zIn = lerp(1.35, 1, p(t, 6.12, 6.6, E.out)) * lerp(1, 1.06, p(t, 6.6, 9.5, E.linear));
-        set(phoneG, { transform: `translate(${W / 2},${H / 2 + 70}) rotate(${-4 + Math.sin(t) * 1.2}) scale(${zIn * .76})` });
+        set(phoneG, { transform: `translate(${W / 2},${H / 2 + 20}) rotate(${-4 + Math.sin(t) * 1.2}) scale(${zIn * .68})` });
         const on = p(t, 6.28, 6.6, E.out);
-        set(phone.ui, { opacity: on }); set(phone.glow, { opacity: .25 * on });
+        set(phone.ui, { opacity: on }); set(phone.glow, { opacity: .35 * on });
         phone.setBattery(100);
         const n = Math.floor(clamp((t - 7.75) / (9.2 - 7.75)) * LINE.length);
         phone.setText(LINE.slice(0, n), true, t);

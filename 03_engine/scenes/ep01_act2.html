@@ -1,0 +1,295 @@
+<!doctype html>
+<html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;padding:0;background:#0B0A12;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script>
+<script src="../lib/animals.js"></script><script src="../lib/you.js"></script><script src="../lib/kit.js"></script>
+</head><body><script>
+// EP01 · Perde 2 — Gerçeklik kontrolü (0:56). Zamanlar: 02_audio/ep01_perde2.timing.json
+SAU.duration = 55.95;
+SAU.init((svg, S) => {
+  const { W, H, el, set, p, tw, E, boil, BRAND: B, clamp, hash, lerp } = S;
+  const rc = rough.svg(svg);
+  SAU.kitDefs(svg);
+  const horizon = H * .62;
+  const FX = W * .6, FY = H * .86, YX = W * .38, YY = H * .93, YS = .82;
+  const phX = YX + 45 * YS, phY = YY - 228 * YS, headX = YX, headY = YY - 410 * YS;
+
+  // ================= WORLD (night camp, same as act 1) =================
+  const world = el('g', {}, svg);
+  el('rect', { x: -W, y: -H, width: W * 3, height: H * 3, fill: 'url(#kNight)' }, world);
+  const stars = el('g', {}, world); SAU.drawStars(stars, W, H, 80);
+  const bg = el('g', {}, world);
+  const ost = el('g', {}, world);
+  const fireLight = el('circle', { cx: FX, cy: FY - 60, r: 700, fill: 'url(#kFireLight)' }, world);
+  const fire = el('g', {}, world), sparks = el('g', {}, world);
+  const youG = el('g', {}, world); const you = SAU.makeYou(youG, rc, { seed: 5, colors: { tech: '#FBEFE2' } });
+  const rock = el('g', {}, world), dust = el('g', {}, world);
+  const phoneLight = el('circle', { r: 320, fill: 'url(#kClaudeLight)', opacity: 0 }, world);
+  const dark = SAU.makeDarkness(svg, W, H, '#07060C', 'm2'); world.appendChild(dark.node);
+  set(dark.node, { x: -W, y: -H, width: W * 3, height: H * 3 });
+  set(svg.querySelector('#m2'), { x: -W, y: -H, width: W * 3, height: H * 3 });
+  set(svg.querySelector('#m2 rect'), { x: -W, y: -H, width: W * 3, height: H * 3 });
+  // things drawn above darkness (world space)
+  const dino = el('g', {}, world), dinoArt = el('g', {}, dino), dinoX = el('g', {}, dino);
+  const batt = el('g', {}, world);                    // big battery callout
+  el('rect', { x: 0, y: 0, width: 250, height: 110, rx: 16, fill: '#0E1416', stroke: B.tech, 'stroke-width': 4, filter: 'url(#kGlow)' }, batt);
+  el('rect', { x: 250, y: 34, width: 16, height: 42, rx: 5, fill: B.tech }, batt);
+  const battFill = el('rect', { x: 14, y: 14, width: 222, height: 82, rx: 9, fill: '#7CF29A' }, batt);
+  const battT = el('text', { x: 125, y: 74, 'text-anchor': 'middle', fill: B.bone, stroke: B.ink, 'stroke-width': 8, 'paint-order': 'stroke', 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 52 }, batt);
+  const tag = el('g', {}, world);                     // price tag on the rock
+  const tagArt = el('g', {}, tag);
+  const tagT = el('text', { x: 0, y: 12, 'text-anchor': 'middle', fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 28 }, tag);
+  tagT.textContent = 'most expensive rock on Earth';
+  const words = el('g', {}, world);
+  const WORDS = ['HELLO', 'PLEASE', 'ALGORITHM', 'WI-FI', 'OKAY', 'THE', 'SPAGHETTI', 'ANYTHING'];
+  const wordEls = WORDS.map(w => { const e = el('text', { 'text-anchor': 'middle', fill: B.bone, stroke: B.ink, 'stroke-width': 8, 'paint-order': 'stroke', 'font-family': B.fontDisplay, 'font-size': 52 }, words); e.textContent = w; return e; });
+  const thought = el('g', {}, world), thoughtArt = el('g', {}, thought), flame = el('g', {}, thought);
+  const wind = el('g', {}, world);
+
+  // ================= SPLIT SCREEN (data centre / valley) =================
+  const split = el('g', {}, svg);
+  const defs = svg.querySelector('defs');
+  const clipL = el('clipPath', { id: 'clipL' }, defs); const clipLr = el('rect', { x: 0, y: 0, width: W, height: H }, clipL);
+  const clipR = el('clipPath', { id: 'clipR' }, defs); const clipRr = el('rect', { x: W / 2, y: 0, width: W / 2, height: H }, clipR);
+  const leftP = el('g', { 'clip-path': 'url(#clipL)' }, split); const server = el('g', {}, leftP);
+  const rightP = el('g', { 'clip-path': 'url(#clipR)' }, split); const valleyG = el('g', {}, rightP);
+  const valleyArt = el('g', {}, valleyG);
+  const guyA = SAU.makeYou(el('g', {}, valleyG), rc, { seed: 41, hair: 'short', colors: { hide: '#8E6A44' } });
+  const guyB = SAU.makeYou(el('g', {}, valleyG), rc, { seed: 77, hair: 'wild', beard: true, colors: { skin: '#9A6646', hide: '#7E5F43' } });
+  const yell = el('g', {}, valleyG);
+  const yA = el('text', { 'text-anchor': 'middle', fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 56 }, yell); yA.textContent = 'HEEEY!';
+  const yB = el('text', { 'text-anchor': 'middle', fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 56 }, yell); yB.textContent = 'WHAAAT?';
+  const divider = el('g', {}, split);
+  const noSig = el('g', {}, split);
+  el('rect', { x: -250, y: -62, width: 500, height: 124, fill: '#FF5A3D', stroke: B.ink, 'stroke-width': 6, transform: 'rotate(-6)' }, noSig);
+  el('text', { x: 0, y: 26, 'text-anchor': 'middle', fill: B.bone, 'font-family': B.fontDisplay, 'font-size': 72, transform: 'rotate(-6)' }, noSig).textContent = 'NO SIGNAL';
+
+  // ================= overlays =================
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .07, 3), preserveAspectRatio: 'none', opacity: .9 }, svg);
+  el('rect', { width: W, height: H, fill: 'url(#kVig)' }, svg);
+  const flash = el('rect', { width: W, height: H, fill: '#FFF7E6', opacity: 0 }, svg);
+  const rew = el('g', {}, svg);
+  el('text', { x: W / 2, y: H / 2 + 30, 'text-anchor': 'middle', fill: B.bone, stroke: B.ink, 'stroke-width': 10, 'paint-order': 'stroke', 'font-family': B.fontDisplay, 'font-size': 110 }, rew).textContent = '◀◀ REWIND';
+
+  // patch notes panel (screen space) — Claude style, no logo
+  const CL = SAU.CL;
+  const PX = 880, PY = 220, PW = 960, PH = 790;
+  const patch = el('g', {}, svg);
+  el('rect', { x: 8, y: 10, width: PW, height: PH, rx: 26, fill: '#000', opacity: .35 }, patch);
+  el('rect', { width: PW, height: PH, rx: 26, fill: CL.cream }, patch);
+  el('rect', { width: PW, height: PH, rx: 26, fill: 'none', stroke: CL.orange, 'stroke-width': 5 }, patch);
+  el('text', { x: 48, y: 82, fill: CL.dark, 'font-family': CL.serif, 'font-weight': 600, 'font-size': 54 }, patch).textContent = 'Patch notes';
+  const vb = el('g', { transform: `translate(${PW - 48},50)` }, patch);
+  el('rect', { x: -230, y: 0, width: 230, height: 50, rx: 25, fill: CL.orange }, vb);
+  el('text', { x: -115, y: 35, 'text-anchor': 'middle', fill: '#fff', 'font-family': CL.sans, 'font-weight': 700, 'font-size': 26 }, vb).textContent = 'Claude v1.0';
+  el('line', { x1: 48, y1: 112, x2: PW - 48, y2: 112, stroke: CL.line, 'stroke-width': 3 }, patch);
+  const NOTES = [
+    [39.47, 'ok', 'Infinite battery'],
+    [40.66, 'ok', 'Magic connection to Claude'],
+    [42.46, 'dot', 'And...'],
+    [44.04, 'no', 'No other tech'],
+    [45.19, 'no', "Can't build anything"],
+    [46.77, 'no', "Can't hunt"],
+    [47.71, 'no', "Can't even hold a spear"],
+    [49.35, 'ok', 'Can talk'],
+    [50.83, 'ok', 'Can teach'],
+  ];
+  const noteEls = NOTES.map(([t0, kind, txt], i) => {
+    const g = el('g', { transform: `translate(48,${168 + i * 62})` }, patch);
+    const col = kind === 'ok' ? CL.green : kind === 'no' ? '#C0452B' : CL.mid;
+    el('text', { x: 0, y: 0, fill: col, 'font-family': CL.sans, 'font-weight': 700, 'font-size': 40 }, g).textContent = kind === 'ok' ? '✓' : kind === 'no' ? '✗' : '•';
+    const tx = el('text', { x: 58, y: 0, fill: CL.text, 'font-family': CL.sans, 'font-weight': 500, 'font-size': 36 }, g); tx.textContent = txt;
+    return { g, tx, t0, kind };
+  });
+  const thatsIt = el('text', { x: 240, y: 168 + 2 * 62, fill: CL.orangeDeep, 'font-family': CL.serif, 'font-style': 'italic', 'font-weight': 500, 'font-size': 38 }, patch); thatsIt.textContent = "that's it.";
+  el('rect', { x: 48, y: PH - 80, width: PW - 96, height: 24, rx: 12, fill: CL.line }, patch);
+  const pBar = el('rect', { x: 48, y: PH - 80, width: 0, height: 24, rx: 12, fill: CL.orange }, patch);
+  const pBarT = el('text', { x: PW - 48, y: PH - 94, 'text-anchor': 'end', fill: CL.orangeDeep, 'font-family': CL.sans, 'font-weight': 700, 'font-size': 26 }, patch);
+
+  // HUD
+  const hud = el('g', {}, svg);
+  const yp = SAU.makeYearPanel(hud, 40, 40);
+  const stats = SAU.makeStatPanel(hud, W - 460, 40, ['CAMPFIRE', 'PHONE BATTERY'], 420);
+  const card = SAU.makeProblemCard(svg);
+  const toast = SAU.makeToast(svg);
+  const count = el('g', {}, svg);
+  el('rect', { x: -330, y: -70, width: 660, height: 150, rx: 16, fill: '#2A1C15', opacity: .94 }, count);
+  el('rect', { x: -328, y: -68, width: 656, height: 146, rx: 15, fill: 'none', stroke: B.sand, 'stroke-opacity': .4, 'stroke-width': 2 }, count);
+  el('text', { x: 0, y: -24, 'text-anchor': 'middle', fill: B.sand, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 24, 'letter-spacing': 4 }, count).textContent = 'ENGLISH ARRIVES IN';
+  const countT = el('text', { x: 0, y: 48, 'text-anchor': 'middle', fill: B.bone, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 62 }, count);
+  const fact1 = SAU.makeFactCard(svg, 'AI assistants run on big computers in data centers, not inside your phone.', 1060);
+  const fact2 = SAU.makeFactCard(svg, 'English is only about 1,500 years old.', 640);
+
+  // ---------- camera keys [t, fx, fy, z] ----------
+  const WIDE = [W * .49, H * .63, 1.36], PHONE = [phX, phY - 20, 1.8], FACE = [headX + 40, headY + 70, 2.1], PATCH = [W * .62, H * .63, 1.36], DINO = [W * .56, H * .58, 1.22];
+  const K = [[0, ...WIDE], [9.95, ...WIDE], [10.7, ...PHONE], [12.5, PHONE[0], PHONE[1], 2.0], [12.9, ...WIDE], [27.6, ...WIDE], [29.0, ...FACE], [35.45, FACE[0], FACE[1], 2.25], [36.3, ...WIDE], [37.7, ...WIDE], [38.5, ...PATCH], [51.9, ...PATCH], [52.7, ...DINO], [56, ...DINO]];
+  const camAt = t => { let i = 0; while (i < K.length - 2 && t > K[i + 1][0]) i++; const a = K[i], b = K[i + 1], k = p(t, a[0], b[0], E.inOut); return [lerp(a[1], b[1], k), lerp(a[2], b[2], k), lerp(a[3], b[3], k)]; };
+  const win = (t, a, b, fi = .25, fo = .25) => p(t, a, a + fi, E.out) * (1 - p(t, b - fo, b, E.in));
+
+  return {
+    update(t) {
+      const [fx, fy, z] = camAt(t);
+      const shake = (t > 5.6 && t < 5.85) ? 14 : (t > 18.2 && t < 18.45) ? 16 : (t > 53.25 && t < 53.45) ? 10 : 0;
+      SAU.cam(world, W, H, fx, fy, z, shake, t);
+
+      // ---------- background / fire ----------
+      SAU.twinkle(stars, t);
+      boil(bg, (r, s, g) => SAU.drawNightCamp(r, s, g, W, H, horizon), t, .25);
+      const fireK = .36 + .1 * Math.sin(t * .7) + (hash(Math.floor(t * 12)) - .5) * .06;
+      boil(fire, (r, s, g) => SAU.drawCampfire(r, s, g, FX, FY, fireK), t, .083);
+      SAU.sparks(sparks, FX, FY, t, 9, .5 + fireK);
+      set(fireLight, { opacity: .45 + fireK * .6 });
+
+      // ---------- battery story 0–8.6 ----------
+      const drain = p(t, 2.69, 5.3, E.in);
+      const rewound = t >= 8.4;
+      const battPct = rewound ? 100 : 100 * (1 - drain);
+      const isRock = t >= 5.6 && t < 8.4;
+      const holding = true;
+      const glowK = isRock ? 0 : (battPct < 20 ? (Math.floor(t * 6) % 2 ? .4 : .9) : 1) * (.9 + .1 * Math.sin(t * 7)) * (rewound ? 1 : clamp(battPct / 30 + .2));
+      set(phoneLight, { cx: phX, cy: phY, opacity: glowK });
+      const bk = win(t, 1.3, 8.2, .35, .3);
+      set(batt, { transform: `translate(${phX + 80},${phY - 250 + (1 - p(t, 1.3, 1.65, E.back)) * 40})`, opacity: bk });
+      set(battFill, { width: 222 * battPct / 100, fill: battPct > 20 ? '#7CF29A' : '#FF5A3D' });
+      battT.textContent = isRock ? '0%' : Math.round(battPct) + '%';
+      boil(rock, (r, s, g) => { if (isRock) SAU.drawPhoneRock(r, s, g, phX, phY - 6, 1.05); }, t, .125);
+      while (dust.firstChild) dust.removeChild(dust.firstChild);
+      if (t > 5.6 && t < 6.3) for (let i = 0; i < 8; i++) { const k = p(t, 5.6, 6.3, E.out), a = i / 8 * Math.PI * 2; el('circle', { cx: phX + Math.cos(a) * 90 * k, cy: phY + Math.sin(a) * 60 * k, r: 16 * (1 - k) + 4, fill: '#B9B1A6', opacity: 1 - k }, dust); }
+      const tk = win(t, 5.95, 8.25, .3, .25);
+      boil(tagArt, (r, s, g) => { g.appendChild(r.line(-215, -20, -275, -90, { seed: s, stroke: B.ink, strokeWidth: 3 })); g.appendChild(r.rectangle(-230, -28, 460, 58, { seed: s + 1, fill: B.bone, fillStyle: 'solid', stroke: B.ink, strokeWidth: 3, roughness: 1.2 })); }, t, .125);
+      set(tag, { transform: `translate(${phX + 360},${phY + 70}) rotate(${-6 + Math.sin(t * 3) * 2}) scale(${.6 + .4 * p(t, 5.95, 6.3, E.back)})`, opacity: tk });
+
+      // ---------- words over the head 21.0–23.9 ----------
+      wordEls.forEach((w, i) => {
+        const a = 21.05 + i * .34, k = p(t, a, a + 1.5, E.linear);
+        set(w, { x: lerp(YX + 900, YX - 900, k), y: headY - 150 + Math.sin(k * 9 + i) * 22 - (i % 3) * 60, opacity: k > 0 && k < 1 ? 1 : 0, transform: '' });
+      });
+
+      // ---------- thought bubble: polite fire 30.9–35.3 ----------
+      const thk = win(t, 31.0, 35.35, .3, .25);
+      boil(thoughtArt, (r, s, g) => SAU.drawQuestionBubble(r, s, g, 85), t, .125);
+      boil(flame, (r, s, g) => SAU.drawPoliteFlame(r, s, g), t, .125);
+      const bow = t > 33.85 && t < 34.6 ? Math.sin(p(t, 33.85, 34.6, E.linear) * Math.PI) * 25 : 0;
+      set(flame, { transform: `translate(0,${10}) rotate(${bow} 0 40) scale(${1 + .05 * Math.sin(t * 8)})` });
+      set(thought, { transform: `translate(${headX + 300},${headY + 20}) scale(${(.4 + .6 * p(t, 31.0, 31.35, E.back)) * .7})`, opacity: thk });
+      // blowing on the screen 32.0–33.8
+      const blowing = t > 32.0 && t < 33.8;
+      while (wind.firstChild) wind.removeChild(wind.firstChild);
+      if (blowing) for (let i = 0; i < 4; i++) {
+        const ph = ((t * 2.2 + i / 4) % 1);
+        el('path', { d: `M ${headX + 10} ${headY + 80 + i * 8} q ${20 + ph * 40} ${30 + ph * 50} ${10 + ph * 50} ${70 + ph * 70}`, stroke: B.bone, 'stroke-width': 4, fill: 'none', 'stroke-linecap': 'round', opacity: (1 - ph) * .9 }, wind);
+      }
+
+      // ---------- dinosaur + ostrich 53.2– ----------
+      const dk = p(t, 53.25, 53.55, E.back);
+      boil(dinoArt, (r, s, g) => SAU.drawDino(r, s, g, '#7A5640'), t, .125);
+      boil(dinoX, (r, s, g) => {
+        const k = p(t, 53.55, 53.85, E.out);
+        if (k > 0) { g.appendChild(r.circle(-20, -230, 520, { seed: s, stroke: '#FF3B2F', strokeWidth: 16, roughness: 1.2 })); g.appendChild(r.line(-200, -50, 160, -410, { seed: s + 1, stroke: '#FF3B2F', strokeWidth: 18, roughness: 1 })); }
+      }, t, .125);
+      set(dino, { transform: `translate(${W * .74},${horizon + 60}) scale(${.62 * dk})`, opacity: t < 53.25 ? 0 : 1 - p(t, 54.3, 54.6) });
+      const ok = p(t, 54.55, 55.9, E.linear);
+      boil(ost, (r, s, g) => SAU.drawOstrich(SAU.makePen(1, r, g, { seed: s, sw: 4 })), t, .083);
+      const ox = lerp(W * 1.15, -W * .2, ok);
+      set(ost, { transform: `translate(${ox},${horizon + 170 - Math.abs(Math.sin(t * 18)) * 14}) rotate(${Math.sin(t * 18) * 3}) scale(.62)`, display: t > 54.55 && t < 55.95 ? 'inline' : 'none' });
+
+      // ---------- You ----------
+      let expr = 'neutral', look = [8, 12], blink = false, armL = Math.sin(t * 1.3) * 4, bob = Math.sin(t * 2.6) * 2.5, head = Math.sin(t * 1.1) * 2;
+      if (t < 2.6) expr = 'smile';
+      if (t >= 2.6 && t < 5.6) { expr = battPct < 30 ? 'scared' : 'thinking'; }
+      if (t >= 5.6 && t < 8.4) { expr = 'shock'; look = [10, 16]; head = -6; }
+      if (t >= 8.4 && t < 10.0) { expr = 'smile'; }
+      if (t >= 10.0 && t < 21.0) { expr = 'thinking'; look = [4, 8]; }
+      if (t >= 21.0 && t < 22.5) { expr = 'scared'; look = [14, -14]; bob = 46 * p(t, 21.0, 21.25, E.out); head = -10; armL = 120; }   // ducks
+      if (t >= 22.5 && t < 23.9) { expr = 'smug'; look = [0, 0]; armL = 60 * p(t, 22.5, 22.8, E.out); head = 8; }                     // shrug, "nobody does"
+      if (t >= 23.9 && t < 27.6) { expr = 'thinking'; look = [-6, -10]; }
+      if (t >= 27.6 && t < 31.0) { expr = 'shock'; look = [10, 14]; }
+      if (t >= 31.0 && t < 35.4) { expr = blowing ? 'shock' : 'smile'; look = [10, 14]; head = blowing ? 6 : 0; }
+      if (t >= 35.4 && t < 38.4) { expr = 'smile'; look = [14, -4]; }
+      if (t >= 38.4 && t < 51.8) { const n = NOTES.filter(n => t >= n[0]).pop(); expr = !n ? 'thinking' : n[1] === 'ok' ? 'smile' : n[1] === 'no' ? 'scared' : 'thinking'; look = [16, -6]; if (t > 42.9 && t < 44.0) expr = 'neutral'; }
+      if (t >= 51.8 && t < 53.2) { expr = 'smile'; armL = 140 * p(t, 51.8, 52.1, E.back); look = [0, -6]; }
+      if (t >= 53.2) { expr = t < 54.5 ? 'shock' : 'thinking'; look = t < 54.5 ? [14, -6] : [clamp((ox - YX) / 40, -16, 16), 4]; }
+      if ((t > 9.4 && t < 9.5) || (t > 16.6 && t < 16.7) || (t > 26.1 && t < 26.2) || (t > 46.0 && t < 46.1)) blink = true;
+      you.pose({ x: YX, y: YY, scale: YS, holding, expr, blink, look, bob, armL, armR: 0, head }, t);
+
+      // ---------- split screen 12.55–19.6 ----------
+      const sIn = p(t, 12.55, 12.95, E.out), sOut = p(t, 19.35, 19.7, E.in);
+      set(split, { display: sIn > 0 && sOut < 1 ? 'inline' : 'none', transform: `translate(${-sOut * W},0)` });
+      if (sIn > 0 && sOut < 1) {
+        const vIn = p(t, 15.75, 16.15, E.out);
+        set(clipLr, { width: lerp(W * sIn, W / 2, vIn) });
+        set(clipRr, { x: lerp(W, W / 2, vIn), width: W / 2 });
+        boil(server, (r, s, g) => SAU.drawServerRoom(r, s, g, W, H, t), t, .125);
+        set(server, { transform: `translate(${lerp(0, -W * .22, vIn)},0)` });
+        set(valleyG, { transform: `translate(${W / 2},0)` });
+        boil(valleyArt, (r, s, g) => SAU.drawValley(r, s, g, W / 2, H), t, .25);
+        const yk = p(t, 17.1, 17.3, E.out), yk2 = p(t, 18.0, 18.2, E.out);
+        guyA.pose({ x: W * .1, y: H * .52, scale: .5, expr: t > 17.0 ? 'shock' : 'neutral', armL: 140 * yk, armR: 140 * yk, look: [12, 0], bob: Math.sin(t * 20) * 3 * yk }, t);
+        guyB.pose({ x: W * .41, y: H * .5, scale: .5, flip: true, expr: t > 18.0 ? 'shock' : 'thinking', armL: 120 * yk2, armR: 90 * yk2, look: [12, 0] }, t);
+        set(yA, { x: W * .18, y: H * .3, opacity: yk * (1 - p(t, 18.3, 18.6)), transform: `rotate(-6 ${W * .18} ${H * .3})` });
+        set(yB, { x: W * .33, y: H * .22, opacity: yk2, transform: `rotate(5 ${W * .33} ${H * .22})` });
+        boil(divider, (r, s, g) => { if (vIn > 0) g.appendChild(r.line(W / 2, -20, W / 2, H + 20, { seed: s, stroke: B.bone, strokeWidth: 14 * vIn, roughness: 2 })); }, t, .125);
+        const nk = p(t, 18.2, 18.45, E.back);
+        set(noSig, { transform: `translate(${W / 2},${H * .62}) scale(${lerp(2.2, 1, nk)})`, opacity: t < 18.2 ? 0 : clamp(nk * 3) });
+      }
+
+      // ---------- flashes / rewind ----------
+      set(flash, { opacity: Math.max(t > 5.58 ? (1 - p(t, 5.58, 5.8)) * .6 : 0, t > 8.3 ? (1 - p(t, 8.3, 8.55)) * .7 : 0) });
+      set(rew, { opacity: win(t, 8.3, 9.0, .08, .2), transform: `translate(${(hash(Math.floor(t * 20)) - .5) * 8},0)` });
+
+      // ---------- problem cards ----------
+      const CARDS = [[0.08, 8.3, 1, 'BATTERY'], [8.64, 19.45, 2, 'INTERNET'], [19.72, 27.4, 3, 'ENGLISH'], [27.52, 30.9, 4, 'SCREENS']];
+      const c = CARDS.find(c => t >= c[0] && t < c[1]);
+      if (c) {
+        card.set(c[2], c[3]);
+        const ck = p(t, c[0], c[0] + .3, E.back), co = p(t, c[1] - .25, c[1], E.in);
+        boil(card.g.firstChild, () => card.draw(rc, Math.floor(t / .125)), t, .125);
+        set(card.g, { transform: `translate(${W / 2},${150 - co * 260}) scale(${lerp(1.6, 1, ck)}) rotate(${-2 + (1 - ck) * 6})`, opacity: clamp(ck * 3), display: 'inline' });
+      } else set(card.g, { display: 'none' });
+
+      // ---------- English countdown 24.0–27.3 ----------
+      const ck2 = win(t, 24.0, 27.35, .3, .25);
+      set(count, { transform: `translate(${W / 2},${360 + (1 - p(t, 24.0, 24.3, E.back)) * 30})`, opacity: ck2 });
+      countT.textContent = S.fmt(299000 - Math.max(0, t - 24.0) * 1873) + ' YRS';
+
+      // ---------- facts ----------
+      const f1 = p(t, 13.2, 13.55, E.back) * (1 - p(t, 15.5, 15.75, E.in));
+      set(fact1, { transform: `translate(40,${H - 132 + (1 - f1) * 180})`, opacity: clamp(f1 * 2) });
+      const f2 = p(t, 24.4, 24.75, E.back) * (1 - p(t, 27.1, 27.4, E.in));
+      set(fact2, { transform: `translate(40,${H - 132 + (1 - f2) * 180})`, opacity: clamp(f2 * 2) });
+
+      // ---------- update toast 36.2–38.0 ----------
+      const ti = p(t, 36.2, 36.6, E.back), to = p(t, 37.7, 38.0, E.in);
+      set(toast.g, { transform: `translate(${W - 40 - toast.w + (1 - ti) * (toast.w + 80)},${300 - to * 60})`, opacity: t < 36.2 ? 0 : 1 - to });
+      toast.set(0);
+
+      // ---------- patch notes 37.9–52.2 ----------
+      const pi = p(t, 37.9, 38.35, E.back), po = p(t, 51.85, 52.2, E.in);
+      set(patch, { transform: `translate(${PX + (1 - pi) * 1100 + po * 1100},${PY})`, opacity: t < 37.9 ? 0 : 1, display: t > 37.85 && t < 52.25 ? 'inline' : 'none' });
+      noteEls.forEach(n => {
+        const k = p(t, n.t0, n.t0 + .25, E.back);
+        set(n.g, { opacity: clamp(k * 2), transform: `translate(${48 + (1 - k) * 40},${168 + noteEls.indexOf(n) * 62})` });
+        if (n.kind === 'ok' && n.t0 > 49) set(n.tx, { fill: t > n.t0 ? CL.orangeDeep : CL.text, 'font-weight': t > n.t0 ? 700 : 500 });
+      });
+      set(thatsIt, { opacity: p(t, 43.32, 43.5) });
+      const ins = p(t, 50.95, 51.75, E.inOut);
+      set(pBar, { width: (PW - 96) * ins });
+      pBarT.textContent = t < 50.95 ? '' : ins < 1 ? 'INSTALLING ' + Math.round(ins * 100) + '%' : 'INSTALLED ✓';
+
+      // ---------- HUD ----------
+      const hudOn = 1 - (sIn > 0 && sOut < 1 ? Math.min(sIn, 1 - sOut) : 0) * .0;
+      set(hud, { opacity: hudOn });
+      const day = rewound ? 1 : 1 + Math.floor(drain * 2.2);
+      yp.set('300,000 BC', 'DAY ' + Math.min(day, 3));
+      stats.set(0, Math.round(fireK * 60) + '%', B.bone);
+      const installed = t >= 51.75;
+      set(stats.vals[1], { 'font-family': installed ? B.fontUI : B.fontMono, 'font-size': installed ? 40 : 32 });
+      stats.set(1, installed ? '∞' : isRock ? '0%' : Math.round(battPct) + '%', installed ? B.tech : battPct > 20 && !isRock ? '#7CF29A' : '#FF5A3D');
+
+      dark.update([{ x: FX, y: FY - 60, r: 560 + fireK * 260 + (hash(Math.floor(t * 9)) - .5) * 40, k: 1 }, { x: phX, y: phY, r: 340 * glowK, k: 1 }], .68);
+    },
+  };
+});
+</script></body></html>

@@ -6,6 +6,7 @@ You are continuing a production that started in a claude.ai chat. Everything you
 ## Roles
 - Buğra = channel owner. Claude = producer, moderator, editor, designer, researcher. You make decisions within his wishes and keep everything stable and consistent across episodes.
 - Never forget decisions. Log every decision and step in `PRODUCTION_LOG.md` (Turkish) as you go.
+- **Brand/IP rules (decided 22.11):** NO Claude/Anthropic logo (Anthropic trademark guidelines need prior approval). Names "Claude"/"Claude Code" OK as plain text. Claude-related visuals use Claude's colours/feel: orange #D97757, cream #FAF9F5, dark #141413, Lora + Poppins (`SAU.CL` in kit.js). Channel HUD stays neon cyan. Music only from YouTube Studio Audio Library ("Attribution not required"). Description gets a not-affiliated disclaimer. Script must show BOTH benefits and costs of each change.
 - **Never alter a design he has chosen** (banner, profile picture, thumbnail language, character). Reproduce exactly. Ask before any visual identity change.
 - Never spend paid credits (Flow, Higgsfield, ElevenLabs) without his explicit OK in chat. Voice is made with HIS ElevenLabs subscription, not Higgsfield.
 
@@ -39,7 +40,7 @@ You are continuing a production that started in a claude.ai chat. Everything you
 - `render.mjs <scene.html> <out.mp4> [--w 1920 --h 1080 --fps 30 --from 0 --to <sec> --audio file --crf 20]`: Playwright seeks every frame, CDP JPEG → ffmpeg (libx264, veryfast). `still.mjs <scene> <out.png> [--t sec --q "k=v"]`. `env.mjs` finds Playwright + Chrome on Linux or Windows (`CHROME_PATH` env overrides).
 - Setup on a new machine: `cd 03_engine && npm i playwright-core` (+ Chrome or `npx playwright install chromium`) and ffmpeg. On Buğra's Windows PC ask before `winget install OpenJS.NodeJS.LTS` / `winget install Gyan.FFmpeg`.
 - Speed ≈10 fps on 2 cores. Render per act/scene in chunks (<10 min per command), then concat. Renders (`04_renders/*.mp4`) are git-ignored (GitHub 100 MB limit) — deliver them as files, not commits.
-- Repo: github.com/bvgrasocialcontact-source/stone-age-upgrade (private). Commit + push after every meaningful step so any session (claude.ai chat, Claude Code web/phone, PC) can continue.
+- Repo: github.com/bvgrasocialcontact-source/stone-age-upgrade (should be private — GitHub showed it public on 22.11; he was told how to switch). Also mirror changed files to his PC folder `C:\Users\BUĞRA\Desktop\StoneAgeUpgrade` via the desktop app (device_commit_files) whenever it is connected. Commit + push after every meaningful step so any session (claude.ai chat, Claude Code web/phone, PC) can continue.
 
 ## EP01 — Claude & Claude Code — status
 - Done: script (6 acts, 1,785 words), narration audio (11:02 total: P1 0:25, P2 0:56, P3 3:15, P4 3:57, P5 1:44, P6 0:41), brand, cast sheet.

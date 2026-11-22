@@ -6,3 +6,8 @@
 @font-face{font-family:'Inter';src:url('Inter-Regular.otf');font-weight:400;}
 @font-face{font-family:'Inter';src:url('Inter-SemiBold.otf');font-weight:600;}
 @font-face{font-family:'Inter';src:url('Inter-Bold.otf');font-weight:700;}
+@font-face{font-family:'Lora';src:url('Lora-Variable.ttf');font-weight:400 700;font-style:normal;}
+@font-face{font-family:'Lora';src:url('Lora-Italic-Variable.ttf');font-weight:400 700;font-style:italic;}
+@font-face{font-family:'Poppins';src:url('Poppins-Regular.ttf');font-weight:400;}
+@font-face{font-family:'Poppins';src:url('Poppins-Medium.ttf');font-weight:500;}
+@font-face{font-family:'Poppins';src:url('Poppins-Bold.ttf');font-weight:700;}
