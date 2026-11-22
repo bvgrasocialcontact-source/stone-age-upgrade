@@ -76,6 +76,12 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - Meme efektleri (boom, plak cızırtısı, korna, boing, cırcır böceği, ding...): YouTube Ses Kitaplığı + ElevenLabs ses efekti aracıyla kendi versiyonlarımız (Buğra'nın aboneliği)
 - Amaç: güncel/modern internet dili, ama tamamen telifsiz
 
+## EP01 2K ÜST KALİTE RENDER (22.11 ~23:30, sürüyor)
+- Karar (Buğra onayı): final video 2560×1440 (2K) olarak yeniden çizilecek; içerik/kurgu/ses aynı, sadece netlik
+- Neden: ilk master ~3 Mbps ve iki kez sıkıştırılmıştı; YouTube 1440p yüklemeleri daha yüksek kaliteli işliyor (1080p izleyene de daha net)
+- Yöntem: render.mjs'e --cap/--jq/--qp/--preset seçenekleri eklendi. Kareler JPEG kalite 100 (PNG 2K'da çok yavaştı, ~2.8 fps) → kayıpsız ara dosya (x264 qp 0) → tek seferlik final kodlama (preset slow, ~16–20 Mbps), ses AAC 384k
+- Sürücü: /tmp/hq/run.sh (50 sn'lik parçalar, kaldığı yerden devam eder). Final birleştirme eski kare sayılarıyla (736,45,1680,5858,8283,3380,1223,360) + /tmp/full/mix_final.wav
+
 ## EP01 FİNAL KURGU (22.11 ~22:50) — teslim edildi
 - Dosya: 04_renders/EP01_FINAL_What_If_You_Had_AI_300000_Years_Ago.mp4 — 11:58.8, 1920×1080 30fps H.264 CRF18, AAC 320k, -14.0 LUFS, tepe -1.2 dBFS
 - Akış: Perde 1 (kanca) → 1,5 sn kanal jeneriği (kancadan SONRA; araştırma: başta uzun marka girişi izleyici kaçırır) → Perde 2–6 → 12 sn bitiş ekranı (YouTube öğeleri için son 5–20 sn)
