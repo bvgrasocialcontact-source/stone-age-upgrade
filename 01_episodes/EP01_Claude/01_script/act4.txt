@@ -6,37 +6,41 @@ Year ten. The notches turn into numbers. Then Claude teaches you to write. Simpl
 
 Year fifty. You're old now. Your hands shake. So you do the smartest thing anyone has ever done: you don't just pass down the phone. [whispers] You pass down the knowledge. Every lesson goes onto clay, bark and stone. The first library in history... is a cave.
 
-[serious] Because one phone is a single point of failure. If it breaks, if it's stolen, if someone drops it in a lake... it's over. But a library can be copied.
+[serious] Because one phone can break. A library can be copied.
 
-Year seventy: the first school. Kids learn to read before they learn to throw a spear. [laughs] Their teacher is a very tired grandma reading Claude's lessons off a clay tablet... because there's still only one phone, and the line to use it goes around the entire village.
+Year seventy: the first school. [laughs] The teacher? A very tired grandma, reading Claude's lessons off a clay tablet... because the line for the phone goes around the entire village.
 
-Year one hundred. Claude explains seeds. Plant them. Wait. Eat. [deadpan] The tribe calls it "the slowest hunt ever." And yet... [awed] farming starts almost three hundred thousand years early. With farming come villages. And with villages... come neighbors.
+Year one hundred. Claude explains seeds. Plant them. Wait. Eat. [deadpan] The tribe calls it "the slowest hunt ever." And yet... [awed] farming starts almost three hundred thousand years early. [serious] Claude is honest about the price: more food, but harder work, more sickness from living next to animals... and something brand new to fight over. Land.
 
-The neighbors want the glowing stone. [dramatic] Their chief demands that Claude design the ultimate weapon. [short pause] Claude politely declines... and offers to help with irrigation instead.
-
-[laughs] Honestly? The most Claude thing that could possibly happen. And it works. Copying the library is cheaper than stealing the phone. Knowledge spreads faster than war.
+The neighbors want the glowing stone. [dramatic] Their chief demands that Claude design the ultimate weapon. [short pause] Claude politely declines... and offers to help with irrigation instead. [laughs] It works. Copying the library is cheaper than stealing the phone. Knowledge spreads faster than war.
 
 Year two hundred. The village has a new problem: everybody wants a turn with the phone. [sighs] There's shoving. There's biting. There's one guy who claims the phone "looked at him first."
 
-So Claude suggests something radical. Everyone raises a hand, you count the hands, and the most hands wins. [mischievously] The first vote in human history... is about whose turn it is to talk to the glowing stone.
+So Claude suggests something radical. Everyone raises a hand, you count the hands, and the most hands wins. [mischievously] The first vote in human history... is about whose turn it is to talk to the glowing stone. [deadpan] The guy who said the phone looked at him first gets zero votes. [short pause] He demands a recount.
 
-[deadpan] The guy who said the phone looked at him first gets zero votes. [short pause] He demands a recount.
-
-Year one thousand. Your great-great... okay, forty "greats"... grandchildren know that germs exist. They wash, they boil, they build clean wells. [excited] They have the wheel, metal tools, and a calendar. And they don't count the years from a king. They count them from you. [short pause] Year one, A.C. After Claude.
+Year one thousand. Your grandchildren's grandchildren know that germs exist. They wash, they boil, they build clean wells. [excited] They have the wheel, metal tools, and a calendar. And they don't count the years from a king. They count them from you. [short pause] Year one, A.C. After Claude.
 
 Year five thousand. People follow the herds north and meet giants: woolly mammoths. In your world, the last mammoths were gone about four thousand years ago. [whispers] Here, Claude had one suggestion: "What if you didn't hunt them all?"
 
 Up north they meet another kind of human, too. The Neanderthals. In your world, they vanished about forty thousand years ago. Here, the two groups trade lessons instead of blows. [mischievously] And Neanderthals turn out to be terrifying at board games.
 
-Year eight thousand. Electricity. Claude walks them through it, one wire at a time. [short pause] The first light bulb flickers on inside a mud-brick house... and the whole village screams.
+Year eight thousand. Electricity. The first light bulb flickers on inside a mud-brick house... and the whole village screams.
 
 [excited] Year ten thousand. And finally... they build a computer.
 
 [dramatic] This is the moment Claude has been waiting ten thousand years for. Because now, Claude Code can finally do its real job.
 
-Claude Code writes the software, runs it, finds the bugs, fixes them, and runs it again. In one afternoon, it writes the operating system for the first computer in history. [short pause] By evening, it's helping that computer design a better computer.
+Here's how it works. You don't write code. You just say what you want, in plain words. Claude Code reads every file in the project, makes a plan, writes the code, opens a terminal and runs the tests. [short pause] When something breaks, it reads the error, fixes it, and runs everything again. Until it works.
 
-[awed] And then everything speeds up. Factories that run themselves. Weather forecasts. A map of the entire planet. A new cure almost every year.
+In one afternoon, it writes the operating system for the first computer in history. By evening, it's helping that computer design a better computer.
+
+Year ten thousand and fifty: the first network. [laughs] Finally, the internet is no longer two guys yelling across a valley.
+
+Year ten thousand two hundred: Claude Code stops working alone. It runs a whole team of agents at once. One writes the code, one tests it, one reviews it. [mischievously] And one human checks all of it. Claude insists on that part.
+
+[serious] But speed has a price. When software writes software, one bug can copy itself everywhere in a single night. And the first time the network goes down... [short pause] nobody remembers how to light a fire. [sighs] So the elders bring back an old rule: every child learns to make fire by hand. Just in case.
+
+[awed] Still, the good side wins by a mile. Factories that run themselves. Weather forecasts. A map of the entire planet. Hospitals that spot a disease before the first symptom. A new cure almost every year.
 
 Year twenty thousand: the first footprint on the Moon. Year one hundred thousand: cities on Mars, ships mining the asteroid belt, and one sign at the edge of the solar system. [whispers] "Please be careful out there."
 

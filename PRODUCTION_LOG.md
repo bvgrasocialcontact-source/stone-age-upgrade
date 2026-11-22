@@ -57,13 +57,24 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - Müzik: sadece YouTube Studio Ses Kitaplığı (Content ID talebi gelmez), "Attribution not required" filtresi; popüler/telifli şarkı kullanılmaz. Diğer uygulama/marka logoları da aynı kural: isim serbest, logo sadece markanın açık izniyle
 - Senaryo kuralı (Buğra): değişimler anlatılırken yararları VE zararları birlikte anlatılır
 
-## Senaryo revizyonu (taslak, onay bekliyor)
+## Senaryo revizyonu v3 (Buğra onayladı 22.11 — seslendirildi)
 - 01_script/act4_v3_draft.txt: Claude Code'un nasıl çalıştığı (dosyaları okur, plan yapar, kodu yazar, terminalde testleri çalıştırır, hatayı okuyup düzeltir), 10.050 ilk ağ, 10.200 ajan takımı + insan kontrolü, bedel: hata bir gecede her yere yayılır / ağ çökünce kimse ateş yakamaz → "her çocuk elle ateş yakmayı öğrenir"; tarımın bedeli (daha çok iş, hastalık, toprak kavgası). Yer açmak için bazı cümleler kısaltıldı
 - 01_script/act5_v3_draft.txt: "Do It Yourself" sınavı (yapay zekâ bağımlılığının bedeli)
-- Tahmini toplam süre ~11:50. 4. ve 5. perde ElevenLabs'te yeniden seslendirilecek → Buğra'nın kredi onayı gerekli
+- 22.11 ElevenLabs (Chrome, Sheldon, v4, 50/80): 4. perde 4.841 + 5. perde 1.898 karakter harcandı, kalan ~17.560. Her perdede 2. nesil seçildi (sessizlik/kesik/clip yok), atempo 0.95 + loudnorm
+- Yeni süreler: P4 4:36, P5 1:53 → TOPLAM 11:45 (10–12 dk kuralı içinde)
+- act4.txt / act5.txt artık v3; eski metinler act4_v2_old.txt / act5_v2_old.txt, eski sesler 02_audio/old_v2/. Tam metin: 01_script/narration_en_v3_final.txt; zamanlar yeniden çıkarıldı (ep01_timing.md)
+- Ham çekimler: 02_audio/raw/act4_v3_gen1-2.mp3, act5_v3_gen1-2.mp3 (git dışı, PC'de)
+
+## Müzik ve efekt planı (Buğra onayladı 22.11)
+- Telifli şarkı ASLA, 1–3 saniye bile değil (YouTube: birkaç saniye de telif talebi doğurur)
+- Komik/ikonik müzik: Kevin MacLeod (incompetech, CC BY 4.0) — Monkeys Spinning Monkeys, Sneaky Snitch, Fluffing a Duck vb.; açıklamaya kredi satırı
+- Ana müzik yatağı: YouTube Studio Ses Kitaplığı (Attribution not required)
+- Meme efektleri (boom, plak cızırtısı, korna, boing, cırcır böceği, ding...): YouTube Ses Kitaplığı + ElevenLabs ses efekti aracıyla kendi versiyonlarımız (Buğra'nın aboneliği)
+- Amaç: güncel/modern internet dili, ama tamamen telifsiz
 
 ## Sıradaki adım (yeni sohbette buradan devam)
-1. Buğra'nın 2. perde (Claude stili) geri bildirimi + 4–5. perde metin/kredi onayı
-2. 3. perdeyi canlandır (zamanlar 01_script/ep01_timing.md); onaydan sonra 4–5'i yeniden seslendir (ElevenLabs, Sheldon, v4), align.py ile yeni zamanları çıkar, sonra 4–6
+1. 3. perdeyi canlandır (zamanlar 01_script/ep01_timing.md), sonra 4, 5, 6
+2. Müzik/efekt topla (Kevin MacLeod + YouTube Ses Kitaplığı + ElevenLabs efektleri) → 02_library/audio, ses miksi
+3. Birleştirme, thumbnail, açıklama, Shorts
 3. Render: `cd 03_engine && node render.mjs scenes/ep01_actN.html ../01_episodes/EP01_Claude/04_renders/ep01_perdeN_v1.mp4 --audio ../01_episodes/EP01_Claude/02_audio/ep01_perdeN.mp3` (~100 sn / 25 sn video)
 Not: Üretim claude.ai sohbetlerinde sürüyor (Claude Code değil). Her adım sonrası GitHub'a kaydet.

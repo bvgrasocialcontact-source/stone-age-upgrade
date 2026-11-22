@@ -43,12 +43,13 @@ You are continuing a production that started in a claude.ai chat. Everything you
 - Repo: github.com/bvgrasocialcontact-source/stone-age-upgrade (should be private — GitHub showed it public on 22.11; he was told how to switch). Also mirror changed files to his PC folder `C:\Users\BUĞRA\Desktop\StoneAgeUpgrade` via the desktop app (device_commit_files) whenever it is connected. Commit + push after every meaningful step so any session (claude.ai chat, Claude Code web/phone, PC) can continue.
 
 ## EP01 — Claude & Claude Code — status
-- Done: script (6 acts, 1,785 words), narration audio (11:02 total: P1 0:25, P2 0:56, P3 3:15, P4 3:57, P5 1:44, P6 0:41), brand, cast sheet.
+- Done: script v3 (`01_script/narration_en_v3_final.txt`; acts 4–5 rewritten 22.11 with Claude Code detail + costs/benefits), narration audio 11:45 total (P1 0:25, P2 0:56, P3 3:15, P4 4:36, P5 1:53, P6 0:41), brand, cast sheet, acts 1–2 animated (`scenes/ep01_act1.html`, `ep01_act2.html`).
+- Music/SFX plan (approved): Kevin MacLeod CC-BY comedy tracks (credit in description) + YouTube Studio Audio Library + our own meme-style SFX generated in his ElevenLabs. Never copyrighted songs, not even 1–3 s.
 - Next, in order:
   1. (Done in cloud) engine is portable; on the PC just install deps.
   2. (Done 22.11) Phrase timings from pauses: `02_audio/ep01_perdeN.timing.json`, sheet `01_script/ep01_timing.md` (tool `03_engine/tools/align.py`).
   3. (Started 22.11 — `03_engine/lib/kit.js`; extend per act) EP01 background + prop + HUD kit (campfire camp, savanna, cave library, village, fields, mud-brick house, computer room, Moon, Mars, museum; HUD: year counter, population, "Claude Code" panel, Real Fact card).
-  4. (Act 1 done: `scenes/ep01_act1.html`, preview sent, awaiting OK) Animate act by act, render per act, then assemble with audio + music/SFX beats (keep total 10–12 min). Send him short previews to approve.
+  4. (Acts 1–2 done & approved; next act 3) Animate act by act, render per act, then assemble with audio + music/SFX beats (keep total 10–12 min). Send him short previews to approve.
   5. Optional Flow shots (scene 7 data center, scene 21 stone boiling, scene 44 Moon footprint) — only after his approval of credits.
   6. Thumbnail (package-2 language), description (template in the script doc, Real Fact sources), Shorts summary 9:16.
 - Open: title confirmation; Flow approval.
