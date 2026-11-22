@@ -1,5 +1,6 @@
 // Stone Age Upgrade — render engine
-// Usage: node render.mjs <scene.html> <out.mp4> [--w 1920 --h 1080 --fps 30 --from 0 --to <dur> --audio file --crf 18 --cap jpeg|png --jq 93 --preset veryfast --qp 0]
+// Usage: node render.mjs <scene.html> <out.mp4> [--w 1920 --h 1080 --fps 30 --from 0 --to <dur> --audio file --crf 18 --cap jpeg|png --jq 93 --preset veryfast --qp 0 --dsf 1.3333333333]
+// --dsf keeps the 1920x1080 layout and captures at higher pixel density (2K: --dsf 1.3333333333 -> 2560x1440)
 import { createRequire } from 'module';
 import { spawn } from 'child_process';
 import path from 'path';
@@ -13,6 +14,7 @@ const out = path.resolve(args[1]);
 const opt = (k, d) => { const i = args.indexOf('--' + k); return i >= 0 ? args[i + 1] : d; };
 const W = +opt('w', 1920), H = +opt('h', 1080), FPS = +opt('fps', 30), CRF = opt('crf', '20');
 const audio = opt('audio', null);
+const DSF = +opt('dsf', 1);
 const CAP = opt('cap', 'jpeg'), JQ = +opt('jq', 93), PRESET = opt('preset', 'veryfast'), QP = opt('qp', null);
 
 const browser = await chromium.launch({
@@ -40,7 +42,7 @@ const t0 = Date.now();
 for (let i = 0; i < frames; i++) {
   const t = from + i / FPS;
   await page.evaluate(t => window.SAU.seek(t), t);
-  const { data } = await cdp.send('Page.captureScreenshot', CAP === 'png' ? { format: 'png', optimizeForSpeed: true } : { format: 'jpeg', quality: JQ, optimizeForSpeed: JQ < 100 });
+  const { data } = await cdp.send('Page.captureScreenshot', { ...(CAP === 'png' ? { format: 'png', optimizeForSpeed: true } : { format: 'jpeg', quality: JQ, optimizeForSpeed: JQ < 100 }), ...(DSF !== 1 ? { clip: { x: 0, y: 0, width: W, height: H, scale: DSF } } : {}) });
   const buf = Buffer.from(data, 'base64');
   if (!ff.stdin.write(buf)) await new Promise(r => ff.stdin.once('drain', r));
   if (i % 60 === 0) process.stdout.write(`\rframe ${i}/${frames}  ${(i / ((Date.now() - t0) / 1000 || 1)).toFixed(1)} fps`);
