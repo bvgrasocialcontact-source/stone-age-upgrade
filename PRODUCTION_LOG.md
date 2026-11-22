@@ -32,3 +32,9 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - [ ] EP01 arka planlar ve HUD kiti
 - [x] GitHub deposu kuruldu (22.11): github.com/bvgrasocialcontact-source/stone-age-upgrade (gizli). CLAUDE.md devir dosyası, taşınabilir motor (env.mjs, vendor/rough.js, fonts/). Telefondan Claude Code veya bu sohbetten devam edilebilir
 - [ ] EP01 render, thumbnail, açıklama, Shorts özeti
+
+## Sıradaki adım (yeni sohbette buradan devam)
+1. Ses dosyalarındaki duraklardan cümle zamanlarını çıkar → sahne zaman çizelgesi
+2. EP01 arka plan + eşya + HUD seti
+3. 1. perdeyi canlandır, önizlemeyi Buğra'ya gönder, onay al; sonra kalan perdeler
+Not: Üretim claude.ai sohbetlerinde sürüyor (Claude Code değil). Her adım sonrası GitHub'a kaydet.
