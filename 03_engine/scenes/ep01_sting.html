@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;padding:0;background:#F3E6CF;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script><script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script><script src="../lib/animals.js"></script><script src="../lib/you.js"></script><script src="../lib/kit.js"></script>
+</head><body><script>
+// Kanal jeneriği (1.5 sn) — kancadan SONRA, profil görseli birebir (Paket 3)
+SAU.duration = 1.5;
+SAU.init((svg, S) => {
+  const { W, H, el, set, p, E, BRAND: B } = S;
+  SAU.kitDefs(svg);
+  el('rect', { width: W, height: H, fill: B.bone }, svg);
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .07, 9), preserveAspectRatio: 'none', opacity: .6 }, svg);
+  const g = el('g', {}, svg);
+  el('image', { href: '../../00_brand/final/profile_800x800.png', x: -200, y: -200, width: 400, height: 400 }, g);
+  const t1 = el('text', { x: W / 2, y: H * .78, 'text-anchor': 'middle', fill: B.ink, 'font-family': B.fontDisplay, 'font-size': 96, 'letter-spacing': 4 }, svg); t1.textContent = 'STONE AGE UPGRADE';
+  const bar = el('rect', { x: W / 2, y: H * .82, width: 0, height: 10, fill: B.tech }, svg);
+  const wipe = el('rect', { width: W, height: H, fill: '#1E1612' }, svg);
+  return { update(t) {
+    const k = p(t, 0, .35, E.back), o = p(t, 1.25, 1.5, E.in);
+    set(g, { transform: `translate(${W / 2},${H * .42}) scale(${.6 + .4 * k}) rotate(${(1 - k) * -20})`, opacity: p(t, 0, .2) });
+    set(t1, { opacity: p(t, .15, .4), transform: `translate(0,${(1 - p(t, .15, .45, E.out)) * 30})` });
+    const bw = 760 * p(t, .3, .8, E.out); set(bar, { x: W / 2 - bw / 2, width: bw });
+    set(wipe, { opacity: Math.max(1 - p(t, 0, .12), o) });
+  } };
+});
+</script></body></html>

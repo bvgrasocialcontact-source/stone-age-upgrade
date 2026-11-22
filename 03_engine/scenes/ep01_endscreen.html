@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;padding:0;background:#07131C;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script><script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script><script src="../lib/animals.js"></script><script src="../lib/you.js"></script><script src="../lib/kit.js"></script>
+</head><body><script>
+// Bitiş ekranı (12 sn) — YouTube öğeleri için boş alanlar: 2 video kutusu + abone dairesi
+SAU.duration = 12;
+SAU.init((svg, S) => {
+  const { W, H, el, set, p, E, BRAND: B } = S;
+  const rc = rough.svg(svg);
+  SAU.kitDefs(svg);
+  const city = el('g', {}, svg);
+  el('rect', { width: W, height: H, fill: '#07131C', opacity: .72 }, svg);
+  const youG = el('g', {}, svg); const you = SAU.makeYou(youG, rc, Object.assign({ seed: 5 }, SAU.CAST.you));
+  const ui = el('g', {}, svg);
+  const tt = el('text', { x: W / 2, y: 150, 'text-anchor': 'middle', fill: B.bone, 'font-family': B.fontDisplay, 'font-size': 72 }, ui); tt.textContent = 'YOUR NEXT UPGRADE';
+  // video element areas (YouTube: 16:9 boxes) — left & right
+  const boxes = [[150, 300], [1010, 300]].map(([x, y]) => { const b = el('g', {}, ui); el('rect', { x, y, width: 760, height: 428, rx: 18, fill: '#0E1416', stroke: B.tech, 'stroke-width': 4, filter: 'url(#kGlow)' }, b); return b; });
+  // subscribe circle area
+  const sub = el('g', {}, ui);
+  el('circle', { cx: W / 2, cy: 900, r: 120, fill: 'none', stroke: B.tech, 'stroke-width': 5, filter: 'url(#kGlow)' }, sub);
+  el('image', { href: '../../00_brand/final/profile_800x800.png', x: W / 2 - 112, y: 788, width: 224, height: 224 }, sub);
+  const ask = el('text', { x: 1440, y: 900, 'text-anchor': 'middle', fill: B.sand, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 40 }, ui); ask.textContent = 'What would YOU ask first? ↓';
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .07, 10), preserveAspectRatio: 'none', opacity: .5 }, svg);
+  el('rect', { width: W, height: H, fill: 'url(#kVig)', opacity: .6 }, svg);
+  const fade = el('rect', { width: W, height: H, fill: '#000' }, svg);
+  let lastS = -1;
+  return { update(t) {
+    const s = Math.floor(t / .25);
+    if (s !== lastS) { lastS = s; while (city.firstChild) city.removeChild(city.firstChild); SAU.drawStoneCity(rc, s + 1, city, W, H, t); }
+    you.pose({ x: 420, y: H + 40, scale: .75, holding: true, expr: 'smile', look: [16, -10], armL: 60 + Math.sin(t * 3) * 20, bob: Math.sin(t * 2.4) * 3, blink: (t % 3.1) < .1 }, t);
+    set(youG, { opacity: p(t, .3, .8) });
+    boxes.forEach((b, i) => set(b, { opacity: p(t, .3 + i * .15, .7 + i * .15), transform: `translate(0,${(1 - p(t, .3 + i * .15, .8 + i * .15, E.out)) * 40})` }));
+    set(sub, { opacity: p(t, .6, 1.0) });
+    set(fade, { opacity: Math.max(1 - p(t, 0, .4), p(t, 11.3, 12)) });
+  } };
+});
+</script></body></html>
