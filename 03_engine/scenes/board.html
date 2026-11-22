@@ -1,0 +1,43 @@
+<!doctype html><html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;background:#F3E6CF;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script><script src="../lib/sau.js"></script>
+</head><body><script>
+const Q = new URLSearchParams(location.search), PKG = +Q.get('pkg');
+const NAMES = { 1: ['PACKAGE 1 — SYSTEM UPDATE', 'Dark stone + neon UI. The update notification is the hook.'],
+                2: ['PACKAGE 2 — BEFORE / AFTER', 'Split frame: 300,000 BC vs the alternate today. The proven series pattern.'],
+                3: ['PACKAGE 3 — FIELD NOTES', 'Light paper, big character, 2–3 handwritten words + arrow. Fast to make, very consistent.'] };
+SAU.init((svg, S) => {
+  const { W, H, el, BRAND: B } = S;
+  const dir = '../out/brand/p' + PKG + '_';
+  const T = (x, y, s, size, fill, fam, extra = {}) => { const t = el('text', Object.assign({ x, y, fill, 'font-family': fam, 'font-size': size }, extra), svg); t.textContent = s; return t; };
+  el('rect', { width: W, height: H, fill: '#F3E6CF' }, svg);
+  T(50, 70, NAMES[PKG][0], 44, B.ink, B.fontDisplay);
+  T(52, 108, NAMES[PKG][1], 24, '#7E5533', B.fontUI);
+  const defs = el('defs', {}, svg);
+  defs.innerHTML = `<clipPath id="strip"><rect x="50" y="140" width="1210" height="200" rx="10"/></clipPath>
+    <clipPath id="pf1"><circle cx="1480" cy="250" r="110"/></clipPath><clipPath id="pf2"><circle cx="1680" cy="320" r="24"/></clipPath>
+    <clipPath id="th"><rect x="50" y="440" width="1040" height="585" rx="18"/></clipPath>`;
+  // banner as seen on desktop (2560x423 strip), scaled to 1210 wide
+  const k = 1210 / 2560;
+  el('image', { href: dir + 'banner.png', x: 50, y: 140 - 508 * k, width: 2560 * k, height: 1440 * k, 'clip-path': 'url(#strip)' }, svg);
+  T(50, 370, 'Banner — what desktop/phone shows', 20, '#7E5533', B.fontUI, { 'font-weight': 700 });
+  // profile picture big + real size
+  el('image', { href: dir + 'pfp.png', x: 1370, y: 140, width: 220, height: 220, 'clip-path': 'url(#pf1)' }, svg);
+  el('image', { href: dir + 'pfp.png', x: 1656, y: 296, width: 48, height: 48, 'clip-path': 'url(#pf2)' }, svg);
+  T(1370, 390, 'Profile — large / real size', 20, '#7E5533', B.fontUI, { 'font-weight': 700 });
+  // thumbnail large
+  el('image', { href: dir + 'thumb.png', x: 50, y: 440, width: 1040, height: 585, 'clip-path': 'url(#th)' }, svg);
+  T(50, 1060, 'EP01 thumbnail — 1280×720', 20, '#7E5533', B.fontUI, { 'font-weight': 700 });
+  // phone-size feed mock
+  el('rect', { x: 1150, y: 440, width: 720, height: 585, rx: 18, fill: '#0F0F0F' }, svg);
+  T(1180, 490, 'How it looks in a phone feed', 22, '#AAAAAA', B.fontUI, { 'font-weight': 700 });
+  el('image', { href: dir + 'thumb.png', x: 1180, y: 520, width: 340, height: 191 }, svg);
+  T(1540, 548, 'What If You Had AI', 22, '#F1F1F1', B.fontUI, { 'font-weight': 600 });
+  T(1540, 578, '300,000 Years Ago?', 22, '#F1F1F1', B.fontUI, { 'font-weight': 600 });
+  T(1540, 612, 'Stone Age Upgrade', 18, '#AAAAAA', B.fontUI);
+  el('image', { href: dir + 'thumb.png', x: 1180, y: 760, width: 160, height: 90 }, svg);
+  T(1360, 790, 'smallest size (sidebar)', 18, '#AAAAAA', B.fontUI);
+  return { update() {} };
+});
+</script></body></html>

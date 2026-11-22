@@ -1,0 +1,61 @@
+<!doctype html><html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;background:#1E1612;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script><script src="../lib/animals.js"></script><script src="../lib/you.js"></script>
+</head><body><script>
+SAU.duration = 6;
+SAU.init((svg, S) => {
+  const { W, H, el, set, p, tw, E, boil, BRAND: B, clamp } = S; const rc = rough.svg(svg);
+  const horizon = H * .64;
+  const defs = el('defs', {}, svg);
+  defs.innerHTML = `<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9A35C"/><stop offset=".6" stop-color="#F2C27F"/><stop offset="1" stop-color="#F6D7A0"/></linearGradient>
+  <radialGradient id="glow"><stop offset="0" stop-color="#3DF5FF" stop-opacity=".55"/><stop offset="1" stop-color="#3DF5FF" stop-opacity="0"/></radialGradient>
+  <radialGradient id="vgrad" cx=".5" cy=".5" r=".75"><stop offset=".55" stop-color="#1E1612" stop-opacity="0"/><stop offset="1" stop-color="#1E1612" stop-opacity=".45"/></radialGradient>`;
+  el('rect', { width: W, height: H, fill: 'url(#sky)' }, svg);
+  const bg = el('g', {}, svg), gaz = el('g', {}, svg);
+  const glow = el('circle', { r: 220, fill: 'url(#glow)' }, svg);
+  const youG = el('g', {}, svg);
+  const you = SAU.makeYou(youG, rc, { seed: 5 });
+  const ost = el('g', {}, svg);
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .07, 2), preserveAspectRatio: 'none' }, svg);
+  el('rect', { width: W, height: H, fill: 'url(#vgrad)' }, svg);
+  const chip = el('g', {}, svg);
+  el('rect', { width: 640, height: 86, rx: 12, fill: B.bone }, chip);
+  el('rect', { width: 12, height: 86, rx: 6, fill: B.ochre }, chip);
+  el('text', { x: 34, y: 36, fill: B.rust, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 18, 'letter-spacing': 3 }, chip).textContent = 'REAL FACT';
+  el('text', { x: 34, y: 68, fill: B.ink, 'font-family': B.fontUI, 'font-weight': 600, 'font-size': 26 }, chip).textContent = 'Birds are living dinosaurs. Yes, the ostrich too.';
+  const drawBg = (r, seed, g) => {
+    const P = SAU.makePen(1, r, g, { seed, sw: 3 });
+    P.ellipse(W * .8, horizon - 260, 110, 110, '#FFE7B0', 0, { noShadow: true });
+    P.shape(`M 0 ${horizon} L ${W*.04} ${horizon-120} L ${W*.17} ${horizon-130} L ${W*.21} ${horizon-50} L ${W*.4} ${horizon-70} L ${W*.46} ${horizon-185} L ${W*.62} ${horizon-195} L ${W*.67} ${horizon-80} L ${W*.86} ${horizon-100} L ${W*.92} ${horizon-150} L ${W} ${horizon-140} L ${W} ${horizon} Z`, '#C07A4A', 3);
+    P.shape(`M -20 ${horizon} L ${W+20} ${horizon} L ${W+20} ${H+20} L -20 ${H+20} Z`, '#D9A566', 3);
+    for (let i = 0; i < 12; i++) { const x = S.hash(i) * W, y = horizon + 40 + S.hash(i + 9) * (H - horizon - 80); P.stroke(`M ${x} ${y} l ${40 + S.hash(i+3)*60} 0`, '#A8713F', 3); }
+  };
+  return {
+    update(t) {
+      boil(bg, drawBg, t, .25);
+      // gazelle grazing in the background, slow drift
+      boil(gaz, (r, seed, g) => SAU.drawGazelle(SAU.makePen(1, r, g, { seed, sw: 4 })), t, .125);
+      set(gaz, { transform: `translate(${tw(t, 0, 6, W * .2, W * .15, E.linear)},${horizon + 60 + Math.sin(t * 2) * 2}) scale(.55)` });
+      // ostrich runs through 3.6 -> 5.6
+      const ok = p(t, 3.6, 5.6, E.linear);
+      boil(ost, (r, seed, g) => SAU.drawOstrich(SAU.makePen(1, r, g, { seed, sw: 4 })), t, .083);
+      set(ost, { transform: `translate(${W + 200 - ok * (W + 500)},${H * 1.02 - Math.abs(Math.sin(t * 18)) * 18}) rotate(${Math.sin(t * 18) * 3}) scale(1.05)`, display: t > 3.6 && t < 5.6 ? 'inline' : 'none' });
+      // You
+      const holding = t < 3.2;
+      const expr = t < 1.9 ? 'neutral' : t < 3.2 ? 'shock' : t < 4.0 ? 'smile' : 'shock';
+      const blink = (t > 0.9 && t < 1.0) || (t > 2.9 && t < 2.98);
+      const ox = W + 200 - p(t, 3.6, 5.6, E.linear) * (W + 500); const look = t < 1.3 ? [0, 0] : t < 3.2 ? [4, 8] : t < 3.7 ? [0, 0] : [Math.max(-14, Math.min(14, (ox - W * .47) / 30)), 4];
+      const cel = p(t, 3.2, 3.5, E.back) * (1 - p(t, 4.0, 4.3, E.inOut));
+      const bob = Math.sin(t * 3) * 3 - cel * 12 * Math.abs(Math.sin(t * 9));
+      const jump = t > 1.9 && t < 2.2 ? -Math.sin(p(t, 1.9, 2.2, E.linear) * Math.PI) * 30 : 0;
+      you.pose({ x: W * .47, y: H * .95 + jump, scale: 1.25, holding, expr, blink, look, bob,
+                 armL: cel * 140, armR: cel * 140, head: t > 4.0 ? 8 * p(t, 4.0, 4.3) : Math.sin(t * 1.5) * 2 }, t);
+      set(glow, { cx: W * .47 + 55 * 1.25, cy: H * .95 - 230 * 1.25, opacity: holding ? .7 + .3 * Math.sin(t * 6) * (t > 1.9 ? 1 : .3) : 0 });
+      const cin = p(t, 4.0, 4.35, E.back) * (1 - p(t, 5.6, 5.9, E.in));
+      set(chip, { transform: `translate(40,${H - 126 + (1 - cin) * 160})`, opacity: clamp(cin * 2) });
+    },
+  };
+});
+</script></body></html>

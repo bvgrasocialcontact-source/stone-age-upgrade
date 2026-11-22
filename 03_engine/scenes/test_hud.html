@@ -1,0 +1,201 @@
+<!doctype html>
+<html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>
+  html,body{margin:0;padding:0;background:#1E1612;overflow:hidden}
+  svg{display:block}
+  text{font-kerning:normal}
+</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script>
+</head><body>
+<script>
+SAU.duration = 6.5;
+SAU.init((svg, S) => {
+  const { W, H, PORTRAIT: P, BRAND: B, el, set, tw, p, E, boil, fmt, year, hash, clamp } = S;
+  const u = Math.min(W, H) / 1080; // unit scale
+
+  // ---------- defs ----------
+  const defs = el('defs', {}, svg);
+  defs.innerHTML = `
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E9A35C"/><stop offset=".55" stop-color="#F2C27F"/><stop offset="1" stop-color="#F6D7A0"/>
+    </linearGradient>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3" result="n"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 .12  0 0 0 0 .08  0 0 0 0 .06  0 0 0 .55 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <filter id="stone"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="4" seed="9"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 .23  0 0 0 0 .15  0 0 0 0 .10  0 0 0 .9 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/></filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="${6*u}" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="vgrad" cx=".5" cy=".5" r=".75"><stop offset=".55" stop-color="#1E1612" stop-opacity="0"/><stop offset="1" stop-color="#1E1612" stop-opacity=".45"/></radialGradient>`;
+  const stoneURL = S.noiseURL(440, 240, 0.22, 7, false);
+
+  // ---------- world ----------
+  const world = el('g', {}, svg);
+  el('rect', { width: W, height: H, fill: 'url(#sky)' }, world);
+  const sun = el('circle', { r: 120 * u, fill: '#FFE7B0', opacity: .9 }, world);
+  const mesas = el('g', {}, world);
+  const ground = el('g', {}, world);
+  const fire = el('g', {}, world);
+  const horizon = P ? H * .62 : H * .66;
+
+  const drawMesas = (rc, seed, g) => {
+    const pts = [[0, horizon], [W*.05, horizon-110*u], [W*.18, horizon-120*u], [W*.22, horizon-40*u], [W*.40, horizon-60*u],
+                 [W*.46, horizon-170*u], [W*.63, horizon-180*u], [W*.68, horizon-70*u], [W*.86, horizon-90*u], [W*.92, horizon-140*u], [W, horizon-130*u], [W, horizon]];
+    g.appendChild(rc.polygon(pts, { seed, roughness: 1.4, bowing: .6, stroke: B.ink, strokeWidth: 3*u, fill: '#C07A4A', fillStyle: 'solid' }));
+    // strata lines
+    for (let i = 0; i < 6; i++) {
+      const y = horizon - (25 + i * 22) * u;
+      g.appendChild(rc.line(W * (.06 + i*.07), y, W * (.17 + i*.05), y + 4*u, { seed: seed + i, roughness: 1.6, stroke: '#8C4A2A', strokeWidth: 2*u }));
+    }
+  };
+  const drawGround = (rc, seed, g) => {
+    g.appendChild(rc.rectangle(-20, horizon, W + 40, H - horizon + 20, { seed, roughness: 1.1, stroke: B.ink, strokeWidth: 3*u, fill: '#D9A566', fillStyle: 'solid' }));
+    for (let i = 0; i < 14; i++) {
+      const x = hash(i) * W, y = horizon + (40 + hash(i + 9) * (H - horizon - 60)) ;
+      g.appendChild(rc.line(x, y, x + (40 + hash(i+3)*60)*u, y, { seed: seed + i, roughness: 2, stroke: '#A8713F', strokeWidth: 2.5*u }));
+    }
+  };
+  const fx = P ? W * .5 : W * .5, fy = P ? H * .78 : H * .86;
+  const drawFire = (rc, seed, g) => {
+    for (let i = 0; i < 5; i++) {
+      const a = -0.9 + i * 0.45;
+      g.appendChild(rc.line(fx - Math.cos(a)*70*u, fy + 18*u, fx + Math.cos(a)*70*u, fy - 4*u, { seed: seed+i, stroke: B.earth, strokeWidth: 9*u, roughness: 1.2 }));
+    }
+    const fl = (s, h, col) => {
+      const j = (hash(seed * 3.1 + s) - .5) * 14 * u, hh = h * (0.85 + hash(seed + s) * .3);
+      return rc.path(`M ${fx - s*u} ${fy} Q ${fx - s*.9*u + j} ${fy - hh*.5} ${fx + j} ${fy - hh} Q ${fx + s*.9*u + j} ${fy - hh*.5} ${fx + s*u} ${fy} Z`,
+        { seed, fill: col, fillStyle: 'solid', stroke: B.ink, strokeWidth: 2.5*u, roughness: .8 });
+    };
+    g.appendChild(fl(55, 150*u, '#E2572C'));
+    g.appendChild(fl(36, 105*u, '#F59B2F'));
+    g.appendChild(fl(18, 62*u, '#FFE07A'));
+  };
+
+  // grain + vignette overlay
+  const grainImgs = [0,1,2].map(i => S.noiseURL(960, 960*H/W, 0.06, i));
+  const grain = el('image', { width: W, height: H, preserveAspectRatio: 'none', href: grainImgs[0], style: 'image-rendering:pixelated' }, svg);
+  el('rect', { width: W, height: H, fill: 'url(#vgrad)' }, svg);
+
+  // ---------- HUD ----------
+  const hud = el('g', {}, svg);
+  const panel = (x, y, w, h, parent) => {
+    const g = el('g', { transform: `translate(${x},${y})` }, parent);
+    el('rect', { width: w, height: h, rx: 14*u, fill: '#2A1C15', opacity: .92 }, g);
+    el('image', { width: w, height: h, href: stoneURL, preserveAspectRatio: 'none', opacity: .5, 'clip-path': 'inset(0 round 14px)' }, g);
+    el('rect', { x: 1.5*u, y: 1.5*u, width: w-3*u, height: h-3*u, rx: 13*u, fill: 'none', stroke: B.sand, 'stroke-opacity': .35, 'stroke-width': 2*u }, g);
+    return g;
+  };
+  const M = 40 * u;
+  // year panel
+  const yp = panel(M, M, 440*u, 150*u, hud);
+  el('text', { x: 26*u, y: 44*u, fill: B.sand, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 22*u, 'letter-spacing': 4*u }, yp).textContent = 'YEAR';
+  const yearT = el('text', { x: 24*u, y: 112*u, fill: B.bone, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 62*u }, yp);
+  const dayT = el('text', { x: 300*u, y: 44*u, fill: B.tech, 'font-family': B.fontMono, 'font-size': 22*u, filter: 'url(#glow)' }, yp);
+
+  // stats panel
+  const sx = P ? M : W - M - 420*u, sy = P ? M + 170*u : M;
+  const sp = panel(sx, sy, 420*u, 230*u, hud);
+  const row = (i, label) => {
+    el('text', { x: 24*u, y: (50 + i*62)*u, fill: B.sand, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 20*u, 'letter-spacing': 3*u }, sp).textContent = label;
+    return el('text', { x: 396*u, y: (50 + i*62)*u, 'text-anchor': 'end', fill: B.bone, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 32*u }, sp);
+  };
+  const popT = row(0, 'POPULATION'), lifeT = row(1, 'LIFESPAN');
+  el('text', { x: 24*u, y: 174*u, fill: B.sand, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 20*u, 'letter-spacing': 3*u }, sp).textContent = 'TECH LEVEL';
+  el('rect', { x: 24*u, y: 190*u, width: 372*u, height: 18*u, rx: 9*u, fill: '#140E0B' }, sp);
+  const techBar = el('rect', { x: 24*u, y: 190*u, width: 0, height: 18*u, rx: 9*u, fill: B.tech, filter: 'url(#glow)' }, sp);
+  const techT = el('text', { x: 396*u, y: 174*u, 'text-anchor': 'end', fill: B.tech, 'font-family': B.fontMono, 'font-size': 22*u }, sp);
+
+  // ---------- update toast ----------
+  const tw0 = 640*u, th0 = 170*u;
+  const toast = el('g', {}, svg);
+  const tbg = el('g', {}, toast);
+  el('rect', { width: tw0, height: th0, rx: 18*u, fill: '#16100D', opacity: .95 }, tbg);
+  el('rect', { width: tw0, height: th0, rx: 18*u, fill: 'none', stroke: B.tech, 'stroke-width': 3*u, filter: 'url(#glow)' }, tbg);
+  // icon: up arrow carved
+  el('path', { d: `M ${50*u} ${110*u} L ${50*u} ${60*u} M ${30*u} ${80*u} L ${50*u} ${58*u} L ${70*u} ${80*u}`, stroke: B.tech, 'stroke-width': 7*u, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', filter: 'url(#glow)' }, toast);
+  const tTitle = el('text', { x: 100*u, y: 56*u, fill: B.tech, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 22*u, 'letter-spacing': 3*u }, toast);
+  el('text', { x: 100*u, y: 98*u, fill: B.bone, 'font-family': B.fontDisplay, 'font-size': 34*u }, toast).textContent = 'Claude v1.0';
+  el('text', { x: 330*u, y: 98*u, fill: B.sand, 'font-family': B.fontUI, 'font-size': 22*u }, toast).textContent = 'for Homo sapiens';
+  el('rect', { x: 100*u, y: 122*u, width: 500*u, height: 14*u, rx: 7*u, fill: '#2A1C15' }, toast);
+  const prog = el('rect', { x: 100*u, y: 122*u, width: 0, height: 14*u, rx: 7*u, fill: B.tech }, toast);
+  const progT = el('text', { x: 600*u, y: 56*u, 'text-anchor': 'end', fill: B.sand, 'font-family': B.fontMono, 'font-size': 22*u }, toast);
+
+  // ---------- fact chip ----------
+  const chip = el('g', {}, svg);
+  const cw = P ? W - 2*M : 900*u;
+  el('rect', { width: cw, height: 86*u, rx: 12*u, fill: B.bone }, chip);
+  el('rect', { width: 12*u, height: 86*u, rx: 6*u, fill: B.ochre }, chip);
+  el('text', { x: 34*u, y: 36*u, fill: B.rust, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 18*u, 'letter-spacing': 3*u }, chip).textContent = 'REAL FACT';
+  el('text', { x: 34*u, y: 68*u, fill: B.ink, 'font-family': B.fontUI, 'font-weight': 600, 'font-size': (P ? 23 : 26)*u }, chip).textContent = 'Oldest known Homo sapiens fossils: Jebel Irhoud, Morocco';
+
+  // ---------- logo lockup ----------
+  const logo = el('g', {}, svg);
+  const l1 = el('text', { 'text-anchor': 'middle', fill: B.bone, stroke: B.ink, 'stroke-width': 10*u, 'paint-order': 'stroke', 'font-family': B.fontDisplay, 'font-size': (P ? 130 : 150)*u }, logo);
+  l1.textContent = 'STONE AGE';
+  const l2 = el('text', { 'text-anchor': 'middle', y: (P ? 140 : 160)*u, fill: B.tech, stroke: '#06282C', 'stroke-width': 10*u, 'paint-order': 'stroke', 'font-family': B.fontDisplay, 'font-size': (P ? 130 : 150)*u, filter: 'url(#glow)' }, logo);
+  l2.textContent = 'UPGRADE';
+  const under = el('g', {}, logo);
+  const est = el('text', { 'text-anchor': 'middle', y: (P ? 215 : 245)*u, fill: B.bone, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 30*u, 'letter-spacing': 8*u, stroke: B.ink, 'stroke-width': 5*u, 'paint-order': 'stroke' }, logo);
+  est.textContent = 'EST. 300,000 BC';
+
+  return {
+    update(t) {
+      
+      // world
+      set(sun, { cx: W * (P ? .7 : .78), cy: tw(t, 0, 6.5, horizon - 260*u, horizon - 300*u, E.linear) });
+      boil(mesas, drawMesas, t, .25);
+      boil(ground, drawGround, t, .25);
+      boil(fire, drawFire, t, .083);
+
+      // year: day counting, then time-lapse acceleration
+      const yr = t < 3 ? -300000 : -300000 + Math.pow(p(t, 3, 6.2, E.in), 1) * 10000;
+      yearT.textContent = year(yr);
+      dayT.textContent = t < 3 ? 'DAY ' + (1 + Math.floor(p(t, 0, 3, E.linear) * 6)) : '+' + fmt(yr + 300000) + ' YRS';
+      popT.textContent = fmt(4812 + p(t, 3, 6.2, E.in) * 21400);
+      lifeT.textContent = (28 + p(t, 3, 6.2, E.in) * 9).toFixed(1) + ' yrs';
+      const tech = p(t, 2.0, 3.4, E.inOut) * 6 + p(t, 3.4, 6.2, E.in) * 31;
+      set(techBar, { width: 372 * u * tech / 100 });
+      techT.textContent = tech.toFixed(1) + '%';
+
+      // hud intro
+      set(hud, { opacity: p(t, 0, .4), transform: `translate(0,${tw(t, 0, .5, -30*u, 0, E.out)})` });
+
+      // toast: slide in 1.0-1.4, install 2.0-3.4, out 4.0-4.3
+      const tin = p(t, 1.0, 1.45, E.back), tout = p(t, 4.0, 4.3, E.in);
+      const txFinal = P ? (W - tw0) / 2 : W - M - tw0, tyFinal = P ? H * .40 : M + 250*u;
+      const tx = P ? txFinal : txFinal + (1 - tin) * (tw0 + 2*M);
+      const ty = (P ? tyFinal + (1 - tin) * 80*u : tyFinal) - tout * 40*u;
+      set(toast, { transform: `translate(${tx},${ty})`, opacity: (P ? tin : 1) * (1 - tout) });
+      const pr = p(t, 2.0, 3.4, E.inOut);
+      set(prog, { width: 500 * u * pr });
+      tTitle.textContent = pr <= 0 ? 'UPDATE AVAILABLE' : pr < 1 ? 'INSTALLING...' : 'INSTALLED  ✓';
+      progT.textContent = pr <= 0 ? '' : Math.round(pr * 100) + '%';
+
+      // fact chip 4.4+
+      const cin = p(t, 4.4, 4.8, E.back);
+      set(chip, { transform: `translate(${M},${H - M - 86*u + (1 - cin) * 160*u})`, opacity: clamp(cin * 2) });
+
+      // logo 4.2+
+      const lin = p(t, 4.2, 4.75, E.back);
+      const lsc = .6 + .4 * lin;
+      set(logo, { transform: `translate(${W/2},${(P ? H*.36 : H*.42)}) scale(${lsc})`, opacity: clamp(lin * 1.5) });
+      boil(under, (rc, seed, g) => {
+        const w = (P ? 760 : 900) * u * p(t, 4.6, 5.2, E.out);
+        if (w > 2) g.appendChild(rc.line(-w/2, (P ? 168 : 192)*u, w/2, (P ? 168 : 192)*u, { seed, stroke: B.ochre, strokeWidth: 12*u, roughness: 2.2 }));
+      }, t, .083);
+
+      // camera: slow push-in, small shake on install complete
+      const shake = t > 3.4 && t < 3.7 ? (hash(t * 90) - .5) * 10*u : 0;
+      const z = 1 + p(t, 0, 6.5, E.linear) * .04;
+      set(world, { transform: `translate(${W/2 + shake},${H/2}) scale(${z}) translate(${-W/2},${-H/2})` });
+    },
+  };
+});
+</script>
+</body></html>

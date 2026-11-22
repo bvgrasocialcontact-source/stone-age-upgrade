@@ -1,0 +1,29 @@
+<!doctype html><html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;background:#F3E6CF;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script>
+</head><body><script>
+SAU.init((svg, S) => {
+  const { W, H, el, BRAND: B } = S;
+  const rc = rough.svg(svg);
+  el('rect', { width: W, height: H, fill: '#F3E6CF' }, svg);
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .08, 4), preserveAspectRatio: 'none' }, svg);
+  el('text', { x: 60, y: 86, 'font-family': B.fontDisplay, 'font-size': 52, fill: B.ink }, svg).textContent = 'YOU — CHARACTER OPTIONS';
+  el('text', { x: 62, y: 128, 'font-family': B.fontUI, 'font-size': 24, fill: '#7E5533' }, svg).textContent = 'Stone Age Upgrade · early Homo sapiens · same body, three signatures';
+  const cols = [{ v: 'A', name: 'A — The Tuft', sub: 'messy hair tuft = instant silhouette' },
+                { v: 'B', name: 'B — Bone Necklace', sub: 'headband + bone necklace' },
+                { v: 'C', name: 'C — Ochre Paint', sub: 'red ochre face stripes (real ancient pigment)' }];
+  cols.forEach((c, i) => {
+    const cx = 330 + i * 630;
+    el('line', { x1: cx + 315, y1: 170, x2: cx + 315, y2: 1000, stroke: '#D8C3A0', 'stroke-width': 3 }, i < 2 ? svg : null);
+    const g1 = el('g', { transform: `translate(${cx - 120},900) scale(1.12)` }, svg);
+    SAU.drawYou(SAU.makePen(1, rc, g1, { seed: 10 + i }), { variant: c.v, expr: 'neutral' });
+    const g2 = el('g', { transform: `translate(${cx + 165},900) scale(1.12)` }, svg);
+    SAU.drawYou(SAU.makePen(1, rc, g2, { seed: 40 + i }), { variant: c.v, expr: 'shock', holding: true });
+    el('text', { x: cx + 20, y: 980, 'text-anchor': 'middle', 'font-family': B.fontDisplay, 'font-size': 36, fill: B.ink }, svg).textContent = c.name;
+    el('text', { x: cx + 20, y: 1020, 'text-anchor': 'middle', 'font-family': B.fontUI, 'font-size': 22, fill: '#7E5533' }, svg).textContent = c.sub;
+  });
+  return { update() {} };
+});
+</script></body></html>

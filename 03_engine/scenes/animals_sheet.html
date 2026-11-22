@@ -1,0 +1,28 @@
+<!doctype html><html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;background:#F3E6CF;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script><script src="../lib/animals.js"></script>
+</head><body><script>
+SAU.init((svg, S) => {
+  const { W, H, el, BRAND: B } = S; const rc = rough.svg(svg);
+  el('rect', { width: W, height: H, fill: '#F3E6CF' }, svg);
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .08, 4), preserveAspectRatio: 'none' }, svg);
+  el('text', { x: 60, y: 76, 'font-family': B.fontDisplay, 'font-size': 46, fill: B.ink }, svg).textContent = 'PERIOD ANIMALS — ~300,000 YEARS AGO';
+  el('text', { x: 62, y: 116, 'font-family': B.fontUI, 'font-size': 22, fill: '#7E5533' }, svg).textContent = 'Every animal is checked against the period before it appears on screen';
+  const items = [
+    { f: SAU.drawGazelle, x: 260, s: 1.15, n: 'GAZELLE', d: 'hunted at the oldest Homo sapiens site' },
+    { f: SAU.drawZebra, x: 720, s: 1.0, n: 'ZEBRA', d: 'African savanna' },
+    { f: SAU.drawOstrich, x: 1150, s: 1.15, n: 'OSTRICH', d: 'technically... a dinosaur' },
+    { f: SAU.drawMammoth, x: 1620, s: .72, n: 'MAMMOTH', d: 'Eurasia only — not in Africa' },
+  ];
+  items.forEach((it, i) => {
+    const g = el('g', { transform: `translate(${it.x},880) scale(${it.s})` }, svg);
+    it.f(SAU.makePen(1, rc, g, { seed: 30 + i * 20, sw: 4 }));
+    el('text', { x: it.x, y: 960, 'text-anchor': 'middle', 'font-family': B.fontDisplay, 'font-size': 34, fill: B.ink }, svg).textContent = it.n;
+    el('text', { x: it.x, y: 998, 'text-anchor': 'middle', 'font-family': B.fontUI, 'font-size': 21, fill: '#7E5533' }, svg).textContent = it.d;
+  });
+  el('line', { x1: 60, y1: 880, x2: W - 60, y2: 880, stroke: '#D8C3A0', 'stroke-width': 3 }, svg);
+  return { update() {} };
+});
+</script></body></html>

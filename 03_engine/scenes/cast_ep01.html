@@ -1,0 +1,28 @@
+<!doctype html><html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;background:#F3E6CF;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script><script src="../lib/you.js"></script>
+</head><body><script>
+SAU.init((svg, S) => {
+  const { W, H, el, BRAND: B } = S; const rc = rough.svg(svg);
+  el('rect', { width: W, height: H, fill: '#F3E6CF' }, svg);
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .08, 4), preserveAspectRatio: 'none' }, svg);
+  el('text', { x: 60, y: 76, 'font-family': B.fontDisplay, 'font-size': 46, fill: B.ink }, svg).textContent = 'EP01 CAST';
+  el('text', { x: 62, y: 114, 'font-family': B.fontUI, 'font-size': 22, fill: '#7E5533' }, svg).textContent = 'Same body rig as You — only hair, colors and accessories change';
+  const cast = [
+    { n: 'YOU', d: 'main character', o: { variant: 'A' }, p: { expr: 'smile', holding: true } },
+    { n: 'THE CHIEF', d: 'tries to eat the phone', o: { hair: 'wild', beard: true, feather: true, necklace: true, colors: { skin: '#7A4E33', skinDark: '#5E3A24', hide: '#8E5A34' } }, p: { expr: 'angry' } },
+    { n: 'YOUR COUSIN', d: 'wet rock, big explosion', o: { hair: 'short', colors: { skin: '#9A6544', skinDark: '#7A4A2E', hide: '#B88A58' } }, p: { expr: 'scared', armL: 60, armR: 60 } },
+    { n: 'GRANDMA', d: 'the first teacher', o: { hair: 'bun', wrinkles: true, colors: { hair: '#E8E2D6', skin: '#7E5236', skinDark: '#5E3A24', hide: '#9C6B44' } }, p: { expr: 'smug', head: -4 } },
+    { n: 'NEANDERTHAL', d: 'terrifying at board games', o: { hair: 'long', brow: true, beard: true, beardColor: '#8A4A28', colors: { hair: '#8A4A28', skin: '#C99A78', skinDark: '#A57A58', hide: '#7A6450' } }, p: { expr: 'smug' } },
+  ];
+  cast.forEach((c, i) => {
+    const cx = 210 + i * 375;
+    SAU.makeYou(el('g', {}, svg), rc, Object.assign({ seed: 20 + i * 7 }, c.o)).pose(Object.assign({ x: cx, y: 930, scale: .95 }, c.p), 0);
+    el('text', { x: cx, y: 990, 'text-anchor': 'middle', 'font-family': B.fontDisplay, 'font-size': 32, fill: B.ink }, svg).textContent = c.n;
+    el('text', { x: cx, y: 1026, 'text-anchor': 'middle', 'font-family': B.fontUI, 'font-size': 21, fill: '#7E5533' }, svg).textContent = c.d;
+  });
+  return { update() {} };
+});
+</script></body></html>

@@ -1,0 +1,8 @@
+node_modules/
+*.log
+# big/regenerable media (GitHub 100 MB limit)
+01_episodes/*/02_audio/raw/
+01_episodes/*/02_audio/*_onizleme.mp3
+01_episodes/*/04_renders/*.mp4
+03_engine/test/*.mp4
+03_engine/out/

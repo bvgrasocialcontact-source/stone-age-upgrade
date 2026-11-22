@@ -1,0 +1,36 @@
+<!doctype html><html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;background:#F3E6CF;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script><script src="../lib/you.js"></script>
+</head><body><script>
+SAU.init((svg, S) => {
+  const { W, H, el, BRAND: B } = S; const rc = rough.svg(svg);
+  el('rect', { width: W, height: H, fill: '#F3E6CF' }, svg);
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .08, 4), preserveAspectRatio: 'none' }, svg);
+  el('text', { x: 60, y: 76, 'font-family': B.fontDisplay, 'font-size': 46, fill: B.ink }, svg).textContent = 'YOU — EXPRESSIONS & POSES';
+  const defs = el('defs', {}, svg);
+  const exprs = ['neutral', 'smile', 'shock', 'smug', 'scared', 'thinking', 'angry'];
+  exprs.forEach((e, i) => {
+    const cx = 150 + i * 270, cy = 300;
+    defs.innerHTML += `<clipPath id="c${i}"><rect x="${cx - 125}" y="${cy - 175}" width="250" height="290" rx="20"/></clipPath>`;
+    el('rect', { x: cx - 125, y: cy - 175, width: 250, height: 290, rx: 20, fill: '#EAD7B4' }, svg);
+    const g = el('g', { 'clip-path': `url(#c${i})` }, svg);
+    SAU.makeYou(g, rc, { seed: 11 + i }).pose({ x: cx, y: cy + 0.68 * 430, scale: .68, expr: e }, 0);
+    el('text', { x: cx, y: cy + 150, 'text-anchor': 'middle', 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 24, fill: '#7E5533' }, svg).textContent = e.toUpperCase();
+  });
+  const poses = [
+    { n: 'IDLE', p: { expr: 'neutral' } },
+    { n: 'POINT', p: { expr: 'smug', armR: 80, head: -4 } },
+    { n: 'CELEBRATE', p: { expr: 'smile', armL: 140, armR: 140 } },
+    { n: 'HOLDING TECH', p: { expr: 'shock', holding: true, look: [4, 6] } },
+    { n: 'SHRUG', p: { expr: 'smug', armL: 55, armR: 55, head: 6 } },
+  ];
+  poses.forEach((q, i) => {
+    const cx = 230 + i * 365;
+    SAU.makeYou(el('g', {}, svg), rc, { seed: 50 + i }).pose(Object.assign({ x: cx, y: 1000, scale: .82 }, q.p), 0);
+    el('text', { x: cx, y: 1050, 'text-anchor': 'middle', 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 24, fill: '#7E5533' }, svg).textContent = q.n;
+  });
+  return { update() {} };
+});
+</script></body></html>

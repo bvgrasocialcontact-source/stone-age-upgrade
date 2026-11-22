@@ -1,0 +1,238 @@
+<!doctype html><html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;background:transparent;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script><script src="../lib/animals.js"></script><script src="../lib/you.js"></script>
+</head><body><script>
+const Q = new URLSearchParams(location.search);
+const PKG = +Q.get('pkg') || 1, ASSET = Q.get('asset') || 'thumb';
+SAU.init((svg, S) => {
+  const { W, H, el, BRAND: B, hash } = S; const rc = rough.svg(svg);
+  const defs = el('defs', {}, svg);
+  defs.innerHTML = `
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glowS" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <radialGradient id="cy"><stop offset="0" stop-color="#3DF5FF" stop-opacity=".6"/><stop offset="1" stop-color="#3DF5FF" stop-opacity="0"/></radialGradient>
+    <radialGradient id="fire"><stop offset="0" stop-color="#FF9A3C" stop-opacity=".55"/><stop offset="1" stop-color="#FF9A3C" stop-opacity="0"/></radialGradient>
+    <radialGradient id="vg" cx=".5" cy=".5" r=".75"><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".55"/></radialGradient>
+    <linearGradient id="dark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2A1C15"/><stop offset="1" stop-color="#120C09"/></linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9A35C"/><stop offset="1" stop-color="#F6D7A0"/></linearGradient>
+    <linearGradient id="night" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1A2A"/><stop offset=".7" stop-color="#173C4A"/><stop offset="1" stop-color="#2B5B5E"/></linearGradient>`;
+  const txt = (parent, x, y, s, attrs) => { const t = el('text', Object.assign({ x, y }, attrs), parent); t.textContent = s; return t; };
+  const display = (parent, x, y, s, size, fill, stroke = B.ink, extra = {}) => txt(parent, x, y, s, Object.assign({ 'font-family': B.fontDisplay, 'font-size': size, fill, stroke, 'stroke-width': size * .09, 'paint-order': 'stroke', 'stroke-linejoin': 'round' }, extra));
+  const tex = (a = .07, seed = 2) => el('image', { width: W, height: H, href: S.noiseURL(Math.min(W, 1280), Math.min(W, 1280) * H / W, a, seed), preserveAspectRatio: 'none' }, svg);
+  const you = (parent, x, y, sc, pose, seed = 9) => SAU.makeYou(el('g', {}, parent), rc, { seed }).pose(Object.assign({ x, y, scale: sc }, pose), 0);
+  const tag = (parent, x, y, s, size, bg, fg, rot = 0) => {
+    const g = el('g', { transform: `translate(${x},${y}) rotate(${rot})` }, parent);
+    const w = s.length * size * .68 + size * 1.1, h = size * 1.45;
+    g.appendChild(rc.rectangle(0, 0, w, h, { fill: bg, fillStyle: 'solid', stroke: B.ink, strokeWidth: size * .09, roughness: 1.2, seed: 4 }));
+    txt(g, w / 2, h * .73, s, { 'text-anchor': 'middle', 'font-family': B.fontDisplay, 'font-size': size, fill: fg });
+    return { g, w, h };
+  };
+  const axe = (parent, cx, cy, s, fill = '#8C7A66') => { // flint hand-axe (teardrop with facets)
+    const P = SAU.makePen(1, rc, el('g', { transform: `translate(${cx},${cy}) scale(${s})` }, parent), { seed: 21, sw: 5 });
+    P.shape('M 0 -150 Q 70 -60 80 30 Q 80 120 0 150 Q -80 120 -80 30 Q -70 -60 0 -150 Z', fill);
+    ['M 0 -150 L -10 -40 L -60 20', 'M -10 -40 L 30 40 L 0 150', 'M 30 40 L 78 10', 'M -60 20 L -30 100'].forEach(d => P.stroke(d, '#5A4A3A', 4));
+  };
+  const skyline = (parent, x0, x1, base, seedBase) => { // alternate 'today': stone towers with neon windows
+    const P = SAU.makePen(1, rc, el('g', {}, parent), { seed: seedBase, sw: 4 });
+    let x = x0, i = 0;
+    while (x < x1) {
+      const w = 90 + hash(i + seedBase) * 110, h = 220 + hash(i * 3 + seedBase) * 380;
+      P.shape(`M ${x} ${base} L ${x} ${base - h} Q ${x + w / 2} ${base - h - 40} ${x + w} ${base - h} L ${x + w} ${base} Z`, i % 2 ? '#5A4A3E' : '#6E5A48');
+      for (let r = 0; r < Math.floor(h / 60); r++) for (let c = 0; c < Math.floor(w / 40); c++) if (hash(i * 31 + r * 7 + c) > .45)
+        el('rect', { x: x + 14 + c * 38, y: base - h + 30 + r * 60, width: 18, height: 26, rx: 4, fill: '#3DF5FF', opacity: .9, filter: 'url(#glowS)' }, parent);
+      x += w + 18; i++;
+    }
+  };
+  const wordmark = (parent, cx, cy, size, style) => {
+    const g = el('g', { transform: `translate(${cx},${cy})` }, parent);
+    display(g, 0, 0, 'STONE AGE', size, B.bone, B.ink, { 'text-anchor': 'middle' });
+    const up = display(g, 0, size * 1.02, 'UPGRADE', size, B.tech, '#06282C', { 'text-anchor': 'middle', filter: style === 'glow' ? 'url(#glow)' : '' });
+    return g;
+  };
+  const progress = (parent, x, y, w, k, h = 22) => {
+    el('rect', { x, y, width: w, height: h, rx: h / 2, fill: '#140E0B', stroke: '#3DF5FF', 'stroke-opacity': .5, 'stroke-width': 2 }, parent);
+    el('rect', { x, y, width: w * k, height: h, rx: h / 2, fill: '#3DF5FF', filter: 'url(#glowS)' }, parent);
+  };
+
+  // ======================= PACKAGE 1 — SYSTEM UPDATE =======================
+  function p1() {
+    if (ASSET === 'pfp') {
+      el('rect', { width: W, height: H, fill: 'url(#dark)' }, svg); tex(.12, 7);
+      axe(svg, W / 2, H / 2 + 20, 1.6, '#7A6A58');
+      const g = el('g', { filter: 'url(#glow)' }, svg);
+      el('path', { d: `M ${W/2} ${H*.70} L ${W/2} ${H*.30} M ${W/2 - 110} ${H*.42} L ${W/2} ${H*.29} L ${W/2 + 110} ${H*.42}`, stroke: B.tech, 'stroke-width': 46, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, g);
+      el('rect', { width: W, height: H, fill: 'url(#vg)' }, svg);
+    }
+    if (ASSET === 'thumb') {
+      el('rect', { width: W, height: H, fill: 'url(#dark)' }, svg);
+      el('circle', { cx: 120, cy: H, r: 520, fill: 'url(#fire)' }, svg); tex(.10, 3);
+      el('circle', { cx: 330, cy: 260, r: 380, fill: 'url(#fire)' }, svg); el('circle', { cx: 410, cy: 630, r: 300, fill: 'url(#cy)' }, svg);
+      you(svg, 330, 1010, 1.62, { expr: 'shock', holding: true, look: [6, 8] });
+      // update toast
+      const t = el('g', { transform: 'translate(650,250) rotate(-3)' }, svg);
+      el('rect', { width: 590, height: 230, rx: 26, fill: '#120C09', stroke: B.tech, 'stroke-width': 6, filter: 'url(#glowS)' }, t);
+      txt(t, 40, 64, 'UPDATE INSTALLED', { 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 30, 'letter-spacing': 4, fill: B.tech });
+      display(t, 38, 150, 'AI v1.0', 88, B.bone, '#000');
+      progress(t, 40, 178, 510, 1, 24);
+      tag(svg, 690, 520, '300,000 BC', 64, '#C8763A', B.bone, 4);
+      el('rect', { width: W, height: H, fill: 'url(#vg)' }, svg);
+    }
+    if (ASSET === 'banner') {
+      el('rect', { width: W, height: H, fill: 'url(#dark)' }, svg); tex(.10, 5);
+      el('circle', { cx: W / 2, cy: H / 2, r: 900, fill: 'url(#cy)', opacity: .35 }, svg);
+      // decorative HUD outside the safe area
+      const hud = (x, y, a, b) => { const g = el('g', { transform: `translate(${x},${y})`, opacity: .55 }, svg); el('rect', { width: 380, height: 120, rx: 14, fill: '#120C09', stroke: B.sand, 'stroke-opacity': .3 }, g); txt(g, 22, 40, a, { 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 20, 'letter-spacing': 4, fill: B.sand }); txt(g, 22, 94, b, { 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 46, fill: B.bone }); };
+      hud(70, 660, 'YEAR', '300,000 BC'); hud(2110, 660, 'TECH LEVEL', '∞ %');
+      const cx = W / 2, cy = H / 2;
+      const ic = el('g', { transform: `translate(${cx - 560},${cy - 150})` }, svg);
+      el('rect', { width: 300, height: 300, rx: 70, fill: '#2A1C15', stroke: B.tech, 'stroke-width': 6, filter: 'url(#glowS)' }, ic);
+      axe(ic, 150, 160, .75, '#7A6A58');
+      el('path', { d: 'M 150 230 L 150 80 M 100 125 L 150 78 L 200 125', stroke: B.tech, 'stroke-width': 20, fill: 'none', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', filter: 'url(#glowS)' }, ic);
+      const wm = el('g', { transform: `translate(${cx + 180},${cy - 60})` }, svg);
+      display(wm, 0, 0, 'STONE AGE', 120, B.bone, B.ink, { 'text-anchor': 'middle' });
+      display(wm, 0, 118, 'UPGRADE', 120, B.tech, '#06282C', { 'text-anchor': 'middle', filter: 'url(#glow)' });
+      progress(svg, cx - 220, cy + 100, 800, .72, 20);
+      txt(svg, cx + 180, cy + 168, "What if you had today's tech 300,000 years ago?", { 'text-anchor': 'middle', 'font-family': B.fontUI, 'font-weight': 600, 'font-size': 38, fill: B.sand });
+      el('rect', { width: W, height: H, fill: 'url(#vg)' }, svg);
+    }
+  }
+
+  // ======================= PACKAGE 2 — BEFORE / AFTER =======================
+  function p2() {
+    if (ASSET === 'pfp') {
+      defs.innerHTML += `<clipPath id="L"><path d="M 0 0 L ${W*.72} 0 L ${W*.52} ${H} L 0 ${H} Z"/></clipPath><clipPath id="R"><path d="M ${W*.72} 0 L ${W} 0 L ${W} ${H} L ${W*.52} ${H} Z"/></clipPath>`;
+      const l = el('g', { 'clip-path': 'url(#L)' }, svg); el('rect', { width: W, height: H, fill: 'url(#sky)' }, l);
+      const r = el('g', { 'clip-path': 'url(#R)' }, svg); el('rect', { width: W, height: H, fill: 'url(#night)' }, r);
+      skyline(r, W * .5, W + 60, H, 3);
+      el('circle', { cx: W * .3, cy: H * .55, r: 380, fill: 'url(#fire)' }, l);
+      you(l, W * .31, H * 1.48, 1.9, { expr: 'smile' }, 4);
+      svg.appendChild(rc.line(W * .72, 0, W * .52, H, { stroke: B.bone, strokeWidth: 30, roughness: 2.5, seed: 3 }));
+      svg.appendChild(rc.line(W * .72, 0, W * .52, H, { stroke: B.ink, strokeWidth: 12, roughness: 2.5, seed: 3 }));
+      tex(.07, 3);
+    }
+    if (ASSET === 'pfporig') { // exactly the Package 2 board profile, cut to a circle
+      const R = W / 2;
+      defs.innerHTML += `<clipPath id="disc"><circle cx="${R}" cy="${R}" r="${R}"/></clipPath><clipPath id="L"><path d="M 0 0 L ${W*.62} 0 L ${W*.38} ${H} L 0 ${H} Z"/></clipPath><clipPath id="R"><path d="M ${W*.62} 0 L ${W} 0 L ${W} ${H} L ${W*.38} ${H} Z"/></clipPath>`;
+      const disc = el('g', { 'clip-path': 'url(#disc)' }, svg);
+      const l = el('g', { 'clip-path': 'url(#L)' }, disc); el('rect', { width: W, height: H, fill: 'url(#sky)' }, l);
+      const r = el('g', { 'clip-path': 'url(#R)' }, disc); el('rect', { width: W, height: H, fill: 'url(#night)' }, r);
+      skyline(r, W * .3, W, H, 3);
+      you(l, W * .40, H * 1.30, 1.45, { expr: 'smile' }, 4);
+      disc.appendChild(rc.line(W * .62, 0, W * .38, H, { stroke: B.ink, strokeWidth: 16, roughness: 2.5, seed: 3 }));
+      el('image', { width: W, height: H, href: S.noiseURL(800, 800, .07, 3), preserveAspectRatio: 'none', 'clip-path': 'url(#disc)' }, svg);
+    }
+    if (ASSET === 'pfpround') {
+      const R = W / 2;
+      defs.innerHTML += `<clipPath id="disc"><circle cx="${R}" cy="${R}" r="${R - 6}"/></clipPath>
+        <clipPath id="L"><path d="M 0 0 L ${W*.80} 0 L ${W*.62} ${H} L 0 ${H} Z"/></clipPath><clipPath id="R"><path d="M ${W*.80} 0 L ${W} 0 L ${W} ${H} L ${W*.62} ${H} Z"/></clipPath>`;
+      const disc = el('g', { 'clip-path': 'url(#disc)' }, svg);
+      const l = el('g', { 'clip-path': 'url(#L)' }, disc); el('rect', { width: W, height: H, fill: 'url(#sky)' }, l);
+      const r = el('g', { 'clip-path': 'url(#R)' }, disc); el('rect', { width: W, height: H, fill: 'url(#night)' }, r);
+      skyline(r, W * .58, W + 60, H, 3);
+      el('circle', { cx: W * .41, cy: H * .45, r: 330, fill: 'url(#fire)' }, l);
+      you(l, W * .41, 880, 1.22, { expr: 'smile' }, 4);
+      disc.appendChild(rc.line(W * .80, -10, W * .62, H + 10, { stroke: B.bone, strokeWidth: 26, roughness: 2.2, seed: 3 }));
+      disc.appendChild(rc.line(W * .80, -10, W * .62, H + 10, { stroke: B.ink, strokeWidth: 10, roughness: 2.2, seed: 3 }));
+      el('image', { width: W, height: H, href: S.noiseURL(800, 800, .06, 3), preserveAspectRatio: 'none', 'clip-path': 'url(#disc)' }, svg);
+      el('circle', { cx: R, cy: R, r: R - 9, fill: 'none', stroke: B.ink, 'stroke-width': 12 }, svg);
+    }
+    if (ASSET === 'thumb') {
+      defs.innerHTML += `<clipPath id="L"><path d="M 0 0 L 690 0 L 590 ${H} L 0 ${H} Z"/></clipPath><clipPath id="R"><path d="M 690 0 L ${W} 0 L ${W} ${H} L 590 ${H} Z"/></clipPath>`;
+      const l = el('g', { 'clip-path': 'url(#L)' }, svg);
+      el('rect', { width: W, height: H, fill: 'url(#sky)' }, l);
+      l.appendChild(rc.rectangle(-20, 520, 760, 260, { fill: '#D9A566', fillStyle: 'solid', stroke: B.ink, strokeWidth: 4, seed: 5 }));
+      el('circle', { cx: 370, cy: 650, r: 240, fill: 'url(#cy)' }, l);
+      you(l, 300, 1000, 1.45, { expr: 'shock', holding: true, look: [6, 8] }, 6);
+      const r = el('g', { 'clip-path': 'url(#R)' }, svg);
+      el('rect', { width: W, height: H, fill: 'url(#night)' }, r);
+      skyline(r, 560, W + 40, 640, 8);
+      r.appendChild(rc.rectangle(560, 620, 760, 140, { fill: '#2A2A2A', fillStyle: 'solid', stroke: B.ink, strokeWidth: 4, seed: 6 }));
+      svg.appendChild(rc.line(690, -10, 590, H + 10, { stroke: B.bone, strokeWidth: 22, roughness: 2.8, seed: 9 }));
+      svg.appendChild(rc.line(690, -10, 590, H + 10, { stroke: B.ink, strokeWidth: 8, roughness: 2.8, seed: 9 }));
+      tag(svg, 36, 34, '300,000 BC', 58, '#C8763A', B.bone, -3);
+      tag(svg, 900, 34, 'TODAY?', 64, B.tech, B.ink, 3);
+      tex(.07, 4); el('rect', { width: W, height: H, fill: 'url(#vg)', opacity: .6 }, svg);
+    }
+    if (ASSET === 'banner') {
+      const mid = W / 2;
+      defs.innerHTML += `<clipPath id="L"><path d="M 0 0 L ${mid + 120} 0 L ${mid - 120} ${H} L 0 ${H} Z"/></clipPath><clipPath id="R"><path d="M ${mid + 120} 0 L ${W} 0 L ${W} ${H} L ${mid - 120} ${H} Z"/></clipPath>`;
+      const l = el('g', { 'clip-path': 'url(#L)' }, svg);
+      el('rect', { width: W, height: H, fill: 'url(#sky)' }, l);
+      l.appendChild(rc.rectangle(-20, 905, mid + 200, 600, { fill: '#D9A566', fillStyle: 'solid', stroke: B.ink, strokeWidth: 5, seed: 5 }));
+      const gz = el('g', { transform: 'translate(250,905) scale(.85)' }, l); SAU.drawGazelle(SAU.makePen(1, rc, gz, { seed: 3, sw: 4 }));
+      you(l, 560, 905, .6, { expr: 'smile', holding: true }, 7);
+      const r = el('g', { 'clip-path': 'url(#R)' }, svg);
+      el('rect', { width: W, height: H, fill: 'url(#night)' }, r);
+      skyline(r, mid - 140, W + 40, 905, 12);
+      r.appendChild(rc.rectangle(mid - 160, 905, mid + 200, 600, { fill: '#2A2A2A', fillStyle: 'solid', stroke: B.ink, strokeWidth: 5, seed: 6 }));
+      svg.appendChild(rc.line(mid + 120, -10, mid - 120, H + 10, { stroke: B.bone, strokeWidth: 26, roughness: 2.8, seed: 9 }));
+      svg.appendChild(rc.line(mid + 120, -10, mid - 120, H + 10, { stroke: B.ink, strokeWidth: 9, roughness: 2.8, seed: 9 }));
+      const plate = el('g', { transform: `translate(${mid},${H / 2})` }, svg);
+      plate.appendChild(rc.rectangle(-560, -150, 1120, 330, { fill: '#1E1612', fillStyle: 'solid', stroke: B.bone, strokeWidth: 6, roughness: 1.4, seed: 2 }));
+      display(plate, 0, -20, 'STONE AGE', 112, B.bone, B.ink, { 'text-anchor': 'middle' });
+      display(plate, 0, 92, 'UPGRADE', 112, B.tech, '#06282C', { 'text-anchor': 'middle', filter: 'url(#glowS)' });
+      txt(plate, 0, 150, "300,000 BC  →  TODAY", { 'text-anchor': 'middle', 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 34, fill: B.sand, 'letter-spacing': 6 });
+      tex(.06, 5);
+    }
+  }
+
+  // ======================= PACKAGE 3 — FIELD NOTES (minimal) =======================
+  function p3() {
+    const paper = () => { el('rect', { width: W, height: H, fill: '#F3E6CF' }, svg); tex(.09, 6); };
+    const hand = (parent, x, y, s, size, extra = {}) => txt(parent, x, y, s, Object.assign({ 'font-family': '"Comic Relief", sans-serif', 'font-weight': 700, 'font-size': size, fill: B.ink }, extra));
+    if (ASSET === 'pfp') {
+      paper();
+      svg.appendChild(rc.circle(W / 2, H / 2, W * .86, { stroke: B.tech, strokeWidth: 26, roughness: 1.2, seed: 2 }));
+      defs.innerHTML += `<clipPath id="c"><circle cx="${W/2}" cy="${H/2}" r="${W*.41}"/></clipPath>`;
+      const g = el('g', { 'clip-path': 'url(#c)' }, svg);
+      you(g, W / 2, H * 1.30, 1.48, { expr: 'smug' }, 3);
+    }
+    if (ASSET === 'pfporig') { // exactly the Package 3 board profile, cut to a circle
+      const R = W / 2;
+      defs.innerHTML += `<clipPath id="disc"><circle cx="${R}" cy="${R}" r="${R}"/></clipPath><clipPath id="c"><circle cx="${W/2}" cy="${H/2}" r="${W*.41}"/></clipPath>`;
+      const disc = el('g', { 'clip-path': 'url(#disc)' }, svg);
+      el('rect', { width: W, height: H, fill: '#F3E6CF' }, disc);
+      el('image', { width: W, height: H, href: S.noiseURL(800, 800, .09, 6), preserveAspectRatio: 'none' }, disc);
+      disc.appendChild(rc.circle(W / 2, H / 2, W * .86, { stroke: B.tech, strokeWidth: 26, roughness: 1.2, seed: 2 }));
+      const g = el('g', { 'clip-path': 'url(#c)' }, disc);
+      you(g, W / 2, H * 1.30, 1.48, { expr: 'smug' }, 3);
+    }
+    if (ASSET === 'pfpround') {
+      const R = W / 2;
+      defs.innerHTML += `<clipPath id="disc"><circle cx="${R}" cy="${R}" r="${R - 6}"/></clipPath>`;
+      const disc = el('g', { 'clip-path': 'url(#disc)' }, svg);
+      el('rect', { width: W, height: H, fill: '#F3E6CF' }, disc);
+      el('image', { width: W, height: H, href: S.noiseURL(800, 800, .09, 6), preserveAspectRatio: 'none' }, disc);
+      disc.appendChild(rc.circle(R, R, W * .80, { stroke: B.tech, strokeWidth: 20, roughness: 1.2, seed: 2 }));
+      you(disc, R, 880, 1.22, { expr: 'smug' }, 3);
+      el('circle', { cx: R, cy: R, r: R - 9, fill: 'none', stroke: B.ink, 'stroke-width': 12 }, svg);
+    }
+    if (ASSET === 'thumb') {
+      paper();
+      el('circle', { cx: 930, cy: 640, r: 260, fill: 'url(#cy)' }, svg);
+      you(svg, 860, 1010, 1.6, { expr: 'shock', holding: true, look: [6, 8] }, 8);
+      hand(svg, 70, 160, 'you have', 92);
+      hand(svg, 64, 320, 'AI??', 150, { fill: '#0E6F7A' });
+      svg.appendChild(rc.path('M 300 350 Q 540 620 850 625', { stroke: B.ink, strokeWidth: 8, roughness: 1.4, seed: 4 }));
+      svg.appendChild(rc.path('M 816 596 L 856 625 L 812 652', { stroke: B.ink, strokeWidth: 8, roughness: 1.2, seed: 5 }));
+      tag(svg, 60, 590, '300,000 BC', 50, B.bone, '#9E4A26', -4);
+    }
+    if (ASSET === 'banner') {
+      paper();
+      const base = 905;
+      const row = [[SAU.drawGazelle, 260, .8], [SAU.drawOstrich, 520, .62], [SAU.drawZebra, 1990, .72], [SAU.drawMammoth, 2330, .52]];
+      row.forEach(([f, x, s], i) => { const g = el('g', { transform: `translate(${x},${base}) scale(${s})` }, svg); f(SAU.makePen(1, rc, g, { seed: 30 + i * 9, sw: 4 })); });
+      svg.appendChild(rc.line(0, base, W, base, { stroke: '#C9AE84', strokeWidth: 5, seed: 2 }));
+      you(svg, 690, base, .55, { expr: 'smile', armR: 80 }, 4);
+      const cx = W / 2 + 60, cy = 660;
+      display(svg, cx, cy, 'STONE AGE', 110, B.ink, B.bone, { 'text-anchor': 'middle' });
+      display(svg, cx, cy + 108, 'UPGRADE', 110, B.tech, B.ink, { 'text-anchor': 'middle' });
+      hand(svg, cx, cy + 172, "what if you had today's tech 300,000 years ago?", 40, { 'text-anchor': 'middle', fill: '#7E5533' });
+    }
+  }
+  ({ 1: p1, 2: p2, 3: p3 })[PKG]();
+  return { update() {} };
+});
+</script></body></html>
