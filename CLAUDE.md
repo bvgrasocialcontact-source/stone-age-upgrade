@@ -52,4 +52,5 @@ You are continuing a production that started in a claude.ai chat. Everything you
   4. (Acts 1–2 done & approved; next act 3) Animate act by act, render per act, then assemble with audio + music/SFX beats (keep total 10–12 min). Send him short previews to approve.
   5. Optional Flow shots (scene 7 data center, scene 21 stone boiling, scene 44 Moon footprint) — only after his approval of credits.
   6. Thumbnail (package-2 language), description (template in the script doc, Real Fact sources), Shorts summary 9:16.
-- Open: title confirmation; Flow approval.
+- FINAL CUT DONE 22.11: `04_renders/EP01_FINAL_What_If_You_Had_AI_300000_Years_Ago.mp4` (11:58.8, -14 LUFS). Rebuild: render acts + `scenes/ep01_sting.html` + `ep01_endscreen.html`, `python3 03_engine/tools/sfx.py 02_library/audio/sfx`, `python3 03_engine/tools/mix_ep01.py`, then loudnorm + concat (see PRODUCTION_LOG). Upload text: `04_publishing/EP01_description.md`.
+- Open: title confirmation; thumbnail; Shorts; Flow approval (optional).

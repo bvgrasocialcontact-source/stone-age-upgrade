@@ -76,7 +76,15 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - Meme efektleri (boom, plak cızırtısı, korna, boing, cırcır böceği, ding...): YouTube Ses Kitaplığı + ElevenLabs ses efekti aracıyla kendi versiyonlarımız (Buğra'nın aboneliği)
 - Amaç: güncel/modern internet dili, ama tamamen telifsiz
 
-## KALDIĞIM YER (22.11 ~22:45)
+## EP01 FİNAL KURGU (22.11 ~22:50) — teslim edildi
+- Dosya: 04_renders/EP01_FINAL_What_If_You_Had_AI_300000_Years_Ago.mp4 — 11:58.8, 1920×1080 30fps H.264 CRF18, AAC 320k, -14.0 LUFS, tepe -1.2 dBFS
+- Akış: Perde 1 (kanca) → 1,5 sn kanal jeneriği (kancadan SONRA; araştırma: başta uzun marka girişi izleyici kaçırır) → Perde 2–6 → 12 sn bitiş ekranı (YouTube öğeleri için son 5–20 sn)
+- Ses: anlatım + 14 müzik geçişi (Kevin MacLeod, anlatım sırasında otomatik kısılma/ducking, konuşma altında ~-18 dB) + 329 ses efekti (kendi ürettiğimiz, 03_engine/tools/sfx.py → 02_library/audio/sfx) + gece/gündüz ortam sesi. Miks: 03_engine/tools/mix_ep01.py
+- Düzeltilen: perde videoları ile sesler arasında 17 karelik kayma (görüntü esas alınarak sıfırlandı); 4. perdenin eksik son 0,2 sn'si son kare uzatılarak kapatıldı
+- Yükleme metni: 04_publishing/EP01_description.md (başlık önerisi, bölüm zamanları, Real Fact kaynakları, müzik künyesi, Anthropic ile bağlantısızlık notu, etiketler, yükleme ayarları)
+- Sıradaki: thumbnail (Paket 2 dili), Shorts 9:16 özetleri, başlık onayı
+
+## KALDIĞIM YER (22.11 ~22:45, tamamlandı)
 - Müzik seçildi (Kevin MacLeod, incompetech, CC BY 4.0): Investigations (P1–P2 merak), Monkeys Spinning Monkeys (P3 komedi), Sneaky Snitch (sinsi/komik anlar), Fluffing a Duck (P4 montaj), Cipher2 (Claude Code/teknoloji dönemi), Wholesome (P5 sonu + P6 kapanış)
 - SORUN: Chrome'dan otomatik indirme engellendi (incompetech için 'birden fazla dosya indirme' izni). Buğra'dan izin/indirme istendi. Dosyalar Downloads'a SAU_music_KevinMacLeod_*.mp3 adıyla gelmeli
 - Sonra: efektler (ElevenLabs Sound Effects), miks (anlatım -16 LUFS, müzik ~-28 LUFS altta, ducking), tam bölüm render
