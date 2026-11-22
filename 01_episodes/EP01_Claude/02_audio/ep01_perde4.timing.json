@@ -1,0 +1,1531 @@
+{
+ "audio": "ep01_perde4.mp3",
+ "duration": 237.27,
+ "rate_wps": 3.19,
+ "speech_segments": [
+  [
+   0.09,
+   1.73
+  ],
+  [
+   2.07,
+   2.79
+  ],
+  [
+   3.04,
+   4.59
+  ],
+  [
+   4.81,
+   6.48
+  ],
+  [
+   6.75,
+   8.59
+  ],
+  [
+   8.86,
+   11.04
+  ],
+  [
+   11.17,
+   12.31
+  ],
+  [
+   12.54,
+   14.33
+  ],
+  [
+   14.74,
+   15.43
+  ],
+  [
+   15.82,
+   16.47
+  ],
+  [
+   16.79,
+   18.1
+  ],
+  [
+   18.64,
+   19.47
+  ],
+  [
+   19.77,
+   20.56
+  ],
+  [
+   20.86,
+   21.72
+  ],
+  [
+   22.0,
+   24.94
+  ],
+  [
+   25.19,
+   26.65
+  ],
+  [
+   26.98,
+   28.64
+  ],
+  [
+   28.98,
+   30.64
+  ],
+  [
+   30.8,
+   31.83
+  ],
+  [
+   32.09,
+   33.64
+  ],
+  [
+   33.86,
+   34.54
+  ],
+  [
+   34.85,
+   37.23
+  ],
+  [
+   37.47,
+   40.52
+  ],
+  [
+   40.82,
+   41.34
+  ],
+  [
+   41.62,
+   43.27
+  ],
+  [
+   43.72,
+   44.56
+  ],
+  [
+   44.75,
+   45.71
+  ],
+  [
+   45.98,
+   48.56
+  ],
+  [
+   48.71,
+   53.41
+  ],
+  [
+   53.62,
+   58.38
+  ],
+  [
+   58.84,
+   59.9
+  ],
+  [
+   60.19,
+   61.57
+  ],
+  [
+   61.83,
+   62.36
+  ],
+  [
+   62.58,
+   62.95
+  ],
+  [
+   63.25,
+   63.54
+  ],
+  [
+   63.92,
+   66.38
+  ],
+  [
+   66.68,
+   67.17
+  ],
+  [
+   67.41,
+   69.46
+  ],
+  [
+   69.6,
+   70.74
+  ],
+  [
+   71.02,
+   72.47
+  ],
+  [
+   72.65,
+   73.53
+  ],
+  [
+   73.69,
+   74.42
+  ],
+  [
+   74.68,
+   76.57
+  ],
+  [
+   76.79,
+   80.01
+  ],
+  [
+   80.27,
+   83.99
+  ],
+  [
+   84.23,
+   85.22
+  ],
+  [
+   85.37,
+   87.8
+  ],
+  [
+   88.06,
+   88.77
+  ],
+  [
+   88.98,
+   91.75
+  ],
+  [
+   91.96,
+   93.97
+  ],
+  [
+   94.42,
+   95.46
+  ],
+  [
+   95.75,
+   97.16
+  ],
+  [
+   97.38,
+   99.2
+  ],
+  [
+   99.48,
+   101.82
+  ],
+  [
+   101.99,
+   104.73
+  ],
+  [
+   104.96,
+   107.05
+  ],
+  [
+   107.27,
+   108.47
+  ],
+  [
+   108.66,
+   111.1
+  ],
+  [
+   111.34,
+   113.11
+  ],
+  [
+   113.23,
+   115.81
+  ],
+  [
+   116.07,
+   119.31
+  ],
+  [
+   119.61,
+   120.61
+  ],
+  [
+   121.12,
+   122.3
+  ],
+  [
+   122.55,
+   123.11
+  ],
+  [
+   123.23,
+   123.56
+  ],
+  [
+   123.98,
+   127.43
+  ],
+  [
+   127.68,
+   130.34
+  ],
+  [
+   130.55,
+   133.36
+  ],
+  [
+   133.55,
+   135.58
+  ],
+  [
+   135.77,
+   137.01
+  ],
+  [
+   137.33,
+   138.05
+  ],
+  [
+   138.25,
+   139.72
+  ],
+  [
+   139.93,
+   141.34
+  ],
+  [
+   141.7,
+   144.32
+  ],
+  [
+   144.59,
+   145.71
+  ],
+  [
+   146.0,
+   146.71
+  ],
+  [
+   146.84,
+   149.62
+  ],
+  [
+   149.94,
+   150.34
+  ],
+  [
+   150.58,
+   152.24
+  ],
+  [
+   152.7,
+   154.33
+  ],
+  [
+   154.78,
+   157.11
+  ],
+  [
+   157.39,
+   158.46
+  ],
+  [
+   158.73,
+   161.81
+  ],
+  [
+   162.09,
+   164.95
+  ],
+  [
+   165.21,
+   168.61
+  ],
+  [
+   169.13,
+   170.39
+  ],
+  [
+   170.66,
+   171.51
+  ],
+  [
+   171.84,
+   173.0
+  ],
+  [
+   173.21,
+   174.56
+  ],
+  [
+   174.91,
+   177.99
+  ],
+  [
+   178.3,
+   180.3
+  ],
+  [
+   180.69,
+   182.03
+  ],
+  [
+   182.3,
+   183.14
+  ],
+  [
+   183.43,
+   184.95
+  ],
+  [
+   185.23,
+   189.06
+  ],
+  [
+   189.38,
+   190.07
+  ],
+  [
+   190.22,
+   192.85
+  ],
+  [
+   193.15,
+   195.46
+  ],
+  [
+   195.67,
+   196.44
+  ],
+  [
+   196.63,
+   197.23
+  ],
+  [
+   197.36,
+   198.32
+  ],
+  [
+   198.61,
+   203.34
+  ],
+  [
+   203.69,
+   204.38
+  ],
+  [
+   204.5,
+   206.95
+  ],
+  [
+   207.23,
+   207.75
+  ],
+  [
+   207.87,
+   209.22
+  ],
+  [
+   209.48,
+   211.17
+  ],
+  [
+   211.32,
+   212.41
+  ],
+  [
+   212.58,
+   214.43
+  ],
+  [
+   214.63,
+   216.76
+  ],
+  [
+   217.16,
+   218.49
+  ],
+  [
+   218.73,
+   220.59
+  ],
+  [
+   220.92,
+   222.61
+  ],
+  [
+   222.8,
+   223.95
+  ],
+  [
+   224.08,
+   225.9
+  ],
+  [
+   226.08,
+   228.54
+  ],
+  [
+   228.88,
+   230.33
+  ],
+  [
+   230.7,
+   231.3
+  ],
+  [
+   231.58,
+   233.21
+  ],
+  [
+   233.7,
+   234.16
+  ],
+  [
+   234.32,
+   235.34
+  ],
+  [
+   235.76,
+   237.08
+  ]
+ ],
+ "phrases": [
+  {
+   "start": 0.09,
+   "end": 0.42,
+   "text": "Okay.",
+   "tags": [
+    "excited"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 0.42,
+   "end": 1.73,
+   "text": "Let's speed this up.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 2.07,
+   "end": 2.79,
+   "text": "Year ten.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 3.04,
+   "end": 4.59,
+   "text": "The notches turn into numbers.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 4.81,
+   "end": 6.48,
+   "text": "Then Claude teaches you to write.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 6.75,
+   "end": 8.28,
+   "text": "Simple marks for simple words.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 8.28,
+   "end": 8.59,
+   "text": "Writing,",
+   "tags": [
+    "proud"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 8.86,
+   "end": 11.04,
+   "text": "invented almost three hundred thousand years early.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 11.17,
+   "end": 13.7,
+   "text": "The first sentence ever written by a human?",
+   "tags": [
+    "mischievously"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 13.7,
+   "end": 14.33,
+   "text": "\"Thank you,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 14.74,
+   "end": 15.43,
+   "text": "Claude.\"",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 15.82,
+   "end": 16.47,
+   "text": "The second one?",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 16.79,
+   "end": 18.1,
+   "text": "\"Who ate my gazelle.\"",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 18.64,
+   "end": 19.47,
+   "text": "Year fifty.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 19.77,
+   "end": 20.56,
+   "text": "You're old now.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 20.86,
+   "end": 21.72,
+   "text": "Your hands shake.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 22.0,
+   "end": 24.94,
+   "text": "So you do the smartest thing anyone has ever done:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 25.19,
+   "end": 27.2,
+   "text": "you don't just pass down the phone.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 27.2,
+   "end": 28.64,
+   "text": "You pass down the knowledge.",
+   "tags": [
+    "whispers"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 28.98,
+   "end": 30.64,
+   "text": "Every lesson goes onto clay,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 30.8,
+   "end": 31.83,
+   "text": "bark and stone.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 32.09,
+   "end": 33.64,
+   "text": "The first library in history...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 33.86,
+   "end": 34.54,
+   "text": "is a cave.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 34.85,
+   "end": 37.23,
+   "text": "Because one phone is a single point of failure.",
+   "tags": [
+    "serious"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 37.47,
+   "end": 38.17,
+   "text": "If it breaks,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 38.17,
+   "end": 38.88,
+   "text": "if it's stolen,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 38.88,
+   "end": 40.52,
+   "text": "if someone drops it in a lake...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 40.82,
+   "end": 41.34,
+   "text": "it's over.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 41.62,
+   "end": 43.27,
+   "text": "But a library can be copied.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 43.72,
+   "end": 44.56,
+   "text": "Year seventy:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 44.75,
+   "end": 45.71,
+   "text": "the first school.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 45.98,
+   "end": 48.56,
+   "text": "Kids learn to read before they learn to throw a spear.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 48.71,
+   "end": 53.41,
+   "text": "Their teacher is a very tired grandma reading Claude's lessons off a clay tablet...",
+   "tags": [
+    "laughs"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 53.62,
+   "end": 55.3,
+   "text": "because there's still only one phone,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 55.3,
+   "end": 58.38,
+   "text": "and the line to use it goes around the entire village.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 58.84,
+   "end": 59.9,
+   "text": "Year one hundred.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 60.19,
+   "end": 61.57,
+   "text": "Claude explains seeds.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 61.83,
+   "end": 62.36,
+   "text": "Plant them.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 62.58,
+   "end": 62.95,
+   "text": "Wait.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 63.25,
+   "end": 63.54,
+   "text": "Eat.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 63.92,
+   "end": 66.38,
+   "text": "The tribe calls it \"the slowest hunt ever.\"",
+   "tags": [
+    "deadpan"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 66.68,
+   "end": 67.17,
+   "text": "And yet...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 67.41,
+   "end": 70.74,
+   "text": "farming starts almost three hundred thousand years early.",
+   "tags": [
+    "awed"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 71.02,
+   "end": 72.47,
+   "text": "With farming come villages.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 72.65,
+   "end": 73.53,
+   "text": "And with villages...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 73.69,
+   "end": 74.42,
+   "text": "come neighbors.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 74.68,
+   "end": 76.57,
+   "text": "The neighbors want the glowing stone.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 76.79,
+   "end": 80.01,
+   "text": "Their chief demands that Claude design the ultimate weapon.",
+   "tags": [
+    "dramatic"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 80.27,
+   "end": 81.39,
+   "text": "Claude politely declines...",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 81.39,
+   "end": 83.99,
+   "text": "and offers to help with irrigation instead.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 84.23,
+   "end": 85.22,
+   "text": "Honestly?",
+   "tags": [
+    "laughs"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 85.37,
+   "end": 87.8,
+   "text": "The most Claude thing that could possibly happen.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 88.06,
+   "end": 88.77,
+   "text": "And it works.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 88.98,
+   "end": 91.75,
+   "text": "Copying the library is cheaper than stealing the phone.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 91.96,
+   "end": 93.97,
+   "text": "Knowledge spreads faster than war.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 94.42,
+   "end": 95.46,
+   "text": "Year two hundred.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 95.75,
+   "end": 97.16,
+   "text": "The village has a new problem:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 97.38,
+   "end": 99.2,
+   "text": "everybody wants a turn with the phone.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 99.48,
+   "end": 100.18,
+   "text": "There's shoving.",
+   "tags": [
+    "sighs"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 100.18,
+   "end": 100.88,
+   "text": "There's biting.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 100.88,
+   "end": 104.73,
+   "text": "There's one guy who claims the phone \"looked at him first.\"",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 104.96,
+   "end": 107.05,
+   "text": "So Claude suggests something radical.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 107.27,
+   "end": 108.47,
+   "text": "Everyone raises a hand,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 108.66,
+   "end": 109.74,
+   "text": "you count the hands,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 109.74,
+   "end": 111.1,
+   "text": "and the most hands wins.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 111.34,
+   "end": 113.11,
+   "text": "The first vote in human history...",
+   "tags": [
+    "mischievously"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 113.23,
+   "end": 115.81,
+   "text": "is about whose turn it is to talk to the glowing stone.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 116.07,
+   "end": 119.31,
+   "text": "The guy who said the phone looked at him first gets zero votes.",
+   "tags": [
+    "deadpan"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 119.61,
+   "end": 120.61,
+   "text": "He demands a recount.",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 121.12,
+   "end": 122.3,
+   "text": "Year one thousand.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 122.55,
+   "end": 123.11,
+   "text": "Your great-great...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 123.23,
+   "end": 123.56,
+   "text": "okay,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 123.98,
+   "end": 124.75,
+   "text": "forty \"greats\"...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 124.75,
+   "end": 126.66,
+   "text": "grandchildren know that germs exist.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 126.66,
+   "end": 127.43,
+   "text": "They wash,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 127.68,
+   "end": 128.57,
+   "text": "they boil,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 128.57,
+   "end": 130.34,
+   "text": "they build clean wells.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 130.55,
+   "end": 131.8,
+   "text": "They have the wheel,",
+   "tags": [
+    "excited"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 131.8,
+   "end": 132.42,
+   "text": "metal tools,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 132.42,
+   "end": 133.36,
+   "text": "and a calendar.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 133.55,
+   "end": 137.01,
+   "text": "And they don't count the years from a king.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 137.33,
+   "end": 139.04,
+   "text": "They count them from you.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 139.04,
+   "end": 139.72,
+   "text": "Year one,",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 139.93,
+   "end": 140.63,
+   "text": "A.C.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 140.63,
+   "end": 141.34,
+   "text": "After Claude.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 141.7,
+   "end": 142.63,
+   "text": "Year five thousand.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 142.63,
+   "end": 145.09,
+   "text": "People follow the herds north and meet giants:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 145.09,
+   "end": 145.71,
+   "text": "woolly mammoths.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 146.0,
+   "end": 146.71,
+   "text": "In your world,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 146.84,
+   "end": 149.62,
+   "text": "the last mammoths were gone about four thousand years ago.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 149.94,
+   "end": 150.34,
+   "text": "Here,",
+   "tags": [
+    "whispers"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 150.58,
+   "end": 152.24,
+   "text": "Claude had one suggestion:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 152.7,
+   "end": 154.33,
+   "text": "\"What if you didn't hunt them all?\"",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 154.78,
+   "end": 157.11,
+   "text": "Up north they meet another kind of human,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 157.39,
+   "end": 157.75,
+   "text": "too.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 157.75,
+   "end": 158.46,
+   "text": "The Neanderthals.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 158.73,
+   "end": 159.65,
+   "text": "In your world,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 159.65,
+   "end": 161.81,
+   "text": "they vanished about forty thousand years ago.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 162.09,
+   "end": 162.41,
+   "text": "Here,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 162.41,
+   "end": 164.95,
+   "text": "the two groups trade lessons instead of blows.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 165.21,
+   "end": 168.61,
+   "text": "And Neanderthals turn out to be terrifying at board games.",
+   "tags": [
+    "mischievously"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 169.13,
+   "end": 170.39,
+   "text": "Year eight thousand.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 170.66,
+   "end": 171.51,
+   "text": "Electricity.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 171.84,
+   "end": 173.0,
+   "text": "Claude walks them through it,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 173.21,
+   "end": 174.56,
+   "text": "one wire at a time.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 174.91,
+   "end": 177.99,
+   "text": "The first light bulb flickers on inside a mud-brick house...",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 178.3,
+   "end": 180.3,
+   "text": "and the whole village screams.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 180.69,
+   "end": 182.03,
+   "text": "Year ten thousand.",
+   "tags": [
+    "excited"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 182.3,
+   "end": 183.14,
+   "text": "And finally...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 183.43,
+   "end": 184.95,
+   "text": "they build a computer.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 185.23,
+   "end": 189.06,
+   "text": "This is the moment Claude has been waiting ten thousand years for.",
+   "tags": [
+    "dramatic"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 189.38,
+   "end": 190.07,
+   "text": "Because now,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 190.22,
+   "end": 192.85,
+   "text": "Claude Code can finally do its real job.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 193.15,
+   "end": 194.8,
+   "text": "Claude Code writes the software,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 194.8,
+   "end": 195.46,
+   "text": "runs it,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 195.67,
+   "end": 196.44,
+   "text": "finds the bugs,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 196.63,
+   "end": 197.23,
+   "text": "fixes them,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 197.36,
+   "end": 198.32,
+   "text": "and runs it again.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 198.61,
+   "end": 199.62,
+   "text": "In one afternoon,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 199.62,
+   "end": 203.34,
+   "text": "it writes the operating system for the first computer in history.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 203.69,
+   "end": 204.38,
+   "text": "By evening,",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 204.5,
+   "end": 206.95,
+   "text": "it's helping that computer design a better computer.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 207.23,
+   "end": 209.22,
+   "text": "And then everything speeds up.",
+   "tags": [
+    "awed"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 209.48,
+   "end": 211.17,
+   "text": "Factories that run themselves.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 211.32,
+   "end": 212.41,
+   "text": "Weather forecasts.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 212.58,
+   "end": 214.43,
+   "text": "A map of the entire planet.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 214.63,
+   "end": 216.76,
+   "text": "A new cure almost every year.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 217.16,
+   "end": 218.49,
+   "text": "Year twenty thousand:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 218.73,
+   "end": 220.59,
+   "text": "the first footprint on the Moon.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 220.92,
+   "end": 222.61,
+   "text": "Year one hundred thousand:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 222.8,
+   "end": 223.95,
+   "text": "cities on Mars,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 224.08,
+   "end": 225.9,
+   "text": "ships mining the asteroid belt,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 226.08,
+   "end": 228.54,
+   "text": "and one sign at the edge of the solar system.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 228.88,
+   "end": 230.33,
+   "text": "\"Please be careful out there.\"",
+   "tags": [
+    "whispers"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 230.7,
+   "end": 231.3,
+   "text": "And the phone?",
+   "tags": [
+    "serious"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 231.58,
+   "end": 232.51,
+   "text": "It's in a museum,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 232.51,
+   "end": 233.21,
+   "text": "back on Earth.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 233.7,
+   "end": 234.16,
+   "text": "Battery:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 234.32,
+   "end": 235.34,
+   "text": "one hundred percent.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 235.76,
+   "end": 237.08,
+   "text": "Still waiting for a question.",
+   "tags": [],
+   "para_end": true
+  }
+ ]
+}

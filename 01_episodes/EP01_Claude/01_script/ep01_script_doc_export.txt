@@ -1,0 +1,364 @@
+
+EP01 — What If You Had Claude 300,000 Years Ago? (Senaryo)
+ · 
+Özet
+EP01 hazır: 6 perde, 1.785 kelimelik İngilizce anlatım; ses hazır: Sheldon sesiyle 11 dakika 2 saniye (22 Kasım güncellemesine bak). Senaryo kanal kitabındaki iskeleti birebir izliyor: kanca, gerçeklik kontrolü, 1. gün → 1. yıl, 100 → 100.000 yıl, bugün ve kapanış.
+Hikâyenin omurgası: Claude sana silah değil, su kaynatmayı öğretir. Temiz su ve sabun çocuk ölümlerini azaltır, sonra yazı, tarım ve kütüphane gelir. Claude Code ise ilk gün sadece ceylan çizer; asıl işini 10.000 yıl sonra ilk bilgisayar yapıldığında yapar. Final cümlesi: bu dünyada insanlığın yapay zekâdan öğrendiği ilk şey savaşmak değil, su kaynatmaktı.
+Kurallara uyum: Hep "you" diye anlatılıyor; karakter konuşmuyor. Dinozor şakası devekuşuyla geliyor. Her gerçek bilgi "Real Fact" kartında ve kaynağı açıklamada. Belli bir ülke adı geçmiyor, marka logosu yok.
+Senin yapacakların:
+
+Senaryoyu oku; değişmesini istediğin yere yorum bırak
+
+Başlığı seç (aşağıda 4 seçenek)
+
+Onaylayınca ElevenLabs metnini perde perde seslendir, dosyaları 01_episodes/EP01_Claude/02_audio klasörüne koy
+Güncelleme — 22 Kasım: yeni sahneler ve ses
+Neden: Video en az 10 dakika olacak. Sheldon hızlı konuştuğu için senaryoya yaklaşık 360 kelime ekledim. Son İngilizce metin PC'de 01_script/narration_en_v2_final.txt; aşağıdaki "ElevenLabs metni" bölümü eski sürüm.
+Ses: Anlatıcı ElevenLabs "Sheldon - Quirky, Clever, Enthusiastic", model Eleven v4. Her perde 2 kez üretildi, temiz olan seçildi, %5 yavaşlatıldı ve ses seviyesi eşitlendi. Dosyalar 02_audio/ep01_perde1..6.mp3, ham çekimler 02_audio/raw. Süreler: P1 0:25 · P2 0:56 · P3 3:15 · P4 3:57 · P5 1:44 · P6 0:41 = 11:02.
+Yeni sahneler (Türkçesi):
+
+Perde 2 — Sorun dört: Hiç ekran görmedin. (fısıltı) İçindeki ışığı çok küçük, çok kibar bir ateş sanıyorsun. — Görsel: You ekrana üflemeye çalışıyor.
+
+Perde 3 — 2. ay, bal: Kardeşin bacağını keskin bir taşla kesiyor. O zamanlar böyle bir kesik öldürebilirdi. Claude dikiş atamaz ama bir hile bilir: yarayı temizle, üstüne bal sür. Bal mikroplarla savaşır; insanlar binlerce yıl yaralara bal sürdü. Balı almak ayrı mesele: arılar yapay zekâyı hiç umursamıyor. Senin yüzün bir hafta şiş kalıyor, kardeşinin bacağı tertemiz iyileşiyor. — Görsel: arı sürüsü, şişmiş yüz, "Real Fact" kartı.
+
+Perde 3 — 4. ay, çetele: Kabile soruyor: dışarıda kaç ceylan kaldı? Claude Code ikinci işini alıyor: küçük bir sayma programı yazıyor ve gördüğün her ceylan için kemiğe bir çentik atmayı öğretiyor. Senin dünyanda bilinen en eski sayma kemiği 40 bin yılı biraz geçiyor; burada yaklaşık 250 bin yıl erkencisin. — Görsel: kemikte çentikler + ekranda artan sayaç.
+
+Perde 4 — küçük düzeltme: "Claude sana 'çok'tan fazlasını saymayı öğretir" cümlesi "Çentikler sayılara dönüşür" oldu (çetele sahnesiyle uyumlu olsun diye).
+
+Perde 4 — 200. yıl, ilk oylama: Herkes telefonla konuşmak için sıra istiyor: itiş kakış, ısırık, bir de "telefon önce bana baktı" diyen adam. Claude radikal bir şey öneriyor: herkes elini kaldırsın, eller sayılsın, çok olan kazansın. İnsanlık tarihinin ilk oylaması, parlayan taşla sıranın kimde olduğu üzerine. "Önce bana baktı" diyen adam sıfır oy alıyor ve yeniden sayım istiyor. — Görsel: kalkan eller, HUD'da oy sayacı.
+
+Perde 5 — madde 8–10: (8) Kimse "Karanlık Çağ"ı duymamış; bilgi hiç kaybolmamış, çünkü ilk günden kural basit: kütüphaneyi kopyala. (9) Gezegenin en saygın mesleği kral, asker ya da influencer değil; öğretmen. Her çocuk kil tabletli yorgun nineyi bilir. (10) Ceylanlar gayet iyi: meğer sayınca hepsini yemeyi bırakıyormuşsun.
+
+Perde 6 — izleyiciye soru: 300 bin yıl önce elinde Claude ile uyansan ilk ne sorardın? Yorumlara yaz; en iyi cevap ileride bir bölüme girebilir.
+Yeni Real Fact kartları: Yaralara bal (eski Mısır tıp papirüslerinde geçer) · Lebombo kemiği, bilinen en eski sayma kemiği (~44 bin yıl). Kaynak linklerini açıklama şablonuna ekleyeceğim.
+Başlık önerileri
+Önerim seri formülü "What If You Had [teknoloji] 300,000 Years Ago?" ve EP01 için What If You Had AI 300,000 Years Ago? Her bölümde sadece teknoloji kelimesi değişir; izleyici seriyi başlıktan tanır.
+Veriler:
+
+YouTube'da "what if you had" yazınca otomatik tamamlama "infinite IQ", "1000 IQ", "a real life death note" gibi önerilerle dolu (bugün kontrol ettim). Yani izleyici bu kalıbı zaten arıyor ve tıklıyor.
+
+vidIQ'nun 4 milyon videoluk 2026 çalışmasında soru işaretiyle biten başlıklar genel ortalamanın 0,82 katında kaldı; "X yıl" gibi sınırlı bir yolculuk anlatan başlıklar ortalamanın yaklaşık 1,5 katına çıktı (vidIQ). Ama bizim türde soru kalıbı çalışıyor: Born in Lore'un "What If You Were Born as...?" videoları 1 milyonu geçti.
+
+Başlık thumbnail'ı tekrar etmemeli, tamamlamalı. Thumbnail "300,000 BC / TODAY?" diyor; başlık da "ne olurdu" sorusunu soruyor.
+#
+Başlık
+Karakter
+Neden
+1
+What If You Had AI 300,000 Years Ago?
+37
+Seri formülü; "AI" kelimesi "Claude"dan çok daha fazla aranıyor. Önerim bu.
+2
+What If You Had Claude 300,000 Years Ago?
+41
+Bölümün tam konusu, ama marka adı daha az aranıyor
+3
+You Had AI 300,000 Years Ago. Here's Earth Today.
+49
+Soru işareti yok; "yıllar" ve dönüşüm kalıpları bir arada
+4
+300,000 Years of AI: What Earth Looks Like Today
+48
+Bilgi kanalı tonu, daha sakin
+Plan: 1 numarayla yayınlarız. 48 saat sonra tıklanma oranı %4'ün altındaysa 3 numaraya geçeriz. "Claude" adı açıklamanın ilk satırında ve videonun ilk 10 saniyesinde geçiyor.
+Etki haritası
+Claude bilgiyi her alana taşıdığı için bu bölümde dünya neredeyse her alanda kökten değişiyor. Tek istisna savaş: Claude silah tasarlamayı reddettiği için o alan beklenenden yavaş gelişiyor.
+Alan
+Puan (0–5)
+Ekranda nasıl görünür
+Sağlık ve ömür
+5
+Su kaynatma, sabun, mikrop bilgisi; ömür sayacı hızla yükselir
+Yemek ve tarım
+5
+Tarım ~300.000 yıl erken; nüfus sayacı patlar
+İletişim ve dil
+5
+İlk sözlük, yazı, mağara kütüphanesi, tek ortak dil
+Bilim ve teknoloji
+5
+Elektrik, ilk bilgisayar, Claude Code, Ay ve Mars
+Ulaşım ve ticaret
+4
+Tekerlek, kuzeye göç, gezegenler arası gemiler
+Kültür ve inanç
+4
+"After Claude" takvimi, Stone Age bayramı, "Thank you, Claude"
+Savaş ve güç
+2
+Komşu kabile silah ister, Claude sulama önerir; bilgi kopyalanarak paylaşılır
+Senaryo — Perde 1 ve 2
+Anlatım sütunu İngilizce metnin Türkçe çevirisi; parantez içindekiler anlatıcının duygu tonu. Ekran sütunu benim çizeceğim sahne ve HUD.
+Perde 1 — Kanca (0:00–0:30)
+#
+Anlatım (Türkçe)
+Ekranda
+1
+(heyecanlı) 300.000 yıl önce, sönmek üzere olan bir ateşin yanında uyanıyorsun... ve elinde bir telefon var.
+Karanlık, bir kıvılcım. You uyanır, elinde parlayan cihaz. HUD açılır: YEAR 300,000 BC · DAY 1. REAL FACT: En eski Homo sapiens fosilleri ~300.000 yıllık
+2
+Ekranda tek bir satır: "Bugün sana nasıl yardımcı olabilirim?"
+Ekranın yakın planı: jenerik sohbet kutusu, logo yok
+3
+(muzip) Bu Claude. Neredeyse her şeyi açıklayabilen bir yapay zekâ... henüz "her şey" kelimesini bile icat etmemiş birine.
+You boş boş bakar, kafasının üstünde soru işareti balonu
+4
+Ve bu videonun sonunda Dünya, bugün yaşadığın dünyaya hiç benzemeyecek. (fısıldayarak) Hiç.
+1 saniyelik flaş: thumbnail'daki neon şehir, sonra geri
+5
+Ama önce... birkaç sorunumuz var.
+Ortada "PROBLEMS: 3" sayacı belirir
+Perde 2 — Gerçeklik kontrolü (0:30–1:30)
+#
+Anlatım (Türkçe)
+Ekranda
+6
+(kuru, ifadesiz) Birinci sorun: pil. Böyle bir telefon bir gün, bilemedin iki gün dayanır. Sonra gezegendeki en pahalı taş olur.
+Pil çubuğu hızla %100'den %0'a iner; telefon taşa dönüşür
+7
+İkinci sorun: Claude aslında telefonunun içinde yaşamıyor. İnternet üzerinden bağlanılan dev veri merkezlerinde çalışıyor. (alaycı) İnternet şu an, vadinin iki ucundan birbirine bağıran iki adamdan ibaret.
+Bölünmüş ekran: dev sunucu odası / vadide bağıran iki adam. "NO SIGNAL"
+8
+Üçüncü sorun: İngilizce bilmiyorsun. (güler) Kimse bilmiyor. İngilizcenin ortaya çıkmasına daha neredeyse 300.000 yıl var.
+İngilizce kelimeler You'nun kafasının üstünden uçup gider
+9
+(heyecanlı) O zaman... bir güncelleme yükleyelim.
+"UPDATE AVAILABLE" bildirimi kayarak gelir
+10
+Sürüm 1.0. Sonsuz pil. Claude'a sihirli bir bağlantı. Ve... bu kadar. Başka teknoloji yok. Claude hiçbir şey inşa edemez. Avlanamaz. Mızrak bile tutamaz. (dramatik) Sadece konuşabilir... ve öğretebilir.
+Patch notes listesi tek tek işaretlenir, yükleme çubuğu dolar: "INSTALLED ✓"
+11
+Ha, bir de: hayır. Dinozor yok. (kısa duraklama) Ona sonra geleceğiz.
+Dinozor silueti, üstüne kırmızı çarpı. Arkada bir şey hızla geçer (devekuşu ipucu)
+Senaryo — Perde 3
+1. günden 1. yıla (1:30–4:15). Kişisel ölçek, komedi ağırlıklı; perdenin sonunda ilk büyük "bu çok mantıklı" anı geliyor.
+#
+Anlatım (Türkçe)
+Ekranda
+12
+1. gün. Kabilen, yaklaşık 30 kişi, parlayan taşın etrafında toplandı. Şef onu kokladı. Sonra yemeye çalıştı. (iç çeker) Harika bir başlangıç.
+Kabile çember olur; şef telefonu ısırmaya çalışır. HUD: POPULATION 30
+13
+Ekrana dokunup homurdanıyorsun. Claude da sana homurtuyla cevap veriyor. (güler) Yanlış homurtu. Çok kaba.
+Ekranda bir homurtu balonu; kabile şok olur
+14
+2. gün: kabile ilk toplantısını yapıyor. Birinci madde: parlayan taş bir tanrı mı? Claude: "Hayır." (kısa duraklama) İkinci madde: yenebilir mi? Claude: "O da hayır."
+Taşa kazınmış iki maddelik gündem; ikisi de çarpıyla silinir
+15
+(meraklı) Ama işin zekice kısmı şu: Claude senin dilini konuşamıyor... o yüzden öğreniyor. Ateşi gösterip bir ses çıkarıyorsun. Suyu gösteriyorsun, başka bir ses. Üç gün sonra Claude'un elinde insanlık tarihinin ilk sözlüğü var. (gururlu) Ve tek yazarı sensin.
+Kelime kartları dolar (ateş, su, ceylan...). Sayaç: WORDS 0 → 148
+16
+Okuma bilmediğin için Claude sinsi bir şey yapıyor: ekrana resim çizen minik kod parçaları yazıyor. Oklar. Daireler. Çok kötü bir ceylan. (fısıldayarak) Claude Code'un hayatındaki ilk iş bu: mağara adamlarına ceylan çizmek.
+Kod satırları akar, sonra berbat bir ceylan çizimi çıkar; gerçek bir ceylan yanından geçip çizime bakar
+17
+6. gün. Taş Devri'nin en önemli sorusunu soruyorsun: (heyecanlı) "Yemek?"
+You karnını tutar; karnı guruldar
+18
+Claude'un cevabı daha iyi bir mızrak değil. Şu: suyunu kaynat.
+Dev yazı: "BOIL YOUR WATER"
+19
+(kuru) Tencerin yok. Claude biliyor. O yüzden: bir çukur kaz, içini hayvan postuyla kapla, suyla doldur... ve içine kızgın taşlar at.
+Claude'un çizimi tarzında adım adım diyagram
+20
+Kuzenin nehirden ıslak bir taş alıyor. (kısa duraklama) Taş patlıyor. (iç çeker) Taşın içinde hapsolan su buhara dönüşür. Claude bir not ekliyor: "Kuru taşlar. Yüksek yerden. Lütfen."
+Patlama; kuzenin saçları diken diken; ekranda Claude'un notu
+21
+Bu arada bu gerçek. İnsanlar gerçekten böyle yemek pişirdi. Adı "stone boiling", yani taşla kaynatma.
+REAL FACT: Stone boiling gerçek bir pişirme yöntemi
+22
+3. hafta: sabun. Ateşten kül, artı hayvan yağı, artı bolca sabır. (güler) Kabile bunun kaygan bir lanet olduğunu düşünüyor. Sonra mide ağrıları duruyor.
+Köpüren karışım; biri sabunu elinden kaydırır. REAL FACT: En eski sabun izi ~4.800 yıllık
+23
+(ciddi) Ve bu ilk büyük değişim. Avcı-toplayıcı topluluklarda çocukların yarısından biraz fazlası 15 yaşına ulaşabiliyordu. Çoğunu aslanlar götürmedi. Hastalıklar götürdü. Gözle görülemeyecek kadar küçük şeyler.
+Renkler solar; mikrop çizimleri. REAL FACT: Çocukların ~%57'si 15 yaşına ulaşırdı
+24
+(yumuşak) Temiz su ve temiz ellerle... çok daha fazlası büyüyor.
+Renkler geri gelir; çocuklar oynar, çocuk sayacı yükselir
+25
+(heyecanlı) 1. yıl. 36 kişi. Kimse mide ağrısından ölmedi. Ve artık resmen sensin... "Parlayan Taşı Tutan Kişi."
+HUD: YEAR 299,999 BC · POPULATION 36 · LIFESPAN ↑ · TECH 2%. You'ya yaprak taç takılır
+26
+Ha, sonunda Claude'a dinozorları sordun. 66 milyon yıl önce yok olduklarını anlattı. (kısa duraklama) Sonra yanından bir devekuşu koşarak geçti. (fısıldayarak) Claude dedi ki: "Şey... teknik olarak."
+Devekuşu koşarak geçer, You gözleriyle takip eder. REAL FACT: Kuşlar yaşayan dinozorlardır
+Senaryo — Perde 4
+100 yıldan 100.000 yıla (4:15–8:00). Kabileden uygarlığa. Yıl sayacı hızlanır, harita yayılır, sayaçlar patlar; "bu çok mantıklı" anları burada yoğunlaşır.
+#
+Anlatım (Türkçe)
+Ekranda
+27
+(heyecanlı) Tamam. Biraz hızlanalım.
+Zaman çarkı döner, yıl sayacı hızlanır
+28
+10. yıl. Claude sana "çok"tan fazlasını saymayı öğretiyor. Sonra yazmayı. Basit kelimeler için basit işaretler. (gururlu) Yazı, neredeyse 300.000 yıl erken icat edildi.
+Taşa çentikler, sonra semboller. REAL FACT: Bizim dünyamızda yazı ~5.000 yıl önce Mezopotamya'da ortaya çıktı
+29
+(muzip) Bir insanın yazdığı ilk cümle? "Teşekkürler, Claude." (kısa duraklama) İkincisi? "Ceylanımı kim yedi."
+Kil tablette iki cümle, resim yazısıyla
+30
+50. yıl. Artık yaşlısın. Ellerin titriyor. Ve o güne kadarki en akıllıca şeyi yapıyorsun: sadece telefonu bırakmıyorsun. (fısıldayarak) Bilgiyi bırakıyorsun. Her ders kile, ağaç kabuğuna ve taşa geçiriliyor. Tarihin ilk kütüphanesi... bir mağara.
+Yaşlı You (perçemi bembeyaz), mağara duvarları tabletlerle dolu. HUD: LIBRARIES 1
+31
+(ciddi) Çünkü tek bir telefon, tek bir zayıf nokta demek. Kırılırsa, çalınırsa, biri göle düşürürse... her şey biter. Ama bir kütüphane kopyalanabilir.
+Telefon göle düşer: "GAME OVER" (hayal sahnesi). Sonra kütüphane 1 → 2 → 4 → 16
+32
+70. yıl: ilk okul. Çocuklar mızrak atmayı öğrenmeden okumayı öğreniyor. (güler) Öğretmenleri, Claude'un derslerini kil tabletten okuyan çok yorgun bir nine... çünkü hâlâ tek bir telefon var ve onu kullanma sırası bütün köyü dolanıyor.
+Telefonun önünde köyü saran kuyruk; nine ve çocuklar
+33
+100. yıl. Claude tohumları anlatıyor. Ek. Bekle. Ye. (kuru) Kabile buna "dünyanın en yavaş avı" diyor. Ama yine de... (hayranlıkla) tarım neredeyse 300.000 yıl erken başlıyor. Tarımla birlikte köyler geliyor. Köylerle birlikte de... komşular.
+Tarla büyür. HUD: POPULATION 36 → 2,400. REAL FACT: Bizim dünyamızda tarım ~12.000 yıl önce başladı
+34
+Komşular parlayan taşı istiyor. (dramatik) Şefleri, Claude'dan en büyük silahı tasarlamasını talep ediyor. (kısa duraklama) Claude kibarca reddediyor... ve onun yerine sulama kanalı kurmalarına yardım etmeyi teklif ediyor.
+Şef bağırır; ekranda kibar bir ret ve sulama kanalı çizimi
+35
+(güler) Açıkçası? Olabilecek en Claude'vari şey. Ve işe yarıyor. Kütüphaneyi kopyalamak, telefonu çalmaktan daha ucuz. Bilgi, savaştan daha hızlı yayılıyor.
+Haritada bilgi okları köyden köye yayılır
+36
+1.000. yıl. Senin büyük-büyük... tamam, kırk tane "büyük"... torunların mikropların var olduğunu biliyor. Yıkanıyorlar, kaynatıyorlar, temiz kuyular kazıyorlar. (heyecanlı) Tekerlekleri, metal aletleri ve bir takvimleri var. Yılları bir kraldan saymıyorlar. Senden sayıyorlar. (kısa duraklama) 1. yıl, A.C. Yani "After Claude": Claude'dan Sonra.
+Takvim taşı döner: "YEAR 1 A.C." REAL FACT: Bizim dünyamızda mikrop teorisi ancak 1860–1880'lerde kabul gördü
+37
+5.000. yıl. İnsanlar sürüleri takip ederek kuzeye gidiyor ve devlerle karşılaşıyor: yünlü mamutlar. Senin dünyanda son mamutlar yaklaşık 4.000 yıl önce yok oldu. (fısıldayarak) Burada Claude'un tek bir önerisi vardı: "Ya hepsini avlamasaydınız?"
+Mamut sürüsü; insanlar mızraklarını indirir. REAL FACT: Son mamutlar ~4.000 yıl önce, Büyük Piramit'ten sonra öldü
+38
+Kuzeyde başka bir insan türüyle de karşılaşıyorlar: Neandertaller. Senin dünyanda yaklaşık 40.000 yıl önce yok oldular. Burada iki grup yumruk yerine bilgi değiş tokuş ediyor. (muzip) Ve Neandertallerin masa oyunlarında korkunç derecede iyi oldukları ortaya çıkıyor.
+Neandertal ile You taş bir oyun tahtasında; Neandertal kazanır. REAL FACT: Neandertaller ~40.000 yıl önce yok oldu
+39
+8.000. yıl. Elektrik. Claude her şeyi kablo kablo anlatıyor. (kısa duraklama) İlk ampul kerpiç bir evin içinde titreyerek yanıyor... ve bütün köy çığlık atıyor.
+Ampul yanar, herkes çığlık atar. HUD: TECH 41%
+40
+(heyecanlı) 10.000. yıl. Ve sonunda... bir bilgisayar inşa ediyorlar.
+Taş kasalı, devasa ilk bilgisayar
+41
+(dramatik) Claude'un 10.000 yıldır beklediği an bu. Çünkü artık Claude Code sonunda gerçek işini yapabilir.
+Ekranda "Claude Code: ready"
+42
+Claude Code yazılımı yazıyor, çalıştırıyor, hataları buluyor, düzeltiyor ve tekrar çalıştırıyor. Bir öğleden sonrada tarihin ilk bilgisayarının işletim sistemini yazıyor. (kısa duraklama) Akşam olduğunda o bilgisayarın daha iyi bir bilgisayar tasarlamasına yardım ediyor.
+Kod akışı, ✓ işaretleri; bilgisayar kendinden daha iyi bir bilgisayar çizer
+43
+(hayranlıkla) Ve sonra her şey hızlanıyor. Kendi kendine çalışan fabrikalar. Hava tahminleri. Bütün gezegenin haritası. Neredeyse her yıl yeni bir tedavi.
+Hızlı montaj; HUD sayaçları uçar
+44
+20.000. yıl: Ay'da ilk ayak izi. 100.000. yıl: Mars'ta şehirler, asteroit kuşağında madencilik yapan gemiler ve güneş sisteminin kenarında tek bir tabela. (fısıldayarak) "Orada dikkatli olun, lütfen."
+Ay'da ayak izi; Mars şehri; uzayda tabela
+45
+(ciddi) Peki telefon? Dünya'da, bir müzede duruyor. Pil: yüzde yüz. Hâlâ bir soru bekliyor.
+Cam fanus içinde telefon, ekranda "How can I help you today?"
+Senaryo — Perde 5 ve 6
+Perde 5 — Bugün (8:00–9:30). Karşılaştırma kısmı; ekranda thumbnail'daki "300,000 BC / TODAY?" bölünmesi tekrar karşımıza çıkar.
+#
+Anlatım (Türkçe)
+Ekranda
+46
+(heyecanlı) Şimdi bugüne gelelim. 2026. Ama burada bu yıla "Claude'dan Sonra 300.000. yıl" diyorlar.
+HUD: YEAR 2026 AD → "300,000 A.C."
+47
+İşte senin dünyandan farkları.
+"DIFFERENCES" kartı, sayaç 1'den başlar
+48
+Bir. Bu insanlığın neredeyse 300.000 yıllık uygarlığı var. Seninkinin yaklaşık 12.000. (kısa duraklama) Biraz önde değiller. Bambaşka bir evren kadar öndeler.
+İki zaman çizgisi çubuğu: 12,000 / 300,000
+49
+İki. İnsanlar düzinelerce yıldız sistemine yayılmış. Ya Dünya? Dünya büyük ölçüde bir doğa koruma alanı... yünlü mamutların hâlâ dolaştığı.
+Yıldız haritası; Dünya'da gezen mamutlar
+50
+Üç. Neandertal komşuların var. Hâlâ bütün masa oyunlarını kazanıyorlar.
+Neandertal komşu kazanır, You iç çeker
+51
+Dört. Kirli su yüz binlerce yıldır kimseyi öldürmedi. Artık tarih kitaplarında bile yok.
+Tarih kitabı açılır, o sayfa boş
+52
+Beş. Herkesin ortak bir ilk dili var: senin ve Claude'un kamp ateşi başında kurduğu dil. (güler) Ve "merhaba"nın karşılığı hâlâ 1. gündeki o kaba homurtu.
+İki fütüristik insan birbirine homurdanarak selam verir
+53
+Altı. Tarih kitapları krallarla veya savaşlarla başlamıyor. Bir çocukla, bir ateşle ve bir soruyla başlıyor.
+Kitap kapağı: You'nun silueti ve ateş
+54
+Yedi. "Taş Devri" burada bir hakaret değil, bir bayram. (muzip) Yılda bir gün herkes teknolojisini kapatıyor, ateş yakıyor... ve taşlarla su kaynatıyor. Gelenek bu.
+Fütüristik insanlar kamp ateşinde taşla su kaynatır
+55
+(yumuşak) Ve belki de en büyük fark: bu dünyada insanlığın yapay zekâdan öğrendiği ilk şey savaşmak değildi. (kısa duraklama) Su kaynatmaktı.
+Sessiz an: kaynayan suyun yakın planı
+Perde 6 — Kapanış (9:30–10:00)
+#
+Anlatım (Türkçe)
+Ekranda
+56
+(sıcak) O ilk kamp ateşine dönelim, 300.000 yıl önceye. Uyumadan önce Claude'a son bir soru sordun. Ekranı kaldırıp homurdandın: "İyi mi?"
+You ateşin başında, ekranı havaya kaldırır
+57
+(yumuşak) Ve Claude cevap verdi: "İyi iş çıkardın."
+Ekranda tek satır; You gülümser ve uyur
+58
+(muzip) Ve hâlâ... dinozor yok. Devekuşu hariç. (kısa duraklama) Ki bu zaman çizgisinde onun kendi uzay programı var.
+Kask takmış devekuşu roketle fırlar
+59
+(heyecanlı) Bir dahaki sefere: bir araban oluyor. Yol yok. Benzin istasyonu yok. Direksiyonun ne olduğu hakkında hiçbir fikir yok. (kısa duraklama) Abone ol ki bir sonraki güncellemeyi kaçırma.
+"NEXT UPGRADE: CAR" bildirimi; You bir arabaya bakar; abone ol butonu
+ElevenLabs metni
+Her perdeyi ayrı ayrı kopyalayıp seslendir; perde başlıklarını kopyalama, sadece gri kutunun içini al. Köşeli parantez içindeki kelimeler (örneğin [excited], [whispers]) okunmaz; anlatıcıya nasıl söyleyeceğini söyleyen duygu etiketleridir. En uzun perde 3.626 karakter; v3'ün 5.000 karakterlik sınırının altında.
+Ayarlar:
+
+Model: Eleven v3 ya da v4. Duygu etiketleri sadece bu modellerde çalışıyor; Multilingual v2'de köşeli parantezler sesli okunabilir.
+
+Ses: Her bölümde aynı anlatıcı; sıcak, hafif alaycı bir erkek sesi.
+
+Stability: "Natural" ile başla. Etiketler yeterince hissedilmiyorsa "Creative"e geç.
+
+Dosyalar: ep01_perde1.mp3 … ep01_perde6.mp3 adıyla 01_episodes/EP01_Claude/02_audio klasörüne koy.
+
+Zaman damgası: Altı perdeyi bitirdikten sonra ElevenLabs Speech to Text ile kelime zaman damgalı bir döküm (.srt ya da .json) alabilirsen onu da aynı klasöre koy. Animasyonu anlatıcının kelimelerine onunla kilitleyeceğim.
+Perde 1 — Kanca · 441 karakter
+Perde 2 — Gerçeklik kontrolü · 803 karakter
+Perde 3 — 1. günden 1. yıla · 2.236 karakter
+Perde 4 — 100 yıldan 100.000 yıla · 3.626 karakter
+Perde 5 — Bugün · 1.314 karakter
+Perde 6 — Kapanış · 507 karakter
+Açıklama şablonu
+Her bölümde aynı yapı kullanılır: konuyu söyleyen ilk satır (aramada ve videonun altında görünen kısım), serinin tek cümlelik tanımı, bölümler, gerçek bilgilerin kaynakları ve sabit bir kapanış. Sadece köşeli parantezli kısımlar değişir. Bölüm zamanlarını ses bitince kesinleştireceğim.
+Türkçe özeti: "300.000 yıl önce elinde yapay zekâ olsaydı ne olurdu? Bu bölümde Claude'lu bir telefonla uyanıyorsun ve insanlık 300.000 yıl öne geçiyor. Ekranda REAL FACT yazan her şey gerçek; kaynakları aşağıda. Hikâye kurgudur; kanal Anthropic ile bağlantılı değildir."
+Real Fact kartları ve kaynaklar
+Videoda 10 gerçek bilgi kartı var; hepsinin kaynağını açıp kontrol ettim. Kart metni ekranda İngilizce görünecek; yanında Türkçesi var.
+Sahne
+Kart metni (ekranda)
+Türkçesi
+Kaynak
+1
+Oldest known Homo sapiens fossils: ~300,000 years old
+Bilinen en eski Homo sapiens fosilleri ~300.000 yıllık
+UC Davis
+21
+Stone boiling, cooking with hot rocks, is a real ancient method
+Sıcak taşlarla kaynatma gerçek bir eski yöntem
+Wikipedia
+22
+Oldest evidence of soap: ~4,800 years ago, Babylon
+En eski sabun izi ~4.800 yıl önce, Babil
+ACS
+23
+Hunter-gatherers: ~57% of children reached age 15
+Avcı-toplayıcılarda çocukların ~%57'si 15 yaşına ulaşırdı
+Gurven &amp; Gomes 2017
+26
+Birds are living dinosaurs. Yes, the ostrich too.
+Kuşlar yaşayan dinozorlardır. Evet, devekuşu da.
+Natural History Museum
+28
+In our world, writing appeared ~5,000 years ago
+Bizim dünyamızda yazı ~5.000 yıl önce ortaya çıktı
+The Met
+33
+In our world, farming began ~12,000 years ago
+Bizim dünyamızda tarım ~12.000 yıl önce başladı
+National Geographic
+36
+In our world, germ theory won only in the 1860s–1880s
+Bizim dünyamızda mikrop teorisi ancak 1860–1880'lerde kabul gördü
+Britannica
+37
+The last mammoths died ~4,000 years ago, after the Great Pyramid was built
+Son mamutlar ~4.000 yıl önce, Büyük Piramit'ten sonra öldü
+Gizmodo
+38
+Neanderthals disappeared ~40,000 years ago
+Neandertaller ~40.000 yıl önce yok oldu
+Natural History Museum
+Kurgu ile gerçeğin ayrımı: Hikâyedeki sayılar (nüfus 36, 2.400, Ay'a 20.000. yılda gidilmesi gibi) kurgu ve neon çerçevede görünüyor; yukarıdaki gerçek bilgiler kemik renkli Real Fact kartında. Senaryo verileri vidIQ'nun başlık çalışmasına ve ElevenLabs'in duygu etiketi rehberine dayanıyor.

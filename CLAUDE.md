@@ -45,9 +45,9 @@ You are continuing a production that started in a claude.ai chat. Everything you
 - Done: script (6 acts, 1,785 words), narration audio (11:02 total: P1 0:25, P2 0:56, P3 3:15, P4 3:57, P5 1:44, P6 0:41), brand, cast sheet.
 - Next, in order:
   1. (Done in cloud) engine is portable; on the PC just install deps.
-  2. Word-level timestamps for each act (ElevenLabs Speech-to-Text in his browser, or local whisper) → `02_audio/ep01_perdeN.words.json`; build a scene timing sheet from them.
-  3. EP01 background + prop + HUD kit (campfire camp, savanna, cave library, village, fields, mud-brick house, computer room, Moon, Mars, museum; HUD: year counter, population, "Claude Code" panel, Real Fact card).
-  4. Animate act by act, render per act, then assemble with audio + music/SFX beats (keep total 10–12 min). Send him short previews to approve.
+  2. (Done 22.11) Phrase timings from pauses: `02_audio/ep01_perdeN.timing.json`, sheet `01_script/ep01_timing.md` (tool `03_engine/tools/align.py`).
+  3. (Started 22.11 — `03_engine/lib/kit.js`; extend per act) EP01 background + prop + HUD kit (campfire camp, savanna, cave library, village, fields, mud-brick house, computer room, Moon, Mars, museum; HUD: year counter, population, "Claude Code" panel, Real Fact card).
+  4. (Act 1 done: `scenes/ep01_act1.html`, preview sent, awaiting OK) Animate act by act, render per act, then assemble with audio + music/SFX beats (keep total 10–12 min). Send him short previews to approve.
   5. Optional Flow shots (scene 7 data center, scene 21 stone boiling, scene 44 Moon footprint) — only after his approval of credits.
   6. Thumbnail (package-2 language), description (template in the script doc, Real Fact sources), Shorts summary 9:16.
 - Open: title confirmation; Flow approval.

@@ -3,7 +3,7 @@ import { createRequire } from 'module';
 import fs from 'fs';
 const require = createRequire(import.meta.url);
 function loadChromium() {
-  for (const m of ['playwright', 'playwright-core', '/opt/npm-tools/node_modules/playwright', '/opt/npm-tools/node_modules/playwright-core']) {
+  for (const m of ['playwright', 'playwright-core', '/opt/npm-tools/node_modules/playwright', '/opt/npm-tools/node_modules/playwright-core', '/opt/node22/lib/node_modules/playwright', '/opt/node22/lib/node_modules/playwright-core']) {
     try { return require(m).chromium; } catch {}
   }
   throw new Error('Playwright not found: run `npm i playwright-core` in 03_engine');

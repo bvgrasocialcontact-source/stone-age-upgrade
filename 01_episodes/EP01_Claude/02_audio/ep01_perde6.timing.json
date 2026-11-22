@@ -1,0 +1,284 @@
+{
+ "audio": "ep01_perde6.mp3",
+ "duration": 40.72,
+ "rate_wps": 3.34,
+ "speech_segments": [
+  [
+   0.09,
+   2.62
+  ],
+  [
+   2.76,
+   3.93
+  ],
+  [
+   4.19,
+   7.17
+  ],
+  [
+   7.63,
+   9.38
+  ],
+  [
+   9.73,
+   10.06
+  ],
+  [
+   10.52,
+   11.6
+  ],
+  [
+   12.04,
+   12.78
+  ],
+  [
+   13.19,
+   14.22
+  ],
+  [
+   14.39,
+   15.64
+  ],
+  [
+   15.93,
+   16.85
+  ],
+  [
+   17.2,
+   20.25
+  ],
+  [
+   20.62,
+   22.01
+  ],
+  [
+   22.37,
+   25.84
+  ],
+  [
+   26.1,
+   27.24
+  ],
+  [
+   27.55,
+   28.52
+  ],
+  [
+   28.79,
+   31.2
+  ],
+  [
+   31.51,
+   32.2
+  ],
+  [
+   32.39,
+   33.38
+  ],
+  [
+   33.61,
+   35.58
+  ],
+  [
+   35.7,
+   37.7
+  ],
+  [
+   37.99,
+   40.53
+  ]
+ ],
+ "phrases": [
+  {
+   "start": 0.09,
+   "end": 2.62,
+   "text": "Back at that first campfire,",
+   "tags": [
+    "warm"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 2.76,
+   "end": 3.93,
+   "text": "three hundred thousand years ago,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 4.19,
+   "end": 7.17,
+   "text": "you asked Claude one last question before falling asleep.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 7.63,
+   "end": 9.38,
+   "text": "You held up the screen and grunted:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 9.73,
+   "end": 10.06,
+   "text": "\"Good?\"",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 10.52,
+   "end": 11.6,
+   "text": "And Claude answered:",
+   "tags": [
+    "softly"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 12.04,
+   "end": 12.78,
+   "text": "\"You did good.\"",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 13.19,
+   "end": 14.22,
+   "text": "And still...",
+   "tags": [
+    "mischievously"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 14.39,
+   "end": 15.64,
+   "text": "no dinosaurs.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 15.93,
+   "end": 16.85,
+   "text": "Except the ostrich.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 17.2,
+   "end": 17.54,
+   "text": "Which,",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 17.54,
+   "end": 18.56,
+   "text": "in this timeline,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 18.56,
+   "end": 20.25,
+   "text": "has its own space program.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 20.62,
+   "end": 22.01,
+   "text": "So here's my question for you:",
+   "tags": [
+    "curious"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 22.37,
+   "end": 25.84,
+   "text": "if you woke up three hundred thousand years ago with Claude in your hand,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 26.1,
+   "end": 27.24,
+   "text": "what would you ask first?",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 27.55,
+   "end": 28.52,
+   "text": "Tell me in the comments.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 28.79,
+   "end": 31.2,
+   "text": "The best answer might end up in a future episode.",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 31.51,
+   "end": 32.2,
+   "text": "Next time:",
+   "tags": [
+    "excited"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 32.39,
+   "end": 33.38,
+   "text": "you get a car.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 33.61,
+   "end": 34.4,
+   "text": "No roads.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 34.4,
+   "end": 35.58,
+   "text": "No gas stations.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 35.7,
+   "end": 37.7,
+   "text": "No idea what a steering wheel is.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 37.99,
+   "end": 38.31,
+   "text": "Subscribe,",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 38.31,
+   "end": 40.53,
+   "text": "so you don't miss the next upgrade.",
+   "tags": [],
+   "para_end": true
+  }
+ ]
+}

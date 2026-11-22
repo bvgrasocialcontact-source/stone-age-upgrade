@@ -1,0 +1,422 @@
+{
+ "audio": "ep01_perde2.mp3",
+ "duration": 55.95,
+ "rate_wps": 3.17,
+ "speech_segments": [
+  [
+   0.08,
+   1.43
+  ],
+  [
+   1.61,
+   2.31
+  ],
+  [
+   2.69,
+   4.33
+  ],
+  [
+   4.55,
+   5.26
+  ],
+  [
+   5.58,
+   8.17
+  ],
+  [
+   8.64,
+   9.66
+  ],
+  [
+   9.99,
+   12.36
+  ],
+  [
+   12.62,
+   15.51
+  ],
+  [
+   15.81,
+   16.36
+  ],
+  [
+   16.48,
+   19.25
+  ],
+  [
+   19.72,
+   20.73
+  ],
+  [
+   21.07,
+   22.29
+  ],
+  [
+   22.5,
+   23.65
+  ],
+  [
+   23.98,
+   27.1
+  ],
+  [
+   27.52,
+   28.55
+  ],
+  [
+   28.86,
+   30.57
+  ],
+  [
+   30.89,
+   33.65
+  ],
+  [
+   33.82,
+   35.13
+  ],
+  [
+   35.48,
+   36.1
+  ],
+  [
+   36.25,
+   37.66
+  ],
+  [
+   37.9,
+   39.24
+  ],
+  [
+   39.47,
+   40.47
+  ],
+  [
+   40.66,
+   42.23
+  ],
+  [
+   42.46,
+   43.1
+  ],
+  [
+   43.32,
+   43.74
+  ],
+  [
+   44.04,
+   44.84
+  ],
+  [
+   45.19,
+   46.61
+  ],
+  [
+   46.77,
+   47.55
+  ],
+  [
+   47.71,
+   49.06
+  ],
+  [
+   49.35,
+   50.55
+  ],
+  [
+   50.83,
+   51.55
+  ],
+  [
+   51.91,
+   52.17
+  ],
+  [
+   52.32,
+   53.07
+  ],
+  [
+   53.25,
+   54.65
+  ],
+  [
+   55.05,
+   55.77
+  ]
+ ],
+ "phrases": [
+  {
+   "start": 0.08,
+   "end": 1.43,
+   "text": "Problem number one:",
+   "tags": [
+    "deadpan"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 1.61,
+   "end": 2.31,
+   "text": "the battery.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 2.69,
+   "end": 4.33,
+   "text": "A phone like this lasts a day,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 4.55,
+   "end": 5.26,
+   "text": "maybe two.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 5.58,
+   "end": 8.17,
+   "text": "Then it's the most expensive rock on the planet.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 8.64,
+   "end": 9.66,
+   "text": "Problem number two:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 9.99,
+   "end": 12.36,
+   "text": "Claude doesn't actually live inside your phone.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 12.62,
+   "end": 14.35,
+   "text": "It runs in giant data centers,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 14.35,
+   "end": 15.51,
+   "text": "connected through the internet.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 15.81,
+   "end": 16.36,
+   "text": "The internet,",
+   "tags": [
+    "sarcastic"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 16.48,
+   "end": 17.1,
+   "text": "right now,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 17.1,
+   "end": 19.25,
+   "text": "is two guys yelling across a valley.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 19.72,
+   "end": 20.73,
+   "text": "Problem number three:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 21.07,
+   "end": 22.29,
+   "text": "you don't speak English.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 22.5,
+   "end": 23.65,
+   "text": "Nobody does.",
+   "tags": [
+    "laughs"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 23.98,
+   "end": 27.1,
+   "text": "English won't show up for almost three hundred thousand years.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 27.52,
+   "end": 28.55,
+   "text": "Problem number four:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 28.86,
+   "end": 30.57,
+   "text": "you have never seen a screen.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 30.89,
+   "end": 33.65,
+   "text": "You think the light inside it is a very small,",
+   "tags": [
+    "whispers"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 33.82,
+   "end": 35.13,
+   "text": "very polite fire.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 35.48,
+   "end": 36.1,
+   "text": "So...",
+   "tags": [
+    "excited"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 36.25,
+   "end": 37.66,
+   "text": "let's install an upgrade.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 37.9,
+   "end": 39.24,
+   "text": "Version one point oh.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 39.47,
+   "end": 40.47,
+   "text": "Infinite battery.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 40.66,
+   "end": 42.23,
+   "text": "A magic connection to Claude.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 42.46,
+   "end": 43.1,
+   "text": "And...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 43.32,
+   "end": 43.74,
+   "text": "that's it.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 44.04,
+   "end": 44.84,
+   "text": "No other tech.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 45.19,
+   "end": 46.61,
+   "text": "Claude can't build anything.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 46.77,
+   "end": 47.55,
+   "text": "It can't hunt.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 47.71,
+   "end": 49.06,
+   "text": "It can't even hold a spear.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 49.35,
+   "end": 50.55,
+   "text": "It can only talk...",
+   "tags": [
+    "dramatic"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 50.83,
+   "end": 51.55,
+   "text": "and teach.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 51.91,
+   "end": 52.17,
+   "text": "Oh,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 52.32,
+   "end": 53.07,
+   "text": "and no.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 53.25,
+   "end": 54.51,
+   "text": "There are no dinosaurs.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 54.51,
+   "end": 55.77,
+   "text": "We'll get to that.",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": true
+  }
+ ]
+}
