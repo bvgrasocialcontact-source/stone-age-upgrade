@@ -76,12 +76,14 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - Meme efektleri (boom, plak cızırtısı, korna, boing, cırcır böceği, ding...): YouTube Ses Kitaplığı + ElevenLabs ses efekti aracıyla kendi versiyonlarımız (Buğra'nın aboneliği)
 - Amaç: güncel/modern internet dili, ama tamamen telifsiz
 
-## EP01 2K ÜST KALİTE RENDER (22.11 ~23:30, sürüyor)
+## EP01 2K ÜST KALİTE RENDER (22.11 23:30 → 23.11 02:10, TAMAMLANDI)
 - Karar (Buğra onayı): final video 2560×1440 (2K) olarak yeniden çizilecek; içerik/kurgu/ses aynı, sadece netlik
 - Neden: ilk master ~3 Mbps ve iki kez sıkıştırılmıştı; YouTube 1440p yüklemeleri daha yüksek kaliteli işliyor (1080p izleyene de daha net)
 - Yöntem: render.mjs'e --cap/--jq/--qp/--preset seçenekleri eklendi. Kareler JPEG kalite 100 (PNG 2K'da çok yavaştı, ~2.8 fps) → kayıpsız ara dosya (x264 qp 0) → tek seferlik final kodlama (preset slow, ~16–20 Mbps), ses AAC 384k
 - HATA BULUNDU (00:40): sahneler 1920×1080 sabit ölçülerle tasarlandığı için doğrudan 2560 pencerede açınca düzen bozuldu (bitiş ekranı, 3. perde vb.). O dosya teslim edilmedi, silindi.
 - ÇÖZÜM: render.mjs --dsf 1.3333333333 → sahne 1920×1080 düzende açılır, kare 4/3 yoğunlukla 2560×1440 yeniden çizilir (büyütme değil; netlik testi 2 kat keskin). Tüm perdeler bu yöntemle yeniden çekiliyor.
+- SONUÇ: 04_renders/EP01_FINAL_2K_What_If_You_Had_AI_300000_Years_Ago.mp4 — 2560×1440 30fps, H.264 CRF14 (tek kayıplı kodlama), ort. ~8.8 Mbps video (düz çizim stili az veri ister; kaliteyi CRF belirliyor) + AAC 384k, 11:58.8, -14.0 LUFS. 14 noktada eski onaylı videoyla karşılaştırıldı: düzen birebir aynı. md5 cbb6d9760ef76c634c462cba3dd99b66, 818.058.437 bayt
+- Teslim: 780 MB, sohbet (500 MB) ve PC kopyalama (400 MB) sınırını aşıyor → birebir 3 parçaya bölündü (EP01_2K_00/01/02.part) + EP01_2K_BIRLESTIR.bat (Windows copy /b) PC'de 04_renders klasörüne kondu. Buğra .bat'a çift tıklayınca tam dosya oluşur. YouTube'a bu yüklenecek.
 - Sürücü: /tmp/hq/run.sh (50 sn'lik parçalar, kaldığı yerden devam eder); kodlayıcı /tmp/hq/enc.sh (her perde bir kez: x264 medium, tune animation, CRF 14). Final birleştirme eski kare sayılarıyla (736,45,1680,5858,8283,3380,1223,360) + /tmp/full/mix_final.wav
 
 ## EP01 FİNAL KURGU (22.11 ~22:50) — teslim edildi
