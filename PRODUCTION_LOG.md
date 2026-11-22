@@ -30,5 +30,5 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - [ ] EP01 Flow planları (onay bekliyor, 01_script/ep01_flow_shots.md)
 - [x] EP01 oyuncu kadrosu (şef, kuzen, nine, Neandertal) — 03_assets/cast_ep01.png
 - [ ] EP01 arka planlar ve HUD kiti
-- [ ] Claude Code + GitHub deposuna geçiş (animasyon aşamasında)
+- [x] GitHub deposu kuruldu (22.11): github.com/bvgrasocialcontact-source/stone-age-upgrade (gizli). CLAUDE.md devir dosyası, taşınabilir motor (env.mjs, vendor/rough.js, fonts/). Telefondan Claude Code veya bu sohbetten devam edilebilir
 - [ ] EP01 render, thumbnail, açıklama, Shorts özeti
