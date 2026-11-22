@@ -33,7 +33,8 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - [x] EP01 kit (22.11): 03_engine/lib/kit.js — gece kampı, kamp ateşi + kıvılcım, karanlık/ışık maskesi, telefon yakın planı, neon taş şehir (TODAY?), yıl paneli, durum paneli, Real Fact kartı, neon etiket, soru balonu, PROBLEMS damgası, neon ikonlar
 - [x] EP01 1. perde animasyonu (22.11) onaylandı; Claude stiline göre güncellendi → ep01_perde1_v2.mp4
 - [x] EP01 2. perde animasyonu (22.11): scenes/ep01_act2.html → ep01_perde2_v2.mp4 (pil/taş, internet bölünmüş ekran, İngilizce geri sayım, kibar ateş, Claude güncellemesi + patch notes, dinozor X + devekuşu)
-- [ ] EP01 3. perde (ses değişmiyor, sıradaki)
+- [x] EP01 3. perde (22.11): scenes/ep01_act3.html → ep01_perde3_v1.mp4 (3:15). Gündüz kampı, kadro (şef/kuzen/nine/kardeş + kalabalık), Claude sohbet penceresi, Claude Code terminali + çizimler, toplantı tableti, sözlük kartları, su kaynatma diyagramı, patlama + Claude notu, sabun tarifi, çocuk hayatta kalma (gri ekran), bal + arılar, çetele kemiği, 1. yıl tacı, dinozor/devekuşu. Real Fact'ler: taşla kaynatma; ~4.800 yıllık sabun tarifi; avcı-toplayıcılarda çocukların ~%55–60'ı 15 yaşına ulaşırdı (Gurven & Kaplan 2007; Kaplan vd. 2000); bal; ~43.000 yıllık sayma kemiği; kuşlar = dinozor
+- [ ] EP01 4. perde (sıradaki)
 - [ ] EP01 4–5. perde: yeni metin onayı + yeniden seslendirme sonrası
 - [ ] EP01 6. perde
 - PC senkronu: Desktop\StoneAgeUpgrade masaüstü uygulamasıyla bağlandı; her adımda dosyalar oraya da yazılır

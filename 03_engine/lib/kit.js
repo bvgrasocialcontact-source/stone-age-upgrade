@@ -366,3 +366,159 @@
     g.appendChild(rc.line(x + 10 * s, y + 10 * s, x + 20 * s, y + 22 * s, ROUGH(seed + 2, { stroke: '#5E5852', strokeWidth: 2 })));
   };
 })();
+
+// ================= Act 3 additions =================
+(function () {
+  const { el, set, hash, clamp, BRAND: B } = SAU;
+  const CL = SAU.CL;
+  const R = (seed, extra = {}) => Object.assign({ seed, stroke: B.ink, strokeWidth: 3, roughness: 1, bowing: .5 }, extra);
+
+  // EP01 cast (same as 03_assets/cast_ep01.png) — use with SAU.makeYou(parent, rc, SAU.CAST.chief)
+  SAU.CAST = {
+    you: { variant: 'A', colors: { tech: '#FBEFE2' } },
+    chief: { hair: 'wild', beard: true, feather: true, necklace: true, colors: { skin: '#7A4E33', skinDark: '#5E3A24', hide: '#8E5A34' } },
+    cousin: { hair: 'short', colors: { skin: '#9A6544', skinDark: '#7A4A2E', hide: '#B88A58' } },
+    grandma: { hair: 'bun', wrinkles: true, colors: { hair: '#E8E2D6', skin: '#7E5236', skinDark: '#5E3A24', hide: '#9C6B44' } },
+    neanderthal: { hair: 'long', brow: true, beard: true, beardColor: '#8A4A28', colors: { hair: '#8A4A28', skin: '#C99A78', skinDark: '#A57A58', hide: '#7A6450' } },
+    brother: { hair: 'wild', necklace: true, colors: { skin: '#946044', skinDark: '#734628', hide: '#A9784C' } },
+  };
+
+  // day camp (warm morning savanna, no fixed region)
+  SAU.drawDayCamp = function (rc, seed, g, W, H, horizon) {
+    const P = SAU.makePen(1, rc, g, { seed, sw: 3 });
+    P.ellipse(W * .82, horizon - 300, 95, 95, '#FFE7B0', 3);
+    P.shape(`M ${-W} ${horizon} L ${-W * .4} ${horizon - 90} L ${W * .1} ${horizon - 80} L ${W * .22} ${horizon - 100} L ${W * .34} ${horizon - 40} L ${W * .5} ${horizon - 70} L ${W * .63} ${horizon - 130} L ${W * .78} ${horizon - 90} L ${W * .9} ${horizon - 115} L ${W * 1.4} ${horizon - 70} L ${W * 2} ${horizon - 60} L ${W * 2} ${horizon} Z`, '#C88A5A', 3);
+    const tx = W * .9, ty = horizon - 40;
+    P.shape(`M ${tx - 8} ${ty} L ${tx - 4} ${ty - 120} L ${tx - 40} ${ty - 170} L ${tx - 30} ${ty - 176} L ${tx + 2} ${ty - 136} L ${tx + 30} ${ty - 186} L ${tx + 40} ${ty - 180} L ${tx + 10} ${ty - 120} L ${tx + 10} ${ty} Z`, '#6B4A33', 3);
+    P.shape(`M ${tx - 150} ${ty - 170} Q ${tx - 60} ${ty - 230} ${tx + 10} ${ty - 205} Q ${tx + 90} ${ty - 240} ${tx + 160} ${ty - 180} Q ${tx + 10} ${ty - 160} ${tx - 150} ${ty - 170} Z`, '#7E8A4A', 3);
+    P.shape(`M ${-W} ${horizon} L ${W * 2} ${horizon} L ${W * 2} ${H * 2} L ${-W} ${H * 2} Z`, '#D9A566', 3);
+    // branch shelter
+    const sx = W * .12, sy = horizon + 40;
+    P.shape(`M ${sx - 120} ${sy + 60} L ${sx} ${sy - 120} L ${sx + 140} ${sy + 60} Z`, '#9C7448', 3);
+    for (let i = 0; i < 6; i++) P.stroke(`M ${sx - 100 + i * 40} ${sy + 60} L ${sx - 4 + i * 2} ${sy - 110}`, '#6B4A33', 3);
+    for (let i = 0; i < 14; i++) { const x = hash(i + 3) * W, y = horizon + 40 + hash(i + 17) * (H - horizon - 60); P.stroke(`M ${x} ${y} l ${30 + hash(i + 5) * 70} 0`, '#B8834C', 3); }
+    for (let i = 0; i < 9; i++) { const x = hash(i * 7 + 1) * W, y = horizon + 20 + hash(i * 3 + 2) * (H - horizon - 40); P.stroke(`M ${x} ${y} l -8 -26 M ${x + 6} ${y} l 2 -34 M ${x + 12} ${y} l 12 -24`, '#8C6A3A', 3); }
+  };
+  // background crowd: simple silhouettes (tribe of ~30)
+  SAU.drawCrowd = function (rc, seed, g, xs, y, s = 1, col = '#5A3A26') {
+    xs.forEach((x, i) => {
+      const h = (150 + hash(i * 5.1) * 40) * s, bob = 0;
+      g.appendChild(rc.path(`M ${x - 34 * s} ${y} L ${x - 30 * s} ${y - h * .55} Q ${x} ${y - h * .66} ${x + 30 * s} ${y - h * .55} L ${x + 34 * s} ${y} Z`, R(seed + i, { fill: col, fillStyle: 'solid', strokeWidth: 2.5 })));
+      g.appendChild(rc.circle(x, y - h * .78 + bob, 46 * s, R(seed + 40 + i, { fill: col, fillStyle: 'solid', strokeWidth: 2.5 })));
+    });
+  };
+
+  // Claude chat window (Claude look, no logo). msgs: [{t, who:'you'|'claude', text}]
+  SAU.makeChatWindow = function (parent, w = 640, h = 640) {
+    const g = el('g', {}, parent);
+    el('rect', { x: 8, y: 12, width: w, height: h, rx: 28, fill: '#000', opacity: .3 }, g);
+    el('rect', { width: w, height: h, rx: 28, fill: CL.cream, stroke: '#20262B', 'stroke-width': 10 }, g);
+    el('text', { x: w / 2, y: 58, 'text-anchor': 'middle', fill: CL.dark, 'font-family': CL.sans, 'font-weight': 500, 'font-size': 30 }, g).textContent = 'Claude';
+    el('line', { x1: 0, y1: 86, x2: w, y2: 86, stroke: CL.line, 'stroke-width': 2 }, g);
+    const body = el('g', {}, g);
+    return {
+      g, w, h,
+      show(msgs, t) {
+        while (body.firstChild) body.removeChild(body.firstChild);
+        const vis = msgs.filter(m => t >= m.t).slice(-4);
+        let y = 120;
+        vis.forEach(m => {
+          const k = clamp((t - m.t) / .25);
+          const mine = m.who === 'you';
+          const fs = m.size || (mine ? 34 : 40);
+          const tx = el('text', { 'font-family': mine ? CL.sans : CL.serif, 'font-weight': mine ? 500 : 500, 'font-size': fs, fill: CL.dark }, body);
+          tx.textContent = m.text;
+          const tw = Math.min(w - 120, tx.getComputedTextLength());
+          const bw = tw + 56, bh = fs + 40, bx = mine ? w - 30 - bw : 30;
+          const bub = el('rect', { x: bx, y: y + (1 - k) * 20, width: bw, height: bh, rx: 22, fill: mine ? '#E8E4D8' : '#FFFFFF', stroke: mine ? 'none' : CL.line, 'stroke-width': 2, opacity: k }, body);
+          body.insertBefore(bub, tx);
+          set(tx, { x: bx + 28, y: y + (1 - k) * 20 + bh / 2 + fs * .35, opacity: k });
+          if (!mine) el('circle', { cx: bx + 12, cy: y + bh + 18, r: 0, fill: CL.orange }, body);
+          y += bh + 26;
+        });
+      },
+    };
+  };
+
+  // Claude note card (cream, orange bar, serif)
+  SAU.makeClaudeNote = function (parent, lines, w = 620, fs = 44) {
+    const g = el('g', {}, parent), h = 90 + lines.length * (fs + 14);
+    el('rect', { x: 8, y: 10, width: w, height: h, rx: 18, fill: '#000', opacity: .3 }, g);
+    el('rect', { width: w, height: h, rx: 18, fill: CL.cream, stroke: CL.orange, 'stroke-width': 4 }, g);
+    el('rect', { width: 14, height: h, rx: 7, fill: CL.orange }, g);
+    el('text', { x: 40, y: 52, fill: CL.orangeDeep, 'font-family': CL.sans, 'font-weight': 700, 'font-size': 24, 'letter-spacing': 2 }, g).textContent = 'NOTE FROM CLAUDE';
+    lines.forEach((ln, i) => { el('text', { x: 40, y: 104 + i * (fs + 14), fill: CL.dark, 'font-family': CL.serif, 'font-weight': 500, 'font-size': fs }, g).textContent = ln; });
+    return { g, w, h };
+  };
+
+  // Claude Code terminal panel (dark, orange accents; header is plain text, no logo)
+  SAU.makeCodePanel = function (parent, w = 760, h = 420) {
+    const g = el('g', {}, parent);
+    el('rect', { x: 8, y: 12, width: w, height: h, rx: 18, fill: '#000', opacity: .35 }, g);
+    el('rect', { width: w, height: h, rx: 18, fill: CL.dark }, g);
+    el('rect', { width: w, height: h, rx: 18, fill: 'none', stroke: CL.orange, 'stroke-width': 3 }, g);
+    [0, 1, 2].forEach(i => el('circle', { cx: 32 + i * 26, cy: 30, r: 8, fill: ['#5A5955', '#5A5955', '#5A5955'][i] }, g));
+    el('text', { x: w / 2, y: 38, 'text-anchor': 'middle', fill: '#B0AEA5', 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 24 }, g).textContent = 'Claude Code';
+    el('line', { x1: 0, y1: 58, x2: w, y2: 58, stroke: '#2B2A27', 'stroke-width': 2 }, g);
+    const body = el('g', {}, g);
+    return {
+      g, w, h,
+      // lines: [{t, text, kind:'prompt'|'out'|'ok'}], typed at cps chars/s
+      show(lines, t, cps = 30) {
+        while (body.firstChild) body.removeChild(body.firstChild);
+        let y = 100;
+        lines.filter(l => t >= l.t).slice(-8).forEach(l => {
+          const n = l.kind === 'prompt' ? Math.floor((t - l.t) * cps) : l.text.length;
+          const col = l.kind === 'prompt' ? CL.cream : l.kind === 'ok' ? '#8FCB7A' : '#B0AEA5';
+          if (l.kind === 'prompt') el('text', { x: 28, y, fill: CL.orange, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 30 }, body).textContent = '>';
+          el('text', { x: l.kind === 'prompt' ? 58 : 58, y, fill: col, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 28 }, body).textContent = (l.kind === 'out' ? '● ' : l.kind === 'ok' ? '✓ ' : '') + l.text.slice(0, n);
+          y += 44;
+        });
+      },
+    };
+  };
+
+  // stone tablet (agenda etc.)
+  SAU.drawTablet = function (rc, seed, g, w, h) {
+    g.appendChild(rc.path(`M ${-w / 2} ${-h / 2 + 30} Q ${-w / 2} ${-h / 2} ${-w / 2 + 40} ${-h / 2} L ${w / 2 - 30} ${-h / 2 + 8} Q ${w / 2} ${-h / 2 + 12} ${w / 2 - 6} ${-h / 2 + 50} L ${w / 2} ${h / 2 - 30} Q ${w / 2 - 4} ${h / 2} ${w / 2 - 40} ${h / 2} L ${-w / 2 + 30} ${h / 2 - 6} Q ${-w / 2} ${h / 2 - 10} ${-w / 2 + 6} ${h / 2 - 50} Z`, R(seed, { fill: '#A79C8E', fillStyle: 'solid', strokeWidth: 5 })));
+    for (let i = 0; i < 5; i++) g.appendChild(rc.line(-w / 2 + 30 + hash(i) * w * .7, -h / 2 + 30 + hash(i + 3) * h * .8, -w / 2 + 60 + hash(i) * w * .7, -h / 2 + 40 + hash(i + 3) * h * .8, R(seed + i, { stroke: '#857A6C', strokeWidth: 2 })));
+  };
+
+  // explosion burst at (0,0), k = 0..1
+  SAU.drawBoom = function (rc, seed, g, k, r = 180) {
+    const n = 12, pts = [];
+    for (let i = 0; i < n * 2; i++) { const a = i / (n * 2) * Math.PI * 2, rr = (i % 2 ? .5 : 1) * r * (.6 + .4 * k) * (0.85 + hash(i + seed * .01) * .3); pts.push([Math.cos(a) * rr, Math.sin(a) * rr]); }
+    g.appendChild(rc.polygon(pts, R(seed, { fill: '#FFB43C', fillStyle: 'solid', strokeWidth: 5 })));
+    g.appendChild(rc.polygon(pts.map(([x, y]) => [x * .55, y * .55]), R(seed + 1, { fill: '#FFF1A8', fillStyle: 'solid', strokeWidth: 3 })));
+  };
+
+  // bee
+  SAU.drawBee = function (rc, seed, g) {
+    g.appendChild(rc.ellipse(0, 0, 44, 30, R(seed, { fill: '#F2C230', fillStyle: 'solid' })));
+    g.appendChild(rc.line(-6, -14, -6, 14, R(seed + 1, { strokeWidth: 5 })));
+    g.appendChild(rc.line(8, -13, 8, 13, R(seed + 2, { strokeWidth: 5 })));
+    g.appendChild(rc.ellipse(-4, -22, 26, 18, R(seed + 3, { fill: '#F3F7FF', fillStyle: 'solid', strokeWidth: 2 })));
+    g.appendChild(rc.ellipse(10, -20, 22, 16, R(seed + 4, { fill: '#F3F7FF', fillStyle: 'solid', strokeWidth: 2 })));
+  };
+
+  // microbe
+  SAU.drawMicrobe = function (rc, seed, g, col = '#7DA05A') {
+    g.appendChild(rc.ellipse(0, 0, 70, 52, R(seed, { fill: col, fillStyle: 'solid' })));
+    for (let i = 0; i < 6; i++) { const a = i / 6 * Math.PI * 2; g.appendChild(rc.line(Math.cos(a) * 34, Math.sin(a) * 25, Math.cos(a) * 50, Math.sin(a) * 38, R(seed + i, { strokeWidth: 3 }))); }
+    el('circle', { cx: -10, cy: -4, r: 5, fill: B.ink }, g); el('circle', { cx: 10, cy: -4, r: 5, fill: B.ink }, g);
+    el('path', { d: 'M -10 10 Q 0 4 10 10', stroke: B.ink, 'stroke-width': 3, fill: 'none' }, g);
+  };
+
+  // bone with n tally notches (0..maxN)
+  SAU.drawTallyBone = function (rc, seed, g, n, w = 520) {
+    g.appendChild(rc.path(`M ${-w / 2 + 30} -22 L ${w / 2 - 30} -22 Q ${w / 2} -60 ${w / 2 + 20} -26 Q ${w / 2 + 34} 0 ${w / 2 + 20} 26 Q ${w / 2} 60 ${w / 2 - 30} 22 L ${-w / 2 + 30} 22 Q ${-w / 2} 60 ${-w / 2 - 20} 26 Q ${-w / 2 - 34} 0 ${-w / 2 - 20} -26 Q ${-w / 2} -60 ${-w / 2 + 30} -22 Z`, R(seed, { fill: '#EFE3C8', fillStyle: 'solid', strokeWidth: 4 })));
+    for (let i = 0; i < n; i++) { const x = -w / 2 + 50 + i * ((w - 100) / 24); g.appendChild(rc.line(x, -16, x + 4, 16, R(seed + 10 + i, { stroke: '#6B4A33', strokeWidth: 4 }))); }
+  };
+
+  // honey pot
+  SAU.drawHoney = function (rc, seed, g) {
+    g.appendChild(rc.path('M -60 -40 Q -80 60 0 70 Q 80 60 60 -40 Z', R(seed, { fill: '#B8763C', fillStyle: 'solid' })));
+    g.appendChild(rc.ellipse(0, -40, 124, 30, R(seed + 1, { fill: '#F2A922', fillStyle: 'solid' })));
+    g.appendChild(rc.path('M -20 -40 Q -24 0 -10 10 Q 0 -10 0 -40 Z', R(seed + 2, { fill: '#F2A922', fillStyle: 'solid', strokeWidth: 2 })));
+  };
+})();
