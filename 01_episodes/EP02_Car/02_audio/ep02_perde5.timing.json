@@ -1,0 +1,685 @@
+{
+ "audio": "ep02_perde5.mp3",
+ "duration": 109.77,
+ "rate_wps": 3.33,
+ "speech_segments": [
+  [
+   0.03,
+   0.53
+  ],
+  [
+   0.66,
+   2.07
+  ],
+  [
+   2.27,
+   3.83
+  ],
+  [
+   4.05,
+   6.96
+  ],
+  [
+   7.16,
+   8.66
+  ],
+  [
+   9.04,
+   10.5
+  ],
+  [
+   10.98,
+   11.33
+  ],
+  [
+   11.64,
+   13.41
+  ],
+  [
+   13.53,
+   14.19
+  ],
+  [
+   14.31,
+   15.28
+  ],
+  [
+   15.49,
+   17.65
+  ],
+  [
+   18.11,
+   18.43
+  ],
+  [
+   18.77,
+   21.33
+  ],
+  [
+   21.57,
+   23.01
+  ],
+  [
+   23.2,
+   24.55
+  ],
+  [
+   24.78,
+   25.95
+  ],
+  [
+   26.45,
+   26.82
+  ],
+  [
+   27.13,
+   29.4
+  ],
+  [
+   29.57,
+   30.82
+  ],
+  [
+   30.96,
+   34.1
+  ],
+  [
+   34.58,
+   34.98
+  ],
+  [
+   35.3,
+   37.02
+  ],
+  [
+   37.24,
+   38.15
+  ],
+  [
+   38.28,
+   39.6
+  ],
+  [
+   39.82,
+   41.2
+  ],
+  [
+   41.42,
+   42.29
+  ],
+  [
+   42.42,
+   43.78
+  ],
+  [
+   44.27,
+   44.73
+  ],
+  [
+   45.05,
+   49.64
+  ],
+  [
+   49.87,
+   51.07
+  ],
+  [
+   51.43,
+   51.93
+  ],
+  [
+   52.43,
+   52.94
+  ],
+  [
+   53.24,
+   55.03
+  ],
+  [
+   55.54,
+   56.15
+  ],
+  [
+   56.35,
+   58.25
+  ],
+  [
+   58.73,
+   59.21
+  ],
+  [
+   59.47,
+   61.79
+  ],
+  [
+   61.91,
+   63.11
+  ],
+  [
+   63.33,
+   64.4
+  ],
+  [
+   64.68,
+   65.79
+  ],
+  [
+   66.02,
+   67.51
+  ],
+  [
+   67.78,
+   68.13
+  ],
+  [
+   68.69,
+   69.01
+  ],
+  [
+   69.3,
+   72.62
+  ],
+  [
+   72.81,
+   77.2
+  ],
+  [
+   77.66,
+   78.09
+  ],
+  [
+   78.37,
+   79.38
+  ],
+  [
+   79.52,
+   81.1
+  ],
+  [
+   81.27,
+   84.15
+  ],
+  [
+   84.68,
+   85.05
+  ],
+  [
+   85.32,
+   87.11
+  ],
+  [
+   87.29,
+   89.34
+  ],
+  [
+   89.85,
+   91.5
+  ],
+  [
+   91.76,
+   93.92
+  ],
+  [
+   94.13,
+   96.94
+  ],
+  [
+   97.16,
+   100.32
+  ],
+  [
+   100.82,
+   102.56
+  ],
+  [
+   102.83,
+   105.61
+  ],
+  [
+   105.93,
+   108.52
+  ],
+  [
+   108.83,
+   109.63
+  ]
+ ],
+ "phrases": [
+  {
+   "start": 0.03,
+   "end": 0.53,
+   "text": "So,",
+   "tags": [
+    "excited"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 0.66,
+   "end": 2.07,
+   "text": "fast forward to today.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 2.27,
+   "end": 3.83,
+   "text": "Two thousand twenty-six.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 4.05,
+   "end": 4.63,
+   "text": "Except here,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 4.63,
+   "end": 6.96,
+   "text": "they call it the year three hundred thousand,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 7.16,
+   "end": 7.91,
+   "text": "A.V.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 7.91,
+   "end": 8.66,
+   "text": "After Vroom.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 9.04,
+   "end": 10.5,
+   "text": "Here's what's different from your world.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 10.98,
+   "end": 11.33,
+   "text": "One.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 11.64,
+   "end": 15.28,
+   "text": "People here have been driving for almost three hundred thousand years.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 15.49,
+   "end": 17.65,
+   "text": "You've been driving for about one hundred and forty.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 18.11,
+   "end": 18.43,
+   "text": "Two.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 18.77,
+   "end": 21.33,
+   "text": "Every city on Earth is built around one road:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 21.57,
+   "end": 23.01,
+   "text": "the Old Ostrich Road.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 23.2,
+   "end": 24.55,
+   "text": "The first road ever.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 24.78,
+   "end": 25.95,
+   "text": "It's a holiday route now.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 26.45,
+   "end": 26.82,
+   "text": "Three.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 27.13,
+   "end": 29.4,
+   "text": "The biggest sport on the planet isn't football.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 29.57,
+   "end": 30.82,
+   "text": "It's ostrich racing.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 30.96,
+   "end": 34.1,
+   "text": "And the ostrich still beats most cars off the line.",
+   "tags": [
+    "laughs"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 34.58,
+   "end": 34.98,
+   "text": "Four.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 35.3,
+   "end": 37.02,
+   "text": "Mammoths never went extinct.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 37.24,
+   "end": 39.6,
+   "text": "They pulled carts for fifty thousand years.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 39.82,
+   "end": 41.2,
+   "text": "Then cars took their jobs.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 41.42,
+   "end": 42.29,
+   "text": "Now they're retired,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 42.42,
+   "end": 43.78,
+   "text": "in giant nature parks.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 44.27,
+   "end": 44.73,
+   "text": "Five.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 45.05,
+   "end": 49.64,
+   "text": "Every car on Earth still has a cup holder in exactly the same place as the First Car.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 49.87,
+   "end": 51.07,
+   "text": "Nobody remembers why.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 51.43,
+   "end": 51.93,
+   "text": "Tradition.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 52.43,
+   "end": 52.94,
+   "text": "Six.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 53.24,
+   "end": 55.03,
+   "text": "The word for \"hello\" is a honk.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 55.54,
+   "end": 56.15,
+   "text": "A short one.",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 56.35,
+   "end": 58.25,
+   "text": "A long honk is very rude.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 58.73,
+   "end": 59.21,
+   "text": "Seven.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 59.47,
+   "end": 61.79,
+   "text": "The longest traffic jam in history lasted forty-one years.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 61.91,
+   "end": 63.11,
+   "text": "People were born in it.",
+   "tags": [
+    "deadpan"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 63.33,
+   "end": 64.4,
+   "text": "People got married in it.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 64.68,
+   "end": 67.51,
+   "text": "Somebody wrote a whole book about it.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 67.78,
+   "end": 68.13,
+   "text": "In it.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 68.69,
+   "end": 69.01,
+   "text": "Eight.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 69.3,
+   "end": 72.62,
+   "text": "Wheels are so old that nobody thinks of them as an invention.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 72.81,
+   "end": 74.64,
+   "text": "Asking \"who invented the wheel?\"",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 74.64,
+   "end": 77.2,
+   "text": "here is like asking \"who invented walking?\"",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 77.66,
+   "end": 78.09,
+   "text": "Nine.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 78.37,
+   "end": 79.38,
+   "text": "Speaking of walking:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 79.52,
+   "end": 81.1,
+   "text": "it's an extreme sport now.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 81.27,
+   "end": 84.15,
+   "text": "Walking ten kilometers gets you on the news.",
+   "tags": [
+    "laughs"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 84.68,
+   "end": 85.05,
+   "text": "Ten.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 85.32,
+   "end": 87.11,
+   "text": "Nobody calls it a steering wheel.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 87.29,
+   "end": 89.34,
+   "text": "Everyone still calls it the round snake.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 89.85,
+   "end": 91.17,
+   "text": "Not everything is better,",
+   "tags": [
+    "deadpan"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 91.17,
+   "end": 91.5,
+   "text": "though.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 91.76,
+   "end": 93.92,
+   "text": "A third of the land is covered by roads.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 94.13,
+   "end": 96.94,
+   "text": "Wild animals live in special \"road-free zones.\"",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 97.16,
+   "end": 100.32,
+   "text": "And the air in some cities still smells like the black water.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 100.82,
+   "end": 102.56,
+   "text": "And maybe the biggest difference of all:",
+   "tags": [
+    "softly"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 102.83,
+   "end": 105.61,
+   "text": "the first thing the car taught humanity wasn't speed.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 105.93,
+   "end": 108.52,
+   "text": "It was that the people over the hill weren't monsters.",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 108.83,
+   "end": 109.63,
+   "text": "They were neighbors.",
+   "tags": [],
+   "para_end": true
+  }
+ ]
+}

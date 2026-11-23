@@ -1,0 +1,1734 @@
+{
+ "audio": "ep02_perde4.mp3",
+ "duration": 255.03,
+ "rate_wps": 3.19,
+ "speech_segments": [
+  [
+   0.11,
+   1.58
+  ],
+  [
+   1.92,
+   2.6
+  ],
+  [
+   2.91,
+   4.07
+  ],
+  [
+   4.31,
+   5.09
+  ],
+  [
+   5.33,
+   6.96
+  ],
+  [
+   7.22,
+   9.26
+  ],
+  [
+   9.48,
+   10.05
+  ],
+  [
+   10.34,
+   11.35
+  ],
+  [
+   11.68,
+   12.95
+  ],
+  [
+   13.22,
+   15.4
+  ],
+  [
+   15.71,
+   16.81
+  ],
+  [
+   17.1,
+   18.4
+  ],
+  [
+   18.55,
+   21.24
+  ],
+  [
+   21.46,
+   24.17
+  ],
+  [
+   24.51,
+   25.07
+  ],
+  [
+   25.52,
+   26.29
+  ],
+  [
+   26.63,
+   28.7
+  ],
+  [
+   28.94,
+   30.3
+  ],
+  [
+   30.53,
+   32.12
+  ],
+  [
+   32.45,
+   33.1
+  ],
+  [
+   33.22,
+   35.04
+  ],
+  [
+   35.35,
+   38.15
+  ],
+  [
+   38.53,
+   39.08
+  ],
+  [
+   39.32,
+   40.77
+  ],
+  [
+   40.95,
+   43.57
+  ],
+  [
+   43.76,
+   46.5
+  ],
+  [
+   46.8,
+   47.55
+  ],
+  [
+   47.78,
+   49.48
+  ],
+  [
+   49.77,
+   51.09
+  ],
+  [
+   51.34,
+   52.72
+  ],
+  [
+   53.23,
+   54.25
+  ],
+  [
+   54.56,
+   56.73
+  ],
+  [
+   56.95,
+   59.33
+  ],
+  [
+   59.52,
+   61.71
+  ],
+  [
+   61.96,
+   63.72
+  ],
+  [
+   63.96,
+   66.99
+  ],
+  [
+   67.27,
+   70.98
+  ],
+  [
+   71.22,
+   72.19
+  ],
+  [
+   72.34,
+   74.36
+  ],
+  [
+   74.66,
+   75.86
+  ],
+  [
+   76.14,
+   77.43
+  ],
+  [
+   77.91,
+   78.94
+  ],
+  [
+   79.2,
+   80.49
+  ],
+  [
+   80.74,
+   83.08
+  ],
+  [
+   83.25,
+   85.13
+  ],
+  [
+   85.45,
+   85.99
+  ],
+  [
+   86.16,
+   86.96
+  ],
+  [
+   87.21,
+   91.52
+  ],
+  [
+   91.74,
+   92.27
+  ],
+  [
+   92.54,
+   93.99
+  ],
+  [
+   94.19,
+   95.38
+  ],
+  [
+   95.84,
+   97.01
+  ],
+  [
+   97.28,
+   99.33
+  ],
+  [
+   99.61,
+   102.12
+  ],
+  [
+   102.29,
+   104.14
+  ],
+  [
+   104.5,
+   106.14
+  ],
+  [
+   106.3,
+   108.22
+  ],
+  [
+   108.45,
+   110.31
+  ],
+  [
+   110.54,
+   112.25
+  ],
+  [
+   112.74,
+   113.92
+  ],
+  [
+   114.19,
+   115.92
+  ],
+  [
+   116.1,
+   117.94
+  ],
+  [
+   118.12,
+   120.14
+  ],
+  [
+   120.33,
+   123.22
+  ],
+  [
+   123.49,
+   124.11
+  ],
+  [
+   124.39,
+   124.81
+  ],
+  [
+   125.07,
+   125.82
+  ],
+  [
+   125.98,
+   127.49
+  ],
+  [
+   127.9,
+   129.17
+  ],
+  [
+   129.44,
+   132.04
+  ],
+  [
+   132.26,
+   132.65
+  ],
+  [
+   132.88,
+   133.44
+  ],
+  [
+   133.58,
+   134.51
+  ],
+  [
+   134.68,
+   135.37
+  ],
+  [
+   135.56,
+   136.79
+  ],
+  [
+   137.06,
+   138.62
+  ],
+  [
+   138.88,
+   143.06
+  ],
+  [
+   143.24,
+   144.43
+  ],
+  [
+   144.69,
+   145.14
+  ],
+  [
+   145.41,
+   145.8
+  ],
+  [
+   146.09,
+   147.77
+  ],
+  [
+   148.01,
+   149.86
+  ],
+  [
+   150.1,
+   151.93
+  ],
+  [
+   152.2,
+   155.96
+  ],
+  [
+   156.42,
+   157.69
+  ],
+  [
+   157.99,
+   158.96
+  ],
+  [
+   159.2,
+   160.22
+  ],
+  [
+   160.46,
+   161.31
+  ],
+  [
+   161.57,
+   162.27
+  ],
+  [
+   162.5,
+   163.55
+  ],
+  [
+   163.82,
+   166.34
+  ],
+  [
+   166.63,
+   167.83
+  ],
+  [
+   168.0,
+   169.39
+  ],
+  [
+   169.62,
+   171.21
+  ],
+  [
+   171.44,
+   172.18
+  ],
+  [
+   172.39,
+   175.5
+  ],
+  [
+   175.93,
+   177.23
+  ],
+  [
+   177.49,
+   179.3
+  ],
+  [
+   179.58,
+   180.76
+  ],
+  [
+   181.04,
+   183.24
+  ],
+  [
+   183.41,
+   185.23
+  ],
+  [
+   185.43,
+   187.29
+  ],
+  [
+   187.58,
+   188.48
+  ],
+  [
+   188.89,
+   189.9
+  ],
+  [
+   190.05,
+   193.37
+  ],
+  [
+   193.68,
+   194.02
+  ],
+  [
+   194.18,
+   195.53
+  ],
+  [
+   195.74,
+   198.01
+  ],
+  [
+   198.24,
+   198.87
+  ],
+  [
+   199.09,
+   199.62
+  ],
+  [
+   199.88,
+   200.44
+  ],
+  [
+   200.8,
+   201.26
+  ],
+  [
+   201.4,
+   203.41
+  ],
+  [
+   203.68,
+   204.91
+  ],
+  [
+   205.22,
+   205.74
+  ],
+  [
+   205.87,
+   207.47
+  ],
+  [
+   207.67,
+   208.55
+  ],
+  [
+   208.73,
+   211.04
+  ],
+  [
+   211.18,
+   213.76
+  ],
+  [
+   214.16,
+   215.47
+  ],
+  [
+   215.72,
+   218.15
+  ],
+  [
+   218.35,
+   219.35
+  ],
+  [
+   219.49,
+   221.78
+  ],
+  [
+   222.12,
+   222.77
+  ],
+  [
+   223.15,
+   223.59
+  ],
+  [
+   223.98,
+   225.19
+  ],
+  [
+   225.37,
+   226.07
+  ],
+  [
+   226.23,
+   229.26
+  ],
+  [
+   229.46,
+   229.83
+  ],
+  [
+   230.01,
+   231.03
+  ],
+  [
+   231.36,
+   231.97
+  ],
+  [
+   232.24,
+   233.1
+  ],
+  [
+   233.31,
+   235.4
+  ],
+  [
+   235.64,
+   236.55
+  ],
+  [
+   236.71,
+   237.38
+  ],
+  [
+   237.8,
+   239.4
+  ],
+  [
+   239.63,
+   241.31
+  ],
+  [
+   241.47,
+   243.79
+  ],
+  [
+   244.0,
+   244.85
+  ],
+  [
+   245.05,
+   246.08
+  ],
+  [
+   246.3,
+   247.53
+  ],
+  [
+   247.69,
+   252.47
+  ],
+  [
+   252.77,
+   253.81
+  ],
+  [
+   254.08,
+   254.85
+  ]
+ ],
+ "phrases": [
+  {
+   "start": 0.11,
+   "end": 0.4,
+   "text": "Okay.",
+   "tags": [
+    "excited"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 0.4,
+   "end": 1.58,
+   "text": "Let's speed this up.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 1.92,
+   "end": 2.6,
+   "text": "Year ten.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 2.91,
+   "end": 4.07,
+   "text": "Everyone wants a car.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 4.31,
+   "end": 5.09,
+   "text": "There's only one.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 5.33,
+   "end": 6.96,
+   "text": "So the tribe builds copies:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 7.22,
+   "end": 9.26,
+   "text": "a wooden box on four round wheels.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 9.48,
+   "end": 10.05,
+   "text": "No engine.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 10.34,
+   "end": 11.35,
+   "text": "Somebody has to pull it.",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 11.68,
+   "end": 12.31,
+   "text": "At first,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 12.31,
+   "end": 12.95,
+   "text": "people pull.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 13.22,
+   "end": 15.4,
+   "text": "Then someone has a terrible idea.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 15.71,
+   "end": 16.81,
+   "text": "The ostrich.",
+   "tags": [
+    "mischievously"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 17.1,
+   "end": 18.4,
+   "text": "Two ostriches on a rope,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 18.55,
+   "end": 19.56,
+   "text": "one wooden cart,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 19.56,
+   "end": 21.24,
+   "text": "and a very brave passenger.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 21.46,
+   "end": 24.17,
+   "text": "The first dinosaur-powered vehicle in history.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 24.51,
+   "end": 25.07,
+   "text": "Technically.",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 25.52,
+   "end": 26.29,
+   "text": "Year fifty.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 26.63,
+   "end": 28.7,
+   "text": "The tracks the carts leave become paths.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 28.94,
+   "end": 30.3,
+   "text": "The paths become roads.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 30.53,
+   "end": 33.1,
+   "text": "And on the very first road...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 33.22,
+   "end": 35.04,
+   "text": "the very first traffic jam.",
+   "tags": [
+    "sighs"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 35.35,
+   "end": 38.15,
+   "text": "Forty ostrich carts and one confused mammoth.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 38.53,
+   "end": 39.08,
+   "text": "The good part?",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 39.32,
+   "end": 40.77,
+   "text": "Roads connect everything.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 40.95,
+   "end": 41.7,
+   "text": "Tribes trade,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 41.7,
+   "end": 42.07,
+   "text": "travel,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 42.07,
+   "end": 43.2,
+   "text": "marry each other.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 43.2,
+   "end": 43.57,
+   "text": "Words,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 43.76,
+   "end": 46.5,
+   "text": "songs and ideas move faster than ever.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 46.8,
+   "end": 47.55,
+   "text": "The bad part?",
+   "tags": [
+    "serious"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 47.78,
+   "end": 49.48,
+   "text": "Roads cut straight through the land.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 49.77,
+   "end": 51.09,
+   "text": "Herds stop crossing them.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 51.34,
+   "end": 52.72,
+   "text": "Some valleys go quiet.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 53.23,
+   "end": 54.25,
+   "text": "Year one hundred.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 54.56,
+   "end": 55.64,
+   "text": "Too many carts.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 55.64,
+   "end": 56.73,
+   "text": "Too many crashes.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 56.95,
+   "end": 59.33,
+   "text": "So the elders invent the first traffic rule:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 59.52,
+   "end": 61.71,
+   "text": "the big red car always goes first.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 61.96,
+   "end": 63.72,
+   "text": "Then they invent the first traffic light:",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 63.96,
+   "end": 64.97,
+   "text": "a man named Ug,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 64.97,
+   "end": 66.99,
+   "text": "holding a red stone and a green leaf.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 67.27,
+   "end": 68.01,
+   "text": "In your world,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 68.01,
+   "end": 70.98,
+   "text": "the first traffic light went up in London in eighteen sixty-eight.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 71.22,
+   "end": 72.19,
+   "text": "It ran on gas...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 72.34,
+   "end": 73.78,
+   "text": "and a few weeks later,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 73.78,
+   "end": 74.36,
+   "text": "it exploded.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 74.66,
+   "end": 75.86,
+   "text": "Ug never exploded.",
+   "tags": [
+    "deadpan"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 76.14,
+   "end": 77.43,
+   "text": "Ug is very proud of that.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 77.91,
+   "end": 78.94,
+   "text": "Year two hundred:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 79.2,
+   "end": 80.49,
+   "text": "the first speeding ticket.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 80.74,
+   "end": 83.08,
+   "text": "It's carved on a forty-kilo stone slab.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 83.25,
+   "end": 85.13,
+   "text": "You have to carry it home yourself.",
+   "tags": [
+    "laughs"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 85.45,
+   "end": 85.99,
+   "text": "The fine:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 86.16,
+   "end": 86.96,
+   "text": "one gazelle.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 87.21,
+   "end": 87.97,
+   "text": "In your world,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 87.97,
+   "end": 91.52,
+   "text": "the first speeding fine went to a man in England in eighteen ninety-six.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 91.74,
+   "end": 92.27,
+   "text": "His speed?",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 92.54,
+   "end": 93.99,
+   "text": "Thirteen kilometers an hour.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 94.19,
+   "end": 95.38,
+   "text": "Four times the limit.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 95.84,
+   "end": 97.01,
+   "text": "Year one thousand.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 97.28,
+   "end": 99.33,
+   "text": "The First Car now sits in a temple.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 99.61,
+   "end": 102.12,
+   "text": "The engine has been running for a thousand years,",
+   "tags": [
+    "whispers"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 102.29,
+   "end": 104.14,
+   "text": "because nobody knows how to turn it off.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 104.5,
+   "end": 106.14,
+   "text": "The honk is used as a prayer bell.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 106.3,
+   "end": 108.22,
+   "text": "And kids learn to read from the manual.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 108.45,
+   "end": 110.31,
+   "text": "The first sentence everybody can read:",
+   "tags": [
+    "proud"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 110.54,
+   "end": 112.25,
+   "text": "\"Check tire pressure every month.\"",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 112.74,
+   "end": 113.92,
+   "text": "Year three thousand.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 114.19,
+   "end": 115.18,
+   "text": "To copy the engine,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 115.18,
+   "end": 115.92,
+   "text": "you need metal.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 116.1,
+   "end": 117.94,
+   "text": "So people learn to melt rocks:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 118.12,
+   "end": 118.4,
+   "text": "copper,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 118.4,
+   "end": 118.97,
+   "text": "then bronze,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 118.97,
+   "end": 119.54,
+   "text": "then iron.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 119.54,
+   "end": 123.22,
+   "text": "And they go looking for the black water that smells like the car.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 123.49,
+   "end": 124.11,
+   "text": "They find it.",
+   "tags": [
+    "serious"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 124.39,
+   "end": 124.81,
+   "text": "Oil.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 125.07,
+   "end": 127.49,
+   "text": "And with oil come the first oil wars.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 127.9,
+   "end": 129.17,
+   "text": "Year five thousand.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 129.44,
+   "end": 132.04,
+   "text": "The first real car built by human hands.",
+   "tags": [
+    "dramatic"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 132.26,
+   "end": 132.65,
+   "text": "Wood.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 132.88,
+   "end": 133.44,
+   "text": "Bronze.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 133.58,
+   "end": 134.51,
+   "text": "A steam engine.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 134.68,
+   "end": 135.37,
+   "text": "Top speed:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 135.56,
+   "end": 136.79,
+   "text": "eight kilometers an hour.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 137.06,
+   "end": 138.62,
+   "text": "The ostrich is not impressed.",
+   "tags": [
+    "deadpan"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 138.88,
+   "end": 139.72,
+   "text": "In your world,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 139.72,
+   "end": 143.06,
+   "text": "the first real car came from Karl Benz in eighteen eighty-six.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 143.24,
+   "end": 144.43,
+   "text": "And the first long road trip?",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 144.69,
+   "end": 145.14,
+   "text": "His wife,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 145.41,
+   "end": 145.8,
+   "text": "Bertha.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 146.09,
+   "end": 147.77,
+   "text": "She took the car without asking,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 148.01,
+   "end": 149.86,
+   "text": "drove over a hundred kilometers...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 150.1,
+   "end": 151.93,
+   "text": "and bought fuel at a pharmacy.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 152.2,
+   "end": 155.96,
+   "text": "That pharmacy is called the first gas station in history.",
+   "tags": [
+    "laughs"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 156.42,
+   "end": 157.69,
+   "text": "Year six thousand.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 157.99,
+   "end": 158.96,
+   "text": "Car companies!",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 159.2,
+   "end": 160.22,
+   "text": "Mammoth Motors.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 160.46,
+   "end": 161.31,
+   "text": "Rockswagen.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 161.57,
+   "end": 162.27,
+   "text": "Fer-rock-i.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 162.5,
+   "end": 163.55,
+   "text": "Ostrich Martin.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 163.82,
+   "end": 166.34,
+   "text": "And the strangest cars ever built.",
+   "tags": [
+    "mischievously"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 166.63,
+   "end": 167.83,
+   "text": "A car with legs,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 168.0,
+   "end": 169.39,
+   "text": "for places without roads.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 169.62,
+   "end": 171.21,
+   "text": "A car that swims.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 171.44,
+   "end": 172.18,
+   "text": "A convertible...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 172.39,
+   "end": 173.94,
+   "text": "which was just a normal car,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 173.94,
+   "end": 175.5,
+   "text": "until a mammoth sat on it.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 175.93,
+   "end": 177.23,
+   "text": "Year ten thousand.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 177.49,
+   "end": 179.3,
+   "text": "One car for every family.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 179.58,
+   "end": 180.76,
+   "text": "And the price shows up.",
+   "tags": [
+    "serious"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 181.04,
+   "end": 183.24,
+   "text": "Traffic jams that last three days.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 183.41,
+   "end": 185.23,
+   "text": "Smoke over every valley.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 185.43,
+   "end": 187.29,
+   "text": "Kids can't play in the street anymore.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 187.58,
+   "end": 188.48,
+   "text": "And crashes.",
+   "tags": [
+    "softly"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 188.89,
+   "end": 189.9,
+   "text": "Even in your world,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 190.05,
+   "end": 193.37,
+   "text": "roads take about one point two million lives every year.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 193.68,
+   "end": 194.02,
+   "text": "Here,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 194.18,
+   "end": 195.53,
+   "text": "they did one thing early.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 195.74,
+   "end": 197.62,
+   "text": "On page one of the manual,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 197.62,
+   "end": 198.87,
+   "text": "there was a picture:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 199.09,
+   "end": 199.62,
+   "text": "a person,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 199.88,
+   "end": 200.44,
+   "text": "a belt,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 200.8,
+   "end": 201.26,
+   "text": "a click.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 201.4,
+   "end": 203.41,
+   "text": "They read it three hundred thousand years early.",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 203.68,
+   "end": 204.91,
+   "text": "Everybody buckles up.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 205.22,
+   "end": 205.74,
+   "text": "Still,",
+   "tags": [
+    "awed"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 205.87,
+   "end": 207.47,
+   "text": "the good side is huge.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 207.67,
+   "end": 208.55,
+   "text": "Ambulances.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 208.73,
+   "end": 211.04,
+   "text": "Food trucks that reach villages during droughts.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 211.18,
+   "end": 213.76,
+   "text": "Cities that trade across whole continents.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 214.16,
+   "end": 215.47,
+   "text": "Year twenty thousand.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 215.72,
+   "end": 218.15,
+   "text": "The traffic jam has lasted three days again.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 218.35,
+   "end": 221.78,
+   "text": "Somebody looks up and says the words that change everything:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 222.12,
+   "end": 222.77,
+   "text": "\"What if...",
+   "tags": [
+    "whispers"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 223.15,
+   "end": 223.59,
+   "text": "up?\"",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 223.98,
+   "end": 225.19,
+   "text": "Flying cars.",
+   "tags": [
+    "excited"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 225.37,
+   "end": 226.07,
+   "text": "In your world,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 226.23,
+   "end": 229.26,
+   "text": "people have been promising flying cars for about a hundred years.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 229.46,
+   "end": 229.83,
+   "text": "Here,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 230.01,
+   "end": 231.97,
+   "text": "they just built them.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 232.24,
+   "end": 233.1,
+   "text": "Two weeks later:",
+   "tags": [
+    "sighs"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 233.31,
+   "end": 235.4,
+   "text": "the first traffic jam in the sky.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 235.64,
+   "end": 237.38,
+   "text": "The birds are furious.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 237.8,
+   "end": 239.4,
+   "text": "Year one hundred thousand.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 239.63,
+   "end": 241.31,
+   "text": "Cars drive themselves.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 241.47,
+   "end": 243.79,
+   "text": "A highway goes all the way around the planet.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 244.0,
+   "end": 244.85,
+   "text": "And the First Car?",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 245.05,
+   "end": 246.08,
+   "text": "It's in a museum now.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 246.3,
+   "end": 247.53,
+   "text": "Engine still running.",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 247.69,
+   "end": 249.4,
+   "text": "Odometer stuck at nine million,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 249.4,
+   "end": 251.1,
+   "text": "nine hundred ninety-nine thousand,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 251.1,
+   "end": 252.47,
+   "text": "nine hundred ninety-nine.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 252.77,
+   "end": 253.81,
+   "text": "The mud on the logo?",
+   "tags": [
+    "whispers"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 254.08,
+   "end": 254.85,
+   "text": "Still there.",
+   "tags": [],
+   "para_end": true
+  }
+ ]
+}

@@ -1,0 +1,327 @@
+{
+ "audio": "ep02_perde6.mp3",
+ "duration": 42.89,
+ "rate_wps": 3.5,
+ "speech_segments": [
+  [
+   0.07,
+   1.32
+  ],
+  [
+   1.46,
+   3.02
+  ],
+  [
+   3.2,
+   5.85
+  ],
+  [
+   6.2,
+   7.93
+  ],
+  [
+   8.42,
+   10.27
+  ],
+  [
+   10.5,
+   11.44
+  ],
+  [
+   11.56,
+   11.65
+  ],
+  [
+   11.81,
+   12.75
+  ],
+  [
+   13.01,
+   14.11
+  ],
+  [
+   14.47,
+   15.49
+  ],
+  [
+   15.72,
+   16.54
+  ],
+  [
+   16.81,
+   17.82
+  ],
+  [
+   18.05,
+   21.07
+  ],
+  [
+   21.35,
+   21.6
+  ],
+  [
+   21.75,
+   22.29
+  ],
+  [
+   22.64,
+   24.08
+  ],
+  [
+   24.37,
+   27.67
+  ],
+  [
+   27.95,
+   29.16
+  ],
+  [
+   29.47,
+   30.43
+  ],
+  [
+   30.71,
+   33.16
+  ],
+  [
+   33.46,
+   34.11
+  ],
+  [
+   34.25,
+   35.65
+  ],
+  [
+   35.8,
+   37.68
+  ],
+  [
+   37.85,
+   38.97
+  ],
+  [
+   39.1,
+   40.1
+  ],
+  [
+   40.35,
+   42.75
+  ]
+ ],
+ "phrases": [
+  {
+   "start": 0.07,
+   "end": 1.32,
+   "text": "Back on day one,",
+   "tags": [
+    "warm"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 1.46,
+   "end": 3.02,
+   "text": "before the tribe went to sleep,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 3.2,
+   "end": 5.85,
+   "text": "the chief left one more gazelle leg next to the car.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 6.2,
+   "end": 7.93,
+   "text": "Just in case it got hungry in the night.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 8.42,
+   "end": 10.27,
+   "text": "Three hundred thousand years later,",
+   "tags": [
+    "softly"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 10.5,
+   "end": 11.65,
+   "text": "it's still there.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 11.81,
+   "end": 12.75,
+   "text": "In the museum.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 13.01,
+   "end": 14.11,
+   "text": "Right next to the tire.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 14.47,
+   "end": 15.49,
+   "text": "And the dinosaurs?",
+   "tags": [
+    "mischievously"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 15.72,
+   "end": 16.54,
+   "text": "Still none.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 16.81,
+   "end": 17.82,
+   "text": "Except the ostrich.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 18.05,
+   "end": 18.39,
+   "text": "Which,",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 18.39,
+   "end": 19.39,
+   "text": "in this timeline,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 19.39,
+   "end": 21.07,
+   "text": "has never lost a race.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 21.35,
+   "end": 22.29,
+   "text": "Not one.",
+   "tags": [
+    "whispers"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 22.64,
+   "end": 24.08,
+   "text": "So here's my question for you:",
+   "tags": [
+    "curious"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 24.37,
+   "end": 27.67,
+   "text": "if you woke up three hundred thousand years ago next to a car,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 27.95,
+   "end": 29.16,
+   "text": "where would you drive first?",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 29.47,
+   "end": 30.43,
+   "text": "Tell me in the comments.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 30.71,
+   "end": 33.16,
+   "text": "The best answer might end up in a future episode.",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 33.46,
+   "end": 34.11,
+   "text": "Next time:",
+   "tags": [
+    "excited"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 34.25,
+   "end": 35.65,
+   "text": "you get a game console.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 35.8,
+   "end": 36.74,
+   "text": "No electricity.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 36.74,
+   "end": 37.68,
+   "text": "No TV.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 37.85,
+   "end": 38.97,
+   "text": "Twenty-nine people.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 39.1,
+   "end": 39.77,
+   "text": "One controller.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 39.77,
+   "end": 40.1,
+   "text": "Subscribe,",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 40.35,
+   "end": 42.75,
+   "text": "so you don't miss the next upgrade.",
+   "tags": [],
+   "para_end": true
+  }
+ ]
+}

@@ -1,0 +1,1427 @@
+{
+ "audio": "ep02_perde3.mp3",
+ "duration": 203.58,
+ "rate_wps": 3.27,
+ "speech_segments": [
+  [
+   0.05,
+   0.74
+  ],
+  [
+   1.08,
+   1.76
+  ],
+  [
+   1.91,
+   2.96
+  ],
+  [
+   3.14,
+   4.87
+  ],
+  [
+   5.23,
+   6.61
+  ],
+  [
+   6.91,
+   8.44
+  ],
+  [
+   9.44,
+   11.42
+  ],
+  [
+   11.87,
+   12.78
+  ],
+  [
+   13.13,
+   13.71
+  ],
+  [
+   13.86,
+   14.5
+  ],
+  [
+   14.84,
+   16.98
+  ],
+  [
+   17.31,
+   17.66
+  ],
+  [
+   17.8,
+   18.57
+  ],
+  [
+   19.01,
+   21.68
+  ],
+  [
+   21.97,
+   22.87
+  ],
+  [
+   23.22,
+   24.94
+  ],
+  [
+   25.7,
+   26.35
+  ],
+  [
+   26.63,
+   28.72
+  ],
+  [
+   29.04,
+   32.55
+  ],
+  [
+   32.99,
+   34.46
+  ],
+  [
+   34.94,
+   36.42
+  ],
+  [
+   36.77,
+   37.8
+  ],
+  [
+   38.18,
+   39.64
+  ],
+  [
+   39.93,
+   41.49
+  ],
+  [
+   41.7,
+   43.15
+  ],
+  [
+   43.33,
+   44.69
+  ],
+  [
+   44.92,
+   46.55
+  ],
+  [
+   47.0,
+   48.12
+  ],
+  [
+   48.24,
+   50.81
+  ],
+  [
+   51.27,
+   51.76
+  ],
+  [
+   52.15,
+   54.47
+  ],
+  [
+   54.79,
+   57.49
+  ],
+  [
+   58.29,
+   59.02
+  ],
+  [
+   59.4,
+   61.23
+  ],
+  [
+   61.51,
+   62.35
+  ],
+  [
+   62.6,
+   63.28
+  ],
+  [
+   63.52,
+   64.12
+  ],
+  [
+   64.55,
+   65.4
+  ],
+  [
+   65.7,
+   66.49
+  ],
+  [
+   66.7,
+   67.49
+  ],
+  [
+   67.68,
+   69.95
+  ],
+  [
+   70.22,
+   71.86
+  ],
+  [
+   72.04,
+   73.87
+  ],
+  [
+   74.25,
+   74.75
+  ],
+  [
+   75.13,
+   76.34
+  ],
+  [
+   76.69,
+   77.79
+  ],
+  [
+   78.18,
+   79.31
+  ],
+  [
+   79.55,
+   82.5
+  ],
+  [
+   82.75,
+   84.5
+  ],
+  [
+   85.34,
+   86.08
+  ],
+  [
+   86.33,
+   87.44
+  ],
+  [
+   87.8,
+   90.49
+  ],
+  [
+   90.82,
+   91.87
+  ],
+  [
+   92.03,
+   92.49
+  ],
+  [
+   92.84,
+   93.33
+  ],
+  [
+   93.5,
+   94.93
+  ],
+  [
+   95.28,
+   97.04
+  ],
+  [
+   97.32,
+   99.1
+  ],
+  [
+   99.44,
+   99.97
+  ],
+  [
+   100.38,
+   101.04
+  ],
+  [
+   101.33,
+   102.69
+  ],
+  [
+   102.96,
+   105.14
+  ],
+  [
+   105.43,
+   109.0
+  ],
+  [
+   109.71,
+   110.44
+  ],
+  [
+   110.73,
+   112.15
+  ],
+  [
+   112.57,
+   113.29
+  ],
+  [
+   113.53,
+   114.28
+  ],
+  [
+   114.55,
+   117.25
+  ],
+  [
+   117.6,
+   119.35
+  ],
+  [
+   119.6,
+   121.0
+  ],
+  [
+   121.27,
+   122.11
+  ],
+  [
+   122.41,
+   124.39
+  ],
+  [
+   124.7,
+   127.33
+  ],
+  [
+   127.69,
+   129.61
+  ],
+  [
+   129.92,
+   131.92
+  ],
+  [
+   132.18,
+   133.53
+  ],
+  [
+   134.47,
+   135.28
+  ],
+  [
+   135.55,
+   137.64
+  ],
+  [
+   137.93,
+   139.52
+  ],
+  [
+   139.79,
+   141.14
+  ],
+  [
+   141.45,
+   141.96
+  ],
+  [
+   142.22,
+   142.87
+  ],
+  [
+   143.14,
+   144.49
+  ],
+  [
+   144.81,
+   146.57
+  ],
+  [
+   146.93,
+   148.07
+  ],
+  [
+   148.42,
+   149.7
+  ],
+  [
+   150.07,
+   150.76
+  ],
+  [
+   150.99,
+   154.0
+  ],
+  [
+   154.18,
+   155.04
+  ],
+  [
+   155.2,
+   157.6
+  ],
+  [
+   157.77,
+   158.09
+  ],
+  [
+   158.25,
+   159.32
+  ],
+  [
+   160.01,
+   160.79
+  ],
+  [
+   161.11,
+   162.27
+  ],
+  [
+   162.75,
+   165.16
+  ],
+  [
+   165.42,
+   165.98
+  ],
+  [
+   166.21,
+   167.27
+  ],
+  [
+   167.59,
+   168.1
+  ],
+  [
+   168.46,
+   169.12
+  ],
+  [
+   169.4,
+   171.77
+  ],
+  [
+   172.08,
+   172.79
+  ],
+  [
+   172.94,
+   173.88
+  ],
+  [
+   174.22,
+   174.55
+  ],
+  [
+   174.92,
+   175.36
+  ],
+  [
+   175.63,
+   177.19
+  ],
+  [
+   177.54,
+   178.2
+  ],
+  [
+   178.33,
+   179.72
+  ],
+  [
+   179.96,
+   181.41
+  ],
+  [
+   181.7,
+   183.28
+  ],
+  [
+   183.71,
+   184.77
+  ],
+  [
+   185.06,
+   186.26
+  ],
+  [
+   186.45,
+   187.51
+  ],
+  [
+   187.99,
+   188.8
+  ],
+  [
+   189.03,
+   190.22
+  ],
+  [
+   190.47,
+   191.28
+  ],
+  [
+   191.51,
+   193.16
+  ],
+  [
+   193.38,
+   193.94
+  ],
+  [
+   194.23,
+   194.56
+  ],
+  [
+   194.81,
+   196.12
+  ],
+  [
+   196.32,
+   196.84
+  ],
+  [
+   197.09,
+   197.93
+  ],
+  [
+   198.14,
+   198.71
+  ],
+  [
+   198.96,
+   200.73
+  ],
+  [
+   200.94,
+   203.44
+  ]
+ ],
+ "phrases": [
+  {
+   "start": 0.05,
+   "end": 0.74,
+   "text": "Day one.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 1.08,
+   "end": 1.76,
+   "text": "Your tribe,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 1.91,
+   "end": 2.96,
+   "text": "about thirty people,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 3.14,
+   "end": 4.87,
+   "text": "gathers around the shiny beast.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 5.23,
+   "end": 6.61,
+   "text": "The chief decides it's hungry.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 6.91,
+   "end": 8.44,
+   "text": "He offers it a gazelle leg.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 9.44,
+   "end": 11.42,
+   "text": "The car does not eat the gazelle leg.",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 11.87,
+   "end": 12.78,
+   "text": "You climb inside.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 13.13,
+   "end": 13.71,
+   "text": "You touch everything.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 13.86,
+   "end": 16.98,
+   "text": "Then you press the middle of the round snake.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 17.31,
+   "end": 18.57,
+   "text": "HONK.",
+   "tags": [
+    "laughs"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 19.01,
+   "end": 21.68,
+   "text": "Thirty people are in a tree in under two seconds.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 21.97,
+   "end": 22.87,
+   "text": "Including the chief.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 23.22,
+   "end": 24.94,
+   "text": "Including the chief's grandmother.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 25.7,
+   "end": 26.35,
+   "text": "Day two:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 26.63,
+   "end": 28.72,
+   "text": "the first drive in human history.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 29.04,
+   "end": 30.32,
+   "text": "You turn the key,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 30.32,
+   "end": 31.27,
+   "text": "the engine roars,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 31.27,
+   "end": 32.55,
+   "text": "and you move forward...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 32.99,
+   "end": 34.46,
+   "text": "at three kilometers an hour.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 34.94,
+   "end": 36.42,
+   "text": "The tribe walks next to you.",
+   "tags": [
+    "deadpan"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 36.77,
+   "end": 37.8,
+   "text": "Some of them are faster.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 38.18,
+   "end": 39.64,
+   "text": "Then you find the other pedal.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 39.93,
+   "end": 41.49,
+   "text": "Sixty kilometers an hour.",
+   "tags": [
+    "excited"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 41.7,
+   "end": 43.15,
+   "text": "Your hair flies back.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 43.33,
+   "end": 44.69,
+   "text": "The tribe screams.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 44.92,
+   "end": 46.55,
+   "text": "They think the beast is eating you.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 47.0,
+   "end": 48.12,
+   "text": "Ninety seconds later,",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 48.24,
+   "end": 51.76,
+   "text": "you have the first car accident in human history.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 52.15,
+   "end": 54.47,
+   "text": "You hit the only tree for ten kilometers.",
+   "tags": [
+    "sighs"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 54.79,
+   "end": 57.49,
+   "text": "The same tree the whole tribe was hiding in yesterday.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 58.29,
+   "end": 59.02,
+   "text": "Day five.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 59.4,
+   "end": 61.23,
+   "text": "Something is running next to your window.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 61.51,
+   "end": 62.35,
+   "text": "Long legs.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 62.6,
+   "end": 63.05,
+   "text": "Big eyes.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 63.05,
+   "end": 63.28,
+   "text": "Feathers.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 63.52,
+   "end": 64.12,
+   "text": "An ostrich.",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 64.55,
+   "end": 65.4,
+   "text": "You speed up.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 65.7,
+   "end": 66.49,
+   "text": "It speeds up.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 66.7,
+   "end": 67.49,
+   "text": "Sixty.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 67.68,
+   "end": 69.19,
+   "text": "Sixty-five.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 69.19,
+   "end": 69.95,
+   "text": "Seventy.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 70.22,
+   "end": 71.86,
+   "text": "The first race in history:",
+   "tags": [
+    "dramatic"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 72.04,
+   "end": 73.87,
+   "text": "a car against a dinosaur.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 74.25,
+   "end": 74.75,
+   "text": "Technically.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 75.13,
+   "end": 76.34,
+   "text": "You hit a termite mound.",
+   "tags": [
+    "deadpan"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 76.69,
+   "end": 77.79,
+   "text": "The ostrich wins.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 78.18,
+   "end": 79.31,
+   "text": "This one's real,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 79.55,
+   "end": 80.29,
+   "text": "by the way.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 80.29,
+   "end": 82.5,
+   "text": "Ostriches can sprint at about seventy kilometers an hour.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 82.75,
+   "end": 84.5,
+   "text": "They're the fastest birds on land.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 85.34,
+   "end": 86.08,
+   "text": "Week two:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 86.33,
+   "end": 87.44,
+   "text": "hunting by car.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 87.8,
+   "end": 88.7,
+   "text": "Gazelles are fast,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 88.7,
+   "end": 90.49,
+   "text": "but they can't outrun a car.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 90.82,
+   "end": 91.87,
+   "text": "They can,",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 92.03,
+   "end": 92.49,
+   "text": "however,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 92.84,
+   "end": 93.33,
+   "text": "turn.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 93.5,
+   "end": 94.93,
+   "text": "Cars can't turn like that.",
+   "tags": [
+    "sighs"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 95.28,
+   "end": 97.04,
+   "text": "But the car is great at one thing:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 97.32,
+   "end": 99.1,
+   "text": "carrying home everything you hunt.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 99.44,
+   "end": 99.97,
+   "text": "In the trunk.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 100.38,
+   "end": 101.04,
+   "text": "The downside?",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 101.33,
+   "end": 102.69,
+   "text": "The engine is loud.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 102.96,
+   "end": 105.14,
+   "text": "The herds learn to run the moment they hear it.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 105.43,
+   "end": 109.0,
+   "text": "Soon the hunters have to walk twice as far to find anything at all.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 109.71,
+   "end": 110.44,
+   "text": "Week three:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 110.73,
+   "end": 112.15,
+   "text": "the car becomes a house.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 112.57,
+   "end": 113.29,
+   "text": "Five seats.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 113.53,
+   "end": 114.28,
+   "text": "Thirty people.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 114.55,
+   "end": 117.25,
+   "text": "Every night is a fight for the back seat.",
+   "tags": [
+    "laughs"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 117.6,
+   "end": 118.6,
+   "text": "But on cold nights,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 118.6,
+   "end": 119.35,
+   "text": "there's the heater.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 119.6,
+   "end": 121.0,
+   "text": "Nobody freezes anymore.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 121.27,
+   "end": 122.11,
+   "text": "And the cup holder?",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 122.41,
+   "end": 124.39,
+   "text": "The tribe has never seen a cup.",
+   "tags": [
+    "awed"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 124.7,
+   "end": 127.33,
+   "text": "They stare at the little round hole for days.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 127.69,
+   "end": 129.61,
+   "text": "Then your cousin carves one out of wood.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 129.92,
+   "end": 131.92,
+   "text": "The first cup in human history.",
+   "tags": [
+    "proud"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 132.18,
+   "end": 133.53,
+   "text": "Invented to fit a car.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 134.47,
+   "end": 135.28,
+   "text": "Month two.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 135.55,
+   "end": 137.64,
+   "text": "You open the glove box and find the manual.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 137.93,
+   "end": 139.52,
+   "text": "You can't read a single word.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 139.79,
+   "end": 141.14,
+   "text": "But you can read the pictures.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 141.45,
+   "end": 141.96,
+   "text": "A wheel.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 142.22,
+   "end": 142.87,
+   "text": "An axle.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 143.14,
+   "end": 144.49,
+   "text": "A wheel on an axle.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 144.81,
+   "end": 146.57,
+   "text": "Your cousin builds a copy out of wood.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 146.93,
+   "end": 148.07,
+   "text": "The first one is square.",
+   "tags": [
+    "deadpan"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 148.42,
+   "end": 149.7,
+   "text": "The second one is round.",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 150.07,
+   "end": 150.76,
+   "text": "The wheel.",
+   "tags": [
+    "excited"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 150.99,
+   "end": 154.0,
+   "text": "Invented almost three hundred thousand years early.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 154.18,
+   "end": 155.04,
+   "text": "In your world,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 155.2,
+   "end": 159.32,
+   "text": "the oldest wooden wheel ever found is about five thousand years old.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 160.01,
+   "end": 160.79,
+   "text": "Month four:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 161.11,
+   "end": 162.27,
+   "text": "the first road trip.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 162.75,
+   "end": 165.16,
+   "text": "The next tribe lives a hundred kilometers away.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 165.42,
+   "end": 165.98,
+   "text": "On foot,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 166.21,
+   "end": 167.27,
+   "text": "that's four days.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 167.59,
+   "end": 168.1,
+   "text": "By car?",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 168.46,
+   "end": 169.12,
+   "text": "Two hours.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 169.4,
+   "end": 170.19,
+   "text": "They meet you,",
+   "tags": [
+    "laughs"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 170.19,
+   "end": 171.77,
+   "text": "and they run up a tree.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 172.08,
+   "end": 172.79,
+   "text": "But this time,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 172.94,
+   "end": 173.88,
+   "text": "you bring gifts.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 174.22,
+   "end": 174.55,
+   "text": "Meat.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 174.92,
+   "end": 175.36,
+   "text": "Cups.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 175.63,
+   "end": 177.19,
+   "text": "One very loud honk.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 177.54,
+   "end": 178.2,
+   "text": "By evening,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 178.33,
+   "end": 179.72,
+   "text": "the two tribes are trading.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 179.96,
+   "end": 181.41,
+   "text": "Stone tools for berries.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 181.7,
+   "end": 183.28,
+   "text": "Fire tricks for fishing tricks.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 183.71,
+   "end": 184.77,
+   "text": "For the first time,",
+   "tags": [
+    "softly"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 185.06,
+   "end": 187.51,
+   "text": "the people over the hill aren't strangers.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 187.99,
+   "end": 188.8,
+   "text": "Year one.",
+   "tags": [
+    "excited"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 189.03,
+   "end": 190.22,
+   "text": "Thirty-four people.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 190.47,
+   "end": 191.28,
+   "text": "Distance driven:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 191.51,
+   "end": 193.16,
+   "text": "forty thousand kilometers.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 193.38,
+   "end": 193.94,
+   "text": "Trees hit:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 194.23,
+   "end": 194.56,
+   "text": "three.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 194.81,
+   "end": 196.12,
+   "text": "Races against the ostrich:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 196.32,
+   "end": 196.84,
+   "text": "twelve.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 197.09,
+   "end": 197.93,
+   "text": "Races won:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 198.14,
+   "end": 198.71,
+   "text": "zero.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 198.96,
+   "end": 200.73,
+   "text": "And you are now officially...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 200.94,
+   "end": 203.44,
+   "text": "\"The One Who Rides the Roaring Beast.\"",
+   "tags": [],
+   "para_end": true
+  }
+ ]
+}

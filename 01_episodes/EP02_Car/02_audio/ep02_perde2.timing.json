@@ -1,0 +1,429 @@
+{
+ "audio": "ep02_perde2.mp3",
+ "duration": 55.79,
+ "rate_wps": 2.92,
+ "speech_segments": [
+  [
+   0.09,
+   1.38
+  ],
+  [
+   1.67,
+   2.13
+  ],
+  [
+   2.56,
+   5.48
+  ],
+  [
+   5.75,
+   6.44
+  ],
+  [
+   6.6,
+   9.18
+  ],
+  [
+   9.76,
+   10.74
+  ],
+  [
+   11.08,
+   11.64
+  ],
+  [
+   12.0,
+   12.62
+  ],
+  [
+   12.92,
+   15.44
+  ],
+  [
+   16.03,
+   17.74
+  ],
+  [
+   18.25,
+   19.25
+  ],
+  [
+   19.59,
+   21.66
+  ],
+  [
+   21.94,
+   24.29
+  ],
+  [
+   24.76,
+   25.79
+  ],
+  [
+   26.1,
+   28.02
+  ],
+  [
+   28.34,
+   30.74
+  ],
+  [
+   30.89,
+   31.88
+  ],
+  [
+   32.1,
+   34.26
+  ],
+  [
+   34.51,
+   35.83
+  ],
+  [
+   36.06,
+   37.9
+  ],
+  [
+   38.15,
+   39.7
+  ],
+  [
+   39.89,
+   40.91
+  ],
+  [
+   41.12,
+   42.06
+  ],
+  [
+   42.36,
+   43.68
+  ],
+  [
+   44.05,
+   44.91
+  ],
+  [
+   45.3,
+   45.77
+  ],
+  [
+   46.06,
+   50.68
+  ],
+  [
+   50.95,
+   51.6
+  ],
+  [
+   51.85,
+   52.07
+  ],
+  [
+   52.21,
+   52.93
+  ],
+  [
+   53.14,
+   54.54
+  ],
+  [
+   54.86,
+   55.57
+  ]
+ ],
+ "phrases": [
+  {
+   "start": 0.09,
+   "end": 1.38,
+   "text": "Problem number one:",
+   "tags": [
+    "deadpan"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 1.67,
+   "end": 2.13,
+   "text": "fuel.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 2.56,
+   "end": 5.48,
+   "text": "A full tank gets you maybe six hundred kilometers.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 5.75,
+   "end": 6.44,
+   "text": "After that,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 6.6,
+   "end": 8.07,
+   "text": "it's a very heavy,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 8.07,
+   "end": 9.18,
+   "text": "very red rock.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 9.76,
+   "end": 10.74,
+   "text": "Problem number two:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 11.08,
+   "end": 11.64,
+   "text": "roads.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 12.0,
+   "end": 12.62,
+   "text": "There are none.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 12.92,
+   "end": 13.93,
+   "text": "Just rocks,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 13.93,
+   "end": 14.43,
+   "text": "rivers,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 14.43,
+   "end": 15.44,
+   "text": "termite mounds...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 16.03,
+   "end": 17.74,
+   "text": "and the occasional angry rhino.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 18.25,
+   "end": 19.25,
+   "text": "Problem number three:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 19.59,
+   "end": 21.66,
+   "text": "you have never seen a steering wheel.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 21.94,
+   "end": 24.29,
+   "text": "You think it's a very round snake.",
+   "tags": [
+    "whispers"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 24.76,
+   "end": 25.79,
+   "text": "Problem number four:",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 26.1,
+   "end": 27.06,
+   "text": "one flat tire,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 27.06,
+   "end": 28.02,
+   "text": "and it's over.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 28.34,
+   "end": 31.46,
+   "text": "Rubber tires won't exist for almost three hundred thousand years.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 31.46,
+   "end": 31.77,
+   "text": "So...",
+   "tags": [
+    "excited"
+   ],
+   "para_end": false
+  },
+  {
+   "start": 31.77,
+   "end": 33.01,
+   "text": "let's install an upgrade.",
+   "tags": [],
+   "para_end": true
+  },
+  {
+   "start": 33.01,
+   "end": 34.26,
+   "text": "Version one point oh.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 34.51,
+   "end": 36.67,
+   "text": "A fuel tank that never runs out.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 36.67,
+   "end": 37.9,
+   "text": "Tires that fix themselves.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 38.15,
+   "end": 39.7,
+   "text": "And in the glove box...",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 39.89,
+   "end": 40.91,
+   "text": "the owner's manual.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 41.12,
+   "end": 42.06,
+   "text": "Four hundred pages.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 42.36,
+   "end": 43.68,
+   "text": "Mostly pictures.",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 44.05,
+   "end": 44.91,
+   "text": "That's it.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 45.3,
+   "end": 45.77,
+   "text": "No roads.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 46.06,
+   "end": 46.98,
+   "text": "No GPS.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 46.98,
+   "end": 48.37,
+   "text": "No driving license.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 48.37,
+   "end": 49.29,
+   "text": "And no,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 49.29,
+   "end": 50.68,
+   "text": "it can't fly.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 50.95,
+   "end": 51.6,
+   "text": "Yet.",
+   "tags": [
+    "mischievously"
+   ],
+   "para_end": true
+  },
+  {
+   "start": 51.85,
+   "end": 52.07,
+   "text": "Oh,",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 52.21,
+   "end": 52.93,
+   "text": "and no.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 53.14,
+   "end": 54.36,
+   "text": "There are no dinosaurs.",
+   "tags": [],
+   "para_end": false
+  },
+  {
+   "start": 54.36,
+   "end": 55.57,
+   "text": "We'll get to that.",
+   "tags": [
+    "short pause"
+   ],
+   "para_end": true
+  }
+ ]
+}
