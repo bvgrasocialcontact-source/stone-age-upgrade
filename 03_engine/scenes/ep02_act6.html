@@ -1,0 +1,139 @@
+<!doctype html>
+<html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;padding:0;background:#141826;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script>
+<script src="../lib/animals.js"></script><script src="../lib/you.js"></script><script src="../lib/kit.js"></script><script src="../lib/kit_car.js"></script>
+</head><body><script>
+// EP02 · Perde 6 — Kapanış: gazel bacağı, devekuşu, soru, sonraki bölüm (42.9 s). Zamanlar: ep02_perde6.timing.json
+SAU.duration = 42.92;
+SAU.init((svg, S) => {
+  const { W, H, el, set, p, E, BRAND: B, clamp, hash, lerp, fmt } = S;
+  const rc = rough.svg(svg);
+  SAU.kitDefs(svg);
+  const sd = t => Math.floor(t / .125) + 1;
+  const clr = g => { while (g.firstChild) g.removeChild(g.firstChild); };
+  const pen = (g, s, sw = 3) => SAU.makePen(1, rc, g, { seed: s, sw });
+  const txt = (g, x, y, s, o = {}) => { const e = el('text', Object.assign({ x, y, 'text-anchor': 'middle', fill: B.bone, 'font-family': B.fontDisplay, 'font-size': 56 }, o), g); e.textContent = s; return e; };
+  const hand = (g, x, y, s, k = 1, size = 50, rot = -3, col = B.bone) => { if (k <= 0) return; const gg = el('g', { transform: `translate(${x},${y}) rotate(${rot}) scale(${.6 + .4 * Math.min(k, 1.2)})`, opacity: clamp(k) }, g); txt(gg, 0, 0, s, { fill: col, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': size, stroke: col === B.bone ? B.ink : B.bone, 'stroke-width': 10, 'paint-order': 'stroke' }); };
+  const drawLeg = (g, s0, x, y, sc = 1, rot = 0, fossil = false) => { const lg = el('g', { transform: `translate(${x},${y}) rotate(${rot}) scale(${sc})` }, g); const P = pen(lg, s0, 4); P.shape('M -90 -26 Q -150 -10 -120 30 Q -60 50 10 18 L 90 10 L 90 -10 L 10 -16 Q -40 -50 -90 -26 Z', fossil ? '#CDBFA6' : '#9E4A26', 4); P.shape('M 86 -18 Q 118 -34 120 -8 Q 136 10 112 20 Q 100 30 86 14 Z', '#F3E6CF', 3); return lg; };
+  const GY = H * .86;
+
+  // layers
+  const world = el('g', {}, svg);
+  const bg = el('g', {}, world), back = el('g', {}, world);
+  const carG = el('g', {}, world); const car = SAU.makeCar(carG, rc);
+  const chief = SAU.makeYou(el('g', {}, world), rc, Object.assign({ seed: 21 }, SAU.CAST.chief));
+  const front = el('g', {}, world);
+  const stars = el('g', {}, svg); SAU.drawStars(stars, W, H, 80);
+  svg.insertBefore(stars, world);
+  const skyR = el('rect', { width: W, height: H, fill: 'url(#kNight)' }, svg); svg.insertBefore(skyR, stars);
+  const scene2 = el('g', {}, svg);
+  const cta = el('g', {}, svg);
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .07, 9), preserveAspectRatio: 'none', opacity: .5 }, svg);
+  el('rect', { width: W, height: H, fill: 'url(#kVig)', opacity: .6 }, svg);
+  const hud = el('g', {}, svg); const yp = SAU.makeYearPanel(hud, 40, 40);
+  const flash = el('rect', { width: W, height: H, fill: '#FFF7E6', opacity: 0 }, svg);
+
+  return {
+    update(t) {
+      const s = sd(t);
+      [back, front, scene2, cta].forEach(clr);
+      const night = t < 8.4;
+      set(world, { display: night ? 'inline' : 'none' }); set(stars, { display: night ? 'inline' : 'none' }); set(skyR, { display: night ? 'inline' : 'none' });
+
+      // ---------- 0–8.4: day one, night camp ----------
+      if (night) {
+        SAU.twinkle(stars, t);
+        S.boil(bg, (r, ss, g) => { const P = SAU.makePen(1, r, g, { seed: ss, sw: 3 }); P.shape(`M -40 ${H * .62} Q ${W * .3} ${H * .56} ${W * .6} ${H * .6} Q ${W * .85} ${H * .63} ${W + 40} ${H * .6} L ${W + 40} ${H + 40} L -40 ${H + 40} Z`, '#2E2420', 3); SAU.drawAcacia(P, W * .97, H * .63, .6); }, t);
+        el('circle', { cx: W * .78, cy: H * .2, r: 60, fill: '#F3E6CF', opacity: .9 }, back);
+        const fg = el('g', {}, back); SAU.drawCampfire(rc, s, fg, W * .2, GY - 20, .9);
+        el('ellipse', { cx: W * .2, cy: GY - 120, rx: 520, ry: 360, fill: '#FF9A4A', opacity: .1 + .03 * Math.sin(t * 9) }, back);
+        car.update(t, { x: W * .58, y: GY, s: .9, dist: 0, dents: 3 });
+        const walk = p(t, 0.3, 3.2);
+        const legDown = t > 4.6;
+        chief.pose({ x: lerp(W * .3, W * .82, walk), y: GY + 10, scale: .62, expr: t > 6.2 ? 'smile' : 'neutral', look: [t > 4.6 ? -10 : 10, 0], bob: walk < 1 ? Math.sin(t * 8) * 4 : 0, legL: walk < 1 ? Math.sin(t * 8) * 14 : 0, legR: walk < 1 ? -Math.sin(t * 8) * 14 : 0, armL: legDown ? 0 : 60, head: t > 4.6 ? 10 : 0 }, t);
+        if (!legDown) drawLeg(front, s, lerp(W * .3, W * .82, walk) + 60, GY - 160, .6, -10);
+        else drawLeg(front, s, W * .58 + 300, GY - 20, .8, 0);
+        if (t > 6.2) hand(front, W * .82, GY - 470, '(in case it gets hungry)', p(t, 6.2, 6.5, E.back), 40, 3);
+        if (t > 0.1) { const k = p(t, 0.1, 0.5) * (1 - p(t, 2.8, 3.2)); if (k > 0) { const tg = el('g', { transform: `translate(${W / 2},${H * .16})`, opacity: k }, front); el('rect', { x: -230, y: -56, width: 460, height: 100, rx: 14, fill: '#120C09', opacity: .9 }, tg); txt(tg, 0, 14, 'BACK ON DAY 1', { fill: B.sand, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 44 }); } }
+        SAU.cam(world, W, H, W / 2, H / 2, lerp(1, 1.06, p(t, 0, 8.4)), 0, t);
+      }
+
+      // ---------- 8.4–14.5: museum ----------
+      if (t >= 8.4 && t < 14.5) {
+        el('rect', { width: W, height: H, fill: '#2A221E' }, scene2);
+        el('ellipse', { cx: W / 2, cy: H * .45, rx: 700, ry: 420, fill: '#FFF3D0', opacity: .08 }, scene2);
+        const P = pen(scene2, s, 5);
+        P.shape(SAU.rrectPath(W / 2 - 520, H * .78, 1040, 70, 10), '#6E5E52', 4);
+        // glass case
+        el('rect', { x: W / 2 - 480, y: H * .3, width: 960, height: H * .48, fill: '#BFD4D8', opacity: .14, stroke: '#BFD4D8', 'stroke-width': 4 }, scene2);
+        el('path', { d: `M ${W / 2 - 420} ${H * .34} l 120 -40 M ${W / 2 - 380} ${H * .42} l 160 -60`, stroke: '#FFFFFF', 'stroke-width': 4, opacity: .3 }, scene2);
+        const tg = el('g', { transform: `translate(${W / 2 - 200},${H * .78 - 150}) rotate(${0})` }, scene2); SAU.drawWheel(pen(tg, s + 3, 5), 140);
+        drawLeg(scene2, s + 7, W / 2 + 230, H * .78 - 50, 1.1, -4, true);
+        const zk = p(t, 13.0, 13.4, E.back);
+        const lg = el('g', { transform: `translate(${W / 2},${H * .9})` }, scene2); el('rect', { x: -360, y: -46, width: 720, height: 92, rx: 10, fill: B.bone, stroke: B.ink, 'stroke-width': 4 }, lg);
+        txt(lg, 0, -6, 'GAZELLE LEG · DAY 1', { fill: B.ink, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 32 });
+        txt(lg, 0, 30, 'please do not eat', { fill: B.rust, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 24 });
+        if (t > 10.5) hand(scene2, W / 2 + 560, H * .26, 'still there', p(t, 10.5, 10.8, E.back), 50, 5);
+        if (zk > 0) { el('circle', { cx: W / 2 - 200, cy: H * .78 - 150, r: 170, fill: 'none', stroke: B.tech, 'stroke-width': 6, 'stroke-dasharray': '16 10', filter: 'url(#kGlow)', opacity: zk }, scene2); hand(scene2, W / 2 - 560, H * .3, 'the tire', zk, 50, -5); }
+      }
+
+      // ---------- 14.5–22.6: dinosaurs? ostrich undefeated ----------
+      if (t >= 14.5 && t < 22.6) {
+        el('rect', { width: W, height: H, fill: '#E9A35C' }, scene2);
+        const P = pen(scene2, s, 4);
+        P.shape(`M -40 ${GY} L ${W + 40} ${GY} L ${W + 40} ${H + 40} L -40 ${H + 40} Z`, '#D9A566', 3);
+        if (t < 16.8) { txt(scene2, W / 2, H * .4, 'DINOSAURS: 0', { fill: B.ink, 'font-size': 110 }); hand(scene2, W / 2, H * .55, 'still none.', p(t, 15.7, 16.0, E.back), 56, -2, B.ink); }
+        else {
+          const og = el('g', { transform: `translate(${W * .38},${GY}) scale(1.1)` }, scene2); SAU.drawOstrich(pen(og, s + 3, 4));
+          // trophies
+          for (let i = 0; i < 5; i++) { const k = p(t, 18.0 + i * .25, 18.3 + i * .25, E.back); if (k <= 0) continue; const tx = W * .62 + (i % 3) * 170, ty = GY - 40 - Math.floor(i / 3) * 230; const tg2 = el('g', { transform: `translate(${tx},${ty}) scale(${k})` }, scene2); pen(tg2, s + i, 4).shape('M -50 -180 L 50 -180 Q 50 -100 0 -80 Q -50 -100 -50 -180 Z', '#E0B030', 4); pen(tg2, s + i + 9, 4).shape('M -10 -80 L 10 -80 L 14 -20 L 40 -20 L 40 0 L -40 0 L -40 -20 L -14 -20 Z', '#C8962A', 3); }
+          const cg = el('g', { transform: `translate(${W / 2},${H * .18}) scale(${p(t, 19.4, 19.8, E.back)})` }, scene2); el('rect', { x: -330, y: -70, width: 660, height: 140, rx: 16, fill: '#120C09', opacity: .93 }, cg); txt(cg, 0, -18, 'RACES LOST', { fill: B.sand, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 26 }); txt(cg, 0, 46, '0', { fill: B.tech, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 64, filter: 'url(#kGlow)' });
+          if (t > 21.4) hand(scene2, W * .24, H * .3, 'not one.', p(t, 21.4, 21.7, E.back), 46, -6, B.ink);
+          if (t > 16.8 && t < 18.2) hand(scene2, W * .24, H * .3, 'except…', p(t, 16.8, 17.1, E.back), 50, -4, B.ink);
+        }
+      }
+
+      // ---------- 22.6–33.5: question ----------
+      if (t >= 22.6 && t < 33.5) {
+        el('rect', { width: W, height: H, fill: '#1E1612' }, cta);
+        const k = p(t, 22.7, 23.1, E.back);
+        const cg = el('g', { transform: `translate(${W / 2},${H * .46}) scale(${k})` }, cta);
+        el('rect', { x: -720, y: -260, width: 1440, height: 520, rx: 30, fill: B.bone, stroke: B.ochre, 'stroke-width': 8 }, cg);
+        txt(cg, 0, -160, 'YOUR TURN', { fill: B.rust, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 40 });
+        txt(cg, 0, -70, '300,000 years ago. A car next to you.', { fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 56 });
+        if (t > 27.9) txt(cg, 0, 30, 'Where would you drive first?', { fill: B.ink, 'font-size': 72, opacity: p(t, 27.9, 28.3) });
+        if (t > 29.5) { const kk = p(t, 29.5, 29.9, E.back); const bg2 = el('g', { transform: `translate(0,160) scale(${kk})` }, cg); el('rect', { x: -320, y: -50, width: 640, height: 100, rx: 50, fill: B.ink }, bg2); txt(bg2, 0, 16, '↓ tell me in the comments', { fill: B.bone, 'font-family': B.fontUI, 'font-weight': 600, 'font-size': 36 }); }
+        if (t > 30.7) txt(cta, W / 2, H * .92, 'best answer → a future episode', { fill: B.tech, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 40, filter: 'url(#kGlow)' });
+      }
+
+      // ---------- 33.5–: next time: game console ----------
+      if (t >= 33.5) {
+        el('rect', { width: W, height: H, fill: '#E9A35C' }, cta);
+        cta.appendChild(rc.rectangle(-30, H * .72, W + 60, H * .4, { seed: s, fill: '#D9A566', fillStyle: 'solid', stroke: B.ink, strokeWidth: 3, roughness: 1 }));
+        txt(cta, W / 2, 150, 'NEXT TIME', { fill: B.rust, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 40 });
+        txt(cta, W / 2, 250, 'WHAT IF YOU HAD A GAME CONSOLE?', { fill: B.ink, 'font-size': 70 });
+        // one generic controller (no brand)
+        const ck = p(t, 34.2, 34.6, E.back), cg = el('g', { transform: `translate(${W / 2},${H * .56}) rotate(${Math.sin(t * 3) * 4}) scale(${ck})` }, cta);
+        const P = pen(cg, s, 5);
+        P.shape('M -200 -60 Q -120 -100 0 -90 Q 120 -100 200 -60 Q 270 60 230 120 Q 190 160 130 90 L -130 90 Q -190 160 -230 120 Q -270 60 -200 -60 Z', '#3A3634', 5);
+        P.stroke('M -150 -10 l 60 0 M -120 -40 l 0 60', B.bone, 10);
+        [[120, -40, '#C8362E'], [160, 0, '#3E7A9A'], [120, 40, '#4E9A3E'], [80, 0, '#E0A020']].forEach(([x, y, c]) => el('circle', { cx: x, cy: y, r: 16, fill: c, stroke: B.ink, 'stroke-width': 3 }, cg));
+        // the tribe (29) around it
+        const nP = Math.round(lerp(0, 29, p(t, 37.9, 38.8)));
+        const xs = []; for (let i = 0; i < nP; i++) xs.push(80 + (i % 15) * 125 + (i > 14 ? 60 : 0));
+        if (nP) { const cr = el('g', {}, cta); SAU.drawCrowd(rc, s, cr, xs.filter((_, i) => i > 14), H * .9, .75, '#5E3A24'); SAU.drawCrowd(rc, s + 5, cr, xs.filter((_, i) => i <= 14), H * .98, .9, '#7A5038'); }
+        [['no electricity', 35.8, W * .16, H * .45], ['no TV', 36.7, W * .84, H * .45], ['29 people', 37.9, W * .16, H * .62], ['1 controller', 39.1, W * .84, H * .62]].forEach(([l, a, x, y], i) => hand(cta, x, y, l, p(t, a, a + .25, E.back), 50, i % 2 ? 4 : -4, B.ink));
+        if (t > 39.8) { const k = p(t, 39.8, 40.15, E.back); const sb = el('g', { transform: `translate(${W / 2},${H * .8}) scale(${k})` }, cta); el('rect', { x: -260, y: -60, width: 520, height: 120, rx: 60, fill: '#CC2A1E', stroke: B.ink, 'stroke-width': 5 }, sb); txt(sb, 0, 20, 'SUBSCRIBE', { fill: '#FFFFFF', 'font-size': 56 }); }
+      }
+
+      yp.set(t < 8.4 ? '300,000 BC' : '300,000 A.V.', t < 8.4 ? 'DAY 1' : 'TODAY');
+      set(hud, { opacity: t < 14.5 ? 1 : 0 });
+      const fl = [8.4, 14.5, 22.6, 33.5].reduce((m, a) => Math.min(m, Math.abs(t - a)), 9);
+      set(flash, { opacity: fl < .25 ? .45 * (1 - fl / .25) : 0 });
+    },
+  };
+});
+</script></body></html>

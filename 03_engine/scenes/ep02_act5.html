@@ -1,0 +1,211 @@
+<!doctype html>
+<html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;padding:0;background:#07131C;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script>
+<script src="../lib/animals.js"></script><script src="../lib/you.js"></script><script src="../lib/kit.js"></script><script src="../lib/kit_car.js"></script>
+</head><body><script>
+// EP02 · Perde 5 — Bugün: "300,000 A.V." listesi (109.8 s). Zamanlar: ep02_perde5.timing.json
+SAU.duration = 109.80;
+SAU.init((svg, S) => {
+  const { W, H, el, set, p, E, BRAND: B, clamp, hash, lerp, fmt } = S;
+  const rc = rough.svg(svg);
+  SAU.kitDefs(svg);
+  const sd = t => Math.floor(t / .125) + 1;
+  const clr = g => { while (g.firstChild) g.removeChild(g.firstChild); };
+  const pen = (g, s, sw = 3) => SAU.makePen(1, rc, g, { seed: s, sw });
+  const txt = (g, x, y, s, o = {}) => { const e = el('text', Object.assign({ x, y, 'text-anchor': 'middle', fill: B.bone, 'font-family': B.fontDisplay, 'font-size': 56 }, o), g); e.textContent = s; return e; };
+  const hand = (g, x, y, s, k = 1, size = 50, rot = -3, col = B.ink) => { if (k <= 0) return; const gg = el('g', { transform: `translate(${x},${y}) rotate(${rot}) scale(${.6 + .4 * Math.min(k, 1.2)})`, opacity: clamp(k) }, g); txt(gg, 0, 0, s, { fill: col, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': size, stroke: col === B.bone ? B.ink : B.bone, 'stroke-width': 10, 'paint-order': 'stroke' }); };
+  const card = (g, x, y, w, h) => { el('rect', { x: x - w / 2 + 8, y: y - h / 2 + 10, width: w, height: h, rx: 22, fill: '#000', opacity: .35 }, g); el('rect', { x: x - w / 2, y: y - h / 2, width: w, height: h, rx: 22, fill: '#F6E9D2', stroke: B.ink, 'stroke-width': 5 }, g); };
+  const win = (t, a, b, fi = .3, fo = .25) => p(t, a, a + fi, E.out) * (1 - p(t, b - fo, b, E.in));
+  const COLS = ['#D23B2E', '#3E7A9A', '#E0A020', '#7C6A5C', '#4E9A3E'];
+  const miniCar = (g, s, x, y, sc, col, o = {}) => { const cg = el('g', { transform: `translate(${x},${y}) scale(${o.flip ? -sc : sc},${sc})` }, g); SAU.drawCarBody(pen(cg, s, 6), Object.assign({ color: col }, o)); SAU.WHEELS.forEach(wx => { const wg = el('g', { transform: `translate(${wx},-50) rotate(${(o.spin || 0) * 57})` }, cg); SAU.drawWheel(pen(wg, s + wx, 6), 62); }); return cg; };
+
+  const city = el('g', {}, svg);
+  const cityDim = el('rect', { width: W, height: H, fill: '#07131C', opacity: .55 }, svg);
+  const stage = el('g', {}, svg);
+  const chars = el('g', {}, svg);
+  const yu = SAU.makeYou(el('g', {}, chars), rc, { seed: 5, colors: { hide: '#3A4A56' } });
+  const nb = SAU.makeYou(el('g', {}, chars), rc, Object.assign({ seed: 41 }, SAU.CAST.cousin));
+  const topG = el('g', {}, svg);
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .07, 7), preserveAspectRatio: 'none', opacity: .5 }, svg);
+  el('rect', { width: W, height: H, fill: 'url(#kVig)', opacity: .6 }, svg);
+  const badge = el('g', {}, svg);
+  el('circle', { r: 74, fill: B.tech, filter: 'url(#kGlow)' }, badge);
+  const badgeT = txt(badge, 0, 26, '1', { fill: '#06282C', 'font-size': 80 });
+  const titleT = txt(svg, W / 2, 330, '', { 'font-size': 60, stroke: '#06282C', 'stroke-width': 10, 'paint-order': 'stroke' });
+  const hud = el('g', {}, svg);
+  const yp = SAU.makeYearPanel(hud, 40, 40);
+  const flash = el('rect', { width: W, height: H, fill: '#FFF7E6', opacity: 0 }, svg);
+
+  const ITEMS = [
+    [11.0, 18.0, '1', 'Drivers for 300,000 years'], [18.1, 26.3, '2', 'The Old Ostrich Road'], [26.4, 34.5, '3', 'Sport #1: ostrich racing'],
+    [34.6, 44.2, '4', 'Mammoths: retired'], [44.3, 52.3, '5', 'Cup holder: same spot'], [52.4, 58.6, '6', 'Hello = honk'],
+    [58.7, 68.6, '7', 'A 41-year traffic jam'], [68.7, 77.6, '8', 'The wheel? Not an invention'], [77.7, 84.6, '9', 'Walking: extreme sport'],
+    [84.7, 89.7, '10', 'It\'s still the round snake'], [89.8, 100.7, '–', 'Not everything is better'], [100.8, 109.8, '', ''],
+  ];
+
+  return {
+    update(t) {
+      const s = sd(t);
+      if (city.__s !== s) { city.__s = s; clr(city); SAU.drawStoneCity(rc, s, city, W, H, t); }
+      const quiet = t > 100.8;
+      set(cityDim, { opacity: t < 10.9 ? .2 : quiet ? .85 : .55 });
+      clr(stage); clr(topG); [yu, nb].forEach(c => set(c.root, { display: 'none' }));
+      const g = stage;
+
+      // ---------- intro 0–10.9: split + A.V. ----------
+      if (t < 10.9) {
+        const k = p(t, 0, .6, E.out);
+        el('path', { d: `M 0 0 L ${W * .55} 0 L ${W * .45} ${H} L 0 ${H} Z`, fill: '#E9A35C', opacity: k }, g);
+        el('path', { d: `M ${W * .55} 0 L ${W * .45} ${H}`, stroke: B.bone, 'stroke-width': 14 }, g);
+        const cg = miniCar(g, s, W * .23, H * .9, .7, '#D23B2E', { dents: 3 });
+        txt(g, W * .22, 290, '300,000 BC', { fill: B.bone, 'font-size': 70, stroke: B.ink, 'stroke-width': 10, 'paint-order': 'stroke' });
+        txt(g, W * .76, 290, 'TODAY?', { fill: B.tech, 'font-size': 80, stroke: '#06282C', 'stroke-width': 10, 'paint-order': 'stroke', filter: 'url(#kGlow)' });
+        if (t > 2.3) { const kk = p(t, 2.3, 2.7, E.back); const bg = el('g', { transform: `translate(${W * .73},${H * .6}) scale(${kk})` }, g); el('rect', { x: -380, y: -90, width: 760, height: 180, rx: 16, fill: '#0E1416', stroke: B.tech, 'stroke-width': 4, filter: 'url(#kGlow)' }, bg);
+          const lab = t < 4.6 ? '2026' : t < 7.2 ? 'YEAR 300,000' : 'YEAR 300,000 A.V.';
+          txt(bg, 0, 26, lab, { fill: B.tech, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 76, filter: 'url(#kGlow)' });
+          if (t > 4.0 && t < 4.6) el('path', { d: 'M -140 -10 L 140 10', stroke: '#FF5A3D', 'stroke-width': 10 }, bg);
+          if (t > 7.9) txt(bg, 0, 150, '(After Vroom)', { fill: B.bone, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 48 }); }
+        if (t > 9.0) txt(g, W / 2, H * .94, "Here's what's different.", { fill: B.bone, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 52, stroke: B.ink, 'stroke-width': 8, 'paint-order': 'stroke' });
+      }
+
+      // ---------- list ----------
+      const it = ITEMS.find(x => t >= x[0] && t < x[1]);
+      const ik = it ? win(t, it[0], it[1]) : 0;
+      set(badge, { display: it && it[2] ? 'inline' : 'none', opacity: ik, transform: `translate(${W / 2},${200}) scale(${.6 + .4 * p(t, it ? it[0] : 0, (it ? it[0] : 0) + .3, E.back)})` });
+      if (it) { badgeT.textContent = it[2]; titleT.textContent = it[3]; set(titleT, { opacity: ik }); } else titleT.textContent = '';
+      set(badge.firstChild, { fill: it && it[2] === '–' ? '#FF5A3D' : B.tech });
+      const vg = el('g', { opacity: ik }, g), cx = W / 2, cy = 690;
+      const n = it ? it[2] : '';
+
+      if (n === '1') { // 300,000 years vs 140
+        card(vg, cx, cy, 1300, 400);
+        const kA = p(t, 11.6, 13.4, E.out), kB = p(t, 15.5, 16.2, E.out);
+        txt(vg, cx - 600, cy - 70, 'THEM', { 'text-anchor': 'start', fill: B.ink, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 34 });
+        el('rect', { x: cx - 600, y: cy - 50, width: 1080 * kA, height: 70, rx: 10, fill: B.techDeep }, vg);
+        txt(vg, cx + 460, cy - 2, kA > .95 ? '300,000 yrs' : '', { 'text-anchor': 'end', fill: B.bone, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 40 });
+        txt(vg, cx - 600, cy + 80, 'YOU', { 'text-anchor': 'start', fill: B.ink, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 34 });
+        el('rect', { x: cx - 600, y: cy + 100, width: Math.max(2, 6 * kB), height: 70, rx: 3, fill: B.rust }, vg);
+        if (kB > 0) { txt(vg, cx - 560, cy + 150, '140 yrs', { 'text-anchor': 'start', fill: B.rust, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 40, opacity: kB }); hand(vg, cx + 260, cy + 150, '(that tiny line is you)', p(t, 16.4, 16.7, E.back), 40, -2); }
+      }
+      if (n === '2') { // Old Ostrich Road
+        const P = pen(vg, s, 4);
+        P.shape(`M ${cx - 140} ${H} L ${cx - 30} ${cy - 120} L ${cx + 30} ${cy - 120} L ${cx + 140} ${H} Z`, '#B88A58', 4);
+        for (let i = 0; i < 5; i++) { const y = cy - 80 + i * 70 + ((t * 60) % 70); P.stroke(`M ${cx - 6} ${y} l 0 24`, B.bone, 4); }
+        const sg = el('g', { transform: `translate(${cx + 360},${cy - 20}) rotate(-3)` }, vg);
+        pen(sg, s + 2, 4).shape(SAU.rrectPath(-12, 0, 24, 330, 6), '#6E5034', 3);
+        el('rect', { x: -260, y: -120, width: 520, height: 160, rx: 14, fill: '#2E6B3A', stroke: B.bone, 'stroke-width': 6 }, sg);
+        txt(sg, 0, -50, 'OLD OSTRICH ROAD', { fill: B.bone, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 40 });
+        txt(sg, 0, 10, 'EST. 300,000 BC', { fill: '#BFE3C4', 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 30 });
+        if (t > 23.2) hand(vg, cx - 380, cy - 60, 'road #1. ever.', p(t, 23.2, 23.5, E.back), 48, -4, B.bone);
+        if (t > 24.8) { const hg = el('g', { transform: `translate(${cx - 400},${cy + 140}) rotate(-6) scale(${p(t, 24.8, 25.1, E.back)})` }, vg); el('rect', { x: -210, y: -46, width: 420, height: 92, rx: 46, fill: '#FFD36B', stroke: B.ink, 'stroke-width': 4 }, hg); txt(hg, 0, 16, 'HOLIDAY ROUTE', { fill: B.ink, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 36 }); }
+      }
+      if (n === '3') { // ostrich racing
+        card(vg, cx, cy, 1500, 420);
+        if (t < 29.6) { txt(vg, cx, cy, 'football', { fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 90 }); if (t > 28.2) el('path', { d: `M ${cx - 220} ${cy - 20} L ${cx + 220} ${cy - 40}`, stroke: '#C8362E', 'stroke-width': 14 }, vg); }
+        else {
+          const k = p(t, 31.0, 33.6, E.inOut), fl = cx + 620;
+          el('path', { d: `M ${fl} ${cy - 190} L ${fl} ${cy + 190}`, stroke: B.ink, 'stroke-width': 8, 'stroke-dasharray': '24 16' }, vg);
+          el('path', { d: `M ${cx - 720} ${cy + 140} L ${cx + 720} ${cy + 140}`, stroke: '#B88A58', 'stroke-width': 6 }, vg);
+          const ox = lerp(cx - 560, cx + 540, k), carX = lerp(cx - 680, cx + 280, Math.pow(k, 1.8));
+          const og = el('g', { transform: `translate(${ox},${cy + 140}) scale(-.5,.5) rotate(${Math.sin(t * 26) * 4})` }, vg); SAU.drawOstrich(pen(og, s + 3, 6));
+          miniCar(vg, s + 9, carX, cy + 140, .42, COLS[1], { spin: t * 8 });
+          SAU.speedLines(vg, ox - 260, cy + 40, t, 4, 160);
+          if (t > 33.0) hand(vg, cx + 420, cy - 180, 'OSTRICH WINS', p(t, 33.0, 33.3, E.back), 52, -4, B.rust);
+        }
+      }
+      if (n === '4') { // mammoths retired
+        card(vg, cx, cy, 1500, 440);
+        const parkK = p(t, 41.4, 41.8, E.out);
+        const mg = el('g', { transform: `translate(${cx - 120},${cy + 170}) scale(.7)` }, vg); SAU.drawMammoth(pen(mg, s + 7, 5));
+        if (t < 39.8) { const cg = el('g', { transform: `translate(${cx + 260},${cy + 170}) scale(.6)` }, vg); SAU.drawCart(pen(cg, s + 1, 5), { rope: false }); el('path', { d: `M ${cx + 140} ${cy + 80} L ${cx + 30} ${cy + 30}`, stroke: '#C9A872', 'stroke-width': 6 }, vg); hand(vg, cx + 470, cy - 120, '50,000 yrs of work', p(t, 37.2, 37.5, E.back), 42, 3); }
+        else if (t < 41.4) { miniCar(vg, s + 3, cx + 320, cy + 170, .45, COLS[0]); hand(vg, cx + 460, cy - 120, 'replaced!', p(t, 39.8, 40.1, E.back), 50, 3, B.rust); }
+        if (parkK > 0) { const sg = el('g', { transform: `translate(${cx + 410},${cy - 40}) rotate(4) scale(${parkK})` }, vg); el('rect', { x: -230, y: -80, width: 460, height: 160, rx: 14, fill: '#2E6B3A', stroke: B.ink, 'stroke-width': 5 }, sg); txt(sg, 0, -16, 'MAMMOTH', { fill: B.bone, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 40 }); txt(sg, 0, 40, 'RETIREMENT PARK', { fill: '#BFE3C4', 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 34 }); hand(vg, cx - 480, cy - 120, 'zzz', parkK, 60, -6, B.techDeep); }
+        if (t > 35.3 && t < 37.2) hand(vg, cx + 400, cy - 120, 'never went extinct', p(t, 35.3, 35.6, E.back), 44, 3);
+      }
+      if (n === '5') { // cup holder
+        card(vg, cx, cy, 1300, 440);
+        const P = pen(vg, s, 4);
+        [[cx - 330, '300,000 BC', '#D23B2E'], [cx + 330, 'TODAY', '#3E7A9A']].forEach(([x, l, c], i) => {
+          P.shape(`M ${x - 230} ${cy + 140} L ${x - 230} ${cy - 40} Q ${x} ${cy - 120} ${x + 230} ${cy - 40} L ${x + 230} ${cy + 140} Z`, i ? '#4A5660' : '#5A4A40', 4);
+          el('circle', { cx: x - 60, cy: cy + 20, r: 70, fill: 'none', stroke: c, 'stroke-width': 14 }, vg);
+          SAU.drawCup(P, x + 130, cy + 92, .9);
+          el('circle', { cx: x + 130, cy: cy + 70, r: 52, fill: 'none', stroke: B.tech, 'stroke-width': 5, 'stroke-dasharray': '10 8', filter: 'url(#kGlow)' }, vg);
+          txt(vg, x, cy - 150, l, { fill: B.ink, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 36 });
+        });
+        if (t > 46.8) txt(vg, cx, cy + 60, '=', { fill: B.ink, 'font-size': 90 });
+        if (t > 49.9) hand(vg, cx, cy + 270, t > 51.4 ? 'why? nobody knows. TRADITION.' : 'why?', p(t, 49.9, 50.2, E.back), 46, -2, B.rust);
+      }
+      if (n === '6') { // honk
+        card(vg, cx, cy, 1400, 420);
+        const b1 = p(t, 53.2, 53.5, E.back), b2 = p(t, 56.4, 56.7, E.back);
+        const bub = (x, y, l, k, col, sz) => { if (k <= 0) return; const bg = el('g', { transform: `translate(${x},${y}) scale(${k})` }, vg); el('path', { d: 'M -220 -70 L 220 -70 L 220 60 L 40 60 L 0 110 L -20 60 L -220 60 Z', fill: B.bone, stroke: B.ink, 'stroke-width': 5 }, bg); txt(bg, 0, 18, l, { fill: col, 'font-size': sz }); };
+        bub(cx - 340, cy - 40, 'HONK!', b1, '#3E7A2E', 64);
+        if (t > 53.2) txt(vg, cx - 340, cy + 150, t > 55.5 ? '= "hello" (short one)' : '= "hello"', { fill: '#3E7A2E', 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 44 });
+        bub(cx + 340, cy - 40, 'HOOOOOOONK', b2, '#C8362E', 48);
+        if (t > 56.4) txt(vg, cx + 340, cy + 150, '= VERY rude', { fill: '#C8362E', 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 44 });
+      }
+      if (n === '7') { // 41-year jam
+        for (let i = 0; i < 7; i++) miniCar(vg, s + i, 160 + i * 270, cy + 230, .4, COLS[i % 5]);
+        const yrs = Math.floor(lerp(0, 41, p(t, 59.5, 61.6)));
+        const cg = el('g', { transform: `translate(${cx},${cy - 110})` }, vg); el('rect', { x: -330, y: -70, width: 660, height: 140, rx: 16, fill: '#120C09', opacity: .93 }, cg); txt(cg, 0, -20, 'TRAFFIC JAM · LANE 3', { fill: B.sand, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 26 }); txt(cg, 0, 44, `YEAR ${yrs}`, { fill: '#FF7A3D', 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 58 });
+        [[61.9, 'born here'], [63.3, 'married here'], [64.7, 'wrote a book here']].forEach(([a, l], i) => hand(vg, 320 + i * 600, cy + 60, l, p(t, a, a + .3, E.back), 42, -3 + i * 3, B.bone));
+        if (t > 66.0) { const bk = el('g', { transform: `translate(${W - 230},${cy - 150}) rotate(6) scale(${.8 * p(t, 66.0, 66.4, E.back)})` }, vg); el('rect', { x: -130, y: -170, width: 260, height: 340, rx: 10, fill: B.rust, stroke: B.ink, 'stroke-width': 5 }, bk); txt(bk, 0, -60, 'MY LIFE', { fill: B.bone, 'font-size': 38 }); txt(bk, 0, -10, 'IN LANE 3', { fill: B.bone, 'font-size': 34 }); txt(bk, 0, 90, 'vol. 1 of 9', { fill: '#FFD36B', 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 24 }); }
+      }
+      if (n === '8') { // wheel / walking
+        card(vg, cx, cy, 1500, 420);
+        txt(vg, cx - 360, cy - 80, '"Who invented', { fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 52 });
+        txt(vg, cx - 360, cy - 10, 'the wheel?"', { fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 52 });
+        const wg = el('g', { transform: `translate(${cx - 360},${cy + 120}) rotate(${t * 60})` }, vg); SAU.drawWheel(pen(wg, s, 4), 70);
+        if (t > 74.6) { const k = p(t, 74.6, 75.0, E.back); txt(vg, cx, cy + 30, '=', { fill: B.rust, 'font-size': 110, opacity: k }); txt(vg, cx + 360, cy - 80, '"Who invented', { fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 52, opacity: k }); txt(vg, cx + 360, cy - 10, 'walking?"', { fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 52, opacity: k }); pen(vg, s + 5, 6).stroke(`M ${cx + 360} ${cy + 70} l 0 70 M ${cx + 360} ${cy + 140} l -30 60 M ${cx + 360} ${cy + 140} l 30 60 M ${cx + 330} ${cy + 100} l 60 0`, B.ink, 7); el('circle', { cx: cx + 360, cy: cy + 50, r: 22, fill: B.ink }, vg); }
+      }
+      if (n === '9') { // walking extreme sport
+        set(yu.root, { display: 'inline' });
+        const wx = lerp(W * .25, W * .55, p(t, 77.7, 84.6, E.linear));
+        yu.pose({ x: wx, y: H * .84, scale: .62, expr: 'smug', bob: Math.sin(t * 8) * 4, legL: Math.sin(t * 8) * 18, legR: -Math.sin(t * 8) * 18, armL: -Math.sin(t * 8) * 16, armR: Math.sin(t * 8) * 16 }, t);
+        el('path', { d: `M ${wx - 64} ${H * .84 - 300} Q ${wx} ${H * .84 - 390} ${wx + 64} ${H * .84 - 300} Z`, fill: '#E0A020', stroke: B.ink, 'stroke-width': 5, transform: `translate(0,${Math.sin(t * 8) * 4 - 6})` }, topG);
+        if (t > 81.3) { const tk = p(t, 81.3, 81.6, E.out); const tg = el('g', { transform: `translate(0,${H - 150 + (1 - tk) * 160})` }, vg); el('rect', { x: 0, y: 0, width: W, height: 110, fill: '#C8362E' }, tg); el('rect', { x: 0, y: 0, width: 300, height: 110, fill: '#120C09' }, tg); txt(tg, 150, 70, 'BREAKING', { fill: B.bone, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 44 }); txt(tg, 360, 72, 'MAN WALKS 10 KM. ON FOOT. ON PURPOSE.', { 'text-anchor': 'start', fill: B.bone, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 46 }); }
+        if (t > 79.5 && t < 81.3) hand(vg, W * .72, H * .55, 'EXTREME!', p(t, 79.5, 79.8, E.back), 70, 6, B.rust);
+      }
+      if (n === '10') { // round snake
+        const sg = el('g', { transform: `translate(${cx},${cy + 20}) rotate(${Math.sin(t * 2) * 12})` }, vg); SAU.drawSteeringWheel(pen(sg, s, 5), 220, p(t, 87.3, 87.8));
+        if (t < 87.3) hand(vg, cx + 430, cy - 140, 'steering wheel?', p(t, 85.3, 85.6, E.back), 50, 4);
+        else { hand(vg, cx + 430, cy - 140, 'steering wheel?', 1, 50, 4); el('path', { d: `M ${cx + 250} ${cy - 150} L ${cx + 610} ${cy - 130}`, stroke: '#C8362E', 'stroke-width': 10 }, vg); hand(vg, cx + 430, cy - 40, 'the ROUND SNAKE', p(t, 87.3, 87.6, E.back), 56, -4, B.rust); }
+      }
+      if (n === '–') { // costs
+        card(vg, cx, cy, 1600, 460);
+        const P = pen(vg, s, 4);
+        // land strip: 1/3 roads
+        const x0 = cx - 720, w = 1440, y0 = cy - 190;
+        P.shape(SAU.rrectPath(x0, y0, w, 90, 10), '#8AA05A', 3);
+        el('rect', { x: x0, y: y0, width: w / 3 * p(t, 91.8, 93.0), height: 90, rx: 10, fill: '#3A3634' }, vg);
+        if (t > 92.4) txt(vg, x0 + w / 6, y0 + 60, '1/3 ROADS', { fill: B.bone, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 40 });
+        if (t > 94.1) { const zg = el('g', { transform: `translate(${cx - 380},${cy + 70}) scale(${p(t, 94.1, 94.4, E.back)})` }, vg); el('rect', { x: -250, y: -60, width: 500, height: 120, rx: 14, fill: '#2E6B3A', stroke: B.ink, 'stroke-width': 4 }, zg); txt(zg, 0, 16, 'ROAD-FREE ZONE', { fill: B.bone, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 40 }); const gg = el('g', { transform: 'translate(0,190) scale(.36)' }, zg); SAU.drawGazelle(pen(gg, s + 4, 8)); }
+        if (t > 97.2) { for (let i = 0; i < 4; i++) el('circle', { cx: cx + 300 + i * 90, cy: cy + 60 - i * 10 + Math.sin(t + i) * 8, r: 70, fill: '#4A4440', opacity: .55 }, vg); hand(vg, cx + 420, cy + 180, 'still smells like black water', p(t, 97.2, 97.5, E.back), 38, -2); }
+      }
+      if (quiet) { // neighbors
+        const k = p(t, 100.8, 101.5);
+        const P = pen(g, s, 4);
+        P.shape(`M -40 ${H * .9} Q ${W * .2} ${H * .55} ${W * .45} ${H * .9} Z`, '#3B2A2A', 4);
+        P.shape(`M ${W * .55} ${H * .9} Q ${W * .8} ${H * .55} ${W + 40} ${H * .9} Z`, '#3B2A2A', 4);
+        miniCar(g, s + 2, W * .5, H * .93, .45, '#D23B2E', { dents: 3 });
+        set(yu.root, { display: 'inline' }); set(nb.root, { display: 'inline' });
+        const wave = t > 108.8 ? Math.sin(t * 8) * 30 : 0;
+        yu.pose({ x: W * .2, y: H * .75, scale: .5, expr: t > 108.8 ? 'smile' : 'neutral', armR: t > 108.8 ? 150 + wave : 0, look: [10, 0] }, t);
+        nb.pose({ x: W * .8, y: H * .75, scale: .5, expr: t > 108.8 ? 'smile' : 'scared', armL: t > 108.8 ? 150 - wave : 0, look: [-10, 0] }, t);
+        if (t > 102.8 && t < 105.9) { txt(g, W / 2, H * .3, 'speed', { fill: B.bone, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 80, opacity: p(t, 102.8, 103.2) }); if (t > 104.6) el('path', { d: `M ${W / 2 - 160} ${H * .28} L ${W / 2 + 160} ${H * .26}`, stroke: '#FF5A3D', 'stroke-width': 10 }, g); }
+        if (t > 105.9 && t < 108.8) txt(g, W / 2, H * .3, 'monsters?', { fill: B.bone, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 80, opacity: p(t, 105.9, 106.3) });
+        if (t > 108.8) txt(g, W / 2, H * .3, 'neighbors.', { fill: B.tech, 'font-family': B.fontDisplay, 'font-size': 96, filter: 'url(#kGlow)', opacity: p(t, 108.8, 109.2) });
+        set(stage, { opacity: k });
+      } else set(stage, { opacity: 1 });
+
+      yp.set(t < 4.6 ? '2026' : t < 7.2 ? 'YEAR 300,000' : '300,000 A.V.', 'TODAY');
+      set(hud, { opacity: t > 10.9 && !quiet ? 1 : 0 });
+      const fl = [11.0, 100.8].reduce((m, a) => Math.min(m, Math.abs(t - a)), 9);
+      set(flash, { opacity: fl < .25 ? .45 * (1 - fl / .25) : 0 });
+    },
+  };
+});
+</script></body></html>

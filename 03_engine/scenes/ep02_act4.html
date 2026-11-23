@@ -1,0 +1,251 @@
+<!doctype html>
+<html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;padding:0;background:#1E1612;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script>
+<script src="../lib/animals.js"></script><script src="../lib/you.js"></script><script src="../lib/kit.js"></script><script src="../lib/kit_car.js"></script>
+</head><body><script>
+// EP02 · Perde 4 — 10. yıl → 100.000. yıl (255.0 s). Zamanlar: ep02_perde4.timing.json
+SAU.duration = 255.05;
+SAU.init((svg, S) => {
+  const { W, H, el, set, p, E, boil, BRAND: B, clamp, hash, lerp, fmt } = S;
+  const rc = rough.svg(svg);
+  const defs = SAU.kitDefs(svg);
+  defs.insertAdjacentHTML('beforeend', `<linearGradient id="kDay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9A35C"/><stop offset=".6" stop-color="#F2C27F"/><stop offset="1" stop-color="#F6D7A0"/></linearGradient>
+    <linearGradient id="kSmog" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8E8478"/><stop offset="1" stop-color="#C9B79A"/></linearGradient>
+    <linearGradient id="kSky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB2C8"/><stop offset="1" stop-color="#E8D9B8"/></linearGradient>
+    <filter id="kGray"><feColorMatrix type="saturate" values="0.15"/></filter>`);
+  const GY = H * .86, horizon = H * .58;
+  const win = (t, a, b, fi = .25, fo = .25) => p(t, a, a + fi, E.out) * (1 - p(t, b - fo, b, E.in));
+  const clr = g => { while (g.firstChild) g.removeChild(g.firstChild); };
+  const hand = (g, x, y, txt, k, size = 54, rot = -3, col = B.ink) => { if (k <= 0) return; const gg = el('g', { transform: `translate(${x},${y}) rotate(${rot}) scale(${.6 + .4 * Math.min(k, 1.2)})`, opacity: clamp(k) }, g); el('text', { 'text-anchor': 'middle', fill: col, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': size, stroke: B.bone, 'stroke-width': 10, 'paint-order': 'stroke' }, gg).textContent = txt; };
+  const pen = (g, s, sw = 3) => SAU.makePen(1, rc, g, { seed: s, sw });
+  const sd = t => Math.floor(t / .125);
+  const stampAt = (g, x, y, txt, k, w = 900, sub = '', rot = -3, size = 64) => { if (k <= 0) return; const sg = el('g', { transform: `translate(${x},${y}) rotate(${rot}) scale(${k})` }, g); const h = sub ? 170 : 120; el('rect', { x: -w / 2 + 8, y: -h / 2 + 10, width: w, height: h, rx: 12, fill: '#000', opacity: .3 }, sg); el('rect', { x: -w / 2, y: -h / 2, width: w, height: h, rx: 12, fill: B.rust, stroke: B.ink, 'stroke-width': 6 }, sg); el('text', { 'text-anchor': 'middle', y: sub ? -6 : size * .36, fill: B.bone, 'font-family': B.fontDisplay, 'font-size': size }, sg).textContent = txt; if (sub) el('text', { 'text-anchor': 'middle', y: 52, fill: '#FFD36B', 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 38 }, sg).textContent = sub; };
+  const darkCard = (g, x, y, l1, l2, k, w = 760, col = B.tech) => { if (k <= 0) return; const cg = el('g', { transform: `translate(${x},${y}) scale(${.8 + .2 * k})`, opacity: clamp(k) }, g); el('rect', { x: -w / 2, y: -70, width: w, height: 140, rx: 16, fill: '#120C09', opacity: .93 }, cg); el('text', { 'text-anchor': 'middle', y: -14, fill: B.sand, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 26, 'letter-spacing': 4 }, cg).textContent = l1; el('text', { 'text-anchor': 'middle', y: 48, fill: col, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 56, filter: col === B.tech ? 'url(#kGlow)' : '' }, cg).textContent = l2; };
+
+  // ================= layers =================
+  const world = el('g', {}, svg);
+  const sky = el('rect', { x: -W * 2, y: -H * 2, width: W * 6, height: H * 5, fill: 'url(#kDay)' }, world);
+  const bg = el('g', {}, world), road = el('g', {}, world), back = el('g', {}, world), mid = el('g', {}, world);
+  const carG = el('g', {}, world); const car = SAU.makeCar(carG, rc);
+  const mk = (o, seed) => SAU.makeYou(el('g', {}, world), rc, Object.assign({ seed }, o));
+  const ug = mk(SAU.CAST.cousin, 41), you = mk(SAU.CAST.you, 6);
+  const front = el('g', {}, world), fx = el('g', {}, world), notes = el('g', {}, world);
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .07, 5), preserveAspectRatio: 'none', opacity: .55 }, svg);
+  el('rect', { width: W, height: H, fill: 'url(#kVig)', opacity: .55 }, svg);
+  const over = el('g', {}, svg);
+  const hud = el('g', {}, svg);
+  const yp = SAU.makeYearPanel(hud, 40, 40);
+  const stats = SAU.makeStatPanel(hud, W - 500, 40, ['POPULATION', 'VEHICLES', 'ROADS'], 460);
+  const FACTS = [
+    [67.3, 77.6, 'The first traffic light: London, 1868. It ran on gas and exploded a few weeks later.'],
+    [87.2, 95.6, 'First speeding fine: England, 1896. Speed: 13 km/h, four times the limit.'],
+    [138.9, 145.0, 'Karl Benz patented the first car in 1886.'],
+    [145.1, 156.2, 'In 1888 Bertha Benz drove it ~100 km and bought fuel at a pharmacy.'],
+    [188.9, 193.6, 'Road crashes kill about 1.19 million people a year (WHO, 2023).'],
+  ].map(([a, b, txt]) => ({ a, b, g: SAU.makeFactCard(svg, txt, Math.min(1840, 120 + txt.length * 14.5)) }));
+  const flash = el('rect', { width: W, height: H, fill: '#FFF7E6', opacity: 0 }, svg);
+
+  const ST = [[0, 'copies', 10], [11.7, 'ostrich', 10], [25.5, 'roads', 50], [53.2, 'rules', 100], [77.9, 'ticket', 200], [95.8, 'temple', 1000], [112.7, 'oil', 3000], [127.9, 'steam', 5000], [156.4, 'brands', 6000], [175.9, 'city', 10000], [214.2, 'fly', 20000], [237.8, 'museum', 100000]];
+  const stageAt = t => { let s = ST[0]; for (const x of ST) if (t >= x[0]) s = x; return s; };
+  const POP = { copies: '40', ostrich: '40', roads: '200', rules: '900', ticket: '2,000', temple: '40,000', oil: '200,000', steam: '1 million', brands: '3 million', city: '40 million', fly: '200 million', museum: '2 billion' };
+  const VEH = { copies: '1 car + 6 carts', ostrich: '1 + 9', roads: '1 + 40', rules: '1 + 300', ticket: '1 + 900', temple: '1 + 20,000', oil: '1 + 90,000', steam: '2', brands: '40,000', city: '20 million', fly: '90 million', museum: '1 billion' };
+  const ROADS = { copies: '0 km', ostrich: '0 km', roads: '12 km', rules: '80 km', ticket: '300 km', temple: '9,000 km', oil: '40,000 km', steam: '60,000 km', brands: '200,000 km', city: '5 million km', fly: '5M km + sky', museum: 'around the planet' };
+
+  // small helpers in world coords
+  const cart = (g, s0, x, y, s = .8, o = {}) => { const cg = el('g', { transform: `translate(${x},${y}) scale(${s})` }, g); SAU.drawCart(pen(cg, s0, 4), o); return cg; };
+  const ostrich = (g, s0, x, y, s = .8, flip = false, t = 0) => { const og = el('g', { transform: `translate(${x},${y}) scale(${flip ? -s : s},${s}) rotate(${Math.sin(t * 24 + x) * 3})` }, g); SAU.drawOstrich(pen(og, s0, 4)); return og; };
+  const villageBg = (r, s, g, day = true) => { const P = SAU.makePen(1, r, g, { seed: s, sw: 3 }); P.shape(`M ${-W * 2} ${horizon} Q 0 ${horizon - 60} ${W} ${horizon - 20} Q ${W * 2} ${horizon - 40} ${W * 4} ${horizon} L ${W * 4} ${H * 2} L ${-W * 2} ${H * 2} Z`, '#D9A566', 3); [-200, 300, 1500, 2100].forEach((x, i) => { P.shape(`M ${x - 90} ${horizon + 50} L ${x} ${horizon - 80} L ${x + 100} ${horizon + 50} Z`, i % 2 ? '#9C7448' : '#B08458', 3); }); SAU.drawAcacia(P, 1800, horizon + 20, .5); SAU.drawSavannaStrip(r, s + 3, g, -W * 2, W * 4, GY + 6, 1); };
+  const roadBand = (g, s0, kind, y = GY - 40, h = 90) => { const P = pen(g, s0, 3); if (kind === 'tracks') { for (let x = -W; x < W * 3; x += 60) P.stroke(`M ${x} ${y + 20} l 30 0 M ${x + 10} ${y + 60} l 30 0`, '#8A5A2E', 4); } else if (kind === 'path') P.shape(`M ${-W * 2} ${y} L ${W * 4} ${y} L ${W * 4} ${y + h} L ${-W * 2} ${y + h} Z`, '#B88A58', 3); else if (kind === 'stone') { P.shape(`M ${-W * 2} ${y} L ${W * 4} ${y} L ${W * 4} ${y + h} L ${-W * 2} ${y + h} Z`, '#A39484', 3); for (let x = -W * 2; x < W * 4; x += 90) P.stroke(`M ${x} ${y} l -14 ${h}`, '#857868', 2.5); } else { P.shape(`M ${-W * 2} ${y} L ${W * 4} ${y} L ${W * 4} ${y + h} L ${-W * 2} ${y + h} Z`, '#3A3634', 3); for (let x = -W * 2; x < W * 4; x += 140) el('rect', { x, y: y + h / 2 - 4, width: 70, height: 8, fill: '#F3E6CF' }, g); } };
+  const cityBg = (r, s, g, smog = 0) => { const P = SAU.makePen(1, r, g, { seed: s, sw: 3 }); for (let i = 0; i < 12; i++) { const x = -200 + i * 200, h = 220 + hash(i * 3.3) * 360, w = 160; P.shape(`M ${x} ${GY - 40} L ${x} ${GY - 40 - h} Q ${x + w / 2} ${GY - 80 - h} ${x + w} ${GY - 40 - h} L ${x + w} ${GY - 40} Z`, i % 2 ? '#8E7C6C' : '#A08C78', 3); for (let k = 0; k < Math.floor(h / 70); k++) for (let c = 0; c < 2; c++) el('rect', { x: x + 30 + c * 60, y: GY - 40 - h + 40 + k * 70, width: 34, height: 40, rx: 5, fill: '#F3E6CF', opacity: .7 }, g); } };
+
+  return {
+    update(t) {
+      const [st0, st, yr] = stageAt(t), lt = t - st0;
+      [back, mid, front, fx, notes, over].forEach(clr);
+      let cam = [W / 2, GY - 300, 1], shake = 0, showCar = false, carO = { x: W * .5, y: GY, s: 1, dist: 0, dents: 3 }, showUg = false, showYou = false;
+      let skyFill = 'url(#kDay)', gray = false;
+
+      // backgrounds
+      if (st === 'city') { skyFill = t > 183.4 ? 'url(#kSmog)' : 'url(#kSky2)'; boil(bg, (r, s, g) => cityBg(r, s, g), t, .25); }
+      else if (st === 'fly') { skyFill = 'url(#kSky2)'; boil(bg, (r, s, g) => cityBg(r, s, g), t, .25); }
+      else if (st === 'museum') { skyFill = '#2A221E'; clr(bg); bg.__seed = -1; }
+      else boil(bg, (r, s, g) => villageBg(r, s, g), t, .25);
+      set(sky, { fill: skyFill });
+
+      if (st === 'copies') { // 0–11.7
+        cam = [W * .55, GY - 300, lerp(1.1, 1, p(t, 0, 3))]; showCar = true; carO = { x: W * .3, y: GY, s: .85, dist: 0, dents: 3 };
+        const n = Math.round(lerp(0, 6, p(t, 5.3, 8.5)));
+        for (let i = 0; i < n; i++) cart(mid, sd(t) + i, W * .62 + (i % 3) * 330, GY - (i > 2 ? 70 : 0), i > 2 ? .6 : .72);
+        SAU.drawCrowd(rc, sd(t) + 50, back, [W * .12, W * .2, W * .45, W * .52, W * .9, W * 1.0], GY - 60, .7, '#7A5038');
+        hand(notes, W * .3, GY - 420, 'everyone: "MINE!"', win(t, 2.9, 5.2, .25, .25), 50, -4);
+        if (t > 4.3 && t < 5.3) hand(notes, W * .3, GY - 340, 'there is only ONE', p(t, 4.3, 4.6, E.back), 46, 2);
+        if (t > 7.2) hand(notes, W * .78, GY - 380, 'box + 4 round wheels', p(t, 7.2, 7.5, E.back), 44, -2);
+        if (t > 9.5) stampAt(over, W * .72, H * .3, 'NO ENGINE', p(t, 9.5, 9.8, E.back), 560);
+      }
+      if (st === 'ostrich') { // 11.7–25.5
+        cam = [W * .5, GY - 300, 1];
+        const run = t > 17.1, x0 = run ? W * .08 + Math.min(t - 17.1, 2.2) * 300 + Math.sin(t * 9) * 6 : W * .42;
+        const cg = cart(mid, sd(t), x0, GY, .85, { rope: true });
+        if (!run) { showUg = true; ug.pose({ x: W * .42 + 330, y: GY + 10, scale: .62, expr: 'angry', look: [-10, 0], armL: -70, bob: Math.sin(t * 8) * 4, legL: Math.sin(t * 6) * 12, legR: -Math.sin(t * 6) * 12 }, t); hand(notes, W * .42, GY - 330, 'heave…', p(t, 12.3, 12.6, E.back), 46, -3); }
+        if (t > 13.2 && !run) { el('circle', { cx: W * .62, cy: GY - 470, r: 50, fill: '#FFE9A8', stroke: B.ink, 'stroke-width': 5 }, notes); hand(notes, W * .62, GY - 540, 'idea!', p(t, 13.2, 13.5, E.back), 46, 4); }
+        if (t > 15.7 && !run) ostrich(front, sd(t) + 3, W * .82, GY, .8, true, t);
+        if (run) { ostrich(front, sd(t) + 3, x0 + 420, GY - 20, .75, true, t); ostrich(front, sd(t) + 5, x0 + 560, GY + 10, .8, true, t); SAU.dust(fx, x0 - 200, GY - 10, t, 5, 1.2); const pg = el('g', {}, mid); SAU.drawCrowd(rc, sd(t) + 9, pg, [x0 - 40], GY - 150, .55, '#5E3A24'); if (t > 19.6) hand(notes, x0, GY - 330, 'AAAAAH!', 1, 48, -8); SAU.speedLines(fx, x0 - 300, GY - 160, t, 6, 260); }
+        const tk = p(t, 21.5, 21.9, E.back);
+        if (tk > 0) stampAt(over, W / 2, H * .28, 'THE FIRST DINOSAUR-POWERED VEHICLE', tk, 1500, t > 24.5 ? '*technically' : '', -2, 58);
+      }
+      if (st === 'roads') { // 25.5–53.2
+        cam = [W * .5, GY - 300, 1];
+        const kind = t < 28.9 ? 'tracks' : t < 30.5 ? 'path' : 'stone';
+        roadBand(mid, sd(t), kind);
+        if (t > 30.5 && t < 38.5) { // traffic jam: 40 ostrich carts + 1 mammoth
+          for (let i = 0; i < 7; i++) { const x = -120 + i * 330; cart(mid, sd(t) + i, x, GY - 20, .45); ostrich(mid, sd(t) + 30 + i, x + 150, GY - 20, .38, true, 0); }
+          const mg = el('g', { transform: `translate(${W * .62},${GY - 6}) scale(.85)` }, front); SAU.drawMammoth(pen(mg, sd(t) + 7, 4));
+          hand(notes, W * .62, GY - 420, '?', p(t, 35.4, 35.7, E.back), 90, 4);
+          darkCard(over, W / 2, H * .2, 'TRAFFIC JAM #1', '40 CARTS · 1 MAMMOTH', p(t, 33.2, 33.6, E.back), 900, B.bone);
+        }
+        if (t >= 38.5 && t < 46.8) { [[41.0, 'trade ⇄'], [41.7, 'travel'], [42.1, 'marriage ♥'], [43.2, 'words'], [43.8, 'songs ♪'], [44.4, 'ideas 💡']].forEach(([a, txt], i) => { const k = p(t, a, a + .3, E.out); if (k <= 0) return; const x = lerp(-200, W * 1.1, ((t - a) * .35 + i * .05) % 1.2); hand(notes, x, GY - 120 - (i % 3) * 70, txt, k, 46, -2); }); hand(notes, W / 2, H * .3, 'GOOD: roads connect everything', p(t, 38.5, 38.9, E.back), 56, -2, '#3E7A2E'); }
+        if (t >= 46.8) { gray = t > 51.3; for (let i = 0; i < 5; i++) { const gg = el('g', { transform: `translate(${W * .2 + i * 170},${GY - 150}) scale(.6)` }, back); SAU.drawGazelle(pen(gg, sd(t) + i, 3)); } hand(notes, W / 2, H * .3, 'BAD: herds stop crossing', p(t, 46.8, 47.2, E.back), 56, -2, '#C8362E'); el('path', { d: `M ${W * .15} ${GY - 140} L ${W * .95} ${GY - 140}`, stroke: '#C8362E', 'stroke-width': 6, 'stroke-dasharray': '20 14' }, fx); if (t > 51.3) hand(notes, W * .75, GY - 380, '(quiet)', p(t, 51.3, 51.6), 48, 3); }
+      }
+      if (st === 'rules') { // 53.2–77.9
+        cam = [W * .5, GY - 300, 1]; roadBand(mid, sd(t), 'stone');
+        if (t < 57.0) { const k = p(t, 54.6, 55.6); cart(mid, sd(t), lerp(W * .2, W * .45, k), GY - 20, .6); cart(mid, sd(t) + 3, lerp(W * .9, W * .62, k), GY - 20, .6); if (t > 55.6) { shake = t < 56 ? 16 : 0; hand(notes, W * .54, GY - 260, 'BONK', p(t, 55.6, 55.8, E.back), 90, -6, '#C8362E'); } }
+        else if (t < 62.0) { const g = el('g', { transform: `translate(${W / 2},${GY - 60})` }, front); SAU.drawSlab(pen(g, sd(t), 4), 700, 520); el('text', { x: 0, y: -440, 'text-anchor': 'middle', fill: B.ink, 'font-family': B.fontDisplay, 'font-size': 44 }, g).textContent = 'RULE #1'; ['THE BIG RED CAR', 'ALWAYS GOES', 'FIRST'].forEach((l, i) => { if (t > 59.5 + i * .4) el('text', { x: 0, y: -340 + i * 74, 'text-anchor': 'middle', fill: '#4A3E34', 'font-family': B.fontDisplay, 'font-size': 56 }, g).textContent = l; }); }
+        else { // Ug the traffic light
+          showUg = true; const phase = Math.floor((t - 62) / 1.6) % 2;
+          ug.pose({ x: W * .5, y: GY + 10, scale: .75, expr: t > 74.7 ? 'smug' : 'neutral', armL: phase ? 20 : 150, armR: phase ? 150 : 20, bob: 0 }, t);
+          const lg = el('g', { transform: `translate(${W * .5},${GY + 10}) scale(.75)` }, front); SAU.drawTrafficUg(pen(lg, sd(t), 4), phase);
+          hand(notes, W * .5, GY - 600, 'UG', p(t, 64.0, 64.3, E.back), 70, -3);
+          if (t > 74.7) { hand(notes, W * .73, GY - 420, 'exploded: 0 times', p(t, 74.7, 75.0, E.back), 48, 4); }
+          cart(back, sd(t) + 1, W * .2, GY - 40, .5); cart(back, sd(t) + 2, W * .82, GY - 40, .5);
+        }
+      }
+      if (st === 'ticket') { // 77.9–95.8
+        cam = [W * .5, GY - 300, 1]; roadBand(mid, sd(t), 'stone'); showYou = true;
+        const carry = t > 83.2;
+        you.pose({ x: lerp(W * .42, W * .52, p(t, 83.2, 87)), y: GY + 10, scale: .7, expr: carry ? 'angry' : 'shock', armL: carry ? 160 : 0, armR: carry ? 160 : 0, bob: carry ? Math.sin(t * 6) * 6 : 0, legL: carry ? Math.sin(t * 6) * 10 : 0, legR: carry ? -Math.sin(t * 6) * 10 : 0 }, t);
+        const sx = carry ? lerp(W * .42, W * .52, p(t, 83.2, 87)) : W * .68, sy = carry ? GY - 400 : GY;
+        const g = el('g', { transform: `translate(${sx},${sy}) scale(${carry ? .55 : .8})` }, front); SAU.drawSlab(pen(g, sd(t), 4), 420, 520);
+        ['SPEEDING', 'TICKET', '———', 'FINE:', '1 GAZELLE'].forEach((l, i) => { if (t > 79.2 + i * .3 && (i < 3 || t > 85.5)) el('text', { x: 0, y: -430 + i * 84, 'text-anchor': 'middle', fill: '#4A3E34', 'font-family': B.fontDisplay, 'font-size': 52 }, g).textContent = l; });
+        if (t > 80.7 && t < 83.2) hand(notes, W * .68, GY - 600, '40 kg', p(t, 80.7, 81.0, E.back), 56, 4);
+      }
+      if (st === 'temple') { // 95.8–112.7
+        cam = [W * .5, GY - 320, 1];
+        if (t < 106.3) {
+          const P = pen(back, sd(t) + 1, 4);
+          P.shape(`M ${W * .12} ${GY - 40} L ${W * .12} ${GY - 520} L ${W * .5} ${GY - 640} L ${W * .88} ${GY - 520} L ${W * .88} ${GY - 40} Z`, '#B9A68C', 4);
+          for (let i = 0; i < 6; i++) P.shape(SAU.rrectPath(W * .15 + i * W * .135, GY - 500, 50, 460, 8), '#D8C6A8', 3);
+          showCar = true; carO = { x: W * .5, y: GY - 40, s: .9, dist: 0, dents: 3 };
+          for (let i = 0; i < 3; i++) { const a = ((t * .7 + i / 3) % 1); el('circle', { cx: W * .5 - 300 - a * 120, cy: GY - 110 - a * 160, r: 18 + a * 30, fill: '#9A9088', opacity: (1 - a) * .6 }, fx); }
+          darkCard(over, W / 2, H * .86, 'ENGINE RUNNING FOR', fmt(lerp(1, 1000, p(t, 99.6, 102.2))) + ' YEARS', p(t, 99.6, 100), 760);
+          if (t > 104.5) { hand(notes, W * .78, GY - 420, 'HONK = prayer bell', p(t, 104.5, 104.8, E.back), 46, 4); SAU.drawCrowd(rc, sd(t) + 3, front, [W * .2, W * .28, W * .72, W * .8], GY + 20, .7, '#6A4430'); }
+        } else { // kids reading the manual
+          const g = el('g', { transform: `translate(${W / 2},${H * .26}) scale(.95)` }, front); SAU.drawManual(pen(g, sd(t), 4), 520, 360);
+          SAU.drawCrowd(rc, sd(t) + 5, front, [W * .25, W * .35, W * .45, W * .55, W * .65, W * .75], GY + 40, .6, '#7A5038');
+          if (t > 108.5) { const k = p(t, 110.5, 111.2); const g2 = el('g', { transform: `translate(${W / 2},${H * .5})` }, over); el('rect', { x: -620, y: -60, width: 1240, height: 110, rx: 14, fill: '#2E3A2E', stroke: '#6E5034', 'stroke-width': 10 }, g2); el('text', { 'text-anchor': 'middle', y: 18, fill: '#F3E6CF', 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 52 }, g2).textContent = '"Check tire pressure every month."'.slice(0, Math.round(32 * k)); }
+        }
+      }
+      if (st === 'oil') { // 112.7–127.9
+        cam = [W * .5, GY - 300, 1];
+        if (t < 119.5) { const P = pen(mid, sd(t), 4); P.shape(`M ${W * .3} ${GY} L ${W * .34} ${GY - 300} L ${W * .46} ${GY - 300} L ${W * .5} ${GY} Z`, '#8A7A6A', 4); el('ellipse', { cx: W * .4, cy: GY - 120, rx: 60, ry: 50, fill: '#FF7A3D', opacity: .5 + .3 * Math.sin(t * 9) }, fx); [[118.1, 'copper', '#C8763A'], [118.4, 'bronze', '#B08A3A'], [119.0, 'iron', '#6E6A64']].forEach(([a, l, c], i) => { const k = p(t, a, a + .25, E.back); if (k <= 0) return; const ig = el('g', { transform: `translate(${W * .62 + i * 200},${GY - 40}) scale(${k})` }, front); pen(ig, sd(t) + i, 4).shape('M -70 0 L -50 -50 L 50 -50 L 70 0 Z', c, 4); hand(notes, W * .62 + i * 200, GY - 130, l, k, 42, -3); }); hand(notes, W * .4, GY - 380, 'melting rocks', p(t, 116.1, 116.4, E.back), 50, -3); }
+        else { SAU.drawOilDerrick(pen(mid, sd(t), 4), W * .5, GY - 10, 1.2); if (t < 125.1) hand(notes, W * .5, GY - 470, t < 124.4 ? 'black water that smells like the car' : 'OIL', p(t, 119.5, 119.8, E.back), t < 124.4 ? 44 : 90, -2, t < 124.4 ? B.ink : '#1E1612'); if (t > 125.1) { SAU.drawCrowd(rc, sd(t) + 3, front, [W * .18, W * .24, W * .3], GY + 20, .7, '#7A5038'); SAU.drawCrowd(rc, sd(t) + 6, front, [W * .7, W * .76, W * .82], GY + 20, .7, '#5E3A24'); for (let i = 0; i < 4; i++) el('circle', { cx: W * .5 + (i - 1.5) * 120, cy: GY - 330 - i * 30, r: 50 + i * 10, fill: '#4A4440', opacity: .5 }, fx); darkCard(over, W / 2, H * .18, 'THE PRICE', 'THE FIRST OIL WARS', p(t, 125.1, 125.5), 820, '#FF7A3D'); } }
+      }
+      if (st === 'steam') { // 127.9–156.4
+        cam = [W * .5, GY - 300, 1]; roadBand(mid, sd(t), 'stone');
+        showCar = true; const dist = (t - 129.4) * 60;
+        carO = { x: W * .2 + clamp(dist, 0, 360), y: GY - 20, s: .8, dist: Math.max(0, dist), variant: 'wood', bounce: Math.sin(t * 10) * 3 };
+        const P = pen(fx, sd(t) + 4, 4); const cx = carO.x;
+        P.shape(SAU.rrectPath(cx - 190, GY - 330, 50, 130, 8), '#5A5048', 3);
+        for (let i = 0; i < 3; i++) { const a = ((t * .9 + i / 3) % 1); el('circle', { cx: cx - 165 - a * 80, cy: GY - 350 - a * 200, r: 20 + a * 40, fill: '#E8E2D6', opacity: (1 - a) * .7 }, fx); }
+        [[132.3, 'wood'], [132.9, 'bronze'], [133.6, 'steam engine']].forEach(([a, l], i) => hand(notes, cx + 60 + i * 30, GY - 430 - i * 60, l, win(t, a, 138.8, .25, .3), 44, -3));
+        darkCard(over, W - 360, H * .55, 'TOP SPEED', '8 km/h', win(t, 134.7, 138.8, .3, .3), 460, B.bone);
+        if (t > 136.5) { ostrich(front, sd(t) + 9, W * .82, GY, .85, true, 0); if (t > 137.1) hand(notes, W * .78, GY - 480, 'not impressed', p(t, 137.1, 137.4, E.back), 46, 4); }
+        if (t > 150.1) { const sg = el('g', { transform: `translate(${W * .62},${GY - 330})` }, back); pen(sg, sd(t), 4).shape(SAU.rrectPath(-200, -100, 400, 260, 10), '#E8D3A8', 4); el('text', { x: 0, y: -30, 'text-anchor': 'middle', fill: B.rust, 'font-family': B.fontDisplay, 'font-size': 46 }, sg).textContent = 'PHARMACY'; el('text', { x: 0, y: 60, 'text-anchor': 'middle', fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 36 }, sg).textContent = '(fuel sold here)'; }
+      }
+      if (st === 'brands') { // 156.4–175.9
+        cam = [W * .5, GY - 300, 1]; roadBand(mid, sd(t), 'asphalt');
+        if (t < 163.8) {
+          const B4 = [[159.2, 'MAMMOTH MOTORS'], [160.5, 'ROCKSWAGEN'], [161.6, 'FER-ROCK-I'], [162.5, 'OSTRICH MARTIN']];
+          B4.forEach(([a, l], i) => { const k = p(t, a, a + .3, E.back); if (k <= 0) return; const x = W * .14 + (i % 2) * W * .4 + (i > 1 ? W * .18 : 0), y = H * .24 + (i > 1 ? 200 : 0); const bgG = el('g', { transform: `translate(${x + 250},${y}) rotate(${-3 + i * 2}) scale(${k})` }, over); el('rect', { x: -260, y: -64, width: 520, height: 128, rx: 14, fill: i % 2 ? B.bone : '#120C09', stroke: B.ink, 'stroke-width': 6 }, bgG); el('text', { 'text-anchor': 'middle', y: 18, fill: i % 2 ? B.rust : B.tech, 'font-family': B.fontDisplay, 'font-size': l.length > 12 ? 44 : 54, filter: i % 2 ? '' : 'url(#kGlow)' }, bgG).textContent = l; });
+          hand(notes, W / 2, H * .1 + 40, 'car companies!', p(t, 158.0, 158.3, E.back), 56, -2);
+        } else {
+          showCar = true;
+          const v = t < 169.6 ? 'legs' : t < 171.4 ? 'swim' : t < 174.2 ? 'normal' : 'convertible';
+          const dist = (t - 163.8) * 300;
+          carO = { x: v === 'convertible' || v === 'normal' ? W * .5 : W * .2 + ((t - 163.8) % 5.8) * 240, y: v === 'legs' ? GY - 70 : GY, s: .9, dist, variant: v, bounce: v === 'legs' ? Math.abs(Math.sin(t * 6)) * -14 : v === 'swim' ? Math.sin(t * 3) * 8 : 0, color: v === 'legs' ? '#3E7A9A' : v === 'swim' ? '#E0A020' : undefined };
+          if (v === 'swim') { el('rect', { x: -W, y: GY - 70, width: W * 3, height: H, fill: '#5FA3B0' }, front); for (let i = 0; i < 8; i++) el('path', { d: `M ${i * 280 - ((t * 120) % 280)} ${GY + 20 + (i % 2) * 40} q 30 -10 60 0`, stroke: '#E8F4F2', 'stroke-width': 4, fill: 'none' }, front); }
+          if (t > 166.6 && t < 169.6) hand(notes, carO.x, GY - 470, 'a car with legs', p(t, 166.6, 166.9, E.back), 50, -3);
+          if (t > 169.6 && t < 171.4) hand(notes, carO.x, GY - 450, 'a car that swims', p(t, 169.6, 169.9, E.back), 50, -3);
+          if (t >= 171.4) { hand(notes, W * .5, GY - 560, 'a convertible…', p(t, 171.4, 171.7, E.back), 54, -3); const mk2 = p(t, 172.6, 174.2, E.in); { const mg = el('g', { transform: `translate(${W * .5},${lerp(GY - 1200, GY - 230, mk2)}) scale(.85)` }, front); SAU.drawMammoth(pen(mg, sd(t) + 7, 4)); } if (t > 174.2) shake = t < 174.6 ? 20 : 0; }
+        }
+      }
+      if (st === 'city') { // 175.9–214.2
+        cam = [W * .5, GY - 300, 1]; roadBand(mid, sd(t), 'asphalt', GY - 70, 110);
+        if (t < 193.7) {
+          for (let i = 0; i < 9; i++) { const cg = el('g', { transform: `translate(${-100 + i * 260 + (t < 181 ? (t * 40) % 260 : 0)},${GY - 10}) scale(.4)` }, mid); SAU.drawCarBody(pen(cg, sd(t) + i, 7), { color: ['#D23B2E', '#3E7A9A', '#E0A020', '#7C6A5C', '#4E9A3E'][i % 5] }); SAU.WHEELS.forEach(x => { const wg = el('g', { transform: `translate(${x},-50)` }, cg); SAU.drawWheel(pen(wg, sd(t) + x, 6), 62); }); }
+          if (t > 181.0 && t < 187.6) darkCard(over, W / 2, H * .2, 'TRAFFIC JAM', 'DAY ' + (1 + Math.floor(p(t, 181, 183) * 2)), p(t, 181, 181.4), 700, '#FF7A3D');
+          if (t > 183.4) for (let i = 0; i < 6; i++) el('circle', { cx: W * (.1 + i * .16), cy: H * .25 + Math.sin(t + i) * 10, r: 120, fill: '#6E665E', opacity: .35 }, fx);
+          if (t > 185.4 && t < 187.6) { showYou = true; you.pose({ x: W * .85, y: GY - 80, scale: .45, expr: 'scared', look: [-10, 0] }, t); hand(notes, W * .85, GY - 380, 'no playing in the street', p(t, 185.4, 185.7, E.back), 40, 3); }
+          gray = t > 187.6;
+        } else if (t < 205.2) {
+          const g = el('g', { transform: `translate(${W / 2},${H * .2})` }, front); SAU.drawManual(pen(g, sd(t), 4), 560, 420);
+          el('text', { x: W / 2, y: H * .2 - 40, 'text-anchor': 'middle', fill: B.ink, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 30 }, over).textContent = 'PAGE 1';
+          [[199.1, 'person'], [199.9, 'belt'], [200.8, 'CLICK']].forEach(([a, l], i) => { const k = p(t, a, a + .25, E.back); if (k <= 0) return; const ix = W / 2 + 120 + i * 140, iy = H * .2 + 200; const P = pen(front, sd(t) + i, 4); if (i === 0) { P.ellipse(ix, iy - 50, 26 * k, 26 * k, '#7A5038', 3); P.shape(`M ${ix - 30} ${iy - 20} L ${ix + 30} ${iy - 20} L ${ix + 24} ${iy + 60} L ${ix - 24} ${iy + 60} Z`, '#7A5038', 3); } if (i === 1) P.stroke(`M ${ix - 40} ${iy - 40} L ${ix + 40} ${iy + 50}`, '#2B2622', 12 * k); if (i === 2) hand(front, ix, iy + 10, 'click', k, 40, -6, B.rust); });
+          if (t > 203.7) stampAt(over, W / 2, H * .82, 'EVERYBODY BUCKLES UP', p(t, 203.7, 204.0, E.back), 1100);
+        } else {
+          const G = [[207.7, 'AMBULANCES', '#C8362E'], [208.7, 'FOOD TRUCKS → DROUGHT VILLAGES', '#3E7A2E'], [211.2, 'TRADE ACROSS CONTINENTS', B.techDeep]];
+          G.forEach(([a, l, c], i) => { const k = p(t, a, a + .35, E.back); if (k <= 0) return; const gg = el('g', { transform: `translate(${W / 2},${H * .26 + i * 120}) scale(${k})` }, over); el('rect', { x: -560, y: -48, width: 1120, height: 96, rx: 14, fill: B.bone, stroke: B.ink, 'stroke-width': 5 }, gg); el('text', { 'text-anchor': 'middle', y: 16, fill: c, 'font-family': B.fontDisplay, 'font-size': 46 }, gg).textContent = '+  ' + l; });
+          hand(notes, W / 2, H * .22, 'the good side is huge', p(t, 205.9, 206.2, E.back), 52, -2, '#3E7A2E');
+        }
+      }
+      if (st === 'fly') { // 214.2–237.8
+        cam = [W * .5, GY - 300, 1]; roadBand(mid, sd(t), 'asphalt', GY - 70, 110);
+        for (let i = 0; i < 9; i++) { const cg = el('g', { transform: `translate(${-100 + i * 260},${GY - 10}) scale(.4)` }, mid); SAU.drawCarBody(pen(cg, sd(t) + i, 7), { color: ['#D23B2E', '#3E7A9A', '#E0A020', '#7C6A5C'][i % 4] }); }
+        if (t < 224.0) { if (t < 218.3) darkCard(over, W / 2, H * .2, 'TRAFFIC JAM', 'DAY 3 (again)', p(t, 215.7, 216.1), 700, '#FF7A3D'); if (t > 218.3) { showYou = true; you.pose({ x: W * .5, y: GY - 130, scale: .5, expr: 'thinking', head: -18, look: [0, -14] }, t); } if (t > 222.1) { const bg2 = el('g', { transform: `translate(${W * .62},${GY - 560})` }, notes); el('ellipse', { rx: 260, ry: 90, fill: B.bone, stroke: B.ink, 'stroke-width': 5 }, bg2); el('text', { 'text-anchor': 'middle', y: 18, fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 50 }, bg2).textContent = t < 223.2 ? 'What if…' : 'What if… UP?'; } }
+        else {
+          const n = t < 232.2 ? 2 : 14;
+          for (let i = 0; i < n; i++) { const rise = t < 232.2 ? p(t, 224 + i * .6, 227 + i * .6) : 1; const x = t < 232.2 ? W * (.3 + i * .35) : (i % 5) * 420 - 60 + (t * 30) % 60, y = t < 232.2 ? lerp(GY - 10, GY - 520, rise) : H * .3 + Math.floor(i / 5) * 140 + Math.sin(t * 3 + i) * 8; const cg = el('g', { transform: `translate(${x},${y}) scale(${t < 232.2 ? .6 : .36})` }, front); SAU.drawCarBody(pen(cg, sd(t) + i * 3, 6), { variant: 'flying', color: ['#D23B2E', '#3E7A9A', '#E0A020', '#7C6A5C'][i % 4] }); el('path', { d: 'M -260 -60 l -60 30 l 60 30 Z', fill: B.tech, opacity: .7, filter: 'url(#kGlow)' }, cg); }
+          if (t > 225.4 && t < 232.2) hand(notes, W / 2, H * .14, 'flying cars!', p(t, 224.0, 224.3, E.back), 70, -3, B.techDeep);
+          if (t > 232.2) darkCard(over, W / 2, H * .82, 'TWO WEEKS LATER', 'SKY TRAFFIC JAM', p(t, 232.2, 232.6), 760, '#FF7A3D');
+          if (t > 235.6) for (let i = 0; i < 5; i++) { const bx = W * (.15 + i * .18), by = H * .62 + Math.sin(t * 6 + i) * 20; el('path', { d: `M ${bx - 40} ${by} q 40 -36 80 0 q -40 18 -80 0 Z`, fill: '#3B2418', stroke: B.ink, 'stroke-width': 3 }, notes); hand(notes, bx, by - 40, '!', 1, 50, 0, '#C8362E'); }
+        }
+      }
+      if (st === 'museum') { // 237.8–255
+        if (t < 244.0) {
+          cam = [W / 2, H / 2, 1];
+          const g = el('g', { transform: `translate(${W / 2},${H * .55}) rotate(${(t - 237.8) * 4})` }, front); const P = pen(g, sd(t), 5); SAU.drawGlobe(P, 300);
+          const rk = p(t, 241.5, 243.0); el('ellipse', { cx: 0, cy: 0, rx: 380, ry: 120, fill: 'none', stroke: B.tech, 'stroke-width': 10, 'stroke-dasharray': `${2400 * rk} 2400`, filter: 'url(#kGlow)', transform: `rotate(${-(t - 237.8) * 4 - 12})` }, g);
+          if (t > 239.6) hand(notes, W / 2, H * .9, 'cars drive themselves', p(t, 239.6, 239.9, E.back), 48, -2);
+          if (t > 241.5) hand(notes, W * .78, H * .2, 'a highway around the planet', p(t, 241.5, 241.8, E.back), 46, 4);
+        } else {
+          const zoomK = p(t, 252.3, 253.6, E.inOut);
+          cam = [lerp(W * .5, W * .5 + 270 * .9, zoomK), lerp(GY - 300, GY - 150, zoomK), lerp(1, 2.6, zoomK)];
+          const P = pen(back, sd(t), 4); P.shape(`M ${-W} ${GY} L ${W * 2} ${GY} L ${W * 2} ${H * 2} L ${-W} ${H * 2} Z`, '#4A3A30', 4); P.shape(SAU.rrectPath(W * .5 - 380, GY - 40, 760, 60, 10), '#8E7C6C', 4);
+          [W * .5 - 420, W * .5 + 420].forEach(x => { P.shape(SAU.rrectPath(x - 12, GY - 160, 24, 160, 6), '#C8A040', 3); }); P.stroke(`M ${W * .5 - 420} ${GY - 150} Q ${W * .5} ${GY - 80} ${W * .5 + 420} ${GY - 150}`, '#9E2A2A', 10);
+          el('ellipse', { cx: W * .5, cy: GY - 400, rx: 520, ry: 300, fill: '#FFF3D0', opacity: .12 }, back);
+          showCar = true; carO = { x: W * .5, y: GY - 40, s: .9, dist: 0, dents: 3 };
+          for (let i = 0; i < 3; i++) { const a = ((t * .7 + i / 3) % 1); el('circle', { cx: W * .5 - 290 - a * 100, cy: GY - 110 - a * 140, r: 16 + a * 26, fill: '#9A9088', opacity: (1 - a) * .55 }, fx); }
+          if (t > 245.1 && t < 252.2) { const pg = el('g', { transform: `translate(${W * .5},${GY - 560})` }, over); el('rect', { x: -380, y: -80, width: 760, height: 160, rx: 14, fill: '#120C09', opacity: .92 }, pg); el('text', { 'text-anchor': 'middle', y: -26, fill: B.sand, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 26, 'letter-spacing': 4 }, pg).textContent = t > 246.3 ? 'THE FIRST CAR · ENGINE: STILL ON' : 'THE FIRST CAR'; el('text', { 'text-anchor': 'middle', y: 46, fill: B.tech, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 58, filter: 'url(#kGlow)' }, pg).textContent = t > 247.7 ? fmt(Math.min(9999999, lerp(9999000, 9999999, p(t, 247.7, 251.1)))) + ' km' : '300,000 BC'; }
+          if (t > 254.1) hand(notes, W * .5 + 330, GY - 210, 'still there ✓', p(t, 254.1, 254.4, E.back), 30, -4);
+        }
+      }
+
+      // ---- characters / car ----
+      SAU.cam(world, W, H, cam[0], cam[1], cam[2], shake, t);
+      set(world, { filter: gray ? 'url(#kGray)' : '' });
+      set(carG, { display: showCar ? 'inline' : 'none' }); if (showCar) car.update(t, carO);
+      set(ug.root, { display: showUg ? 'inline' : 'none' }); set(you.root, { display: showYou ? 'inline' : 'none' });
+      if (st === 'roads' || st === 'rules' || st === 'ticket' || st === 'steam' || st === 'brands') { /* road drawn above */ }
+
+      // ---- overlays ----
+      FACTS.forEach(f => { const k = p(t, f.a, f.a + .35, E.back) * (1 - p(t, f.b - .3, f.b, E.in)); set(f.g, { display: k > 0 ? 'inline' : 'none', transform: `translate(40,${H - 132 + (1 - k) * 180})`, opacity: clamp(k * 2) }); });
+      yp.set(fmt(300000 - yr) + ' BC', 'YEAR ' + fmt(yr));
+      stats.set(0, POP[st], lt < 1 ? B.tech : B.bone); stats.set(1, VEH[st]); stats.set(2, ROADS[st]);
+      set(hud, { opacity: (st === 'museum' && t < 244) || (st === 'temple' && t > 106.3) || (st === 'city' && t > 193.7 && t < 205.2) ? 0 : 1 });
+      set(flash, { opacity: ST.some(s => s[0] > 0 && t > s[0] && t < s[0] + .3) ? .55 * (1 - ST.reduce((m, s) => Math.min(m, Math.abs(t - s[0])), 9) / .3) : 0 });
+    },
+  };
+});
+</script></body></html>
