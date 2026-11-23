@@ -1,6 +1,6 @@
 # EP02 — YouTube yükleme metni (kopyala-yapıştır)
 
-## Başlık (formül — onay bekliyor)
+## Başlık (ONAYLANDI 23.11)
 What If You Had a Car 300,000 Years Ago?
 
 Alternatifler: "What If Cavemen Had a Car?" · "I Gave a Caveman a Car. Here's What Happened to Earth."
