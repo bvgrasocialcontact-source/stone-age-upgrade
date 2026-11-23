@@ -85,3 +85,33 @@ Subtitles: `04_publishing/subtitles/` — build EN cues from the timing jsons (+
 ## 10. Publishing schedule
 - EP01: uploaded Mon 23.11.2026 (+ Short 1). Short 2 Tue 24.11, Short 3 Wed 25.11.
 - EP02 (car): upload **Thu 26.11.2026**. Target cadence: 2 long videos/week (bible).
+
+### 10.1 WEEKLY AUTOMATION (Buğra 24.11 — binding)
+| Day | Publishes |
+|---|---|
+| Mon | long video A + its Short 1 |
+| Tue | A Short 2 |
+| Wed | A Short 3 |
+| Thu | long video B + its Short 1 |
+| Fri | B Short 2 |
+| Sat | B Short 3 |
+| Sun | nothing |
+- Claude uploads everything to YouTube Studio itself with **Schedule** (Planla), never "Public now". Default time 20:00 Europe/Istanbul (= 12:00 New York, 17:00 London) for long video and its Shorts. One upload session per finished episode uploads all 4 items with their dates.
+- Buğra only opens the PC, Google/YouTube signed in. He does sign-ins/passwords; Claude never types them. Only manual step he may need: choosing the big video file in the upload dialog (browser upload tool max 3.8 MB; thumbnail PNG and SRT files are small enough for Claude). Before the session: run `04_renders/EP0X_2K_BIRLESTIR.bat` so the mp4 exists.
+- At the start of each upload session, show him the list (file → title → date/time) and get one "tamam" before clicking Schedule.
+- Per long video in Studio: title, description (from `04_publishing/EP0X_description.md`), thumbnail FINAL, playlist "Stone Age Upgrade", not made for kids, category Education, tags, language English, captions EN, end screen (last 12 s: latest video + best for viewer + subscribe), chapters check, then Schedule. Shorts: title, description, Related video = the episode, Schedule; pinned comment after publish (or right after scheduling if Studio allows).
+- **Languages (decided 24.11):** subtitles + translated title/description for TR, ES, PT (Brazil), HI, FR, DE, JA, ID, AR (+ EN original). Reason: largest non-English YouTube audiences (Spanish, Hindi, Portuguese, Japanese, French, German, Indonesian) + Arabic reach + Buğra's TR. Added in Studio → Subtitles **before** the scheduled publish time. Files: `04_publishing/subtitles/EP0X_<lang>.srt` + `README_EP0X_yukleme.md` (titles/descriptions per language). Long video gets all; Shorts get translated title/description only.
+- Next-episode topic is announced at the end of each video → **always ask Buğra before writing it into act 6.**
+- Higgsfield / Flow: allowed with minimal credits (Buğra 24.11) — only for 1–3 short shots per episode where a real "wow" shot adds value; state the credit cost and per-episode cap before generating.
+
+## 11. Zero-error QA (Buğra 24.11: "tek bir nokta hataya bile yer yok")
+Before delivery, every episode:
+1. Contact sheets of the 2K master every 5 s → check overlaps, cut-off text, characters hidden/clipped, wrong props (e.g. EP01 phone in EP02 end screen), You always with hair tuft.
+2. On-screen text list (grep all strings in scenes) → spelling (US English), numbers match the narration and the Real Fact sources.
+3. A/V sync spot checks at 5 SFX hits; loudness -14 LUFS ±0.5, TP ≤ -1.5; no audio before 1.0 s.
+4. Duration 10:00–12:00; chapters start at 0:00, ≥3 chapters, each ≥10 s, times = master times.
+5. Subtitles: every cue ≤2 lines, no overlap, last cue < video end; translations same count as EN.
+6. Description: sources present for every Real Fact card, Kevin MacLeod credit, disclaimer, no broken links.
+7. Shorts: 9:16, 15–35 s, hook in first 2 s, ends on punchline, captions match audio.
+8. Thumbnail: differs from previous episodes (pose / sky / object), readable at 160 px.
+

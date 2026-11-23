@@ -45,6 +45,7 @@ You are continuing a production that started in a claude.ai chat. Everything you
 
 ## Publishing
 - EP01 + Short 1 uploaded Mon 23.11.2026; Short 2 Tue 24.11; Short 3 Wed 25.11. **EP02 (car) uploads Thu 26.11.2026.**
+- **WEEKLY AUTOMATION (Buğra 24.11, binding — details in URETIM_REHBERI §10.1 + §11):** Mon = video + Short 1, Tue = Short 2, Wed = Short 3, Thu = next video + Short 1, Fri = Short 2, Sat = Short 3, Sun = nothing. Claude uploads to YouTube Studio itself with Schedule (20:00 Istanbul), writes all fields, adds subtitles + translated title/description in TR, ES, PT, HI, FR, DE, JA, ID, AR. Buğra just opens the PC with YouTube signed in. Zero-error QA checklist (§11) before every delivery; small in-video fixes allowed. Higgsfield/Flow allowed with minimal credits (state cost first). **Always ask him the next-episode topic before writing the end teaser.**
 
 ## EP02 — Car — status (current work)
 - Buğra 23.11: topic = car (as promised at the end of EP01). Same format, same style, MORE absurdity (weird cars, flying cars, real car brands mentioned). He delegated research, script, voice (his ElevenLabs), edit to Claude.

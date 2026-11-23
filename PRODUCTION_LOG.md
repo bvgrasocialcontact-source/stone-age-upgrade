@@ -171,3 +171,12 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 3. Birleştirme, thumbnail, açıklama, Shorts
 3. Render: `cd 03_engine && node render.mjs scenes/ep01_actN.html ../01_episodes/EP01_Claude/04_renders/ep01_perdeN_v1.mp4 --audio ../01_episodes/EP01_Claude/02_audio/ep01_perdeN.mp3` (~100 sn / 25 sn video)
 Not: Üretim claude.ai sohbetlerinde sürüyor (Claude Code değil). Her adım sonrası GitHub'a kaydet.
+
+## HAFTALIK OTOMASYON (24.11 01:17 — Buğra kararı)
+- Takvim: Pzt video + 1. Short · Salı 2. Short · Çarşamba 3. Short · Perşembe yeni video + 1. Short · Cuma 2. Short · Cumartesi 3. Short · Pazar yok.
+- Yüklemeyi Claude yapacak (YouTube Studio, "Planla"), açıklamalar eksiksiz. Buğra sadece bilgisayarı açıp Google/YouTube'a girmiş olacak. Şifre/giriş her zaman Buğra'da.
+- Her videoya yayından önce altyazı + çevrilmiş başlık/açıklama: TR, ES, PT, HI, FR, DE, JA, ID, AR (dil analizi: YouTube'da İngilizce dışındaki en büyük kitleler İspanyolca, Hintçe, Portekizce, Japonca, Fransızca, Almanca, Endonezce; + Arapça erişim + Türkçe).
+- Sıfır hata: her bölümden önce §11 kontrol listesi (URETIM_REHBERI). Video içinde küçük düzeltmeler serbest.
+- Higgsfield + Flow: minimal kredi ile kullanılabilir (her bölüm 1–3 çekim, önce maliyet söylenir).
+- Bir sonraki bölüm konusu her zaman önce Buğra'ya sorulacak (video sonunda duyurulduğu için).
+- Varsayılan yayın saati: 20:00 (İstanbul) = 12:00 New York / 17:00 Londra.
