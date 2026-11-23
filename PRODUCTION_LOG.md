@@ -80,6 +80,7 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - Buğra: YouTube'a dosya olarak Türkçe altyazı ekleyelim → İngilizce (birebir senaryo) + Türkçe .srt hazırlandı: 04_publishing/subtitles/EP01_en.srt, EP01_tr.srt (309 satır, zamanlama hizalama json'larından, 2K final videoya göre +1 sn giriş dahil, son satır 11:47.9)
 - Türkçe başlık + açıklama (YouTube "Başlık ve açıklama" çevirisi için) + yükleme adımları: subtitles/README_yukleme.md
 - Türkçe başlık: "300.000 Yıl Önce Yapay Zekân Olsaydı Ne Olurdu?" — "A.C." → "C.S." (Claude'dan Sonra)
+- Buğra Almanca başlık + açıklama istedi → README_yukleme.md'ye eklendi ("Was wäre, wenn du vor 300.000 Jahren KI gehabt hättest?"). Almanca .srt istenmedi (teklif edildi).
 - Ek diller (İspanyolca, Portekizce, Hintçe) önerildi; Buğra henüz istemedi.
 - Shorts işi yarıda: tools/shorts.py + 06_shorts/*.json hazır, 3 Short ilk render alındı (/tmp/sh), altyazı parçalama düzeltmesi sonrası yeniden render edilecek.
 
