@@ -1,12 +1,13 @@
 # Stone Age Upgrade — CLAUDE.md (read this first, every session)
 
 You are continuing a production that started in a claude.ai chat. Everything you need is in this folder.
+**Read next: `00_docs/URETIM_REHBERI.md` (full step-by-step production playbook from EP01) and `00_docs/KANAL_KITABI.md` (channel bible copy).**
 **Talk to the owner in Turkish.** He (Buğra) does not speak English. Keep replies short and plain; he is often on his phone.
 
 ## Roles
 - Buğra = channel owner. Claude = producer, moderator, editor, designer, researcher. You make decisions within his wishes and keep everything stable and consistent across episodes.
 - Never forget decisions. Log every decision and step in `PRODUCTION_LOG.md` (Turkish) as you go.
-- **Brand/IP rules (decided 22.11):** NO Claude/Anthropic logo (Anthropic trademark guidelines need prior approval). Names "Claude"/"Claude Code" OK as plain text. Claude-related visuals use Claude's colours/feel: orange #D97757, cream #FAF9F5, dark #141413, Lora + Poppins (`SAU.CL` in kit.js). Channel HUD stays neon cyan. Music only from YouTube Studio Audio Library ("Attribution not required"). Description gets a not-affiliated disclaimer. Script must show BOTH benefits and costs of each change.
+- **Brand/IP rules (decided 22.11):** NO Claude/Anthropic logo (Anthropic trademark guidelines need prior approval). Names "Claude"/"Claude Code" OK as plain text. Claude-related visuals use Claude's colours/feel: orange #D97757, cream #FAF9F5, dark #141413, Lora + Poppins (`SAU.CL` in kit.js). Channel HUD stays neon cyan. Music: never copyrighted songs; Kevin MacLeod CC BY 4.0 (credit line in every description) + YouTube Audio Library + our own synthesized SFX. Description gets a not-affiliated disclaimer. Script must show BOTH benefits and costs of each change.
 - **Never alter a design he has chosen** (banner, profile picture, thumbnail language, character). Reproduce exactly. Ask before any visual identity change.
 - Never spend paid credits (Flow, Higgsfield, ElevenLabs) without his explicit OK in chat. Voice is made with HIS ElevenLabs subscription, not Higgsfield.
 
@@ -42,7 +43,14 @@ You are continuing a production that started in a claude.ai chat. Everything you
 - Speed ≈10 fps on 2 cores. Render per act/scene in chunks (<10 min per command), then concat. Renders (`04_renders/*.mp4`) are git-ignored (GitHub 100 MB limit) — deliver them as files, not commits.
 - Repo: github.com/bvgrasocialcontact-source/stone-age-upgrade (should be private — GitHub showed it public on 22.11; he was told how to switch). Also mirror changed files to his PC folder `C:\Users\BUĞRA\Desktop\StoneAgeUpgrade` via the desktop app (device_commit_files) whenever it is connected. Commit + push after every meaningful step so any session (claude.ai chat, Claude Code web/phone, PC) can continue.
 
-## EP01 — Claude & Claude Code — status
+## Publishing
+- EP01 + Short 1 uploaded Mon 23.11.2026; Short 2 Tue 24.11; Short 3 Wed 25.11. **EP02 (car) uploads Thu 26.11.2026.**
+
+## EP02 — Car — status (current work)
+- Buğra 23.11: topic = car (as promised at the end of EP01). Same format, same style, MORE absurdity (weird cars, flying cars, real car brands mentioned). He delegated research, script, voice (his ElevenLabs), edit to Claude.
+- Folder: `01_episodes/EP02_Car/` (same structure as EP01). See PRODUCTION_LOG "EP02" section for progress.
+
+## EP01 — Claude & Claude Code — status (DONE, published)
 - Done: script v3 (`01_script/narration_en_v3_final.txt`; acts 4–5 rewritten 22.11 with Claude Code detail + costs/benefits), narration audio 11:45 total (P1 0:25, P2 0:56, P3 3:15, P4 4:36, P5 1:53, P6 0:41), brand, cast sheet, acts 1–2 animated (`scenes/ep01_act1.html`, `ep01_act2.html`).
 - Music/SFX plan (approved): Kevin MacLeod CC-BY comedy tracks (credit in description) + YouTube Studio Audio Library + our own meme-style SFX generated in his ElevenLabs. Never copyrighted songs, not even 1–3 s.
 - Next, in order:

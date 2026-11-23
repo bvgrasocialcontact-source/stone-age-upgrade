@@ -76,6 +76,12 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - Meme efektleri (boom, plak cızırtısı, korna, boing, cırcır böceği, ding...): YouTube Ses Kitaplığı + ElevenLabs ses efekti aracıyla kendi versiyonlarımız (Buğra'nın aboneliği)
 - Amaç: güncel/modern internet dili, ama tamamen telifsiz
 
+## KAYIT + EP02 BAŞLANGIÇ (23.11 14:30)
+- Buğra: EP01 ve Short 1 yüklendi; Short 2 yarın (24.11), Short 3 çarşamba (25.11); EP02 Perşembe 26.11 yayınlanacak.
+- Buğra: EP01'de yapılan her şey klasöre kaydedilsin → 00_docs/URETIM_REHBERI.md (adım adım üretim rehberi, komutlar, hatalar/dersler) + 00_docs/KANAL_KITABI.md (kanal kitabının klasör kopyası). CLAUDE.md bunlara yönlendiriyor.
+- EP02 konusu: ARABA (EP01 sonunda söz verildiği gibi; kanal kitabındaki sıra değişti: telefon sonraya). Aynı başlık formülü, aynı içerik yapısı ve çizgi; DAHA FAZLA ABSÜRTLÜK: gerçek araba markaları, garip arabalar, uçan arabalar.
+- Senaryo, ses (Buğra'nın ElevenLabs'i — "sana bırakıyorum" = EP02 anlatımı için onay), kurgu tamamen Claude'da.
+
 ## EP01 SHORTS (23.11 14:05) — HAZIR
 - Araştırma (Shorts 2026): ilk 2–3 sn kaydırma oranı belirleyici; loop/yeniden izleme güçlü sinyal; cevap gelince bit, outro yok; Zack D. Films örneği (31 sn, "you" anlatımı). vidIQ bağlayıcısı önerildi (kanal verisi için), bağlanmadı → web araştırmasıyla devam.
 - Araç: 03_engine/tools/shorts.py — 2K finalden 1080×1920: bulanık arka plan + kamera penceresi (keyframe pan/zoom) + üst merak başlığı (Archivo Black, 2. satır neon) + 1–3 kelimelik büyük altyazı (vurgu kelimeleri neon). Ses = bölüm miksi (müzik+efekt dahil), -14 LUFS.
