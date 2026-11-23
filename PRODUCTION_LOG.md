@@ -76,6 +76,13 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - Meme efektleri (boom, plak cızırtısı, korna, boing, cırcır böceği, ding...): YouTube Ses Kitaplığı + ElevenLabs ses efekti aracıyla kendi versiyonlarımız (Buğra'nın aboneliği)
 - Amaç: güncel/modern internet dili, ama tamamen telifsiz
 
+## EP01 ALTYAZI (23.11 13:50)
+- Buğra: YouTube'a dosya olarak Türkçe altyazı ekleyelim → İngilizce (birebir senaryo) + Türkçe .srt hazırlandı: 04_publishing/subtitles/EP01_en.srt, EP01_tr.srt (309 satır, zamanlama hizalama json'larından, 2K final videoya göre +1 sn giriş dahil, son satır 11:47.9)
+- Türkçe başlık + açıklama (YouTube "Başlık ve açıklama" çevirisi için) + yükleme adımları: subtitles/README_yukleme.md
+- Türkçe başlık: "300.000 Yıl Önce Yapay Zekân Olsaydı Ne Olurdu?" — "A.C." → "C.S." (Claude'dan Sonra)
+- Ek diller (İspanyolca, Portekizce, Hintçe) önerildi; Buğra henüz istemedi.
+- Shorts işi yarıda: tools/shorts.py + 06_shorts/*.json hazır, 3 Short ilk render alındı (/tmp/sh), altyazı parçalama düzeltmesi sonrası yeniden render edilecek.
+
 ## EP01 BAŞLIK + THUMBNAIL (23.11 13:10)
 - Buğra başlığı ONAYLADI: "What If You Had AI 300,000 Years Ago?"
 - Thumbnail iki seçenek (05_thumbnail): A = onaylı Paket 2 referansının birebir aynısı; B = aynı düzen + yıldızlar, neon uçan-taş izleri, telefonda daha güçlü ışık. Logo yok, sadece "300,000 BC" ve "TODAY?". 160 px'te okunuyor.

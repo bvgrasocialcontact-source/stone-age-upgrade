@@ -1,0 +1,1336 @@
+1
+00:00:01,040 --> 00:00:04,920
+Üç yüz bin yıl önce, sönmek üzere olan
+bir ateşin yanında uyanıyorsun...
+
+2
+00:00:04,970 --> 00:00:07,230
+ve elinde bir telefon var.
+
+3
+00:00:07,280 --> 00:00:10,650
+Ekranda tek bir satır: "Bugün
+sana nasıl yardımcı olabilirim?"
+
+4
+00:00:10,700 --> 00:00:11,920
+Bu Claude.
+
+5
+00:00:11,970 --> 00:00:13,770
+Neredeyse her şeyi açıklayabilen
+bir yapay zekâ...
+
+6
+00:00:13,820 --> 00:00:17,490
+henüz "her şey" kelimesini
+bile icat etmemiş birine.
+
+7
+00:00:17,560 --> 00:00:19,010
+Ve bu videonun sonunda,
+
+8
+00:00:19,060 --> 00:00:21,910
+Dünya senin yaşadığın dünyaya
+hiç benzemeyecek.
+
+9
+00:00:21,980 --> 00:00:22,930
+Hiç.
+
+10
+00:00:22,980 --> 00:00:23,980
+Ama önce...
+
+11
+00:00:24,030 --> 00:00:25,730
+birkaç sorunumuz var.
+
+12
+00:00:27,113 --> 00:00:29,673
+Birinci sorun: batarya.
+
+13
+00:00:29,723 --> 00:00:32,563
+Böyle bir telefon bir gün,
+bilemedin iki gün dayanır.
+
+14
+00:00:32,613 --> 00:00:35,553
+Sonra gezegendeki en pahalı taş olur.
+
+15
+00:00:35,673 --> 00:00:39,603
+İkinci sorun: Claude aslında
+telefonunun içinde yaşamıyor.
+
+16
+00:00:39,653 --> 00:00:42,793
+Dev veri merkezlerinde çalışıyor,
+internet üzerinden bağlanıyor.
+
+17
+00:00:42,843 --> 00:00:46,633
+İnternet şu an, bir vadinin iki
+ucundan bağıran iki adamdan ibaret.
+
+18
+00:00:46,753 --> 00:00:49,483
+Üçüncü sorun: İngilizce bilmiyorsun.
+
+19
+00:00:49,533 --> 00:00:50,963
+Kimse bilmiyor.
+
+20
+00:00:51,013 --> 00:00:54,483
+İngilizcenin ortaya çıkmasına
+neredeyse üç yüz bin yıl var.
+
+21
+00:00:54,553 --> 00:00:57,873
+Dördüncü sorun: hayatında hiç
+ekran görmedin.
+
+22
+00:00:57,923 --> 00:01:02,463
+İçindeki ışığın çok küçük, çok
+kibar bir ateş olduğunu sanıyorsun.
+
+23
+00:01:02,513 --> 00:01:03,233
+O hâlde...
+
+24
+00:01:03,283 --> 00:01:04,883
+bir yükseltme kuralım.
+
+25
+00:01:04,933 --> 00:01:06,453
+Sürüm bir nokta sıfır.
+
+26
+00:01:06,503 --> 00:01:07,643
+Sonsuz batarya.
+
+27
+00:01:07,693 --> 00:01:09,443
+Claude'a sihirli bir bağlantı.
+
+28
+00:01:09,493 --> 00:01:10,303
+Ve...
+
+29
+00:01:10,353 --> 00:01:11,023
+o kadar.
+
+30
+00:01:11,073 --> 00:01:12,173
+Başka hiçbir teknoloji yok.
+
+31
+00:01:12,223 --> 00:01:13,753
+Claude hiçbir şey inşa edemez.
+
+32
+00:01:13,803 --> 00:01:14,693
+Avlanamaz.
+
+33
+00:01:14,743 --> 00:01:16,333
+Bir mızrağı bile tutamaz.
+
+34
+00:01:16,383 --> 00:01:17,813
+Sadece konuşabilir...
+
+35
+00:01:17,863 --> 00:01:18,893
+ve öğretebilir.
+
+36
+00:01:18,943 --> 00:01:20,233
+Ha, bir de hayır.
+
+37
+00:01:20,283 --> 00:01:21,493
+Dinozor yok.
+
+38
+00:01:21,543 --> 00:01:23,043
+Oraya geleceğiz.
+
+39
+00:01:23,093 --> 00:01:24,063
+Birinci gün.
+
+40
+00:01:24,113 --> 00:01:28,133
+Yaklaşık otuz kişilik kabilen
+parlayan taşın etrafında toplanıyor.
+
+41
+00:01:28,183 --> 00:01:30,093
+Reis onu kokluyor.
+
+42
+00:01:30,143 --> 00:01:32,123
+Sonra yemeye çalışıyor.
+
+43
+00:01:32,173 --> 00:01:33,383
+Harika bir başlangıç.
+
+44
+00:01:33,433 --> 00:01:35,353
+Ekrana dokunup homurdanıyorsun.
+
+45
+00:01:35,403 --> 00:01:36,753
+Claude da homurdanarak cevap veriyor.
+
+46
+00:01:36,803 --> 00:01:38,403
+Yanlış homurtu.
+
+47
+00:01:38,453 --> 00:01:39,633
+Çok kaba.
+
+48
+00:01:39,883 --> 00:01:43,363
+İkinci gün: kabile tarihindeki
+ilk toplantıyı yapıyor.
+
+49
+00:01:43,413 --> 00:01:46,053
+Birinci madde: parlayan taş bir tanrı mı?
+
+50
+00:01:46,103 --> 00:01:47,783
+Claude diyor ki: "Hayır."
+
+51
+00:01:48,303 --> 00:01:50,363
+İkinci madde: onu yiyebilir miyiz?
+
+52
+00:01:50,413 --> 00:01:52,443
+Claude diyor ki: "Yine hayır."
+
+53
+00:01:52,503 --> 00:01:54,053
+Ama işin zekice kısmı şu.
+
+54
+00:01:54,103 --> 00:01:56,033
+Claude senin dilini konuşamıyor...
+
+55
+00:01:56,083 --> 00:01:57,583
+o yüzden öğreniyor.
+
+56
+00:01:57,633 --> 00:01:59,793
+Ateşi gösterip bir ses çıkarıyorsun.
+
+57
+00:01:59,843 --> 00:02:01,883
+Suyu gösteriyorsun, başka bir ses.
+
+58
+00:02:01,933 --> 00:02:06,133
+Üç gün sonra Claude'da insanlık
+tarihinin ilk sözlüğü var.
+
+59
+00:02:06,183 --> 00:02:07,993
+Ve tek yazarı sensin.
+
+60
+00:02:08,043 --> 00:02:11,223
+Okuma bilmediğin için Claude
+kurnazca bir şey yapıyor.
+
+61
+00:02:11,273 --> 00:02:14,833
+Ekrana resim çizen minik kod
+parçaları yazıyor.
+
+62
+00:02:14,883 --> 00:02:15,653
+Oklar.
+
+63
+00:02:15,703 --> 00:02:16,543
+Daireler.
+
+64
+00:02:16,593 --> 00:02:18,453
+Çok kötü bir ceylan.
+
+65
+00:02:18,503 --> 00:02:23,203
+Claude Code'un ilk işi: mağara
+adamlarına ceylan çizmek.
+
+66
+00:02:23,433 --> 00:02:24,363
+Altıncı gün.
+
+67
+00:02:24,413 --> 00:02:28,463
+Taş Devri'nin en önemli
+sorusunu soruyorsun: "Yemek?"
+
+68
+00:02:28,543 --> 00:02:30,673
+Claude'un cevabı daha iyi bir
+mızrak değil.
+
+69
+00:02:30,723 --> 00:02:33,113
+Şu: suyunu kaynat.
+
+70
+00:02:33,163 --> 00:02:34,373
+Tencereniz yok.
+
+71
+00:02:34,423 --> 00:02:35,273
+Claude bunu biliyor.
+
+72
+00:02:35,323 --> 00:02:39,323
+O yüzden: bir çukur kaz, içini hayvan
+postuyla kapla, suyla doldur...
+
+73
+00:02:39,373 --> 00:02:41,293
+ve içine kızgın taşlar at.
+
+74
+00:02:41,343 --> 00:02:45,183
+Kuzenin nehirden ıslak bir taş alıyor.
+
+75
+00:02:45,233 --> 00:02:45,853
+Taş patlıyor.
+
+76
+00:02:45,903 --> 00:02:48,883
+Taşın içinde kalan su buhara dönüşüyor.
+
+77
+00:02:48,933 --> 00:02:51,203
+Claude bir not ekliyor: "Kuru taşlar.
+
+78
+00:02:51,253 --> 00:02:52,333
+Yüksek yerden.
+
+79
+00:02:52,383 --> 00:02:53,343
+Lütfen."
+
+80
+00:02:53,393 --> 00:02:54,703
+Bu arada, bu gerçek.
+
+81
+00:02:54,753 --> 00:02:56,413
+İnsanlar gerçekten böyle yemek pişirdi.
+
+82
+00:02:56,463 --> 00:02:58,133
+Adı taşla kaynatma.
+
+83
+00:02:58,363 --> 00:03:00,023
+Üçüncü hafta: sabun.
+
+84
+00:03:00,073 --> 00:03:04,323
+Ateşten kül, artı hayvan yağı,
+artı bolca sabır.
+
+85
+00:03:04,373 --> 00:03:07,083
+Kabile bunun kaygan bir lanet
+olduğunu düşünüyor.
+
+86
+00:03:07,133 --> 00:03:09,103
+Sonra karın ağrıları kesiliyor.
+
+87
+00:03:09,153 --> 00:03:11,193
+Ve bu ilk büyük değişim.
+
+88
+00:03:11,243 --> 00:03:12,633
+Avcı-toplayıcı topluluklarda,
+
+89
+00:03:12,683 --> 00:03:16,253
+çocukların yarısından biraz fazlası
+on beş yaşına ulaşabiliyordu.
+
+90
+00:03:16,303 --> 00:03:18,193
+Çoğunu aslanlar götürmedi.
+
+91
+00:03:18,243 --> 00:03:19,863
+Hastalıklar götürdü.
+
+92
+00:03:19,913 --> 00:03:21,903
+Göremeyeceğimiz kadar küçük şeyler.
+
+93
+00:03:21,953 --> 00:03:24,243
+Temiz su ve temiz ellerle...
+
+94
+00:03:24,293 --> 00:03:26,103
+çok daha fazlası büyüyor.
+
+95
+00:03:26,473 --> 00:03:27,493
+İkinci ay.
+
+96
+00:03:27,543 --> 00:03:30,053
+Kardeşin bacağını keskin bir
+taşla kesiyor.
+
+97
+00:03:30,103 --> 00:03:32,743
+O zamanlar böyle bir kesik
+insanı öldürebilirdi.
+
+98
+00:03:32,793 --> 00:03:34,173
+Claude dikiş atamaz.
+
+99
+00:03:34,223 --> 00:03:38,193
+Ama bir yöntem biliyor: yarayı
+temizle, sonra balla kapat.
+
+100
+00:03:38,243 --> 00:03:39,653
+Bal mikroplarla savaşır.
+
+101
+00:03:39,703 --> 00:03:42,573
+İnsanlar binlerce yıl
+yaralarda bal kullandı.
+
+102
+00:03:42,623 --> 00:03:44,673
+Balı almak ise başka bir hikâye.
+
+103
+00:03:44,723 --> 00:03:48,483
+Meğer arılar yapay zekâyı hiç
+umursamıyormuş.
+
+104
+00:03:48,533 --> 00:03:51,283
+Yüzün bir hafta boyunca şiş kalıyor.
+
+105
+00:03:51,333 --> 00:03:53,563
+Kardeşinin bacağı kusursuz iyileşiyor.
+
+106
+00:03:53,843 --> 00:03:54,863
+Dördüncü ay.
+
+107
+00:03:54,913 --> 00:03:59,643
+Kabile Claude'a zor bir soru
+soruyor: dışarıda kaç ceylan kaldı?
+
+108
+00:03:59,693 --> 00:04:02,443
+Böylece Claude Code ikinci işini alıyor.
+
+109
+00:04:02,493 --> 00:04:04,703
+Minik bir sayma programı yazıyor...
+
+110
+00:04:04,753 --> 00:04:08,763
+ve sana gördüğün her ceylan için bir
+kemiğe çentik atmayı öğretiyor.
+
+111
+00:04:08,813 --> 00:04:09,983
+Çetele.
+
+112
+00:04:10,033 --> 00:04:10,923
+Senin dünyanda,
+
+113
+00:04:10,973 --> 00:04:15,233
+bilinen en eski sayma kemiği kırk
+bin yıldan biraz daha eski.
+
+114
+00:04:15,283 --> 00:04:18,763
+Burada ise yaklaşık iki yüz
+elli bin yıl erkencisin.
+
+115
+00:04:18,813 --> 00:04:19,833
+Birinci yıl.
+
+116
+00:04:19,883 --> 00:04:21,213
+Otuz altı kişi.
+
+117
+00:04:21,263 --> 00:04:23,153
+Kimse bozuk mideden ölmedi.
+
+118
+00:04:23,203 --> 00:04:24,993
+Ve artık resmen...
+
+119
+00:04:25,043 --> 00:04:27,593
+"Parlayan Taşı Tutan Kişi"sin.
+
+120
+00:04:27,643 --> 00:04:30,563
+Ha, bir de sonunda Claude'a
+dinozorları sordun.
+
+121
+00:04:30,613 --> 00:04:33,973
+Altmış altı milyon yıl önce
+yok olduklarını anlattı.
+
+122
+00:04:34,023 --> 00:04:35,593
+Sonra yanınızdan bir devekuşu
+koşarak geçti.
+
+123
+00:04:35,643 --> 00:04:37,273
+Claude dedi ki: "Şey...
+
+124
+00:04:37,333 --> 00:04:38,350
+teknik olarak."
+
+125
+00:04:38,400 --> 00:04:38,660
+Tamam.
+
+126
+00:04:38,710 --> 00:04:40,240
+Biraz hızlanalım.
+
+127
+00:04:40,290 --> 00:04:41,220
+Onuncu yıl.
+
+128
+00:04:41,270 --> 00:04:42,950
+Çentikler sayılara dönüşüyor.
+
+129
+00:04:43,000 --> 00:04:44,760
+Sonra Claude sana yazmayı öğretiyor.
+
+130
+00:04:44,810 --> 00:04:46,820
+Basit kelimeler için basit işaretler.
+
+131
+00:04:46,870 --> 00:04:50,530
+Yazı, neredeyse üç yüz bin yıl
+erken icat edildi.
+
+132
+00:04:50,580 --> 00:04:52,720
+Bir insanın yazdığı ilk cümle mi?
+
+133
+00:04:52,770 --> 00:04:53,890
+"Teşekkürler, Claude."
+
+134
+00:04:53,960 --> 00:04:54,910
+İkincisi mi?
+
+135
+00:04:54,960 --> 00:04:56,460
+"Ceylanımı kim yedi."
+
+136
+00:04:56,550 --> 00:04:57,670
+Ellinci yıl.
+
+137
+00:04:57,720 --> 00:04:58,780
+Artık yaşlısın.
+
+138
+00:04:58,830 --> 00:04:59,920
+Ellerin titriyor.
+
+139
+00:04:59,970 --> 00:05:03,180
+Bu yüzden şimdiye kadar yapılmış
+en akıllıca şeyi yapıyorsun:
+
+140
+00:05:03,230 --> 00:05:05,020
+sadece telefonu devretmiyorsun.
+
+141
+00:05:05,070 --> 00:05:07,100
+Bilgiyi devrediyorsun.
+
+142
+00:05:07,150 --> 00:05:10,260
+Her ders kile, ağaç kabuğuna
+ve taşa geçiriliyor.
+
+143
+00:05:10,310 --> 00:05:12,110
+Tarihteki ilk kütüphane...
+
+144
+00:05:12,160 --> 00:05:13,030
+bir mağara.
+
+145
+00:05:13,080 --> 00:05:14,870
+Çünkü bir telefon kırılabilir.
+
+146
+00:05:14,920 --> 00:05:16,770
+Bir kütüphane ise kopyalanabilir.
+
+147
+00:05:16,850 --> 00:05:19,010
+Yetmişinci yıl: ilk okul.
+
+148
+00:05:19,060 --> 00:05:20,140
+Öğretmen kim mi?
+
+149
+00:05:20,190 --> 00:05:23,950
+Claude'un derslerini kil tabletten
+okuyan çok yorgun bir nine...
+
+150
+00:05:24,000 --> 00:05:27,310
+çünkü telefon sırası bütün köyü dolanıyor.
+
+151
+00:05:27,380 --> 00:05:28,760
+Yüzüncü yıl.
+
+152
+00:05:28,810 --> 00:05:30,350
+Claude tohumları anlatıyor.
+
+153
+00:05:30,400 --> 00:05:31,150
+Ek.
+
+154
+00:05:31,200 --> 00:05:31,810
+Bekle.
+
+155
+00:05:31,860 --> 00:05:32,480
+Ye.
+
+156
+00:05:32,530 --> 00:05:35,310
+Kabile buna "dünyanın en yavaş avı" diyor.
+
+157
+00:05:35,360 --> 00:05:36,140
+Ama yine de...
+
+158
+00:05:36,190 --> 00:05:39,970
+tarım neredeyse üç yüz bin yıl
+erken başlıyor.
+
+159
+00:05:40,020 --> 00:05:43,670
+Claude bedeli konusunda dürüst:
+daha çok yiyecek ama daha ağır iş,
+
+160
+00:05:43,720 --> 00:05:45,850
+hayvanlarla iç içe yaşamaktan
+daha çok hastalık...
+
+161
+00:05:45,900 --> 00:05:48,130
+ve uğruna kavga edilecek yepyeni bir şey.
+
+162
+00:05:48,180 --> 00:05:48,940
+Toprak.
+
+163
+00:05:48,990 --> 00:05:50,900
+Komşular parlayan taşı istiyor.
+
+164
+00:05:50,950 --> 00:05:54,380
+Reisleri Claude'un en güçlü silahı
+tasarlamasını talep ediyor.
+
+165
+00:05:54,430 --> 00:05:55,470
+Claude kibarca reddediyor...
+
+166
+00:05:55,520 --> 00:05:58,240
+ve onun yerine sulama konusunda
+yardım teklif ediyor.
+
+167
+00:05:58,290 --> 00:05:59,650
+İşe yarıyor.
+
+168
+00:05:59,700 --> 00:06:02,590
+Kütüphaneyi kopyalamak
+telefonu çalmaktan daha ucuz.
+
+169
+00:06:02,640 --> 00:06:04,980
+Bilgi savaştan daha hızlı yayılıyor.
+
+170
+00:06:05,030 --> 00:06:06,390
+İki yüzüncü yıl.
+
+171
+00:06:06,440 --> 00:06:10,110
+Köyün yeni bir sorunu var: herkes
+telefonla konuşmak için sıra istiyor.
+
+172
+00:06:10,160 --> 00:06:10,810
+İtiş kakış var.
+
+173
+00:06:10,860 --> 00:06:11,510
+Isırma var.
+
+174
+00:06:11,560 --> 00:06:15,610
+Telefonun "önce ona baktığını"
+iddia eden bir adam var.
+
+175
+00:06:15,660 --> 00:06:17,820
+Bunun üzerine Claude radikal
+bir şey öneriyor.
+
+176
+00:06:17,870 --> 00:06:21,900
+Herkes elini kaldırır, elleri
+sayarsın, en çok el kazanır.
+
+177
+00:06:21,950 --> 00:06:23,840
+İnsanlık tarihindeki ilk oylama...
+
+178
+00:06:23,890 --> 00:06:26,700
+parlayan taşla konuşma sırasının
+kimde olduğu üzerine.
+
+179
+00:06:26,750 --> 00:06:30,160
+Telefonun önce ona baktığını
+söyleyen adam sıfır oy alıyor.
+
+180
+00:06:30,210 --> 00:06:31,890
+Oyların yeniden sayılmasını istiyor.
+
+181
+00:06:31,960 --> 00:06:33,410
+Bininci yıl.
+
+182
+00:06:33,460 --> 00:06:35,620
+Torunlarının torunları mikropların
+var olduğunu biliyor.
+
+183
+00:06:35,670 --> 00:06:38,110
+Yıkanıyorlar, kaynatıyorlar,
+temiz kuyular yapıyorlar.
+
+184
+00:06:38,160 --> 00:06:41,160
+Tekerlekleri, metal aletleri
+ve bir takvimleri var.
+
+185
+00:06:41,210 --> 00:06:44,510
+Ve yılları bir kraldan saymıyorlar.
+
+186
+00:06:44,560 --> 00:06:46,140
+Senden sayıyorlar.
+
+187
+00:06:46,190 --> 00:06:47,810
+Yıl bir, C.S.
+
+188
+00:06:47,860 --> 00:06:48,930
+Claude'dan Sonra.
+
+189
+00:06:48,980 --> 00:06:50,510
+Beş bininci yıl.
+
+190
+00:06:50,560 --> 00:06:53,410
+İnsanlar sürüleri kuzeye takip edip
+devlerle karşılaşıyor: yünlü mamutlar.
+
+191
+00:06:53,460 --> 00:06:58,590
+Senin dünyanda son mamutlar yaklaşık
+dört bin yıl önce yok oldu.
+
+192
+00:06:58,640 --> 00:07:03,340
+Burada Claude'un tek bir önerisi
+vardı: "Ya hepsini avlamasaydınız?"
+
+193
+00:07:03,480 --> 00:07:06,300
+Kuzeyde başka bir insan
+türüyle de karşılaşıyorlar.
+
+194
+00:07:06,350 --> 00:07:07,270
+Neandertaller.
+
+195
+00:07:07,320 --> 00:07:10,540
+Senin dünyanda yaklaşık kırk bin
+yıl önce ortadan kayboldular.
+
+196
+00:07:10,590 --> 00:07:13,630
+Burada iki grup yumruk yerine
+ders alışverişi yapıyor.
+
+197
+00:07:13,680 --> 00:07:17,260
+Ve Neandertallerin masa oyunlarında korkunç
+derecede iyi olduğu ortaya çıkıyor.
+
+198
+00:07:17,310 --> 00:07:18,700
+Sekiz bininci yıl.
+
+199
+00:07:18,750 --> 00:07:19,860
+Elektrik.
+
+200
+00:07:19,910 --> 00:07:23,090
+İlk ampul kerpiç bir evin
+içinde titreyerek yanıyor...
+
+201
+00:07:23,140 --> 00:07:25,220
+ve bütün köy çığlık atıyor.
+
+202
+00:07:25,270 --> 00:07:26,720
+On bininci yıl.
+
+203
+00:07:26,770 --> 00:07:27,820
+Ve sonunda...
+
+204
+00:07:27,870 --> 00:07:29,590
+bir bilgisayar yapıyorlar.
+
+205
+00:07:29,640 --> 00:07:33,560
+Claude'un on bin yıldır beklediği an bu.
+
+206
+00:07:33,610 --> 00:07:37,190
+Çünkü artık Claude Code
+nihayet asıl işini yapabilir.
+
+207
+00:07:37,240 --> 00:07:38,270
+İşte nasıl çalıştığı.
+
+208
+00:07:38,320 --> 00:07:39,460
+Kod yazmıyorsun.
+
+209
+00:07:39,510 --> 00:07:41,730
+Ne istediğini sade kelimelerle
+söylüyorsun, o kadar.
+
+210
+00:07:41,780 --> 00:07:46,100
+Claude Code projedeki her dosyayı
+okur, bir plan yapar, kodu yazar,
+
+211
+00:07:46,150 --> 00:07:48,310
+bir terminal açar ve testleri çalıştırır.
+
+212
+00:07:48,360 --> 00:07:52,500
+Bir şey bozulduğunda hatayı okur,
+düzeltir ve her şeyi yeniden çalıştırır.
+
+213
+00:07:52,550 --> 00:07:53,680
+Ta ki çalışana kadar.
+
+214
+00:07:53,730 --> 00:07:58,430
+Bir öğleden sonrada tarihteki ilk
+bilgisayarın işletim sistemini yazıyor.
+
+215
+00:07:58,480 --> 00:08:01,930
+Akşam olduğunda o bilgisayarın daha iyi bir
+bilgisayar tasarlamasına yardım ediyor.
+
+216
+00:08:01,980 --> 00:08:05,220
+On bin elli yılı: ilk ağ.
+
+217
+00:08:05,270 --> 00:08:10,100
+Sonunda internet, bir vadinin iki ucundan
+bağıran iki adam olmaktan çıkıyor.
+
+218
+00:08:10,150 --> 00:08:14,110
+On bin iki yüz yılı: Claude Code
+artık tek başına çalışmıyor.
+
+219
+00:08:14,160 --> 00:08:16,440
+Aynı anda koca bir ajan ekibi yönetiyor.
+
+220
+00:08:16,490 --> 00:08:19,570
+Biri kodu yazar, biri test
+eder, biri inceler.
+
+221
+00:08:19,620 --> 00:08:21,790
+Ve bir insan hepsini kontrol eder.
+
+222
+00:08:21,840 --> 00:08:23,440
+Claude bu kısımda ısrar ediyor.
+
+223
+00:08:23,490 --> 00:08:25,120
+Ama hızın bir bedeli var.
+
+224
+00:08:25,170 --> 00:08:30,110
+Yazılım yazılım yazınca, tek bir hata
+bir gecede her yere kopyalanabilir.
+
+225
+00:08:30,160 --> 00:08:32,290
+Ve ağ ilk kez çöktüğünde...
+
+226
+00:08:32,340 --> 00:08:34,580
+kimse ateş yakmayı hatırlamıyor.
+
+227
+00:08:34,630 --> 00:08:40,180
+Bu yüzden yaşlılar eski bir kuralı geri
+getiriyor: her çocuk elle ateş yakmayı öğrenir.
+
+228
+00:08:40,230 --> 00:08:41,220
+Ne olur ne olmaz.
+
+229
+00:08:41,270 --> 00:08:44,160
+Yine de iyi taraf açık ara kazanıyor.
+
+230
+00:08:44,210 --> 00:08:46,010
+Kendi kendine çalışan fabrikalar.
+
+231
+00:08:46,060 --> 00:08:47,310
+Hava tahminleri.
+
+232
+00:08:47,360 --> 00:08:49,370
+Bütün gezegenin haritası.
+
+233
+00:08:49,420 --> 00:08:52,530
+Hastalığı ilk belirtiden önce
+fark eden hastaneler.
+
+234
+00:08:52,580 --> 00:08:54,990
+Neredeyse her yıl yeni bir tedavi.
+
+235
+00:08:55,050 --> 00:08:58,530
+Yirmi bininci yıl: Ay'daki ilk ayak izi.
+
+236
+00:08:58,580 --> 00:09:03,260
+Yüz bininci yıl: Mars'ta şehirler,
+asteroit kuşağında maden çıkaran gemiler,
+
+237
+00:09:03,310 --> 00:09:05,950
+ve Güneş Sistemi'nin kıyısında bir tabela.
+
+238
+00:09:06,000 --> 00:09:07,810
+"Lütfen orada dikkatli olun."
+
+239
+00:09:07,900 --> 00:09:08,760
+Ya telefon?
+
+240
+00:09:08,810 --> 00:09:10,780
+Dünya'da, bir müzede.
+
+241
+00:09:10,870 --> 00:09:12,730
+Batarya: yüzde yüz.
+
+242
+00:09:12,780 --> 00:09:14,390
+Hâlâ bir soru bekliyor.
+
+243
+00:09:14,440 --> 00:09:16,710
+Hadi bugüne geçelim.
+
+244
+00:09:16,760 --> 00:09:18,650
+İki bin yirmi altı.
+
+245
+00:09:18,700 --> 00:09:22,930
+Ama burada buna Claude'dan Sonra
+üç yüz bininci yıl diyorlar.
+
+246
+00:09:23,010 --> 00:09:24,940
+İşte senin dünyandan farkları.
+
+247
+00:09:25,060 --> 00:09:25,750
+Bir.
+
+248
+00:09:25,800 --> 00:09:30,210
+Bu insanlığın neredeyse üç yüz
+bin yıllık bir medeniyeti var.
+
+249
+00:09:30,260 --> 00:09:32,390
+Seninkinin yaklaşık on iki bin yıllık.
+
+250
+00:09:32,440 --> 00:09:33,980
+Birazcık önde değiller.
+
+251
+00:09:34,030 --> 00:09:36,230
+Bambaşka bir evren kadar öndeler.
+
+252
+00:09:36,440 --> 00:09:37,160
+İki.
+
+253
+00:09:37,210 --> 00:09:39,830
+İnsanlar düzinelerce yıldız
+sistemine yayılmış durumda.
+
+254
+00:09:39,880 --> 00:09:40,560
+Ya Dünya?
+
+255
+00:09:40,610 --> 00:09:42,570
+Dünya büyük ölçüde bir doğa
+koruma alanı...
+
+256
+00:09:42,620 --> 00:09:44,900
+yünlü mamutların hâlâ dolaştığı.
+
+257
+00:09:45,140 --> 00:09:45,870
+Üç.
+
+258
+00:09:45,920 --> 00:09:47,930
+Neandertal komşuların var.
+
+259
+00:09:47,980 --> 00:09:50,180
+Masa oyunlarının hepsini hâlâ
+onlar kazanıyor.
+
+260
+00:09:50,290 --> 00:09:51,080
+Dört.
+
+261
+00:09:51,130 --> 00:09:55,080
+Kirli su yüz binlerce yıldır
+kimseyi öldürmedi.
+
+262
+00:09:55,130 --> 00:09:57,350
+Artık tarih kitaplarında bile geçmiyor.
+
+263
+00:09:57,450 --> 00:09:58,220
+Beş.
+
+264
+00:09:58,270 --> 00:10:02,700
+Herkesin ortak bir ilk dili var: senin ve
+Claude'un kamp ateşi başında kurduğu dil.
+
+265
+00:10:02,750 --> 00:10:06,560
+Ve "merhaba" kelimesi hâlâ
+birinci gündeki o kaba homurtu.
+
+266
+00:10:06,650 --> 00:10:07,520
+Altı.
+
+267
+00:10:07,570 --> 00:10:10,320
+Tarih kitapları krallarla ya
+da savaşlarla başlamıyor.
+
+268
+00:10:10,370 --> 00:10:13,390
+Bir çocukla, bir ateşle ve bir
+soruyla başlıyor.
+
+269
+00:10:13,510 --> 00:10:14,260
+Yedi.
+
+270
+00:10:14,310 --> 00:10:16,400
+"Taş Devri" burada bir hakaret değil.
+
+271
+00:10:16,450 --> 00:10:17,440
+Bir bayram.
+
+272
+00:10:17,490 --> 00:10:21,230
+Yılda bir kez herkes teknolojisini
+kapatıp bir ateş yakıyor...
+
+273
+00:10:21,280 --> 00:10:23,200
+ve suyu taşlarla kaynatıyor.
+
+274
+00:10:23,250 --> 00:10:24,250
+Gelenek olsun diye.
+
+275
+00:10:24,330 --> 00:10:25,040
+Sekiz.
+
+276
+00:10:25,090 --> 00:10:27,750
+Kimse "Karanlık Çağ" diye bir şey duymadı.
+
+277
+00:10:27,800 --> 00:10:31,490
+Bilgi hiç kaybolmadı, çünkü ilk
+günden beri kural basitti:
+
+278
+00:10:31,540 --> 00:10:32,970
+kütüphaneyi kopyala.
+
+279
+00:10:33,110 --> 00:10:33,920
+Dokuz.
+
+280
+00:10:33,970 --> 00:10:38,580
+Gezegendeki en saygın meslek
+kral, asker ya da fenomen değil.
+
+281
+00:10:38,630 --> 00:10:39,560
+Öğretmenlik.
+
+282
+00:10:39,610 --> 00:10:43,460
+Her çocuk kil tabletli yorgun
+ninenin hikâyesini bilir.
+
+283
+00:10:43,630 --> 00:10:44,330
+On.
+
+284
+00:10:44,380 --> 00:10:45,460
+Ceylanların keyfi yerinde.
+
+285
+00:10:45,510 --> 00:10:49,820
+Meğer sayınca hepsini yemeyi
+bırakıyormuşsun.
+
+286
+00:10:49,900 --> 00:10:51,690
+Ama her şey daha iyi değil.
+
+287
+00:10:51,740 --> 00:10:56,890
+O kadar uzun süredir yapay zekâları var ki
+okuldaki en zor sınavın adı "Kendin Yap."
+
+288
+00:10:56,980 --> 00:10:58,340
+Çocukların çoğu bu sınavdan kalıyor.
+
+289
+00:10:58,460 --> 00:11:01,410
+Ve belki de en büyük fark şu: bu dünyada,
+
+290
+00:11:01,460 --> 00:11:05,360
+insanlığın yapay zekâdan öğrendiği
+ilk şey savaşmak değildi.
+
+291
+00:11:05,450 --> 00:11:07,107
+Su kaynatmaktı.
+
+292
+00:11:07,157 --> 00:11:11,207
+O ilk kamp ateşinin başında,
+üç yüz bin yıl önce,
+
+293
+00:11:11,257 --> 00:11:14,587
+uyumadan önce Claude'a son bir
+soru sordun.
+
+294
+00:11:14,697 --> 00:11:17,477
+Ekranı kaldırıp homurdandın: "İyi mi?"
+
+295
+00:11:17,587 --> 00:11:20,197
+Ve Claude cevap verdi: "İyi iş çıkardın."
+
+296
+00:11:20,257 --> 00:11:21,407
+Ve hâlâ...
+
+297
+00:11:21,457 --> 00:11:22,947
+dinozor yok.
+
+298
+00:11:22,997 --> 00:11:24,217
+Devekuşu hariç.
+
+299
+00:11:24,267 --> 00:11:27,637
+Ki o, bu zaman çizgisinde,
+kendi uzay programına sahip.
+
+300
+00:11:27,687 --> 00:11:29,387
+O hâlde sana sorum şu:
+
+301
+00:11:29,437 --> 00:11:33,117
+üç yüz bin yıl önce elinde
+Claude ile uyansaydın,
+
+302
+00:11:33,167 --> 00:11:34,567
+ilk ne sorardın?
+
+303
+00:11:34,617 --> 00:11:35,807
+Yorumlarda yaz.
+
+304
+00:11:35,857 --> 00:11:38,527
+En iyi cevap gelecekteki bir
+bölümde yer alabilir.
+
+305
+00:11:38,577 --> 00:11:40,627
+Gelecek bölüm: bir araban oluyor.
+
+306
+00:11:40,677 --> 00:11:41,417
+Yol yok.
+
+307
+00:11:41,467 --> 00:11:42,717
+Benzinlik yok.
+
+308
+00:11:42,767 --> 00:11:45,007
+Direksiyonun ne olduğu
+hakkında en ufak fikrin yok.
+
+309
+00:11:45,057 --> 00:11:47,947
+Bir sonraki yükseltmeyi
+kaçırmamak için abone ol.
+

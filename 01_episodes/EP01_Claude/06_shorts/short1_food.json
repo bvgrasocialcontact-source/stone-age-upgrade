@@ -1,0 +1,79 @@
+{
+ "header": [
+  "CAVEMEN ASK AI",
+  "FOR FOOD"
+ ],
+ "parts": [
+  {
+   "src_from": 143.2333,
+   "src_to": 177.9833,
+   "act": 3,
+   "act_from": 60.2
+  }
+ ],
+ "keys": [
+  [
+   0,
+   960,
+   540,
+   1080,
+   0
+  ],
+  [
+   2.4,
+   1320,
+   540,
+   1160,
+   0.6
+  ],
+  [
+   8.2,
+   980,
+   540,
+   1080,
+   0.5
+  ],
+  [
+   9.6,
+   960,
+   520,
+   1650,
+   0.6
+  ],
+  [
+   16.9,
+   1000,
+   540,
+   1300,
+   0.6
+  ],
+  [
+   25.4,
+   1250,
+   540,
+   1300,
+   0.5
+  ],
+  [
+   29.9,
+   960,
+   540,
+   1920,
+   0.6
+  ]
+ ],
+ "emph": [
+  "FOOD?",
+  "WATER.",
+  "EXPLODES.",
+  "STONES.",
+  "BOILING.",
+  "CLAUDE",
+  "DRY",
+  "ROCKS.",
+  "POTS.",
+  "SPEAR."
+ ],
+ "master": "/home/claude/stone-age-upgrade/01_episodes/EP01_Claude/04_renders/EP01_FINAL_2K_What_If_You_Had_AI_300000_Years_Ago.mp4",
+ "timing_dir": "/home/claude/stone-age-upgrade/01_episodes/EP01_Claude/02_audio"
+}

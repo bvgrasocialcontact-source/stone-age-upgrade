@@ -1,0 +1,53 @@
+{
+ "header": [
+  "CAVEMAN ASKS AI",
+  "ABOUT DINOSAURS"
+ ],
+ "parts": [
+  {
+   "src_from": 268.0333,
+   "src_to": 278.2833,
+   "act": 3,
+   "act_from": 185.0
+  },
+  {
+   "src_from": 680.1667,
+   "src_to": 687.5167,
+   "act": 6,
+   "act_from": 13.1
+  }
+ ],
+ "keys": [
+  [
+   0,
+   1240,
+   540,
+   1350,
+   0
+  ],
+  [
+   5.6,
+   960,
+   540,
+   1920,
+   0.5
+  ],
+  [
+   10.25,
+   960,
+   540,
+   1080,
+   0
+  ]
+ ],
+ "emph": [
+  "DINOSAURS.",
+  "OSTRICH",
+  "TECHNICALLY.",
+  "SPACE",
+  "PROGRAM.",
+  "SIXTY-SIX"
+ ],
+ "master": "/home/claude/stone-age-upgrade/01_episodes/EP01_Claude/04_renders/EP01_FINAL_2K_What_If_You_Had_AI_300000_Years_Ago.mp4",
+ "timing_dir": "/home/claude/stone-age-upgrade/01_episodes/EP01_Claude/02_audio"
+}

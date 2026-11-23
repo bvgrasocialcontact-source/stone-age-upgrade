@@ -1,0 +1,65 @@
+{
+ "header": [
+  "THE FIRST VOTE",
+  "WAS ABOUT THIS"
+ ],
+ "parts": [
+  {
+   "src_from": 364.85,
+   "src_to": 391.75,
+   "act": 4,
+   "act_from": 86.55
+  }
+ ],
+ "keys": [
+  [
+   0,
+   960,
+   540,
+   1080,
+   0
+  ],
+  [
+   0.01,
+   975,
+   600,
+   860,
+   4.6
+  ],
+  [
+   5.0,
+   990,
+   640,
+   760,
+   0.5
+  ],
+  [
+   10.6,
+   960,
+   540,
+   1080,
+   0.5
+  ],
+  [
+   24.9,
+   1110,
+   540,
+   1080,
+   0.4
+  ]
+ ],
+ "emph": [
+  "PHONE.",
+  "FIRST",
+  "VOTE",
+  "HISTORY...",
+  "ZERO",
+  "VOTES.",
+  "RECOUNT.",
+  "HANDS",
+  "BITING.",
+  "SHOVING."
+ ],
+ "master": "/home/claude/stone-age-upgrade/01_episodes/EP01_Claude/04_renders/EP01_FINAL_2K_What_If_You_Had_AI_300000_Years_Ago.mp4",
+ "timing_dir": "/home/claude/stone-age-upgrade/01_episodes/EP01_Claude/02_audio"
+}

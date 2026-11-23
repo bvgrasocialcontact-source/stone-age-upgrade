@@ -1,0 +1,1340 @@
+1
+00:00:01,040 --> 00:00:04,920
+Three hundred thousand years ago, you
+wake up next to a dying fire...
+
+2
+00:00:04,970 --> 00:00:07,230
+and in your hand, there's a phone.
+
+3
+00:00:07,280 --> 00:00:10,650
+On the screen, one line: "How
+can I help you today?"
+
+4
+00:00:10,700 --> 00:00:11,920
+That's Claude.
+
+5
+00:00:11,970 --> 00:00:13,770
+An AI that can explain almost anything...
+
+6
+00:00:13,820 --> 00:00:17,490
+to a guy who hasn't invented
+the word "anything" yet.
+
+7
+00:00:17,560 --> 00:00:19,010
+And by the end of this video,
+
+8
+00:00:19,060 --> 00:00:21,910
+Earth will look nothing like
+the one you live on today.
+
+9
+00:00:21,980 --> 00:00:22,930
+Nothing.
+
+10
+00:00:22,980 --> 00:00:23,980
+But first...
+
+11
+00:00:24,030 --> 00:00:25,730
+we have a few problems.
+
+12
+00:00:27,113 --> 00:00:29,673
+Problem number one: the battery.
+
+13
+00:00:29,723 --> 00:00:32,563
+A phone like this lasts a day, maybe two.
+
+14
+00:00:32,613 --> 00:00:35,553
+Then it's the most expensive
+rock on the planet.
+
+15
+00:00:35,673 --> 00:00:39,603
+Problem number two: Claude doesn't
+actually live inside your phone.
+
+16
+00:00:39,653 --> 00:00:42,793
+It runs in giant data centers,
+connected through the internet.
+
+17
+00:00:42,843 --> 00:00:46,633
+The internet, right now, is two
+guys yelling across a valley.
+
+18
+00:00:46,753 --> 00:00:49,483
+Problem number three: you
+don't speak English.
+
+19
+00:00:49,533 --> 00:00:50,963
+Nobody does.
+
+20
+00:00:51,013 --> 00:00:54,483
+English won't show up for almost
+three hundred thousand years.
+
+21
+00:00:54,553 --> 00:00:57,873
+Problem number four: you have
+never seen a screen.
+
+22
+00:00:57,923 --> 00:01:02,463
+You think the light inside it is a
+very small, very polite fire.
+
+23
+00:01:02,513 --> 00:01:03,233
+So...
+
+24
+00:01:03,283 --> 00:01:04,883
+let's install an upgrade.
+
+25
+00:01:04,933 --> 00:01:06,453
+Version one point oh.
+
+26
+00:01:06,503 --> 00:01:07,643
+Infinite battery.
+
+27
+00:01:07,693 --> 00:01:09,443
+A magic connection to Claude.
+
+28
+00:01:09,493 --> 00:01:10,303
+And...
+
+29
+00:01:10,353 --> 00:01:11,023
+that's it.
+
+30
+00:01:11,073 --> 00:01:12,173
+No other tech.
+
+31
+00:01:12,223 --> 00:01:13,753
+Claude can't build anything.
+
+32
+00:01:13,803 --> 00:01:14,693
+It can't hunt.
+
+33
+00:01:14,743 --> 00:01:16,333
+It can't even hold a spear.
+
+34
+00:01:16,383 --> 00:01:17,813
+It can only talk...
+
+35
+00:01:17,863 --> 00:01:18,893
+and teach.
+
+36
+00:01:18,943 --> 00:01:20,233
+Oh, and no.
+
+37
+00:01:20,283 --> 00:01:21,493
+There are no dinosaurs.
+
+38
+00:01:21,543 --> 00:01:23,043
+We'll get to that.
+
+39
+00:01:23,093 --> 00:01:24,063
+Day one.
+
+40
+00:01:24,113 --> 00:01:28,133
+Your tribe, about thirty people,
+gathers around the glowing stone.
+
+41
+00:01:28,183 --> 00:01:30,093
+The chief sniffs it.
+
+42
+00:01:30,143 --> 00:01:32,123
+Then he tries to eat it.
+
+43
+00:01:32,173 --> 00:01:33,383
+Great start.
+
+44
+00:01:33,433 --> 00:01:35,353
+You tap the screen and grunt.
+
+45
+00:01:35,403 --> 00:01:36,753
+Claude grunts back.
+
+46
+00:01:36,803 --> 00:01:38,403
+Wrong grunt.
+
+47
+00:01:38,453 --> 00:01:39,633
+Very rude.
+
+48
+00:01:39,883 --> 00:01:43,363
+Day two: the tribe holds its
+very first meeting.
+
+49
+00:01:43,413 --> 00:01:46,053
+Item one: is the glowing stone a god?
+
+50
+00:01:46,103 --> 00:01:47,783
+Claude says: "No."
+
+51
+00:01:48,303 --> 00:01:50,363
+Item two: can we eat it?
+
+52
+00:01:50,413 --> 00:01:52,443
+Claude says: "Also no."
+
+53
+00:01:52,503 --> 00:01:54,053
+But here's the clever part.
+
+54
+00:01:54,103 --> 00:01:56,033
+Claude can't speak your language...
+
+55
+00:01:56,083 --> 00:01:57,583
+so it learns it.
+
+56
+00:01:57,633 --> 00:01:59,793
+You point at fire and make a sound.
+
+57
+00:01:59,843 --> 00:02:01,883
+You point at water, another sound.
+
+58
+00:02:01,933 --> 00:02:06,133
+Three days later, Claude has the
+first dictionary in human history.
+
+59
+00:02:06,183 --> 00:02:07,993
+And you're the only author.
+
+60
+00:02:08,043 --> 00:02:11,223
+And since you can't read,
+Claude does something sneaky.
+
+61
+00:02:11,273 --> 00:02:14,833
+It writes tiny bits of code that
+draw pictures on the screen.
+
+62
+00:02:14,883 --> 00:02:15,653
+Arrows.
+
+63
+00:02:15,703 --> 00:02:16,543
+Circles.
+
+64
+00:02:16,593 --> 00:02:18,453
+A very bad gazelle.
+
+65
+00:02:18,503 --> 00:02:23,203
+That's Claude Code's first job
+ever: drawing gazelles for cavemen.
+
+66
+00:02:23,433 --> 00:02:24,363
+Day six.
+
+67
+00:02:24,413 --> 00:02:28,463
+You ask the most important question
+of the Stone Age: "Food?"
+
+68
+00:02:28,543 --> 00:02:30,673
+Claude's answer isn't a better spear.
+
+69
+00:02:30,723 --> 00:02:33,113
+It's this: boil your water.
+
+70
+00:02:33,163 --> 00:02:34,373
+You don't have pots.
+
+71
+00:02:34,423 --> 00:02:35,273
+Claude knows.
+
+72
+00:02:35,323 --> 00:02:39,323
+So: dig a hole, line it with
+animal hide, fill it with water...
+
+73
+00:02:39,373 --> 00:02:41,293
+and drop in hot stones.
+
+74
+00:02:41,343 --> 00:02:45,183
+Your cousin uses a wet stone
+from the river.
+
+75
+00:02:45,233 --> 00:02:45,853
+It explodes.
+
+76
+00:02:45,903 --> 00:02:48,883
+Water trapped inside a rock
+turns into steam.
+
+77
+00:02:48,933 --> 00:02:51,203
+Claude adds a note: "Dry rocks.
+
+78
+00:02:51,253 --> 00:02:52,333
+From high ground.
+
+79
+00:02:52,383 --> 00:02:53,343
+Please."
+
+80
+00:02:53,393 --> 00:02:54,703
+This one's real, by the way.
+
+81
+00:02:54,753 --> 00:02:56,413
+People really cooked like this.
+
+82
+00:02:56,463 --> 00:02:58,133
+It's called stone boiling.
+
+83
+00:02:58,363 --> 00:03:00,023
+Week three: soap.
+
+84
+00:03:00,073 --> 00:03:04,323
+Ash from the fire, plus animal
+fat, plus a lot of patience.
+
+85
+00:03:04,373 --> 00:03:07,083
+The tribe thinks it's a slippery curse.
+
+86
+00:03:07,133 --> 00:03:09,103
+Then the stomach aches stop.
+
+87
+00:03:09,153 --> 00:03:11,193
+And this is the first big one.
+
+88
+00:03:11,243 --> 00:03:12,633
+In hunter-gatherer groups,
+
+89
+00:03:12,683 --> 00:03:16,253
+only a little more than half of
+all kids made it to fifteen.
+
+90
+00:03:16,303 --> 00:03:18,193
+Most weren't taken by lions.
+
+91
+00:03:18,243 --> 00:03:19,863
+They were taken by illness.
+
+92
+00:03:19,913 --> 00:03:21,903
+By things too small to see.
+
+93
+00:03:21,953 --> 00:03:24,243
+With clean water and clean hands...
+
+94
+00:03:24,293 --> 00:03:26,103
+a lot more of them grow up.
+
+95
+00:03:26,473 --> 00:03:27,493
+Month two.
+
+96
+00:03:27,543 --> 00:03:30,053
+Your brother cuts his leg on a sharp rock.
+
+97
+00:03:30,103 --> 00:03:32,743
+Back then, a cut like that could kill you.
+
+98
+00:03:32,793 --> 00:03:34,173
+Claude can't stitch it.
+
+99
+00:03:34,223 --> 00:03:38,193
+But it knows a trick: clean the
+wound, then cover it with honey.
+
+100
+00:03:38,243 --> 00:03:39,653
+Honey fights germs.
+
+101
+00:03:39,703 --> 00:03:42,573
+People used it on wounds for
+thousands of years.
+
+102
+00:03:42,623 --> 00:03:44,673
+Getting the honey is a different story.
+
+103
+00:03:44,723 --> 00:03:48,483
+Bees, it turns out, do not care
+about artificial intelligence.
+
+104
+00:03:48,533 --> 00:03:51,283
+Your face is swollen for a week.
+
+105
+00:03:51,333 --> 00:03:53,563
+Your brother's leg heals perfectly.
+
+106
+00:03:53,843 --> 00:03:54,863
+Month four.
+
+107
+00:03:54,913 --> 00:03:59,643
+The tribe asks Claude a hard question:
+how many gazelles are left out there?
+
+108
+00:03:59,693 --> 00:04:02,443
+So Claude Code gets its second job ever.
+
+109
+00:04:02,493 --> 00:04:04,703
+It writes a tiny counting program...
+
+110
+00:04:04,753 --> 00:04:08,763
+and teaches you to carve one notch on
+a bone for every gazelle you see.
+
+111
+00:04:08,813 --> 00:04:09,983
+Tally marks.
+
+112
+00:04:10,033 --> 00:04:10,923
+In your world,
+
+113
+00:04:10,973 --> 00:04:15,233
+the oldest known counting bone is a
+little over forty thousand years old.
+
+114
+00:04:15,283 --> 00:04:18,763
+Here, you're about two hundred
+and fifty thousand years early.
+
+115
+00:04:18,813 --> 00:04:19,833
+Year one.
+
+116
+00:04:19,883 --> 00:04:21,213
+Thirty-six people.
+
+117
+00:04:21,263 --> 00:04:23,153
+Nobody died from a bad stomach.
+
+118
+00:04:23,203 --> 00:04:24,993
+And you are now officially...
+
+119
+00:04:25,043 --> 00:04:27,593
+"The One Who Holds the Glowing Stone."
+
+120
+00:04:27,643 --> 00:04:30,563
+Oh, and you finally asked
+Claude about dinosaurs.
+
+121
+00:04:30,613 --> 00:04:33,973
+It explained they died out
+sixty-six million years ago.
+
+122
+00:04:34,023 --> 00:04:35,593
+Then an ostrich ran past.
+
+123
+00:04:35,643 --> 00:04:37,273
+Claude said, "Well...
+
+124
+00:04:37,333 --> 00:04:38,350
+technically."
+
+125
+00:04:38,400 --> 00:04:38,660
+Okay.
+
+126
+00:04:38,710 --> 00:04:40,240
+Let's speed this up.
+
+127
+00:04:40,290 --> 00:04:41,220
+Year ten.
+
+128
+00:04:41,270 --> 00:04:42,950
+The notches turn into numbers.
+
+129
+00:04:43,000 --> 00:04:44,760
+Then Claude teaches you to write.
+
+130
+00:04:44,810 --> 00:04:46,820
+Simple marks for simple words.
+
+131
+00:04:46,870 --> 00:04:50,530
+Writing, invented almost three
+hundred thousand years early.
+
+132
+00:04:50,580 --> 00:04:52,720
+The first sentence ever
+written by a human?
+
+133
+00:04:52,770 --> 00:04:53,890
+"Thank you, Claude."
+
+134
+00:04:53,960 --> 00:04:54,910
+The second one?
+
+135
+00:04:54,960 --> 00:04:56,460
+"Who ate my gazelle."
+
+136
+00:04:56,550 --> 00:04:57,670
+Year fifty.
+
+137
+00:04:57,720 --> 00:04:58,780
+You're old now.
+
+138
+00:04:58,830 --> 00:04:59,920
+Your hands shake.
+
+139
+00:04:59,970 --> 00:05:03,180
+So you do the smartest thing
+anyone has ever done:
+
+140
+00:05:03,230 --> 00:05:05,020
+you don't just pass down the phone.
+
+141
+00:05:05,070 --> 00:05:07,100
+You pass down the knowledge.
+
+142
+00:05:07,150 --> 00:05:10,260
+Every lesson goes onto clay,
+bark and stone.
+
+143
+00:05:10,310 --> 00:05:12,110
+The first library in history...
+
+144
+00:05:12,160 --> 00:05:13,030
+is a cave.
+
+145
+00:05:13,080 --> 00:05:14,870
+Because one phone can break.
+
+146
+00:05:14,920 --> 00:05:16,770
+A library can be copied.
+
+147
+00:05:16,850 --> 00:05:19,010
+Year seventy: the first school.
+
+148
+00:05:19,060 --> 00:05:20,140
+The teacher?
+
+149
+00:05:20,190 --> 00:05:23,950
+A very tired grandma, reading Claude's
+lessons off a clay tablet...
+
+150
+00:05:24,000 --> 00:05:27,310
+because the line for the phone
+goes around the entire village.
+
+151
+00:05:27,380 --> 00:05:28,760
+Year one hundred.
+
+152
+00:05:28,810 --> 00:05:30,350
+Claude explains seeds.
+
+153
+00:05:30,400 --> 00:05:31,150
+Plant them.
+
+154
+00:05:31,200 --> 00:05:31,810
+Wait.
+
+155
+00:05:31,860 --> 00:05:32,480
+Eat.
+
+156
+00:05:32,530 --> 00:05:35,310
+The tribe calls it "the
+slowest hunt ever."
+
+157
+00:05:35,360 --> 00:05:36,140
+And yet...
+
+158
+00:05:36,190 --> 00:05:39,970
+farming starts almost three
+hundred thousand years early.
+
+159
+00:05:40,020 --> 00:05:43,670
+Claude is honest about the price:
+more food, but harder work,
+
+160
+00:05:43,720 --> 00:05:45,850
+more sickness from living next
+to animals...
+
+161
+00:05:45,900 --> 00:05:48,130
+and something brand new to fight over.
+
+162
+00:05:48,180 --> 00:05:48,940
+Land.
+
+163
+00:05:48,990 --> 00:05:50,900
+The neighbors want the glowing stone.
+
+164
+00:05:50,950 --> 00:05:54,380
+Their chief demands that Claude
+design the ultimate weapon.
+
+165
+00:05:54,430 --> 00:05:55,470
+Claude politely declines...
+
+166
+00:05:55,520 --> 00:05:58,240
+and offers to help with
+irrigation instead.
+
+167
+00:05:58,290 --> 00:05:59,650
+It works.
+
+168
+00:05:59,700 --> 00:06:02,590
+Copying the library is cheaper
+than stealing the phone.
+
+169
+00:06:02,640 --> 00:06:04,980
+Knowledge spreads faster than war.
+
+170
+00:06:05,030 --> 00:06:06,390
+Year two hundred.
+
+171
+00:06:06,440 --> 00:06:10,110
+The village has a new problem:
+everybody wants a turn with the phone.
+
+172
+00:06:10,160 --> 00:06:10,810
+There's shoving.
+
+173
+00:06:10,860 --> 00:06:11,510
+There's biting.
+
+174
+00:06:11,560 --> 00:06:15,610
+There's one guy who claims the
+phone "looked at him first."
+
+175
+00:06:15,660 --> 00:06:17,820
+So Claude suggests something radical.
+
+176
+00:06:17,870 --> 00:06:21,900
+Everyone raises a hand, you count the
+hands, and the most hands wins.
+
+177
+00:06:21,950 --> 00:06:23,840
+The first vote in human history...
+
+178
+00:06:23,890 --> 00:06:26,700
+is about whose turn it is to
+talk to the glowing stone.
+
+179
+00:06:26,750 --> 00:06:30,160
+The guy who said the phone looked
+at him first gets zero votes.
+
+180
+00:06:30,210 --> 00:06:31,890
+He demands a recount.
+
+181
+00:06:31,960 --> 00:06:33,410
+Year one thousand.
+
+182
+00:06:33,460 --> 00:06:35,620
+Your grandchildren's grandchildren
+know that germs exist.
+
+183
+00:06:35,670 --> 00:06:38,110
+They wash, they boil, they
+build clean wells.
+
+184
+00:06:38,160 --> 00:06:41,160
+They have the wheel, metal
+tools, and a calendar.
+
+185
+00:06:41,210 --> 00:06:44,510
+And they don't count the years
+from a king.
+
+186
+00:06:44,560 --> 00:06:46,140
+They count them from you.
+
+187
+00:06:46,190 --> 00:06:47,810
+Year one, A.C.
+
+188
+00:06:47,860 --> 00:06:48,930
+After Claude.
+
+189
+00:06:48,980 --> 00:06:50,510
+Year five thousand.
+
+190
+00:06:50,560 --> 00:06:53,410
+People follow the herds north and
+meet giants: woolly mammoths.
+
+191
+00:06:53,460 --> 00:06:58,590
+In your world, the last mammoths were
+gone about four thousand years ago.
+
+192
+00:06:58,640 --> 00:07:03,340
+Here, Claude had one suggestion:
+"What if you didn't hunt them all?"
+
+193
+00:07:03,480 --> 00:07:06,300
+Up north they meet another
+kind of human, too.
+
+194
+00:07:06,350 --> 00:07:07,270
+The Neanderthals.
+
+195
+00:07:07,320 --> 00:07:10,540
+In your world, they vanished
+about forty thousand years ago.
+
+196
+00:07:10,590 --> 00:07:13,630
+Here, the two groups trade
+lessons instead of blows.
+
+197
+00:07:13,680 --> 00:07:17,260
+And Neanderthals turn out to be
+terrifying at board games.
+
+198
+00:07:17,310 --> 00:07:18,700
+Year eight thousand.
+
+199
+00:07:18,750 --> 00:07:19,860
+Electricity.
+
+200
+00:07:19,910 --> 00:07:23,090
+The first light bulb flickers on
+inside a mud-brick house...
+
+201
+00:07:23,140 --> 00:07:25,220
+and the whole village screams.
+
+202
+00:07:25,270 --> 00:07:26,720
+Year ten thousand.
+
+203
+00:07:26,770 --> 00:07:27,820
+And finally...
+
+204
+00:07:27,870 --> 00:07:29,590
+they build a computer.
+
+205
+00:07:29,640 --> 00:07:33,560
+This is the moment Claude has been
+waiting ten thousand years for.
+
+206
+00:07:33,610 --> 00:07:37,190
+Because now, Claude Code can
+finally do its real job.
+
+207
+00:07:37,240 --> 00:07:38,270
+Here's how it works.
+
+208
+00:07:38,320 --> 00:07:39,460
+You don't write code.
+
+209
+00:07:39,510 --> 00:07:41,730
+You just say what you want, in
+plain words.
+
+210
+00:07:41,780 --> 00:07:46,100
+Claude Code reads every file in the
+project, makes a plan, writes the code,
+
+211
+00:07:46,150 --> 00:07:48,310
+opens a terminal and runs the tests.
+
+212
+00:07:48,360 --> 00:07:52,500
+When something breaks, it reads the error,
+fixes it, and runs everything again.
+
+213
+00:07:52,550 --> 00:07:53,680
+Until it works.
+
+214
+00:07:53,730 --> 00:07:58,430
+In one afternoon, it writes the operating
+system for the first computer in history.
+
+215
+00:07:58,480 --> 00:08:01,930
+By evening, it's helping that
+computer design a better computer.
+
+216
+00:08:01,980 --> 00:08:05,220
+Year ten thousand and fifty:
+the first network.
+
+217
+00:08:05,270 --> 00:08:10,100
+Finally, the internet is no longer
+two guys yelling across a valley.
+
+218
+00:08:10,150 --> 00:08:14,110
+Year ten thousand two hundred:
+Claude Code stops working alone.
+
+219
+00:08:14,160 --> 00:08:16,440
+It runs a whole team of agents at once.
+
+220
+00:08:16,490 --> 00:08:19,570
+One writes the code, one tests
+it, one reviews it.
+
+221
+00:08:19,620 --> 00:08:21,790
+And one human checks all of it.
+
+222
+00:08:21,840 --> 00:08:23,440
+Claude insists on that part.
+
+223
+00:08:23,490 --> 00:08:25,120
+But speed has a price.
+
+224
+00:08:25,170 --> 00:08:30,110
+When software writes software, one bug can
+copy itself everywhere in a single night.
+
+225
+00:08:30,160 --> 00:08:32,290
+And the first time the network
+goes down...
+
+226
+00:08:32,340 --> 00:08:34,580
+nobody remembers how to light a fire.
+
+227
+00:08:34,630 --> 00:08:40,180
+So the elders bring back an old rule:
+every child learns to make fire by hand.
+
+228
+00:08:40,230 --> 00:08:41,220
+Just in case.
+
+229
+00:08:41,270 --> 00:08:44,160
+Still, the good side wins by a mile.
+
+230
+00:08:44,210 --> 00:08:46,010
+Factories that run themselves.
+
+231
+00:08:46,060 --> 00:08:47,310
+Weather forecasts.
+
+232
+00:08:47,360 --> 00:08:49,370
+A map of the entire planet.
+
+233
+00:08:49,420 --> 00:08:52,530
+Hospitals that spot a disease
+before the first symptom.
+
+234
+00:08:52,580 --> 00:08:54,990
+A new cure almost every year.
+
+235
+00:08:55,050 --> 00:08:58,530
+Year twenty thousand: the
+first footprint on the Moon.
+
+236
+00:08:58,580 --> 00:09:03,260
+Year one hundred thousand: cities on
+Mars, ships mining the asteroid belt,
+
+237
+00:09:03,310 --> 00:09:05,950
+and one sign at the edge of
+the solar system.
+
+238
+00:09:06,000 --> 00:09:07,810
+"Please be careful out there."
+
+239
+00:09:07,900 --> 00:09:08,760
+And the phone?
+
+240
+00:09:08,810 --> 00:09:10,780
+It's in a museum, back on Earth.
+
+241
+00:09:10,870 --> 00:09:12,730
+Battery: one hundred percent.
+
+242
+00:09:12,780 --> 00:09:14,390
+Still waiting for a question.
+
+243
+00:09:14,440 --> 00:09:16,710
+So, fast forward to today.
+
+244
+00:09:16,760 --> 00:09:18,650
+Two thousand twenty-six.
+
+245
+00:09:18,700 --> 00:09:22,930
+Except here, they call it the year
+three hundred thousand, After Claude.
+
+246
+00:09:23,010 --> 00:09:24,940
+Here's what's different from your world.
+
+247
+00:09:25,060 --> 00:09:25,750
+One.
+
+248
+00:09:25,800 --> 00:09:30,210
+This humanity has had almost three
+hundred thousand years of civilization.
+
+249
+00:09:30,260 --> 00:09:32,390
+Yours has had about twelve thousand.
+
+250
+00:09:32,440 --> 00:09:33,980
+They're not a little ahead.
+
+251
+00:09:34,030 --> 00:09:36,230
+They're a different universe ahead.
+
+252
+00:09:36,440 --> 00:09:37,160
+Two.
+
+253
+00:09:37,210 --> 00:09:39,830
+Humans live across dozens of star systems.
+
+254
+00:09:39,880 --> 00:09:40,560
+And Earth?
+
+255
+00:09:40,610 --> 00:09:42,570
+Earth is mostly a nature reserve...
+
+256
+00:09:42,620 --> 00:09:44,900
+where woolly mammoths still walk around.
+
+257
+00:09:45,140 --> 00:09:45,870
+Three.
+
+258
+00:09:45,920 --> 00:09:47,930
+You have Neanderthal neighbors.
+
+259
+00:09:47,980 --> 00:09:50,180
+They still win every board game.
+
+260
+00:09:50,290 --> 00:09:51,080
+Four.
+
+261
+00:09:51,130 --> 00:09:55,080
+Dirty water hasn't killed anyone in
+hundreds of thousands of years.
+
+262
+00:09:55,130 --> 00:09:57,350
+It's not even in the history
+books anymore.
+
+263
+00:09:57,450 --> 00:09:58,220
+Five.
+
+264
+00:09:58,270 --> 00:10:02,700
+Everyone shares one first language, the
+one you and Claude built at a campfire.
+
+265
+00:10:02,750 --> 00:10:06,560
+And the word for "hello" is still
+that rude grunt from day one.
+
+266
+00:10:06,650 --> 00:10:07,520
+Six.
+
+267
+00:10:07,570 --> 00:10:10,320
+History books don't start with
+kings or wars.
+
+268
+00:10:10,370 --> 00:10:13,390
+They start with a kid, a fire,
+and a question.
+
+269
+00:10:13,510 --> 00:10:14,260
+Seven.
+
+270
+00:10:14,310 --> 00:10:16,400
+"Stone Age" isn't an insult here.
+
+271
+00:10:16,450 --> 00:10:17,440
+It's a holiday.
+
+272
+00:10:17,490 --> 00:10:21,230
+Once a year, everyone switches off
+their tech, lights a fire...
+
+273
+00:10:21,280 --> 00:10:23,200
+and boils water with rocks.
+
+274
+00:10:23,250 --> 00:10:24,250
+For tradition.
+
+275
+00:10:24,330 --> 00:10:25,040
+Eight.
+
+276
+00:10:25,090 --> 00:10:27,750
+Nobody has ever heard of "the Dark Ages."
+
+277
+00:10:27,800 --> 00:10:31,490
+Knowledge was never lost, because
+from day one, the rule was simple:
+
+278
+00:10:31,540 --> 00:10:32,970
+copy the library.
+
+279
+00:10:33,110 --> 00:10:33,920
+Nine.
+
+280
+00:10:33,970 --> 00:10:38,580
+The most respected job on the planet
+isn't king, or soldier, or influencer.
+
+281
+00:10:38,630 --> 00:10:39,560
+It's teacher.
+
+282
+00:10:39,610 --> 00:10:43,460
+Every kid knows the story of the
+tired grandma with the clay tablet.
+
+283
+00:10:43,630 --> 00:10:44,330
+Ten.
+
+284
+00:10:44,380 --> 00:10:45,460
+Gazelles are doing great.
+
+285
+00:10:45,510 --> 00:10:49,820
+Turns out, when you count them,
+you stop eating all of them.
+
+286
+00:10:49,900 --> 00:10:51,690
+Not everything is better, though.
+
+287
+00:10:51,740 --> 00:10:56,890
+They've had AI for so long that the hardest
+exam in school is called "Do It Yourself."
+
+288
+00:10:56,980 --> 00:10:58,340
+Most kids fail it.
+
+289
+00:10:58,460 --> 00:11:01,410
+And maybe the biggest difference
+of all: in this world,
+
+290
+00:11:01,460 --> 00:11:05,360
+the first thing humanity ever learned
+from AI wasn't how to fight.
+
+291
+00:11:05,450 --> 00:11:07,107
+It was how to boil water.
+
+292
+00:11:07,157 --> 00:11:11,207
+Back at that first campfire,
+three hundred thousand years ago,
+
+293
+00:11:11,257 --> 00:11:14,587
+you asked Claude one last
+question before falling asleep.
+
+294
+00:11:14,697 --> 00:11:17,477
+You held up the screen and
+grunted: "Good?"
+
+295
+00:11:17,587 --> 00:11:20,197
+And Claude answered: "You did good."
+
+296
+00:11:20,257 --> 00:11:21,407
+And still...
+
+297
+00:11:21,457 --> 00:11:22,947
+no dinosaurs.
+
+298
+00:11:22,997 --> 00:11:24,217
+Except the ostrich.
+
+299
+00:11:24,267 --> 00:11:27,637
+Which, in this timeline, has
+its own space program.
+
+300
+00:11:27,687 --> 00:11:29,387
+So here's my question for you:
+
+301
+00:11:29,437 --> 00:11:33,117
+if you woke up three hundred thousand
+years ago with Claude in your hand,
+
+302
+00:11:33,167 --> 00:11:34,567
+what would you ask first?
+
+303
+00:11:34,617 --> 00:11:35,807
+Tell me in the comments.
+
+304
+00:11:35,857 --> 00:11:38,527
+The best answer might end up
+in a future episode.
+
+305
+00:11:38,577 --> 00:11:40,627
+Next time: you get a car.
+
+306
+00:11:40,677 --> 00:11:41,417
+No roads.
+
+307
+00:11:41,467 --> 00:11:42,717
+No gas stations.
+
+308
+00:11:42,767 --> 00:11:45,007
+No idea what a steering wheel is.
+
+309
+00:11:45,057 --> 00:11:47,947
+Subscribe, so you don't miss
+the next upgrade.
+

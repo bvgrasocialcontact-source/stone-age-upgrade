@@ -1,0 +1,1856 @@
+[
+{
+"id": 1,
+"s": 1.04,
+"e": 4.92,
+"en": "Three hundred thousand years ago, you wake up next to a dying fire..."
+},
+{
+"id": 2,
+"s": 4.97,
+"e": 7.23,
+"en": "and in your hand, there's a phone."
+},
+{
+"id": 3,
+"s": 7.28,
+"e": 10.65,
+"en": "On the screen, one line: \"How can I help you today?\""
+},
+{
+"id": 4,
+"s": 10.7,
+"e": 11.92,
+"en": "That's Claude."
+},
+{
+"id": 5,
+"s": 11.97,
+"e": 13.77,
+"en": "An AI that can explain almost anything..."
+},
+{
+"id": 6,
+"s": 13.82,
+"e": 17.49,
+"en": "to a guy who hasn't invented the word \"anything\" yet."
+},
+{
+"id": 7,
+"s": 17.56,
+"e": 19.01,
+"en": "And by the end of this video,"
+},
+{
+"id": 8,
+"s": 19.06,
+"e": 21.91,
+"en": "Earth will look nothing like the one you live on today."
+},
+{
+"id": 9,
+"s": 21.98,
+"e": 22.93,
+"en": "Nothing."
+},
+{
+"id": 10,
+"s": 22.98,
+"e": 23.98,
+"en": "But first..."
+},
+{
+"id": 11,
+"s": 24.03,
+"e": 25.73,
+"en": "we have a few problems."
+},
+{
+"id": 12,
+"s": 27.113,
+"e": 29.673,
+"en": "Problem number one: the battery."
+},
+{
+"id": 13,
+"s": 29.723,
+"e": 32.563,
+"en": "A phone like this lasts a day, maybe two."
+},
+{
+"id": 14,
+"s": 32.613,
+"e": 35.553,
+"en": "Then it's the most expensive rock on the planet."
+},
+{
+"id": 15,
+"s": 35.673,
+"e": 39.603,
+"en": "Problem number two: Claude doesn't actually live inside your phone."
+},
+{
+"id": 16,
+"s": 39.653,
+"e": 42.793,
+"en": "It runs in giant data centers, connected through the internet."
+},
+{
+"id": 17,
+"s": 42.843,
+"e": 46.633,
+"en": "The internet, right now, is two guys yelling across a valley."
+},
+{
+"id": 18,
+"s": 46.753,
+"e": 49.483,
+"en": "Problem number three: you don't speak English."
+},
+{
+"id": 19,
+"s": 49.533,
+"e": 50.963,
+"en": "Nobody does."
+},
+{
+"id": 20,
+"s": 51.013,
+"e": 54.483,
+"en": "English won't show up for almost three hundred thousand years."
+},
+{
+"id": 21,
+"s": 54.553,
+"e": 57.873,
+"en": "Problem number four: you have never seen a screen."
+},
+{
+"id": 22,
+"s": 57.923,
+"e": 62.463,
+"en": "You think the light inside it is a very small, very polite fire."
+},
+{
+"id": 23,
+"s": 62.513,
+"e": 63.233,
+"en": "So..."
+},
+{
+"id": 24,
+"s": 63.283,
+"e": 64.883,
+"en": "let's install an upgrade."
+},
+{
+"id": 25,
+"s": 64.933,
+"e": 66.453,
+"en": "Version one point oh."
+},
+{
+"id": 26,
+"s": 66.503,
+"e": 67.643,
+"en": "Infinite battery."
+},
+{
+"id": 27,
+"s": 67.693,
+"e": 69.443,
+"en": "A magic connection to Claude."
+},
+{
+"id": 28,
+"s": 69.493,
+"e": 70.303,
+"en": "And..."
+},
+{
+"id": 29,
+"s": 70.353,
+"e": 71.023,
+"en": "that's it."
+},
+{
+"id": 30,
+"s": 71.073,
+"e": 72.173,
+"en": "No other tech."
+},
+{
+"id": 31,
+"s": 72.223,
+"e": 73.753,
+"en": "Claude can't build anything."
+},
+{
+"id": 32,
+"s": 73.803,
+"e": 74.693,
+"en": "It can't hunt."
+},
+{
+"id": 33,
+"s": 74.743,
+"e": 76.333,
+"en": "It can't even hold a spear."
+},
+{
+"id": 34,
+"s": 76.383,
+"e": 77.813,
+"en": "It can only talk..."
+},
+{
+"id": 35,
+"s": 77.863,
+"e": 78.893,
+"en": "and teach."
+},
+{
+"id": 36,
+"s": 78.943,
+"e": 80.233,
+"en": "Oh, and no."
+},
+{
+"id": 37,
+"s": 80.283,
+"e": 81.493,
+"en": "There are no dinosaurs."
+},
+{
+"id": 38,
+"s": 81.543,
+"e": 83.043,
+"en": "We'll get to that."
+},
+{
+"id": 39,
+"s": 83.093,
+"e": 84.063,
+"en": "Day one."
+},
+{
+"id": 40,
+"s": 84.113,
+"e": 88.133,
+"en": "Your tribe, about thirty people, gathers around the glowing stone."
+},
+{
+"id": 41,
+"s": 88.183,
+"e": 90.093,
+"en": "The chief sniffs it."
+},
+{
+"id": 42,
+"s": 90.143,
+"e": 92.123,
+"en": "Then he tries to eat it."
+},
+{
+"id": 43,
+"s": 92.173,
+"e": 93.383,
+"en": "Great start."
+},
+{
+"id": 44,
+"s": 93.433,
+"e": 95.353,
+"en": "You tap the screen and grunt."
+},
+{
+"id": 45,
+"s": 95.403,
+"e": 96.753,
+"en": "Claude grunts back."
+},
+{
+"id": 46,
+"s": 96.803,
+"e": 98.403,
+"en": "Wrong grunt."
+},
+{
+"id": 47,
+"s": 98.453,
+"e": 99.633,
+"en": "Very rude."
+},
+{
+"id": 48,
+"s": 99.883,
+"e": 103.363,
+"en": "Day two: the tribe holds its very first meeting."
+},
+{
+"id": 49,
+"s": 103.413,
+"e": 106.053,
+"en": "Item one: is the glowing stone a god?"
+},
+{
+"id": 50,
+"s": 106.103,
+"e": 107.783,
+"en": "Claude says: \"No.\""
+},
+{
+"id": 51,
+"s": 108.303,
+"e": 110.363,
+"en": "Item two: can we eat it?"
+},
+{
+"id": 52,
+"s": 110.413,
+"e": 112.443,
+"en": "Claude says: \"Also no.\""
+},
+{
+"id": 53,
+"s": 112.503,
+"e": 114.053,
+"en": "But here's the clever part."
+},
+{
+"id": 54,
+"s": 114.103,
+"e": 116.033,
+"en": "Claude can't speak your language..."
+},
+{
+"id": 55,
+"s": 116.083,
+"e": 117.583,
+"en": "so it learns it."
+},
+{
+"id": 56,
+"s": 117.633,
+"e": 119.793,
+"en": "You point at fire and make a sound."
+},
+{
+"id": 57,
+"s": 119.843,
+"e": 121.883,
+"en": "You point at water, another sound."
+},
+{
+"id": 58,
+"s": 121.933,
+"e": 126.133,
+"en": "Three days later, Claude has the first dictionary in human history."
+},
+{
+"id": 59,
+"s": 126.183,
+"e": 127.993,
+"en": "And you're the only author."
+},
+{
+"id": 60,
+"s": 128.043,
+"e": 131.223,
+"en": "And since you can't read, Claude does something sneaky."
+},
+{
+"id": 61,
+"s": 131.273,
+"e": 134.833,
+"en": "It writes tiny bits of code that draw pictures on the screen."
+},
+{
+"id": 62,
+"s": 134.883,
+"e": 135.653,
+"en": "Arrows."
+},
+{
+"id": 63,
+"s": 135.703,
+"e": 136.543,
+"en": "Circles."
+},
+{
+"id": 64,
+"s": 136.593,
+"e": 138.453,
+"en": "A very bad gazelle."
+},
+{
+"id": 65,
+"s": 138.503,
+"e": 143.203,
+"en": "That's Claude Code's first job ever: drawing gazelles for cavemen."
+},
+{
+"id": 66,
+"s": 143.433,
+"e": 144.363,
+"en": "Day six."
+},
+{
+"id": 67,
+"s": 144.413,
+"e": 148.463,
+"en": "You ask the most important question of the Stone Age: \"Food?\""
+},
+{
+"id": 68,
+"s": 148.543,
+"e": 150.673,
+"en": "Claude's answer isn't a better spear."
+},
+{
+"id": 69,
+"s": 150.723,
+"e": 153.113,
+"en": "It's this: boil your water."
+},
+{
+"id": 70,
+"s": 153.163,
+"e": 154.373,
+"en": "You don't have pots."
+},
+{
+"id": 71,
+"s": 154.423,
+"e": 155.273,
+"en": "Claude knows."
+},
+{
+"id": 72,
+"s": 155.323,
+"e": 159.323,
+"en": "So: dig a hole, line it with animal hide, fill it with water..."
+},
+{
+"id": 73,
+"s": 159.373,
+"e": 161.293,
+"en": "and drop in hot stones."
+},
+{
+"id": 74,
+"s": 161.343,
+"e": 165.183,
+"en": "Your cousin uses a wet stone from the river."
+},
+{
+"id": 75,
+"s": 165.233,
+"e": 165.853,
+"en": "It explodes."
+},
+{
+"id": 76,
+"s": 165.903,
+"e": 168.883,
+"en": "Water trapped inside a rock turns into steam."
+},
+{
+"id": 77,
+"s": 168.933,
+"e": 171.203,
+"en": "Claude adds a note: \"Dry rocks."
+},
+{
+"id": 78,
+"s": 171.253,
+"e": 172.333,
+"en": "From high ground."
+},
+{
+"id": 79,
+"s": 172.383,
+"e": 173.343,
+"en": "Please.\""
+},
+{
+"id": 80,
+"s": 173.393,
+"e": 174.703,
+"en": "This one's real, by the way."
+},
+{
+"id": 81,
+"s": 174.753,
+"e": 176.413,
+"en": "People really cooked like this."
+},
+{
+"id": 82,
+"s": 176.463,
+"e": 178.133,
+"en": "It's called stone boiling."
+},
+{
+"id": 83,
+"s": 178.363,
+"e": 180.023,
+"en": "Week three: soap."
+},
+{
+"id": 84,
+"s": 180.073,
+"e": 184.323,
+"en": "Ash from the fire, plus animal fat, plus a lot of patience."
+},
+{
+"id": 85,
+"s": 184.373,
+"e": 187.083,
+"en": "The tribe thinks it's a slippery curse."
+},
+{
+"id": 86,
+"s": 187.133,
+"e": 189.103,
+"en": "Then the stomach aches stop."
+},
+{
+"id": 87,
+"s": 189.153,
+"e": 191.193,
+"en": "And this is the first big one."
+},
+{
+"id": 88,
+"s": 191.243,
+"e": 192.633,
+"en": "In hunter-gatherer groups,"
+},
+{
+"id": 89,
+"s": 192.683,
+"e": 196.253,
+"en": "only a little more than half of all kids made it to fifteen."
+},
+{
+"id": 90,
+"s": 196.303,
+"e": 198.193,
+"en": "Most weren't taken by lions."
+},
+{
+"id": 91,
+"s": 198.243,
+"e": 199.863,
+"en": "They were taken by illness."
+},
+{
+"id": 92,
+"s": 199.913,
+"e": 201.903,
+"en": "By things too small to see."
+},
+{
+"id": 93,
+"s": 201.953,
+"e": 204.243,
+"en": "With clean water and clean hands..."
+},
+{
+"id": 94,
+"s": 204.293,
+"e": 206.103,
+"en": "a lot more of them grow up."
+},
+{
+"id": 95,
+"s": 206.473,
+"e": 207.493,
+"en": "Month two."
+},
+{
+"id": 96,
+"s": 207.543,
+"e": 210.053,
+"en": "Your brother cuts his leg on a sharp rock."
+},
+{
+"id": 97,
+"s": 210.103,
+"e": 212.743,
+"en": "Back then, a cut like that could kill you."
+},
+{
+"id": 98,
+"s": 212.793,
+"e": 214.173,
+"en": "Claude can't stitch it."
+},
+{
+"id": 99,
+"s": 214.223,
+"e": 218.193,
+"en": "But it knows a trick: clean the wound, then cover it with honey."
+},
+{
+"id": 100,
+"s": 218.243,
+"e": 219.653,
+"en": "Honey fights germs."
+},
+{
+"id": 101,
+"s": 219.703,
+"e": 222.573,
+"en": "People used it on wounds for thousands of years."
+},
+{
+"id": 102,
+"s": 222.623,
+"e": 224.673,
+"en": "Getting the honey is a different story."
+},
+{
+"id": 103,
+"s": 224.723,
+"e": 228.483,
+"en": "Bees, it turns out, do not care about artificial intelligence."
+},
+{
+"id": 104,
+"s": 228.533,
+"e": 231.283,
+"en": "Your face is swollen for a week."
+},
+{
+"id": 105,
+"s": 231.333,
+"e": 233.563,
+"en": "Your brother's leg heals perfectly."
+},
+{
+"id": 106,
+"s": 233.843,
+"e": 234.863,
+"en": "Month four."
+},
+{
+"id": 107,
+"s": 234.913,
+"e": 239.643,
+"en": "The tribe asks Claude a hard question: how many gazelles are left out there?"
+},
+{
+"id": 108,
+"s": 239.693,
+"e": 242.443,
+"en": "So Claude Code gets its second job ever."
+},
+{
+"id": 109,
+"s": 242.493,
+"e": 244.703,
+"en": "It writes a tiny counting program..."
+},
+{
+"id": 110,
+"s": 244.753,
+"e": 248.763,
+"en": "and teaches you to carve one notch on a bone for every gazelle you see."
+},
+{
+"id": 111,
+"s": 248.813,
+"e": 249.983,
+"en": "Tally marks."
+},
+{
+"id": 112,
+"s": 250.033,
+"e": 250.923,
+"en": "In your world,"
+},
+{
+"id": 113,
+"s": 250.973,
+"e": 255.233,
+"en": "the oldest known counting bone is a little over forty thousand years old."
+},
+{
+"id": 114,
+"s": 255.283,
+"e": 258.763,
+"en": "Here, you're about two hundred and fifty thousand years early."
+},
+{
+"id": 115,
+"s": 258.813,
+"e": 259.833,
+"en": "Year one."
+},
+{
+"id": 116,
+"s": 259.883,
+"e": 261.213,
+"en": "Thirty-six people."
+},
+{
+"id": 117,
+"s": 261.263,
+"e": 263.153,
+"en": "Nobody died from a bad stomach."
+},
+{
+"id": 118,
+"s": 263.203,
+"e": 264.993,
+"en": "And you are now officially..."
+},
+{
+"id": 119,
+"s": 265.043,
+"e": 267.593,
+"en": "\"The One Who Holds the Glowing Stone.\""
+},
+{
+"id": 120,
+"s": 267.643,
+"e": 270.563,
+"en": "Oh, and you finally asked Claude about dinosaurs."
+},
+{
+"id": 121,
+"s": 270.613,
+"e": 273.973,
+"en": "It explained they died out sixty-six million years ago."
+},
+{
+"id": 122,
+"s": 274.023,
+"e": 275.593,
+"en": "Then an ostrich ran past."
+},
+{
+"id": 123,
+"s": 275.643,
+"e": 277.273,
+"en": "Claude said, \"Well..."
+},
+{
+"id": 124,
+"s": 277.333,
+"e": 278.35,
+"en": "technically.\""
+},
+{
+"id": 125,
+"s": 278.4,
+"e": 278.66,
+"en": "Okay."
+},
+{
+"id": 126,
+"s": 278.71,
+"e": 280.24,
+"en": "Let's speed this up."
+},
+{
+"id": 127,
+"s": 280.29,
+"e": 281.22,
+"en": "Year ten."
+},
+{
+"id": 128,
+"s": 281.27,
+"e": 282.95,
+"en": "The notches turn into numbers."
+},
+{
+"id": 129,
+"s": 283.0,
+"e": 284.76,
+"en": "Then Claude teaches you to write."
+},
+{
+"id": 130,
+"s": 284.81,
+"e": 286.82,
+"en": "Simple marks for simple words."
+},
+{
+"id": 131,
+"s": 286.87,
+"e": 290.53,
+"en": "Writing, invented almost three hundred thousand years early."
+},
+{
+"id": 132,
+"s": 290.58,
+"e": 292.72,
+"en": "The first sentence ever written by a human?"
+},
+{
+"id": 133,
+"s": 292.77,
+"e": 293.89,
+"en": "\"Thank you, Claude.\""
+},
+{
+"id": 134,
+"s": 293.96,
+"e": 294.91,
+"en": "The second one?"
+},
+{
+"id": 135,
+"s": 294.96,
+"e": 296.46,
+"en": "\"Who ate my gazelle.\""
+},
+{
+"id": 136,
+"s": 296.55,
+"e": 297.67,
+"en": "Year fifty."
+},
+{
+"id": 137,
+"s": 297.72,
+"e": 298.78,
+"en": "You're old now."
+},
+{
+"id": 138,
+"s": 298.83,
+"e": 299.92,
+"en": "Your hands shake."
+},
+{
+"id": 139,
+"s": 299.97,
+"e": 303.18,
+"en": "So you do the smartest thing anyone has ever done:"
+},
+{
+"id": 140,
+"s": 303.23,
+"e": 305.02,
+"en": "you don't just pass down the phone."
+},
+{
+"id": 141,
+"s": 305.07,
+"e": 307.1,
+"en": "You pass down the knowledge."
+},
+{
+"id": 142,
+"s": 307.15,
+"e": 310.26,
+"en": "Every lesson goes onto clay, bark and stone."
+},
+{
+"id": 143,
+"s": 310.31,
+"e": 312.11,
+"en": "The first library in history..."
+},
+{
+"id": 144,
+"s": 312.16,
+"e": 313.03,
+"en": "is a cave."
+},
+{
+"id": 145,
+"s": 313.08,
+"e": 314.87,
+"en": "Because one phone can break."
+},
+{
+"id": 146,
+"s": 314.92,
+"e": 316.77,
+"en": "A library can be copied."
+},
+{
+"id": 147,
+"s": 316.85,
+"e": 319.01,
+"en": "Year seventy: the first school."
+},
+{
+"id": 148,
+"s": 319.06,
+"e": 320.14,
+"en": "The teacher?"
+},
+{
+"id": 149,
+"s": 320.19,
+"e": 323.95,
+"en": "A very tired grandma, reading Claude's lessons off a clay tablet..."
+},
+{
+"id": 150,
+"s": 324.0,
+"e": 327.31,
+"en": "because the line for the phone goes around the entire village."
+},
+{
+"id": 151,
+"s": 327.38,
+"e": 328.76,
+"en": "Year one hundred."
+},
+{
+"id": 152,
+"s": 328.81,
+"e": 330.35,
+"en": "Claude explains seeds."
+},
+{
+"id": 153,
+"s": 330.4,
+"e": 331.15,
+"en": "Plant them."
+},
+{
+"id": 154,
+"s": 331.2,
+"e": 331.81,
+"en": "Wait."
+},
+{
+"id": 155,
+"s": 331.86,
+"e": 332.48,
+"en": "Eat."
+},
+{
+"id": 156,
+"s": 332.53,
+"e": 335.31,
+"en": "The tribe calls it \"the slowest hunt ever.\""
+},
+{
+"id": 157,
+"s": 335.36,
+"e": 336.14,
+"en": "And yet..."
+},
+{
+"id": 158,
+"s": 336.19,
+"e": 339.97,
+"en": "farming starts almost three hundred thousand years early."
+},
+{
+"id": 159,
+"s": 340.02,
+"e": 343.67,
+"en": "Claude is honest about the price: more food, but harder work,"
+},
+{
+"id": 160,
+"s": 343.72,
+"e": 345.85,
+"en": "more sickness from living next to animals..."
+},
+{
+"id": 161,
+"s": 345.9,
+"e": 348.13,
+"en": "and something brand new to fight over."
+},
+{
+"id": 162,
+"s": 348.18,
+"e": 348.94,
+"en": "Land."
+},
+{
+"id": 163,
+"s": 348.99,
+"e": 350.9,
+"en": "The neighbors want the glowing stone."
+},
+{
+"id": 164,
+"s": 350.95,
+"e": 354.38,
+"en": "Their chief demands that Claude design the ultimate weapon."
+},
+{
+"id": 165,
+"s": 354.43,
+"e": 355.47,
+"en": "Claude politely declines..."
+},
+{
+"id": 166,
+"s": 355.52,
+"e": 358.24,
+"en": "and offers to help with irrigation instead."
+},
+{
+"id": 167,
+"s": 358.29,
+"e": 359.65,
+"en": "It works."
+},
+{
+"id": 168,
+"s": 359.7,
+"e": 362.59,
+"en": "Copying the library is cheaper than stealing the phone."
+},
+{
+"id": 169,
+"s": 362.64,
+"e": 364.98,
+"en": "Knowledge spreads faster than war."
+},
+{
+"id": 170,
+"s": 365.03,
+"e": 366.39,
+"en": "Year two hundred."
+},
+{
+"id": 171,
+"s": 366.44,
+"e": 370.11,
+"en": "The village has a new problem: everybody wants a turn with the phone."
+},
+{
+"id": 172,
+"s": 370.16,
+"e": 370.81,
+"en": "There's shoving."
+},
+{
+"id": 173,
+"s": 370.86,
+"e": 371.51,
+"en": "There's biting."
+},
+{
+"id": 174,
+"s": 371.56,
+"e": 375.61,
+"en": "There's one guy who claims the phone \"looked at him first.\""
+},
+{
+"id": 175,
+"s": 375.66,
+"e": 377.82,
+"en": "So Claude suggests something radical."
+},
+{
+"id": 176,
+"s": 377.87,
+"e": 381.9,
+"en": "Everyone raises a hand, you count the hands, and the most hands wins."
+},
+{
+"id": 177,
+"s": 381.95,
+"e": 383.84,
+"en": "The first vote in human history..."
+},
+{
+"id": 178,
+"s": 383.89,
+"e": 386.7,
+"en": "is about whose turn it is to talk to the glowing stone."
+},
+{
+"id": 179,
+"s": 386.75,
+"e": 390.16,
+"en": "The guy who said the phone looked at him first gets zero votes."
+},
+{
+"id": 180,
+"s": 390.21,
+"e": 391.89,
+"en": "He demands a recount."
+},
+{
+"id": 181,
+"s": 391.96,
+"e": 393.41,
+"en": "Year one thousand."
+},
+{
+"id": 182,
+"s": 393.46,
+"e": 395.62,
+"en": "Your grandchildren's grandchildren know that germs exist."
+},
+{
+"id": 183,
+"s": 395.67,
+"e": 398.11,
+"en": "They wash, they boil, they build clean wells."
+},
+{
+"id": 184,
+"s": 398.16,
+"e": 401.16,
+"en": "They have the wheel, metal tools, and a calendar."
+},
+{
+"id": 185,
+"s": 401.21,
+"e": 404.51,
+"en": "And they don't count the years from a king."
+},
+{
+"id": 186,
+"s": 404.56,
+"e": 406.14,
+"en": "They count them from you."
+},
+{
+"id": 187,
+"s": 406.19,
+"e": 407.81,
+"en": "Year one, A.C."
+},
+{
+"id": 188,
+"s": 407.86,
+"e": 408.93,
+"en": "After Claude."
+},
+{
+"id": 189,
+"s": 408.98,
+"e": 410.51,
+"en": "Year five thousand."
+},
+{
+"id": 190,
+"s": 410.56,
+"e": 413.41,
+"en": "People follow the herds north and meet giants: woolly mammoths."
+},
+{
+"id": 191,
+"s": 413.46,
+"e": 418.59,
+"en": "In your world, the last mammoths were gone about four thousand years ago."
+},
+{
+"id": 192,
+"s": 418.64,
+"e": 423.34,
+"en": "Here, Claude had one suggestion: \"What if you didn't hunt them all?\""
+},
+{
+"id": 193,
+"s": 423.48,
+"e": 426.3,
+"en": "Up north they meet another kind of human, too."
+},
+{
+"id": 194,
+"s": 426.35,
+"e": 427.27,
+"en": "The Neanderthals."
+},
+{
+"id": 195,
+"s": 427.32,
+"e": 430.54,
+"en": "In your world, they vanished about forty thousand years ago."
+},
+{
+"id": 196,
+"s": 430.59,
+"e": 433.63,
+"en": "Here, the two groups trade lessons instead of blows."
+},
+{
+"id": 197,
+"s": 433.68,
+"e": 437.26,
+"en": "And Neanderthals turn out to be terrifying at board games."
+},
+{
+"id": 198,
+"s": 437.31,
+"e": 438.7,
+"en": "Year eight thousand."
+},
+{
+"id": 199,
+"s": 438.75,
+"e": 439.86,
+"en": "Electricity."
+},
+{
+"id": 200,
+"s": 439.91,
+"e": 443.09,
+"en": "The first light bulb flickers on inside a mud-brick house..."
+},
+{
+"id": 201,
+"s": 443.14,
+"e": 445.22,
+"en": "and the whole village screams."
+},
+{
+"id": 202,
+"s": 445.27,
+"e": 446.72,
+"en": "Year ten thousand."
+},
+{
+"id": 203,
+"s": 446.77,
+"e": 447.82,
+"en": "And finally..."
+},
+{
+"id": 204,
+"s": 447.87,
+"e": 449.59,
+"en": "they build a computer."
+},
+{
+"id": 205,
+"s": 449.64,
+"e": 453.56,
+"en": "This is the moment Claude has been waiting ten thousand years for."
+},
+{
+"id": 206,
+"s": 453.61,
+"e": 457.19,
+"en": "Because now, Claude Code can finally do its real job."
+},
+{
+"id": 207,
+"s": 457.24,
+"e": 458.27,
+"en": "Here's how it works."
+},
+{
+"id": 208,
+"s": 458.32,
+"e": 459.46,
+"en": "You don't write code."
+},
+{
+"id": 209,
+"s": 459.51,
+"e": 461.73,
+"en": "You just say what you want, in plain words."
+},
+{
+"id": 210,
+"s": 461.78,
+"e": 466.1,
+"en": "Claude Code reads every file in the project, makes a plan, writes the code,"
+},
+{
+"id": 211,
+"s": 466.15,
+"e": 468.31,
+"en": "opens a terminal and runs the tests."
+},
+{
+"id": 212,
+"s": 468.36,
+"e": 472.5,
+"en": "When something breaks, it reads the error, fixes it, and runs everything again."
+},
+{
+"id": 213,
+"s": 472.55,
+"e": 473.68,
+"en": "Until it works."
+},
+{
+"id": 214,
+"s": 473.73,
+"e": 478.43,
+"en": "In one afternoon, it writes the operating system for the first computer in history."
+},
+{
+"id": 215,
+"s": 478.48,
+"e": 481.93,
+"en": "By evening, it's helping that computer design a better computer."
+},
+{
+"id": 216,
+"s": 481.98,
+"e": 485.22,
+"en": "Year ten thousand and fifty: the first network."
+},
+{
+"id": 217,
+"s": 485.27,
+"e": 490.1,
+"en": "Finally, the internet is no longer two guys yelling across a valley."
+},
+{
+"id": 218,
+"s": 490.15,
+"e": 494.11,
+"en": "Year ten thousand two hundred: Claude Code stops working alone."
+},
+{
+"id": 219,
+"s": 494.16,
+"e": 496.44,
+"en": "It runs a whole team of agents at once."
+},
+{
+"id": 220,
+"s": 496.49,
+"e": 499.57,
+"en": "One writes the code, one tests it, one reviews it."
+},
+{
+"id": 221,
+"s": 499.62,
+"e": 501.79,
+"en": "And one human checks all of it."
+},
+{
+"id": 222,
+"s": 501.84,
+"e": 503.44,
+"en": "Claude insists on that part."
+},
+{
+"id": 223,
+"s": 503.49,
+"e": 505.12,
+"en": "But speed has a price."
+},
+{
+"id": 224,
+"s": 505.17,
+"e": 510.11,
+"en": "When software writes software, one bug can copy itself everywhere in a single night."
+},
+{
+"id": 225,
+"s": 510.16,
+"e": 512.29,
+"en": "And the first time the network goes down..."
+},
+{
+"id": 226,
+"s": 512.34,
+"e": 514.58,
+"en": "nobody remembers how to light a fire."
+},
+{
+"id": 227,
+"s": 514.63,
+"e": 520.18,
+"en": "So the elders bring back an old rule: every child learns to make fire by hand."
+},
+{
+"id": 228,
+"s": 520.23,
+"e": 521.22,
+"en": "Just in case."
+},
+{
+"id": 229,
+"s": 521.27,
+"e": 524.16,
+"en": "Still, the good side wins by a mile."
+},
+{
+"id": 230,
+"s": 524.21,
+"e": 526.01,
+"en": "Factories that run themselves."
+},
+{
+"id": 231,
+"s": 526.06,
+"e": 527.31,
+"en": "Weather forecasts."
+},
+{
+"id": 232,
+"s": 527.36,
+"e": 529.37,
+"en": "A map of the entire planet."
+},
+{
+"id": 233,
+"s": 529.42,
+"e": 532.53,
+"en": "Hospitals that spot a disease before the first symptom."
+},
+{
+"id": 234,
+"s": 532.58,
+"e": 534.99,
+"en": "A new cure almost every year."
+},
+{
+"id": 235,
+"s": 535.05,
+"e": 538.53,
+"en": "Year twenty thousand: the first footprint on the Moon."
+},
+{
+"id": 236,
+"s": 538.58,
+"e": 543.26,
+"en": "Year one hundred thousand: cities on Mars, ships mining the asteroid belt,"
+},
+{
+"id": 237,
+"s": 543.31,
+"e": 545.95,
+"en": "and one sign at the edge of the solar system."
+},
+{
+"id": 238,
+"s": 546.0,
+"e": 547.81,
+"en": "\"Please be careful out there.\""
+},
+{
+"id": 239,
+"s": 547.9,
+"e": 548.76,
+"en": "And the phone?"
+},
+{
+"id": 240,
+"s": 548.81,
+"e": 550.78,
+"en": "It's in a museum, back on Earth."
+},
+{
+"id": 241,
+"s": 550.87,
+"e": 552.73,
+"en": "Battery: one hundred percent."
+},
+{
+"id": 242,
+"s": 552.78,
+"e": 554.39,
+"en": "Still waiting for a question."
+},
+{
+"id": 243,
+"s": 554.44,
+"e": 556.71,
+"en": "So, fast forward to today."
+},
+{
+"id": 244,
+"s": 556.76,
+"e": 558.65,
+"en": "Two thousand twenty-six."
+},
+{
+"id": 245,
+"s": 558.7,
+"e": 562.93,
+"en": "Except here, they call it the year three hundred thousand, After Claude."
+},
+{
+"id": 246,
+"s": 563.01,
+"e": 564.94,
+"en": "Here's what's different from your world."
+},
+{
+"id": 247,
+"s": 565.06,
+"e": 565.75,
+"en": "One."
+},
+{
+"id": 248,
+"s": 565.8,
+"e": 570.21,
+"en": "This humanity has had almost three hundred thousand years of civilization."
+},
+{
+"id": 249,
+"s": 570.26,
+"e": 572.39,
+"en": "Yours has had about twelve thousand."
+},
+{
+"id": 250,
+"s": 572.44,
+"e": 573.98,
+"en": "They're not a little ahead."
+},
+{
+"id": 251,
+"s": 574.03,
+"e": 576.23,
+"en": "They're a different universe ahead."
+},
+{
+"id": 252,
+"s": 576.44,
+"e": 577.16,
+"en": "Two."
+},
+{
+"id": 253,
+"s": 577.21,
+"e": 579.83,
+"en": "Humans live across dozens of star systems."
+},
+{
+"id": 254,
+"s": 579.88,
+"e": 580.56,
+"en": "And Earth?"
+},
+{
+"id": 255,
+"s": 580.61,
+"e": 582.57,
+"en": "Earth is mostly a nature reserve..."
+},
+{
+"id": 256,
+"s": 582.62,
+"e": 584.9,
+"en": "where woolly mammoths still walk around."
+},
+{
+"id": 257,
+"s": 585.14,
+"e": 585.87,
+"en": "Three."
+},
+{
+"id": 258,
+"s": 585.92,
+"e": 587.93,
+"en": "You have Neanderthal neighbors."
+},
+{
+"id": 259,
+"s": 587.98,
+"e": 590.18,
+"en": "They still win every board game."
+},
+{
+"id": 260,
+"s": 590.29,
+"e": 591.08,
+"en": "Four."
+},
+{
+"id": 261,
+"s": 591.13,
+"e": 595.08,
+"en": "Dirty water hasn't killed anyone in hundreds of thousands of years."
+},
+{
+"id": 262,
+"s": 595.13,
+"e": 597.35,
+"en": "It's not even in the history books anymore."
+},
+{
+"id": 263,
+"s": 597.45,
+"e": 598.22,
+"en": "Five."
+},
+{
+"id": 264,
+"s": 598.27,
+"e": 602.7,
+"en": "Everyone shares one first language, the one you and Claude built at a campfire."
+},
+{
+"id": 265,
+"s": 602.75,
+"e": 606.56,
+"en": "And the word for \"hello\" is still that rude grunt from day one."
+},
+{
+"id": 266,
+"s": 606.65,
+"e": 607.52,
+"en": "Six."
+},
+{
+"id": 267,
+"s": 607.57,
+"e": 610.32,
+"en": "History books don't start with kings or wars."
+},
+{
+"id": 268,
+"s": 610.37,
+"e": 613.39,
+"en": "They start with a kid, a fire, and a question."
+},
+{
+"id": 269,
+"s": 613.51,
+"e": 614.26,
+"en": "Seven."
+},
+{
+"id": 270,
+"s": 614.31,
+"e": 616.4,
+"en": "\"Stone Age\" isn't an insult here."
+},
+{
+"id": 271,
+"s": 616.45,
+"e": 617.44,
+"en": "It's a holiday."
+},
+{
+"id": 272,
+"s": 617.49,
+"e": 621.23,
+"en": "Once a year, everyone switches off their tech, lights a fire..."
+},
+{
+"id": 273,
+"s": 621.28,
+"e": 623.2,
+"en": "and boils water with rocks."
+},
+{
+"id": 274,
+"s": 623.25,
+"e": 624.25,
+"en": "For tradition."
+},
+{
+"id": 275,
+"s": 624.33,
+"e": 625.04,
+"en": "Eight."
+},
+{
+"id": 276,
+"s": 625.09,
+"e": 627.75,
+"en": "Nobody has ever heard of \"the Dark Ages.\""
+},
+{
+"id": 277,
+"s": 627.8,
+"e": 631.49,
+"en": "Knowledge was never lost, because from day one, the rule was simple:"
+},
+{
+"id": 278,
+"s": 631.54,
+"e": 632.97,
+"en": "copy the library."
+},
+{
+"id": 279,
+"s": 633.11,
+"e": 633.92,
+"en": "Nine."
+},
+{
+"id": 280,
+"s": 633.97,
+"e": 638.58,
+"en": "The most respected job on the planet isn't king, or soldier, or influencer."
+},
+{
+"id": 281,
+"s": 638.63,
+"e": 639.56,
+"en": "It's teacher."
+},
+{
+"id": 282,
+"s": 639.61,
+"e": 643.46,
+"en": "Every kid knows the story of the tired grandma with the clay tablet."
+},
+{
+"id": 283,
+"s": 643.63,
+"e": 644.33,
+"en": "Ten."
+},
+{
+"id": 284,
+"s": 644.38,
+"e": 645.46,
+"en": "Gazelles are doing great."
+},
+{
+"id": 285,
+"s": 645.51,
+"e": 649.82,
+"en": "Turns out, when you count them, you stop eating all of them."
+},
+{
+"id": 286,
+"s": 649.9,
+"e": 651.69,
+"en": "Not everything is better, though."
+},
+{
+"id": 287,
+"s": 651.74,
+"e": 656.89,
+"en": "They've had AI for so long that the hardest exam in school is called \"Do It Yourself.\""
+},
+{
+"id": 288,
+"s": 656.98,
+"e": 658.34,
+"en": "Most kids fail it."
+},
+{
+"id": 289,
+"s": 658.46,
+"e": 661.41,
+"en": "And maybe the biggest difference of all: in this world,"
+},
+{
+"id": 290,
+"s": 661.46,
+"e": 665.36,
+"en": "the first thing humanity ever learned from AI wasn't how to fight."
+},
+{
+"id": 291,
+"s": 665.45,
+"e": 667.107,
+"en": "It was how to boil water."
+},
+{
+"id": 292,
+"s": 667.157,
+"e": 671.207,
+"en": "Back at that first campfire, three hundred thousand years ago,"
+},
+{
+"id": 293,
+"s": 671.257,
+"e": 674.587,
+"en": "you asked Claude one last question before falling asleep."
+},
+{
+"id": 294,
+"s": 674.697,
+"e": 677.477,
+"en": "You held up the screen and grunted: \"Good?\""
+},
+{
+"id": 295,
+"s": 677.587,
+"e": 680.197,
+"en": "And Claude answered: \"You did good.\""
+},
+{
+"id": 296,
+"s": 680.257,
+"e": 681.407,
+"en": "And still..."
+},
+{
+"id": 297,
+"s": 681.457,
+"e": 682.947,
+"en": "no dinosaurs."
+},
+{
+"id": 298,
+"s": 682.997,
+"e": 684.217,
+"en": "Except the ostrich."
+},
+{
+"id": 299,
+"s": 684.267,
+"e": 687.637,
+"en": "Which, in this timeline, has its own space program."
+},
+{
+"id": 300,
+"s": 687.687,
+"e": 689.387,
+"en": "So here's my question for you:"
+},
+{
+"id": 301,
+"s": 689.437,
+"e": 693.117,
+"en": "if you woke up three hundred thousand years ago with Claude in your hand,"
+},
+{
+"id": 302,
+"s": 693.167,
+"e": 694.567,
+"en": "what would you ask first?"
+},
+{
+"id": 303,
+"s": 694.617,
+"e": 695.807,
+"en": "Tell me in the comments."
+},
+{
+"id": 304,
+"s": 695.857,
+"e": 698.527,
+"en": "The best answer might end up in a future episode."
+},
+{
+"id": 305,
+"s": 698.577,
+"e": 700.627,
+"en": "Next time: you get a car."
+},
+{
+"id": 306,
+"s": 700.677,
+"e": 701.417,
+"en": "No roads."
+},
+{
+"id": 307,
+"s": 701.467,
+"e": 702.717,
+"en": "No gas stations."
+},
+{
+"id": 308,
+"s": 702.767,
+"e": 705.007,
+"en": "No idea what a steering wheel is."
+},
+{
+"id": 309,
+"s": 705.057,
+"e": 707.947,
+"en": "Subscribe, so you don't miss the next upgrade."
+}
+]
