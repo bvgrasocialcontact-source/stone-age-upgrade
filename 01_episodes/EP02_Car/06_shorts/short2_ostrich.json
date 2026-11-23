@@ -1,0 +1,35 @@
+{
+ "header": [
+  "CAR VS DINOSAUR",
+  "WHO WINS?"
+ ],
+ "parts": [
+  {
+   "src_from": 139.467,
+   "src_to": 166.367,
+   "act": 3,
+   "act_from": 58.3
+  }
+ ],
+ "keys": [
+  [
+   0,
+   960,
+   540,
+   1250,
+   0
+  ]
+ ],
+ "emph": [
+  "OSTRICH.",
+  "SEVENTY.",
+  "DINOSAUR.",
+  "TECHNICALLY.",
+  "WINS.",
+  "REAL,",
+  "FASTEST"
+ ],
+ "master": "/home/claude/stone-age-upgrade/01_episodes/EP02_Car/04_renders/EP02_FINAL_2K_What_If_You_Had_a_Car_300000_Years_Ago.mp4",
+ "timing_dir": "/home/claude/stone-age-upgrade/01_episodes/EP02_Car/02_audio",
+ "prefix": "ep02"
+}

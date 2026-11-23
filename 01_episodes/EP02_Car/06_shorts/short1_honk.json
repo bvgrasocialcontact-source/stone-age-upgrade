@@ -1,0 +1,48 @@
+{
+ "header": [
+  "CAVEMAN FINDS",
+  "THE HORN"
+ ],
+ "parts": [
+  {
+   "src_from": 92.967,
+   "src_to": 106.767,
+   "act": 3,
+   "act_from": 11.8
+  },
+  {
+   "src_from": 128.167,
+   "src_to": 139.367,
+   "act": 3,
+   "act_from": 47.0
+  }
+ ],
+ "keys": [
+  [
+   0,
+   960,
+   560,
+   1100,
+   0
+  ],
+  [
+   13.8,
+   960,
+   540,
+   1250,
+   0.4
+  ]
+ ],
+ "emph": [
+  "HONK.",
+  "TREE",
+  "CHIEF.",
+  "GRANDMOTHER.",
+  "ACCIDENT",
+  "ONLY",
+  "SAME"
+ ],
+ "master": "/home/claude/stone-age-upgrade/01_episodes/EP02_Car/04_renders/EP02_FINAL_2K_What_If_You_Had_a_Car_300000_Years_Ago.mp4",
+ "timing_dir": "/home/claude/stone-age-upgrade/01_episodes/EP02_Car/02_audio",
+ "prefix": "ep02"
+}

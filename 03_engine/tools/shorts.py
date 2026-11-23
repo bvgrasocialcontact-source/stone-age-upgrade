@@ -25,7 +25,7 @@ SW, SH = int(probe[0]), int(probe[1]); K = SW / 1920
 chunks = []  # (t0, t1, text) in short time
 tcur = 0.0
 for part in spec['parts']:
-    d = json.load(open(f"{spec['timing_dir']}/ep01_perde{part['act']}.timing.json"))
+    d = json.load(open(f"{spec['timing_dir']}/{spec.get('prefix', 'ep01')}_perde{part['act']}.timing.json"))
     a0, a1 = part['act_from'], part['act_from'] + (part['src_to'] - part['src_from'])
     for ph in d['phrases']:
         if ph['start'] < a0 - 0.05 or ph['start'] >= a1: continue

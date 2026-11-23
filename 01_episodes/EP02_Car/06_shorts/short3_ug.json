@@ -1,0 +1,36 @@
+{
+ "header": [
+  "THE FIRST TRAFFIC",
+  "LIGHT WAS A MAN"
+ ],
+ "parts": [
+  {
+   "src_from": 337.967,
+   "src_to": 362.567,
+   "act": 4,
+   "act_from": 53.2
+  }
+ ],
+ "keys": [
+  [
+   0,
+   960,
+   560,
+   1150,
+   0
+  ]
+ ],
+ "emph": [
+  "RULE:",
+  "RED",
+  "UG,",
+  "STONE",
+  "LEAF.",
+  "LONDON",
+  "EXPLODED.",
+  "NEVER"
+ ],
+ "master": "/home/claude/stone-age-upgrade/01_episodes/EP02_Car/04_renders/EP02_FINAL_2K_What_If_You_Had_a_Car_300000_Years_Ago.mp4",
+ "timing_dir": "/home/claude/stone-age-upgrade/01_episodes/EP02_Car/02_audio",
+ "prefix": "ep02"
+}

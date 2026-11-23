@@ -207,6 +207,46 @@ SAU.init((svg, S) => {
       tag(svg, 900, 34, 'TODAY?', 64, B.tech, B.ink, 3);
       tex(.07, 4); el('rect', { width: W, height: H, fill: 'url(#vg)', opacity: .5 }, svg);
     }
+    if (ASSET === 'thumb_ep02b') { // EP02 alt: same Package-2 split + tags; You stands on the car roof (victory), ostrich racing; right = dusk + perspective stone highway with light trails
+      defs.innerHTML += `<clipPath id="L"><path d="M 0 0 L 690 0 L 590 ${H} L 0 ${H} Z"/></clipPath><clipPath id="R"><path d="M 690 0 L ${W} 0 L ${W} ${H} L 590 ${H} Z"/></clipPath>
+        <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B1440"/><stop offset=".55" stop-color="#6A2C5E"/><stop offset="1" stop-color="#E0784A"/></linearGradient>
+        <radialGradient id="hl"><stop offset="0" stop-color="#FFF3B0" stop-opacity=".9"/><stop offset=".5" stop-color="#FFE07A" stop-opacity=".35"/><stop offset="1" stop-color="#FFE07A" stop-opacity="0"/></radialGradient>`;
+      const P = (g, seed, sw = 5) => SAU.makePen(1, rc, g, { seed, sw });
+      const l = el('g', { 'clip-path': 'url(#L)' }, svg);
+      el('rect', { width: W, height: H, fill: 'url(#sky)' }, l);
+      l.appendChild(rc.rectangle(-20, 600, 760, 200, { fill: '#D9A566', fillStyle: 'solid', stroke: B.ink, strokeWidth: 4, seed: 5 }));
+      // ostrich racing in the back + dust
+      const og = el('g', { transform: 'translate(505,640) scale(-.6,.6) rotate(-6)' }, l); SAU.drawOstrich(P(og, 21, 7));
+      for (let i = 0; i < 4; i++) el('path', { d: `M ${-10} ${300 + i * 60} l ${120 + i * 30} 0`, stroke: B.ink, 'stroke-width': 5, 'stroke-linecap': 'round', opacity: .55 }, l);
+      for (let i = 0; i < 5; i++) el('circle', { cx: 40 + i * 50, cy: 690 - (i % 2) * 18, r: 26 + i * 4, fill: '#C9A06E', opacity: .7 }, l);
+      // car (hero) + You on the roof
+      const cg = el('g', { transform: 'translate(300,712) scale(.78) rotate(-3)' }, l); SAU.drawCarBody(P(cg, 4, 6), { dents: 2 });
+      SAU.WHEELS.forEach((x, i) => { const wg = el('g', { transform: `translate(${x},-50)` }, cg); SAU.drawWheel(P(wg, 11 + i, 6), 62); });
+      el('circle', { cx: 300 + 292 * .78, cy: 712 - 120 * .78, r: 120, fill: 'url(#hl)' }, l);
+      you(l, 285, 712 - 282 * .78, .6, { expr: 'smile', armL: 160, armR: 160, look: [6, -4] }, 6);
+      const r = el('g', { 'clip-path': 'url(#R)' }, svg);
+      el('rect', { width: W, height: H, fill: 'url(#dusk)' }, r);
+      for (let i = 0; i < 18; i++) el('circle', { cx: 620 + hash(i * 7 + 3) * 680, cy: 20 + hash(i * 11 + 5) * 220, r: 1.5 + hash(i) * 2, fill: B.bone, opacity: .3 + hash(i * 5) * .5 }, r);
+      skyline(r, 560, W + 40, 520, 8);
+      // perspective stone highway
+      const vx = 990, vy = 520;
+      r.appendChild(rc.path(`M ${vx - 40} ${vy} L ${vx + 40} ${vy} L ${W + 260} ${H + 10} L ${560 - 180} ${H + 10} Z`, { fill: '#6E645C', fillStyle: 'solid', stroke: B.ink, strokeWidth: 4, seed: 6 }));
+      for (let k = 1; k < 8; k++) { const y = vy + (H - vy) * Math.pow(k / 8, 1.8), half = 40 + (W + 260 - vx - 40) * Math.pow(k / 8, 1.8); r.appendChild(rc.line(vx - half * .95, y, vx + half * .95, y, { stroke: '#4E463F', strokeWidth: 2, seed: 20 + k })); }
+      // light trails (red tail lights left lanes, white/cyan headlights right)
+      [[-.55, '#FF4A3A'], [-.25, '#FF7A5A'], [.25, '#FFF3D0'], [.55, B.tech]].forEach(([f, c], i) => el('path', { d: `M ${vx + f * 30} ${vy + 4} Q ${vx + f * 200} ${vy + 120} ${vx + f * 700} ${H + 10}`, stroke: c, 'stroke-width': 7 + i, fill: 'none', 'stroke-linecap': 'round', filter: 'url(#glowS)', opacity: .9 }, r));
+      // cars on the highway
+      [[880, 600, .17, '#3E7A9A'], [1140, 640, .22, '#E0A020'], [760, 690, .28, '#4E9A3E']].forEach(([x, y, sc, c], i) => { const g2 = el('g', { transform: `translate(${x},${y}) scale(${sc})` }, r); SAU.drawCarBody(P(g2, 40 + i, 12), { color: c }); SAU.WHEELS.forEach((wx, k) => { const wg = el('g', { transform: `translate(${wx},-50)` }, g2); SAU.drawWheel(P(wg, 50 + i * 2 + k, 12), 62); }); });
+      // flying cars
+      [[860, 240, .2, 1, '#D23B2E'], [1180, 330, .16, -1, '#7C6A5C']].forEach(([x, y, sc, d, c], i) => {
+        el('path', { d: `M ${x - d * 60} ${y - 20} q ${-d * 120} 20 ${-d * 300} 0`, stroke: B.tech, 'stroke-width': 5, fill: 'none', 'stroke-dasharray': '36 22', 'stroke-linecap': 'round', filter: 'url(#glowS)' }, r);
+        const fg = el('g', { transform: `translate(${x},${y}) scale(${d * sc},${sc})` }, r); SAU.drawCarBody(P(fg, 30 + i, 9), { variant: 'flying', color: c });
+      });
+      svg.appendChild(rc.line(690, -10, 590, H + 10, { stroke: B.bone, strokeWidth: 22, roughness: 2.8, seed: 9 }));
+      svg.appendChild(rc.line(690, -10, 590, H + 10, { stroke: B.ink, strokeWidth: 8, roughness: 2.8, seed: 9 }));
+      tag(svg, 36, 34, '300,000 BC', 58, '#C8763A', B.bone, -3);
+      tag(svg, 900, 34, 'TODAY?', 64, B.tech, B.ink, 3);
+      tex(.07, 4); el('rect', { width: W, height: H, fill: 'url(#vg)', opacity: .5 }, svg);
+    }
     if (ASSET === 'banner') {
       const mid = W / 2;
       defs.innerHTML += `<clipPath id="L"><path d="M 0 0 L ${mid + 120} 0 L ${mid - 120} ${H} L 0 ${H} Z"/></clipPath><clipPath id="R"><path d="M ${mid + 120} 0 L ${W} 0 L ${W} ${H} L ${mid - 120} ${H} Z"/></clipPath>`;

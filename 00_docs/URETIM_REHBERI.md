@@ -69,6 +69,7 @@ Sting (1.5 s brand card) goes **after** the hook. End screen 12 s at the end. Na
 7. Delivery: files > 400 MB → byte-split `.part` files (`split -n 3 -d`) + `EPxx_2K_BIRLESTIR.bat` (`copy /y /b a+b+c out.mp4`) to the PC; files ≤ 500 MB can also go via SendUserFile.
 
 ## 7. Thumbnail (Package 2, "B" style — chosen 23.11)
+- **No repetition (Buğra 23.11):** fixed = split screen + '300,000 BC' / 'TODAY?' tags + palette. Must change every episode = You's pose/expression (EP01 shocked close-up, EP02 victory on the car roof…), right side sky/time of day (EP01 teal night, EP02 dusk purple-orange…), the episode's hero object + one absurd detail (ostrich etc.). Always show the new one next to previous thumbnails at 160 px before asking.
 `03_engine/scenes/brand.html?pkg=2&asset=thumb_epNN` at 1280×720 (`node still.mjs … --w 1280 --h 720 --q "pkg=2&asset=…"`).
 Left: warm savanna, You (shocked) holding the episode's tech, face ≈ 1/3. Right: night/neon alternate TODAY with ONE strong episode image (EP01: stone-neon city; car episode: **stone highway**), plus B-style extras (stars, neon trails, glow). Only two tags: "300,000 BC" (ochre) and "TODAY?" (neon). No logos. Check at 160 px. < 2 MB.
 

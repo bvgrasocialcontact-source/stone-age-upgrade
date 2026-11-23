@@ -100,6 +100,7 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - Açıklama: 04_publishing/EP02_description.md (bölüm zamanları +1 sn, 9 Gerçek Bilgi + kaynak, müzik künyesi, araba markalarıyla bağlantısızlık notu). Başlık formülü: "What If You Had a Car 300,000 Years Ago?" — onay bekliyor.
 - Altyazı: yeni araç 03_engine/tools/subs.py (zamanlama json'larından cue + EN/TR srt) → subtitles/EP02_en.srt, EP02_tr.srt (180 satır).
 - 2K final: /tmp/hq2/run.sh + enc.sh (EP01 tarifinin aynısı; act1'e 30 karelik giriş).
+- 23.11 16:14 Buğra: başlık "What If You Had a Car 300,000 Years Ago?" ONAYLANDI. Thumbnail uygun ama "birbirini tekrarlayan thumbnailler gibi durmasın" → kural: Paket 2 düzeni (bölünmüş ekran + 300,000 BC / TODAY? etiketleri) sabit; her bölümde You'nun pozu, sağ taraftaki gökyüzü rengi/zamanı ve bölüme özel nesne değişir. EP02 için B hazırlandı (asset=thumb_ep02b: You arabanın tavanında zafer pozu + devekuşu; sağda gün batımı, perspektif taş otoyol, ışık izleri, uçan arabalar). A/B seçimi bekleniyor. Dosyalar: 05_thumbnail/EP02_thumb_A.png, EP02_thumb_B_yeni.png.
 
 ## EP01 SHORTS (23.11 14:05) — HAZIR
 - Araştırma (Shorts 2026): ilk 2–3 sn kaydırma oranı belirleyici; loop/yeniden izleme güçlü sinyal; cevap gelince bit, outro yok; Zack D. Films örneği (31 sn, "you" anlatımı). vidIQ bağlayıcısı önerildi (kanal verisi için), bağlanmadı → web araştırmasıyla devam.
