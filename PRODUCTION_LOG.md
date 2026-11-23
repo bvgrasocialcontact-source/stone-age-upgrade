@@ -102,6 +102,14 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - 2K final: /tmp/hq2/run.sh + enc.sh (EP01 tarifinin aynısı; act1'e 30 karelik giriş).
 - 23.11 16:14 Buğra: başlık "What If You Had a Car 300,000 Years Ago?" ONAYLANDI. Thumbnail uygun ama "birbirini tekrarlayan thumbnailler gibi durmasın" → kural: Paket 2 düzeni (bölünmüş ekran + 300,000 BC / TODAY? etiketleri) sabit; her bölümde You'nun pozu, sağ taraftaki gökyüzü rengi/zamanı ve bölüme özel nesne değişir. EP02 için B hazırlandı (asset=thumb_ep02b: You arabanın tavanında zafer pozu + devekuşu; sağda gün batımı, perspektif taş otoyol, ışık izleri, uçan arabalar). 23.11 16:44 Buğra: **B seçildi** → 05_thumbnail/EP02_thumbnail_FINAL.png. Dosyalar: 05_thumbnail/EP02_thumb_A.png, EP02_thumb_B_yeni.png.
 
+## EP02 FİNAL (23.11 17:10) — TESLİM
+- 04_renders/EP02_FINAL_2K_What_If_You_Had_a_Car_300000_Years_Ago.mp4 — 2560×1440, 30 fps, CRF14, AAC 384k, 11:44.6 (704.57 sn), -14.1 LUFS, 721.520.558 bayt, md5 a6575ed5162d5a299fe389ea4cdc216d. YÜKLENECEK DOSYA BU.
+- Kare sayıları: act1 686(+30 giriş), sting 45, act2 1674, act3 6108, act4 7652, act5 3294, act6 1288, bitiş 360.
+- Bitiş ekranında You telefon tutuyordu (EP01'den kalma) → elini sallıyor olarak düzeltildi, yeniden render edildi.
+- PC'ye: 04_renders/EP02_2K_00.part + _01.part + EP02_2K_BIRLESTIR.bat (çift tıkla → mp4).
+- Shorts: 06_shorts/EP02_short1_honk.mp4 (25,0 sn, "Caveman Finds the Car Horn"), EP02_short2_ostrich.mp4 (26,9 sn, "Car vs Ostrich: Who Wins?"), EP02_short3_ug.mp4 (24,6 sn, "The First Traffic Light Was a Man") + README (başlık, açıklama, müzik künyesi, sabit yorum, yükleme sırası). shorts.py artık "prefix" alanıyla her bölümde çalışıyor.
+- Yükleme metinleri: 04_publishing/EP02_description.md; altyazı + TR/DE başlık-açıklama: 04_publishing/subtitles/README_EP02_yukleme.md, EP02_en.srt, EP02_tr.srt.
+
 ## EP01 SHORTS (23.11 14:05) — HAZIR
 - Araştırma (Shorts 2026): ilk 2–3 sn kaydırma oranı belirleyici; loop/yeniden izleme güçlü sinyal; cevap gelince bit, outro yok; Zack D. Films örneği (31 sn, "you" anlatımı). vidIQ bağlayıcısı önerildi (kanal verisi için), bağlanmadı → web araştırmasıyla devam.
 - Araç: 03_engine/tools/shorts.py — 2K finalden 1080×1920: bulanık arka plan + kamera penceresi (keyframe pan/zoom) + üst merak başlığı (Archivo Black, 2. satır neon) + 1–3 kelimelik büyük altyazı (vurgu kelimeleri neon). Ses = bölüm miksi (müzik+efekt dahil), -14 LUFS.

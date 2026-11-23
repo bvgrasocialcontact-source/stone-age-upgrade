@@ -49,6 +49,7 @@ You are continuing a production that started in a claude.ai chat. Everything you
 ## EP02 — Car — status (current work)
 - Buğra 23.11: topic = car (as promised at the end of EP01). Same format, same style, MORE absurdity (weird cars, flying cars, real car brands mentioned). He delegated research, script, voice (his ElevenLabs), edit to Claude.
 - Folder: `01_episodes/EP02_Car/` (same structure as EP01). See PRODUCTION_LOG "EP02" section for progress.
+- **DONE 23.11:** 2K master `04_renders/EP02_FINAL_2K_What_If_You_Had_a_Car_300000_Years_Ago.mp4` (11:44.6, -14 LUFS; rebuild: `/tmp/hq2/run.sh`+`enc.sh`+`final.sh` recipe = EP01 2K recipe with scenes ep02_act1..6 + ep01_sting + ep02_endscreen, audio `tools/mix_ep02.py` + 1 s lead + loudnorm), title approved, thumbnail **B** (`05_thumbnail/EP02_thumbnail_FINAL.png`, asset thumb_ep02b), description `04_publishing/EP02_description.md`, subtitles EN/TR + TR/DE title/description (`04_publishing/subtitles/README_EP02_yukleme.md`, tool `tools/subs.py`), 3 Shorts in `06_shorts/` (+README). Next episode teased: game console.
 
 ## EP01 — Claude & Claude Code — status (DONE, published)
 - Done: script v3 (`01_script/narration_en_v3_final.txt`; acts 4–5 rewritten 22.11 with Claude Code detail + costs/benefits), narration audio 11:45 total (P1 0:25, P2 0:56, P3 3:15, P4 4:36, P5 1:53, P6 0:41), brand, cast sheet, acts 1–2 animated (`scenes/ep01_act1.html`, `ep01_act2.html`).

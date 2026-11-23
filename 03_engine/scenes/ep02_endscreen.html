@@ -28,7 +28,7 @@ SAU.init((svg, S) => {
   return { update(t) {
     const s = Math.floor(t / .25);
     if (s !== lastS) { lastS = s; while (city.firstChild) city.removeChild(city.firstChild); SAU.drawStoneCity(rc, s + 1, city, W, H, t); }
-    you.pose({ x: 420, y: H + 40, scale: .75, holding: true, expr: 'smile', look: [16, -10], armL: 60 + Math.sin(t * 3) * 20, bob: Math.sin(t * 2.4) * 3, blink: (t % 3.1) < .1 }, t);
+    you.pose({ x: 420, y: H + 40, scale: .75, holding: false, expr: 'smile', look: [16, -10], armR: 150 + Math.sin(t * 6) * 22, armL: 10, bob: Math.sin(t * 2.4) * 3, blink: (t % 3.1) < .1 }, t);
     set(youG, { opacity: p(t, .3, .8) });
     boxes.forEach((b, i) => set(b, { opacity: p(t, .3 + i * .15, .7 + i * .15), transform: `translate(0,${(1 - p(t, .3 + i * .15, .8 + i * .15, E.out)) * 40})` }));
     set(sub, { opacity: p(t, .6, 1.0) });
