@@ -82,6 +82,13 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - EP02 konusu: ARABA (EP01 sonunda söz verildiği gibi; kanal kitabındaki sıra değişti: telefon sonraya). Aynı başlık formülü, aynı içerik yapısı ve çizgi; DAHA FAZLA ABSÜRTLÜK: gerçek araba markaları, garip arabalar, uçan arabalar.
 - Senaryo, ses (Buğra'nın ElevenLabs'i — "sana bırakıyorum" = EP02 anlatımı için onay), kurgu tamamen Claude'da.
 
+## EP02 ARABA — SENARYO v1 (23.11 15:00)
+- Araştırma: 01_episodes/EP02_Car/01_script/research.md (12 gerçek bilgi + kaynak: devekuşu ~70 km/sa, en eski tekerlek ~5.150 yıl, Benz 1886, Bertha Benz 1888 + eczane = ilk benzinlik, ilk trafik lambası 1868 Londra (patladı), ilk hız cezası 1896 (13 km/sa, sınırın 4 katı), yılda ~1,19 milyon trafik ölümü (WHO), ~1,5 milyar araba).
+- Marka kararı (Claude): gerçek marka/kişi adları sadece gerçek bilgilerde düz yazı (Benz); logo yok; arabanın logosu ilk sahneden itibaren çamurla kaplı ve hep öyle kalıyor (running gag). Absürt uydurma markalar: Mammoth Motors, Rockswagen, Fer-rock-i, Ostrich Martin.
+- Senaryo v1: 01_script/narration_en_v1.txt + act1..6.txt — 1.851 kelime, ~11.300 karakter, tahmini anlatım ~10:45 (sting+bitiş ile ~11:00).
+- Önemli anlar: kırmızı araba + çamurlu logo; korna → herkes ağaçta; ilk kaza (tek ağaca); devekuşu yarışı (gerçek: 70 km/sa); bardaklık → ilk bardak; el kitabının resimleri → tekerlek (önce kare); 100 km = 2 saat → ilk ticaret; devekuşu arabası = "ilk dinozor güçlü araç"; ilk trafik sıkışıklığı; trafik lambası "Ug"; taş hız cezası; tapınaktaki 1.000 yıldır çalışan araba; metal, petrol + petrol savaşları; uydurma markalar + bacaklı/yüzen/mamutun ezdiği "üstü açık" araba; emniyet kemeri erken; uçan arabalar + gökyüzünde trafik; bugün: "After Vroom", devekuşu yarışı en büyük spor, mamutlar emekli, merhaba = korna, 41 yıllık trafik, yürümek ekstrem spor, direksiyon = "yuvarlak yılan". Bedeller: av sürüleri kaçar, yollar doğayı böler, petrol savaşları, duman, kazalar, toprağın üçte biri yol.
+- Sonraki bölüm ipucu: oyun konsolu (kanal kitabı listesinden, en absürt aday).
+
 ## EP01 SHORTS (23.11 14:05) — HAZIR
 - Araştırma (Shorts 2026): ilk 2–3 sn kaydırma oranı belirleyici; loop/yeniden izleme güçlü sinyal; cevap gelince bit, outro yok; Zack D. Films örneği (31 sn, "you" anlatımı). vidIQ bağlayıcısı önerildi (kanal verisi için), bağlanmadı → web araştırmasıyla devam.
 - Araç: 03_engine/tools/shorts.py — 2K finalden 1080×1920: bulanık arka plan + kamera penceresi (keyframe pan/zoom) + üst merak başlığı (Archivo Black, 2. satır neon) + 1–3 kelimelik büyük altyazı (vurgu kelimeleri neon). Ses = bölüm miksi (müzik+efekt dahil), -14 LUFS.
