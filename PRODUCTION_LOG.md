@@ -78,7 +78,8 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 
 ## EP01 BAŞLIK + THUMBNAIL (23.11 13:10)
 - Buğra başlığı ONAYLADI: "What If You Had AI 300,000 Years Ago?"
-- Thumbnail iki seçenek (05_thumbnail): A = onaylı Paket 2 referansının birebir aynısı; B = aynı düzen + yıldızlar, neon uçan-taş izleri, telefonda daha güçlü ışık. Logo yok, sadece "300,000 BC" ve "TODAY?". 160 px'te okunuyor. Seçim Buğra'da bekliyor.
+- Thumbnail iki seçenek (05_thumbnail): A = onaylı Paket 2 referansının birebir aynısı; B = aynı düzen + yıldızlar, neon uçan-taş izleri, telefonda daha güçlü ışık. Logo yok, sadece "300,000 BC" ve "TODAY?". 160 px'te okunuyor.
+- Buğra **B**'yi seçti → 05_thumbnail/EP01_thumbnail_FINAL.png. Sonraki bölümlerde de B tarzı (Paket 2 + bölüme özel neon ayrıntılar) kullanılacak.
 
 ## EP01 BAŞA 1 SN GİRİŞ (23.11 13:00)
 - Buğra: birleştirilmiş videonun başında ~1 sn ses yok, "Three" duyulmuyor
