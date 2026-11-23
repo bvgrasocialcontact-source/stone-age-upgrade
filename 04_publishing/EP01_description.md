@@ -1,6 +1,6 @@
 # EP01 — YouTube yükleme metni (kopyala-yapıştır)
 
-## Başlık (öneri — Buğra'nın son onayını bekliyor)
+## Başlık (ONAYLANDI 23.11)
 What If You Had AI 300,000 Years Ago?
 
 Alternatifler: "What If Cavemen Had Claude?" · "I Gave a Caveman AI. Here's What Happened to Earth."

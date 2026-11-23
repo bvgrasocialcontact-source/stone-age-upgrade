@@ -76,6 +76,10 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - Meme efektleri (boom, plak cızırtısı, korna, boing, cırcır böceği, ding...): YouTube Ses Kitaplığı + ElevenLabs ses efekti aracıyla kendi versiyonlarımız (Buğra'nın aboneliği)
 - Amaç: güncel/modern internet dili, ama tamamen telifsiz
 
+## EP01 BAŞLIK + THUMBNAIL (23.11 13:10)
+- Buğra başlığı ONAYLADI: "What If You Had AI 300,000 Years Ago?"
+- Thumbnail iki seçenek (05_thumbnail): A = onaylı Paket 2 referansının birebir aynısı; B = aynı düzen + yıldızlar, neon uçan-taş izleri, telefonda daha güçlü ışık. Logo yok, sadece "300,000 BC" ve "TODAY?". 160 px'te okunuyor. Seçim Buğra'da bekliyor.
+
 ## EP01 BAŞA 1 SN GİRİŞ (23.11 13:00)
 - Buğra: birleştirilmiş videonun başında ~1 sn ses yok, "Three" duyulmuyor
 - Teşhis: dosyada ses tam ("Three" 0,1. sn'de başlıyordu); anlatım videonun ilk anında başladığı için oynatıcı/ses kartı açılırken ilk kelimeyi yutuyor. YouTube'da da risk.
