@@ -76,6 +76,14 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - Meme efektleri (boom, plak cızırtısı, korna, boing, cırcır böceği, ding...): YouTube Ses Kitaplığı + ElevenLabs ses efekti aracıyla kendi versiyonlarımız (Buğra'nın aboneliği)
 - Amaç: güncel/modern internet dili, ama tamamen telifsiz
 
+## EP01 BAŞA 1 SN GİRİŞ (23.11 13:00)
+- Buğra: birleştirilmiş videonun başında ~1 sn ses yok, "Three" duyulmuyor
+- Teşhis: dosyada ses tam ("Three" 0,1. sn'de başlıyordu); anlatım videonun ilk anında başladığı için oynatıcı/ses kartı açılırken ilk kelimeyi yutuyor. YouTube'da da risk.
+- Çözüm: başa 1 sn (30 kare) giriş eklendi; ilk kare duruyor, gece/ateş ambiyansı 0,8 sn'de yumuşakça açılıyor, anlatım 1,1. sn'de başlıyor. Süre 11:59.8, -14.0 LUFS, senkron korunuyor (5 noktada kontrol). Act1 kayıpsız parçadan tek sefer yeniden kodlandı, diğer perdeler aynen (-c copy).
+- Yeni ses: /tmp/full/mix_final_lead1s.wav. md5 f36f42bfa8e9abdcb40ffe807e511d22, 817.931.260 bayt
+- Açıklamadaki bölüm zamanları +1 sn kaydırıldı (0:27, 1:23, 4:38, 6:31, 7:25, 8:23, 8:54, 9:14, 11:07); bitiş ekranı 11:48–12:00
+- KURAL (sonraki bölümler): anlatım hiçbir zaman 0. saniyede başlamasın, en az 1 sn giriş olsun.
+
 ## EP01 2K ÜST KALİTE RENDER (22.11 23:30 → 23.11 02:10, TAMAMLANDI)
 - Karar (Buğra onayı): final video 2560×1440 (2K) olarak yeniden çizilecek; içerik/kurgu/ses aynı, sadece netlik
 - Neden: ilk master ~3 Mbps ve iki kez sıkıştırılmıştı; YouTube 1440p yüklemeleri daha yüksek kaliteli işliyor (1080p izleyene de daha net)

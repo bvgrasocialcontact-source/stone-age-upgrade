@@ -13,15 +13,15 @@ What would YOU ask first? Tell me in the comments. The best answer might end up 
 
 ⏱️ Chapters
 0:00 You wake up with AI, 300,000 years ago
-0:26 Four big problems
-1:22 Day one to year one: boiling water, soap, honey
-4:37 Writing, the first library, farming (and its price)
-6:30 Year 1,000 A.C.: mammoths, Neanderthals, electricity
-7:24 Claude Code finally gets its real job
-8:22 The price of speed
-8:53 The Moon, Mars… and a museum
-9:13 Today: 10 differences from your world
-11:06 One last question
+0:27 Four big problems
+1:23 Day one to year one: boiling water, soap, honey
+4:38 Writing, the first library, farming (and its price)
+6:31 Year 1,000 A.C.: mammoths, Neanderthals, electricity
+7:25 Claude Code finally gets its real job
+8:23 The price of speed
+8:54 The Moon, Mars… and a museum
+9:14 Today: 10 differences from your world
+11:07 One last question
 
 📚 Real Facts used in this video
 • Oldest known Homo sapiens fossils: ~300,000 years old (Hublin et al., Nature, 2017)
@@ -59,7 +59,7 @@ what if, what if history, alternate history, stone age, cavemen, prehistoric, AI
 ## Yükleme ayarları (öneri)
 - Kategori: Education (Eğitim)
 - Kitle: "Çocuklara özel değil" (çocuklara özel seçilirse bitiş ekranı ve yorumlar kapanır)
-- Bitiş ekranı: son 12 sn (11:47–11:59) — sol kutu: "En son yüklenen video", sağ kutu: "İzleyiciye en uygun", alttaki daire: Abone ol
+- Bitiş ekranı: son 12 sn (11:48–12:00) — sol kutu: "En son yüklenen video", sağ kutu: "İzleyiciye en uygun", alttaki daire: Abone ol
 - Bölümler (chapters) açıklamadaki zaman damgalarından otomatik oluşur
 - Ücretli tanıtım: Hayır
 - Değiştirilmiş/sentetik içerik: Animasyon gerçekçi değil; yapay ses gerçek bir kişiyi taklit etmiyor → genelde "Hayır". Emin değilsen "Evet" demek kanala zarar vermez.
