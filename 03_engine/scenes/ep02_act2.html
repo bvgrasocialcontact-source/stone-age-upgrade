@@ -1,0 +1,193 @@
+<!doctype html>
+<html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;padding:0;background:#1E1612;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script>
+<script src="../lib/animals.js"></script><script src="../lib/you.js"></script><script src="../lib/kit.js"></script><script src="../lib/kit_car.js"></script>
+</head><body><script>
+// EP02 · Perde 2 — gerçeklik kontrolü + yükseltme (55.8 s). Zamanlar: ep02_perde2.timing.json
+SAU.duration = 55.8;
+SAU.init((svg, S) => {
+  const { W, H, el, set, p, E, boil, BRAND: B, clamp, hash, lerp, fmt } = S;
+  const rc = rough.svg(svg);
+  const defs = SAU.kitDefs(svg);
+  defs.insertAdjacentHTML('beforeend', `<linearGradient id="kDay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9A35C"/><stop offset=".6" stop-color="#F2C27F"/><stop offset="1" stop-color="#F6D7A0"/></linearGradient>`);
+  const GY = H * .86, horizon = H * .58;
+  const win = (t, a, b, fi = .25, fo = .25) => p(t, a, a + fi, E.out) * (1 - p(t, b - fo, b, E.in));
+  const clr = g => { while (g.firstChild) g.removeChild(g.firstChild); };
+  const hand = (g, x, y, txt, k, size = 54, rot = -3, col = B.ink) => { if (k <= 0) return; const gg = el('g', { transform: `translate(${x},${y}) rotate(${rot}) scale(${.6 + .4 * k})`, opacity: clamp(k) }, g); el('text', { 'text-anchor': 'middle', fill: col, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': size, stroke: B.bone, 'stroke-width': 10, 'paint-order': 'stroke' }, gg).textContent = txt; };
+
+  // ================= savanna world =================
+  const A = el('g', {}, svg), world = el('g', {}, A);
+  el('rect', { x: -W * 2, y: -H, width: W * 6, height: H * 3, fill: 'url(#kDay)' }, world);
+  const bg = el('g', {}, world), obst = el('g', {}, world);
+  const carG = el('g', {}, world); const car = SAU.makeCar(carG, rc);
+  const fx = el('g', {}, world), notes = el('g', {}, world);
+  // ================= close-ups =================
+  const IN = el('g', {}, svg), inBg = el('g', {}, IN), wheelG = el('g', {}, IN), youIn = el('g', {}, IN), inFx = el('g', {}, IN);
+  const youI = SAU.makeYou(youIn, rc, Object.assign({ seed: 5 }, SAU.CAST.you));
+  const TIRE = el('g', {}, svg), tireBg = el('g', {}, TIRE), tireCar = el('g', {}, TIRE), tireFx = el('g', {}, TIRE);
+  const tcar = SAU.makeCar(tireCar, rc);
+  const DINO = el('g', {}, svg), dinoBg = el('g', {}, DINO), dinoG = el('g', {}, DINO), dinoX = el('g', {}, DINO), ostPeek = el('g', {}, DINO);
+
+  // ================= overlays =================
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .07, 5), preserveAspectRatio: 'none', opacity: .55 }, svg);
+  el('rect', { width: W, height: H, fill: 'url(#kVig)', opacity: .55 }, svg);
+  const gauge = el('g', {}, svg), gaugeArt = el('g', {}, gauge);
+  const odo = el('g', {}, svg);
+  el('rect', { x: -170, y: -50, width: 340, height: 100, rx: 14, fill: '#120C09', stroke: B.sand, 'stroke-opacity': .4, 'stroke-width': 2 }, odo);
+  el('text', { x: -150, y: -18, fill: B.sand, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 18, 'letter-spacing': 3 }, odo).textContent = 'DISTANCE';
+  const odoT = el('text', { x: 150, y: 34, 'text-anchor': 'end', fill: B.bone, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 52 }, odo);
+  const card = SAU.makeProblemCard(svg);
+  const toast = SAU.makeNeonToast(svg, 'CAR v1.0', 'for Homo sapiens');
+  const notesCard = el('g', {}, svg);
+  const notIncl = el('g', {}, svg);
+  const hud = el('g', {}, svg);
+  const yp = SAU.makeYearPanel(hud, 40, 40);
+  const FACTS = [[28.3, 31.4, 'The first rubber tires would take almost 300,000 more years to show up.']].map(([a, b, txt]) => ({ a, b, g: SAU.makeFactCard(svg, txt, Math.min(1840, 120 + txt.length * 14.5)) }));
+  const flash = el('rect', { width: W, height: H, fill: '#FFF7E6', opacity: 0 }, svg);
+
+  const PROB = [[0.1, 9.7, 1, 'FUEL'], [9.8, 18.1, 2, 'ROADS'], [18.2, 24.7, 3, 'STEERING'], [24.8, 31.4, 4, 'TIRES']];
+
+  return {
+    update(t) {
+      const stage = t < 18.2 ? 'A' : t < 24.8 ? 'IN' : t < 31.5 ? 'TIRE' : t < 51.9 ? 'A2' : 'DINO';
+      set(A, { display: stage === 'A' || stage === 'A2' ? 'inline' : 'none' });
+      set(IN, { display: stage === 'IN' ? 'inline' : 'none' }); set(TIRE, { display: stage === 'TIRE' ? 'inline' : 'none' }); set(DINO, { display: stage === 'DINO' ? 'inline' : 'none' });
+      clr(fx); clr(notes); clr(obst); clr(inFx); clr(tireFx); clr(dinoX); clr(ostPeek); clr(notIncl);
+
+      // ---------- savanna stages ----------
+      if (stage === 'A' || stage === 'A2') {
+        // P1: driving 0–5.8 (dist grows), sputter 5.8–6.6, red rock 6.6–9.8; P2: obstacles 9.8–18.2; A2: upgrade
+        const drive = t < 5.8 ? t / 5.8 : 1;
+        const dist = stage === 'A' ? (t < 5.8 ? t * 900 : 5.8 * 900 + p(t, 5.8, 6.6, E.out) * 160) : 0;
+        const camX = stage === 'A' && t < 9.8 ? dist + W * .5 : W * .5;
+        const carX = stage === 'A' && t < 9.8 ? dist + W * .42 : W * .3;
+        const z = stage === 'A2' ? 1.0 : t < 9.8 ? 1.0 : lerp(1.0, .9, p(t, 9.8, 11));
+        const camXX = stage === 'A' && t >= 9.8 ? W * .6 : camX;
+        SAU.cam(world, W, H, camXX, GY - 260, z, t > 5.8 && t < 6.6 ? 6 : 0, t);
+        boil(bg, (r, s, g) => {
+          const P = SAU.makePen(1, r, g, { seed: s, sw: 3 });
+          P.shape(`M ${-W * 2} ${horizon} Q 0 ${horizon - 60} ${W} ${horizon - 20} Q ${W * 3} ${horizon - 40} ${W * 6} ${horizon} L ${W * 6} ${H * 2} L ${-W * 2} ${H * 2} Z`, '#D9A566', 3);
+          [-400, 900, 2300, 3700, 5100, 6400].forEach((x, i) => SAU.drawAcacia(P, x, horizon + 24, .45 + (i % 2) * .15));
+          SAU.drawSavannaStrip(r, s + 3, g, -W * 2, W * 6, GY + 6, 1);
+        }, t, .25);
+        const isRock = stage === 'A' && t > 6.6 && t < 9.8;
+        car.update(t, { x: carX, y: GY, s: 1, dist, bounce: t < 5.8 ? Math.sin(t * 20) * 3 : 0, variant: isRock ? 'rock' : 'normal', color: isRock ? SAU.CAR.RED : undefined, lights: stage === 'A2' });
+        if (stage === 'A' && t < 5.8) { SAU.dust(fx, carX - 300, GY - 10, t, 5); SAU.speedLines(fx, carX - 260, GY - 120, t, 4, 180); }
+        if (stage === 'A' && t > 5.8 && t < 6.6) { for (let i = 0; i < 3; i++) el('circle', { cx: carX - 300 - i * 30, cy: GY - 70 - i * 20, r: 16 + i * 8, fill: '#5A4E44', opacity: .5 }, fx); hand(notes, carX - 120, GY - 380, 'cough… cough…', p(t, 5.8, 6.1, E.back), 48, -4); }
+        if (isRock) {
+          hand(notes, carX + 40, GY - 400, 'a very heavy,', p(t, 6.6, 6.9, E.back), 56, -3);
+          hand(notes, carX + 80, GY - 330, 'very RED rock', p(t, 8.1, 8.4, E.back), 64, 2, '#C8362E');
+          const bird = p(t, 7.4, 8.4, E.out); // a bird lands on the roof
+          if (bird > 0) { const bx = lerp(carX + 500, carX + 20, bird), by = lerp(GY - 520, GY - 300, bird); el('path', { d: `M ${bx - 26} ${by} q 26 -24 52 0 q -26 14 -52 0 Z`, fill: '#3B2418', stroke: B.ink, 'stroke-width': 3 }, fx); }
+        }
+        // P2 obstacles appear to the right of the car
+        if (stage === 'A' && t >= 9.8) {
+          const P = SAU.makePen(1, rc, obst, { seed: Math.floor(t * 8), sw: 3 });
+          const k1 = p(t, 12.9, 13.2, E.back), k2 = p(t, 13.9, 14.2, E.back), k3 = p(t, 14.4, 14.7, E.back), k4 = p(t, 16.0, 16.6, E.out);
+          if (k1 > 0) { [[W * .46, 70], [W * .54, 50], [W * .5, 40]].forEach(([x, r]) => P.ellipse(x, GY - r * .4 * k1, r, r * .6 * k1, '#9A8C7C', 3)); hand(notes, W * .5, GY - 170, 'rocks', k1, 46); }
+          if (k2 > 0) { SAU.drawRiver(P, W * .6, W * .76, GY - 6); hand(notes, W * .68, GY - 110, 'rivers', k2, 46); }
+          if (k3 > 0) { const tg = el('g', { transform: `translate(${W * .87},${GY}) scale(${k3})` }, obst); SAU.drawTermite(SAU.makePen(1, rc, tg, { seed: Math.floor(t * 8) + 3, sw: 3 }), 0, 0, 1.3); hand(notes, W * .87, GY - 290, 'termite mounds', k3, 46); }
+          if (k4 > 0) { const rx = lerp(W * 1.5, W * 1.07, k4), rg = el('g', { transform: `translate(${rx},${GY}) scale(1.05) rotate(${t > 16.6 ? Math.sin(t * 25) * 2 : 0})` }, obst); SAU.drawRhino(SAU.makePen(1, rc, rg, { seed: Math.floor(t * 8) + 5, sw: 3.5 })); if (t > 16.6) hand(notes, W * 1.07, GY - 300, '!!!', p(t, 16.6, 16.8, E.back), 70, 4, '#C8362E'); }
+          hand(notes, W * .3, GY - 420, 'roads: 0', p(t, 12.0, 12.3, E.back), 56, -4);
+        }
+        // A2: upgrade, glow outline + wings on "yet"
+        if (stage === 'A2') {
+          const glow = win(t, 33.0, 51.9, .5, .3);
+          if (glow > 0) el('ellipse', { cx: carX + 4, cy: GY - 150, rx: 360, ry: 210, fill: 'none', stroke: B.tech, 'stroke-width': 6, opacity: glow * (.5 + .3 * Math.sin(t * 5)), filter: 'url(#kGlow)' }, fx);
+          const wk = win(t, 51.0, 51.9, .15, .25);
+          if (wk > 0) { const wg = el('g', { transform: `translate(${carX},${GY})` }, fx); const P = SAU.makePen(1, rc, wg, { seed: Math.floor(t * 8), sw: 3 }); P.shape(`M -60 -170 L ${-230 * wk} ${-250 - Math.sin(t * 30) * 30} L -120 -140 Z`, '#F3E6CF', 3); P.shape(`M 60 -170 L ${230 * wk} ${-250 - Math.sin(t * 30) * 30} L 120 -140 Z`, '#F3E6CF', 3); }
+        }
+      }
+
+      // ---------- P3 interior: steering wheel = round snake ----------
+      if (stage === 'IN') {
+        const lt = t - 18.2;
+        boil(inBg, (r, s, g) => { const P = SAU.makePen(1, r, g, { seed: s, sw: 4 }); el('rect', { width: W, height: H, fill: '#E9A35C' }, g); P.shape(`M -40 ${H * .52} L ${W + 40} ${H * .52} L ${W + 40} ${H + 40} L -40 ${H + 40} Z`, '#3A3430', 5); P.shape(`M ${W * .08} 40 L ${W * .92} 40 L ${W * .86} ${H * .5} L ${W * .14} ${H * .5} Z`, SAU.CAR.GLASS, 4); el('rect', { x: W * .1, y: 50, width: W * .8, height: H * .44, fill: '#F2C27F', opacity: .5 }, g); }, t, .25);
+        const snake = p(t, 21.9, 22.5, E.back), wob = snake > 0 ? Math.sin(t * 8) * 6 * snake : 0;
+        boil(wheelG, (r, s, g) => SAU.drawSteeringWheel(SAU.makePen(1, r, g, { seed: s, sw: 4 }), 260, snake), t, .125);
+        set(wheelG, { transform: `translate(${W * .56},${H * .68}) rotate(${wob - 6 + Math.sin(lt * 1.4) * 4})` });
+        youI.pose({ x: W * .2, y: H * 1.35, scale: 1.7, expr: snake > 0 ? 'scared' : 'thinking', look: [16, -4], head: 8, armR: snake > 0 ? 60 : 0, bob: Math.sin(t * 2.4) * 3 }, t);
+        hand(inFx, W * .78, H * .4, 'steering wheel?', p(t, 19.8, 20.1, E.back), 64, -3);
+        if (snake > 0) hand(inFx, W * .8, H * .55, 'sssss…', snake, 64, 6, '#C8362E');
+      }
+
+      // ---------- P4 flat tyre ----------
+      if (stage === 'TIRE') {
+        const lt = t - 24.8;
+        boil(tireBg, (r, s, g) => { el('rect', { x: -W, y: -H, width: W * 3, height: H * 3, fill: 'url(#kDay)' }, g); SAU.drawSavannaStrip(r, s, g, -W, W * 2, H * .5 + 115, 1.2); el('rect', { x: -W, y: H * .5 + 115, width: W * 3, height: H, fill: '#D9A566' }, g); }, t, .25);
+        const flat = t > 26.5;
+        set(tireCar, { transform: `translate(${W * .42},${H * .5}) scale(2.3) translate(168,50)` });
+        tcar.update(t, { x: 0, y: 0, s: 1, flat, tilt: flat ? -2.5 * p(t, 26.5, 27.2, E.out) : 0 });
+        if (t > 26.1 && t < 28.2) for (let i = 0; i < 4; i++) { const a = ((t * 2 + i / 4) % 1); hand(tireFx, W * .32 - a * 260, H * .7 - a * 120 - i * 30, 'PSSS', 1 - a, 44, -8); }
+        hand(tireFx, W * .7, H * .25, "…and it's over.", p(t, 27.1, 27.4, E.back), 60, 3);
+      }
+
+      // ---------- dinosaur tease ----------
+      if (stage === 'DINO') {
+        boil(dinoBg, (r, s, g) => { el('rect', { width: W, height: H, fill: '#F2C27F' }, g); const P = SAU.makePen(1, r, g, { seed: s, sw: 3 }); P.stroke(`M 0 ${H * .8} L ${W} ${H * .8}`, B.ink, 4); }, t, .25);
+        boil(dinoG, (r, s, g) => { const gg = el('g', { transform: `translate(${W * .48},${H * .8}) scale(1.25)` }, g); SAU.drawDino(r, s, gg, '#5A3A26'); }, t, .125);
+        const xk = p(t, 53.1, 53.45, E.back);
+        if (xk > 0) { el('path', { d: `M ${W * .48 - 300 * xk} ${H * .8 - 520 * xk} L ${W * .48 + 300 * xk} ${H * .8 - 20} M ${W * .48 + 300 * xk} ${H * .8 - 520 * xk} L ${W * .48 - 300 * xk} ${H * .8 - 20}`, stroke: '#C8362E', 'stroke-width': 40, 'stroke-linecap': 'round', opacity: .92 }, dinoX); }
+        const ok = win(t, 54.3, 55.8, .5, .01);
+        if (ok > 0) { const og = el('g', { transform: `translate(${W + 120 - 300 * ok},${H * .8}) scale(.9)` }, ostPeek); SAU.drawOstrich(SAU.makePen(1, rc, og, { seed: Math.floor(t * 8), sw: 4 })); hand(ostPeek, W - 330, H * .3, '…technically?', ok, 50, -6); }
+        hand(dinoX, W * .5, H * .16, 'DINOSAURS: 0', p(t, 53.1, 53.4, E.back), 80, -2);
+      }
+
+      // ---------- overlays ----------
+      // fuel gauge + odometer (P1)
+      const gk = win(t, 1.6, 9.7, .3, .3);
+      set(gauge, { display: gk > 0 ? 'inline' : 'none', transform: `translate(${W - 300},${H - 120}) scale(${gk})` });
+      if (gk > 0) boil(gaugeArt, (r, s, g) => { const P = SAU.makePen(1, r, g, { seed: s, sw: 3 }); SAU.drawFuelGauge(P, 1 - p(t, 2.6, 5.8, E.linear), 170); el('text', { x: -150, y: 40, fill: B.bone, 'font-family': B.fontDisplay, 'font-size': 40, stroke: B.ink, 'stroke-width': 6, 'paint-order': 'stroke' }, g).textContent = 'E'; el('text', { x: 124, y: 40, fill: B.bone, 'font-family': B.fontDisplay, 'font-size': 40, stroke: B.ink, 'stroke-width': 6, 'paint-order': 'stroke' }, g).textContent = 'F'; }, t, .125);
+      const ok2 = win(t, 2.6, 9.7, .3, .3);
+      set(odo, { display: ok2 > 0 ? 'inline' : 'none', transform: `translate(${W * .5},${H - 90}) scale(${ok2})` });
+      odoT.textContent = fmt(600 * p(t, 2.6, 5.8, E.linear)) + ' km';
+      // problem card
+      const c = PROB.find(c => t >= c[0] && t < c[1]);
+      if (c) {
+        const ck = p(t, c[0], c[0] + .35, E.back), co = p(t, c[1] - .25, c[1], E.in);
+        card.set(c[2], c[3]);
+        boil(card.g.firstChild, () => card.draw(rc, Math.floor(t / .125), c[3].length > 8 ? 760 : 620), t, .125);
+        set(card.g, { display: 'inline', transform: `translate(${W / 2},${150 - co * 260}) scale(${lerp(1.6, 1, ck)}) rotate(${-2 + (1 - ck) * 6})`, opacity: clamp(ck * 3) });
+      } else set(card.g, { display: 'none' });
+      // upgrade toast + patch notes
+      const ti = p(t, 31.8, 32.4, E.back), to = p(t, 43.6, 44.0, E.in);
+      set(toast.g, { display: t > 31.7 && t < 44 ? 'inline' : 'none', transform: `translate(${W - 40 - toast.w + (1 - ti) * (toast.w + 80)},${190 - to * 60})`, opacity: 1 - to });
+      toast.set(p(t, 33.0, 34.4, E.inOut));
+      clr(notesCard);
+      if (t > 34.3 && t < 44) {
+        const g = el('g', { transform: `translate(${W - 40 - 680},400)`, opacity: 1 - to }, notesCard);
+        el('rect', { width: 680, height: 330, rx: 20, fill: '#120C09', opacity: .94 }, g);
+        el('text', { x: 34, y: 52, fill: B.sand, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 22, 'letter-spacing': 4 }, g).textContent = 'PATCH NOTES';
+        [[34.5, '∞', 'Fuel tank that never runs out'], [36.7, '+', 'Tires that fix themselves'], [38.1, '+', 'Glove box: the owner’s manual'], [41.1, ' ', '400 pages'], [42.4, ' ', '…mostly pictures']].forEach(([a, ic, txt], i) => {
+          const k = p(t, a, a + .3, E.out); if (k <= 0) return;
+          const y = 100 + i * 46;
+          el('text', { x: 40, y, fill: B.tech, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 34, opacity: k, filter: 'url(#kGlow)' }, g).textContent = ic;
+          el('text', { x: 84 + (i > 2 ? 30 : 0) - (1 - k) * 20, y, fill: i > 2 ? B.sand : B.bone, 'font-family': B.fontUI, 'font-weight': i > 2 ? 500 : 700, 'font-size': i > 2 ? 28 : 32, 'font-style': i > 2 ? 'italic' : 'normal', opacity: k }, g).textContent = txt;
+        });
+      }
+      // NOT INCLUDED list
+      if (t > 44 && t < 51.9) {
+        const k0 = p(t, 44.0, 44.4, E.back), ko = p(t, 51.6, 51.9, E.in);
+        const g = el('g', { transform: `translate(${W - 760},${200 + (1 - k0) * 40})`, opacity: clamp(k0 * 2) * (1 - ko) }, notIncl);
+        el('rect', { width: 680, height: 420, rx: 20, fill: B.bone, stroke: B.ink, 'stroke-width': 5 }, g);
+        el('text', { x: 40, y: 66, fill: B.rust, 'font-family': B.fontDisplay, 'font-size': 44 }, g).textContent = 'NOT INCLUDED:';
+        [[45.3, 'Roads'], [46.1, 'GPS'], [47.0, 'Driving license'], [49.3, 'Flying']].forEach(([a, txt], i) => {
+          const k = p(t, a, a + .25, E.back); if (k <= 0) return;
+          const y = 140 + i * 72;
+          el('text', { x: 50, y, fill: '#C8362E', 'font-family': B.fontDisplay, 'font-size': 52, opacity: k }, g).textContent = '✗';
+          el('text', { x: 110, y, fill: B.ink, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 44, opacity: k }, g).textContent = txt;
+        });
+        const yk = p(t, 51.0, 51.3, E.back);
+        if (yk > 0) { const yg = el('g', { transform: `translate(420,356) rotate(-8) scale(${yk})` }, g); el('text', { 'text-anchor': 'middle', fill: B.tech, 'font-family': B.fontDisplay, 'font-size': 64, stroke: B.ink, 'stroke-width': 8, 'paint-order': 'stroke', filter: 'url(#kGlow)' }, yg).textContent = '…YET'; }
+      }
+      FACTS.forEach(f => { const k = p(t, f.a, f.a + .35, E.back) * (1 - p(t, f.b - .3, f.b, E.in)); set(f.g, { display: k > 0 ? 'inline' : 'none', transform: `translate(40,${H - 132 + (1 - k) * 180})`, opacity: clamp(k * 2) }); });
+      set(hud, { opacity: stage === 'IN' || stage === 'TIRE' || stage === 'DINO' ? 0 : 1 });
+      yp.set('300,000 BC', 'DAY 1');
+      set(flash, { opacity: Math.max(win(t, 31.6, 32.0, .1, .3) * .7, win(t, 33.0, 33.3, .1, .2) * .4) });
+    },
+  };
+});
+</script></body></html>

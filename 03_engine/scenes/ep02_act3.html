@@ -1,0 +1,309 @@
+<!doctype html>
+<html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;padding:0;background:#1E1612;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script>
+<script src="../lib/animals.js"></script><script src="../lib/you.js"></script><script src="../lib/kit.js"></script><script src="../lib/kit_car.js"></script>
+</head><body><script>
+// EP02 · Perde 3 — 1. gün → 1. yıl (203.6 s). Zamanlar: ep02_perde3.timing.json
+SAU.duration = 203.6;
+SAU.init((svg, S) => {
+  const { W, H, el, set, p, E, boil, BRAND: B, clamp, hash, lerp, fmt } = S;
+  const rc = rough.svg(svg);
+  const defs = SAU.kitDefs(svg);
+  defs.insertAdjacentHTML('beforeend', `<linearGradient id="kDay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9A35C"/><stop offset=".6" stop-color="#F2C27F"/><stop offset="1" stop-color="#F6D7A0"/></linearGradient>
+    <linearGradient id="kNight" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E1A2A"/><stop offset="1" stop-color="#2B3A4A"/></linearGradient>
+    <clipPath id="kWin" clipPathUnits="userSpaceOnUse"><path id="kWinP" d="M -14 -268 L 112 -268 Q 132 -266 146 -248 L 182 -194 L -14 -194 Z"/></clipPath><radialGradient id="kHeat"><stop offset="0" stop-color="#FF9A3C" stop-opacity=".75"/><stop offset="1" stop-color="#FF9A3C" stop-opacity="0"/></radialGradient>`);
+  const GY = H * .86, horizon = H * .58;
+  const win = (t, a, b, fi = .25, fo = .25) => p(t, a, a + fi, E.out) * (1 - p(t, b - fo, b, E.in));
+  const clr = g => { while (g.firstChild) g.removeChild(g.firstChild); };
+  const hand = (g, x, y, txt, k, size = 54, rot = -3, col = B.ink) => { if (k <= 0) return; const gg = el('g', { transform: `translate(${x},${y}) rotate(${rot}) scale(${.6 + .4 * Math.min(k, 1.2)})`, opacity: clamp(k) }, g); el('text', { 'text-anchor': 'middle', fill: col, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': size, stroke: B.bone, 'stroke-width': 10, 'paint-order': 'stroke' }, gg).textContent = txt; };
+  const pen = (g, s, sw = 3) => SAU.makePen(1, rc, g, { seed: s, sw });
+  const sd = t => Math.floor(t / .125);
+
+  // ================= world =================
+  const world = el('g', {}, svg);
+  const sky = el('rect', { x: -W * 3, y: -H * 2, width: W * 16, height: H * 4, fill: 'url(#kDay)' }, world);
+  const bg = el('g', {}, world), tree = el('g', {}, world), props = el('g', {}, world), crowdG = el('g', {}, world), behind = el('g', {}, world);
+  const mk = (o, seed) => SAU.makeYou(el('g', {}, world), rc, Object.assign({ seed }, o));
+  const chief = mk(SAU.CAST.chief, 31), cousin = mk(SAU.CAST.cousin, 41), grandma = mk(SAU.CAST.grandma, 51);
+  const carG = el('g', {}, world); const car = SAU.makeCar(carG, rc);
+  const youHead = el('g', { 'clip-path': 'url(#kWin)' }, world); const youH = SAU.makeYou(youHead, rc, Object.assign({ seed: 5 }, SAU.CAST.you));
+  const you = mk(SAU.CAST.you, 6);
+  const animals = el('g', {}, world), front = el('g', {}, world), fx = el('g', {}, world), notes = el('g', {}, world);
+  // ================= screen layers =================
+  const SCR = el('g', {}, svg);
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .07, 5), preserveAspectRatio: 'none', opacity: .55 }, svg);
+  el('rect', { width: W, height: H, fill: 'url(#kVig)', opacity: .55 }, svg);
+  const over = el('g', {}, svg);
+  const speedo = el('g', {}, svg);
+  el('rect', { x: -170, y: -56, width: 340, height: 112, rx: 14, fill: '#120C09', stroke: B.sand, 'stroke-opacity': .4, 'stroke-width': 2 }, speedo);
+  el('text', { x: -150, y: -22, fill: B.sand, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 18, 'letter-spacing': 3 }, speedo).textContent = 'SPEED';
+  const speedT = el('text', { x: 150, y: 36, 'text-anchor': 'end', fill: B.bone, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 56 }, speedo);
+  const big = SAU.makeBigCard(svg, 84);
+  const hud = el('g', {}, svg);
+  const yp = SAU.makeYearPanel(hud, 40, 40);
+  const stats = SAU.makeStatPanel(hud, W - 500, 40, ['POPULATION', 'DISTANCE DRIVEN', 'TREES HIT'], 460);
+  const FACTS = [
+    [78.2, 85.0, 'Ostriches can sprint at about 70 km/h. They are the fastest birds on land.'],
+    [154.2, 159.8, 'The oldest wooden wheel ever found is about 5,150 years old (Ljubljana Marshes).'],
+    [201.0, 203.6, 'Birds are living dinosaurs. Yes, the ostrich too.'],
+  ].map(([a, b, txt]) => ({ a, b, g: SAU.makeFactCard(svg, txt, Math.min(1840, 120 + txt.length * 14.5)) }));
+  const flash = el('rect', { width: W, height: H, fill: '#FFF7E6', opacity: 0 }, svg);
+
+  // stage list: [start, name]
+  const ST = [[0, 'camp'], [25.7, 'drive'], [58.3, 'race'], [85.3, 'hunt'], [109.7, 'house'], [121.3, 'cup'], [134.5, 'manual'], [160.0, 'trip'], [188.0, 'year']];
+  const stageAt = t => { let s = ST[0]; for (const x of ST) if (t >= x[0]) s = x; return s; };
+  const crowdXs = n => Array.from({ length: n }, (_, i) => i);
+
+  // camp layout
+  const XC = 1150; // car
+  const P_CHIEF = 720, P_COUS = 470, P_GRAN = 300;
+  const treeX = 1650;
+  const drawTreePeople = (g, s, n, x, y, scale = 1) => { const P = pen(g, s); for (let i = 0; i < n; i++) { const a = hash(i * 3.7), b = hash(i * 9.1); const px = x + (a - .5) * 320 * scale, py = y - 250 * scale - b * 60 * scale; P.ellipse(px, py, 16 * scale, 16 * scale, i % 3 ? '#7A5038' : '#5E3A24', 2); } };
+
+  return {
+    update(t) {
+      const [st0, st] = stageAt(t), lt = t - st0;
+      [fx, notes, front, animals, over, props, behind].forEach(clr);
+      const day = !(st === 'house' || st === 'cup');
+      set(sky, { fill: day ? 'url(#kDay)' : 'url(#kNight)' });
+      let cam = [W / 2, GY - 300, 1], shake = 0;
+      const show = { chief: false, cousin: false, grandma: false, you: false, youHead: false, car: true, crowd: false, tree: false };
+      let carO = { x: XC, y: GY, s: 1, dist: 0 };
+      let speed = null;
+
+      // ---------------- background (re-drawn per stage) ----------------
+      boil(bg, (r, s, g) => {
+        const P = SAU.makePen(1, r, g, { seed: s, sw: 3 });
+        P.shape(`M ${-W * 3} ${horizon} Q 0 ${horizon - 60} ${W} ${horizon - 20} Q ${W * 3} ${horizon - 40} ${W * 13} ${horizon} L ${W * 13} ${H * 2} L ${-W * 3} ${H * 2} Z`, day ? '#D9A566' : '#4A4A40', 3);
+        if (day) [-1600, -300, 2600, 3900, 6100, 8800, 11200, 14500, 17800, 21000].forEach((x, i) => SAU.drawAcacia(P, x, horizon + 24, .45 + (i % 2) * .15));
+        else { for (let i = 0; i < 40; i++) el('circle', { cx: hash(i) * W * 3 - W, cy: hash(i + 7) * horizon * 1.3 - H * .3, r: 2 + hash(i + 3) * 2, fill: '#F3E6CF', opacity: .7 }, g); }
+        SAU.drawSavannaStrip(r, s + 3, g, -W * 3, W * 13, GY + 6, day ? 1 : .6);
+      }, t, .25);
+
+      if (st === 'camp') { // 0–25.7
+        show.chief = show.cousin = show.grandma = true; show.crowd = t < 17.4; show.tree = true; show.you = t < 11.9; show.youHead = t >= 12.6;
+        cam = t < 11.9 ? [XC - 200, GY - 300, lerp(1.05, 1.15, p(t, 0, 11))] : t < 17.3 ? [XC, GY - 220, 1.5] : [lerp(XC, treeX, p(t, 17.6, 19.0)), GY - 330, lerp(1.2, .95, p(t, 17.6, 19.0))];
+        if (t > 17.3 && t < 17.9) shake = 22;
+        carO.bounce = t > 13.1 && t < 13.9 ? Math.sin(t * 40) * 4 : 0; carO.lights = t > 13.1 && t < 13.9 && Math.floor(t * 8) % 2;
+        // honk text
+        const hk = win(t, 17.3, 18.9, .08, .4);
+        if (hk > 0) { const g = el('g', { transform: `translate(${XC + 380},${GY - 380}) rotate(-8) scale(${hk * (1 + .1 * Math.sin(t * 40))})` }, fx); el('text', { 'text-anchor': 'middle', fill: '#FFD36B', 'font-family': B.fontDisplay, 'font-size': 170, stroke: B.ink, 'stroke-width': 14, 'paint-order': 'stroke' }, g).textContent = 'HONK!'; for (let i = 0; i < 3; i++) el('path', { d: `M ${XC + 300 + i * 40} ${GY - 160} q 40 -60 0 -120`, fill: 'none', stroke: B.ink, 'stroke-width': 6, opacity: hk }, fx); }
+        // gazelle leg offered by the chief
+        const legK = p(t, 6.9, 7.6, E.out), drop = p(t, 10.2, 10.8, E.in);
+        if (t > 6.6 && t < 17.3) { const lx = lerp(P_CHIEF + 90, XC + 300, legK), ly = GY - 200 + drop * 180; const P = pen(props, sd(t) + 3); P.shape(`M ${lx - 50} ${ly - 12} Q ${lx} ${ly - 30} ${lx + 50} ${ly - 8} L ${lx + 60} ${ly + 10} Q ${lx} ${ly + 6} ${lx - 50} ${ly + 12} Z`, '#B8694A', 3); P.ellipse(lx + 64, ly, 14, 12, '#F3E6CF', 2.5); }
+        if (t > 9.4 && t < 11.8) hand(notes, XC + 300, GY - 470, '…no thanks.', p(t, 9.5, 9.8, E.back), 52, 4);
+        if (t > 5.2 && t < 6.8) hand(notes, P_CHIEF, GY - 560, 'hungry?', p(t, 5.2, 5.5, E.back), 52, -3);
+        // You climbs in: walk toward the door then vanish; head appears in the window
+        const inK = p(t, 11.9, 12.6, E.inOut);
+        you.pose({ x: lerp(XC - 380, XC - 60, inK), y: GY + 10, scale: .62, expr: t < 9 ? 'thinking' : 'smug', look: [10, 0], bob: Math.sin(t * 6) * 3, legL: inK > 0 && inK < 1 ? Math.sin(t * 14) * 20 : 0, legR: inK > 0 && inK < 1 ? -Math.sin(t * 14) * 20 : 0 }, t);
+        // tree people (from 19.0)
+        if (t > 18.9) { drawTreePeople(front, sd(t), Math.round(lerp(0, 28, p(t, 18.9, 20.5))), treeX, GY, 1.15); }
+        if (t > 19.0) { const n = Math.round(lerp(0, 30, p(t, 18.9, 20.5))); const g = el('g', { transform: `translate(${treeX - 420},${GY - 560}) rotate(-4)` }, notes); el('rect', { x: -10, y: -54, width: 330, height: 72, rx: 10, fill: '#120C09', opacity: .9 }, g); el('text', { x: 14, y: -6, fill: B.tech, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 40, filter: 'url(#kGlow)' }, g).textContent = 'IN TREE: ' + n; }
+        if (t > 22.0) hand(notes, treeX + 330, GY - 380, '← the chief', p(t, 22.0, 22.3, E.back), 44, 4);
+        if (t > 23.2) hand(notes, treeX + 120, GY - 600, '↓ his grandmother', p(t, 23.2, 23.5, E.back), 44, -4);
+      }
+
+      if (st === 'drive') { // 25.7–58.3
+        const fast = t >= 39.9, crash = t >= 48.2;
+        const slowD = Math.max(0, t - 31.3) * 26, fastD = fast ? (t - 39.9) * 1400 : 0;
+        const dist = crash ? (48.2 - 39.9) * 1400 + slowD : slowD + fastD;
+        const crashX = (48.2 - 39.9) * 1400 + (48.2 - 31.3) * 26 + XC; // tree position = where the car stops
+        carO = { x: XC + dist, y: GY, s: 1, dist, bounce: t > 30.3 && !crash ? Math.sin(t * 25) * (fast ? 4 : 2) : 0, dents: crash ? 2 : 0, tilt: crash ? -3 * p(t, 48.2, 48.5, E.out) : 0 };
+        cam = [carO.x - 60, GY - 280, fast && !crash ? .95 : 1.05]; if (t >= 48.2 && t < 48.7) shake = 30;
+        if (t > 30.3 && t < 31.3) shake = 6;
+        speed = t < 31.3 ? 0 : !fast ? 3 : crash ? 0 : Math.min(60, (t - 39.9) * 60);
+        show.youHead = true; show.crowd = false;
+        // walkers next to the car (some faster)
+        if (!fast) for (let i = 0; i < 7; i++) { const g = el('g', { transform: `translate(${XC - 300 + i * 110 + Math.max(0, t - 31.3) * (24 + (i % 3) * 8) },0)` }, behind); SAU.drawCrowd(rc, sd(t) + i, g, [0], GY - 46, .7, i % 2 ? '#7A5038' : '#6A4430'); }
+        if (t > 36.8 && t < 39.8) hand(notes, carO.x + 260, GY - 470, 'some of them are faster', p(t, 36.8, 37.1, E.back), 46, -3);
+        if (t > 29.0 && t < 31.3) hand(notes, carO.x, GY - 470, 'VROOOM', p(t, 30.3, 30.5, E.back), 90, -4, '#C8362E');
+        if (fast && !crash) { SAU.dust(fx, carO.x - 310, GY - 10, t, 6, 1.4); SAU.speedLines(fx, carO.x - 300, GY - 120, t, 5, 260); for (let i = 0; i < 4; i++) hand(notes, carO.x - 500 - i * 140, GY - 300 - (i % 2) * 120, 'AAAH!', 1, 44, -10 + i * 6); }
+        if (t > 44.9 && t < 47.0) { const g = el('g', { transform: `translate(${carO.x - 520},${GY - 560})` }, notes); el('ellipse', { rx: 200, ry: 110, fill: B.bone, stroke: B.ink, 'stroke-width': 5 }, g); const cg = el('g', { transform: 'translate(-60,40) scale(.28)' }, g); SAU.drawCarBody(pen(cg, sd(t), 8), {}); el('circle', { cx: 70, cy: -10, r: 26, fill: '#7A5038', stroke: B.ink, 'stroke-width': 4 }, g); el('text', { x: 70, y: -50, 'text-anchor': 'middle', fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 34 }, g).textContent = 'nom'; }
+        // the only tree for 10 km
+        const tg = el('g', {}, props); SAU.drawAcacia(pen(tg, sd(t) + 5), crashX + 300, GY + 6, 1.1);
+        if (crash) {
+          for (let i = 0; i < 3; i++) el('circle', { cx: crashX + 260 + i * 20, cy: GY - 320 - ((t * 60 + i * 30) % 120), r: 14 + i * 4, fill: '#D9D3C8', opacity: .6 }, fx);
+          if (t > 47.0 && t < 49.5) { const g = el('g', { transform: `translate(${carO.x + 160},${GY - 470}) rotate(10) scale(${p(t, 48.2, 48.4, E.back)})` }, notes); el('text', { 'text-anchor': 'middle', fill: '#FFD36B', 'font-family': B.fontDisplay, 'font-size': 140, stroke: B.ink, 'stroke-width': 12, 'paint-order': 'stroke' }, g).textContent = 'BONK'; }
+          if (t > 52.1) { hand(notes, crashX - 600, GY - 160, '← 10 km of nothing', p(t, 52.1, 52.4, E.back), 44, 0); hand(notes, crashX + 1000, GY - 160, 'nothing for 10 km →', p(t, 52.6, 52.9, E.back), 44, 0); }
+          if (t > 54.8) drawTreePeople(front, sd(t), 12, crashX + 300, GY, 1.2);
+          if (t > 55.4) hand(notes, crashX + 300, GY - 560, '(yes, THAT tree)', p(t, 55.4, 55.7, E.back), 46, 4);
+        }
+        if (t > 47.0 && t < 48.2) hand(notes, carO.x + 300, GY - 520, '90 seconds later…', p(t, 47.0, 47.2, E.back), 48, -2);
+      }
+
+      if (st === 'race') { // 58.3–85.3
+        const end = t >= 75.1;
+        const v = t < 64.5 ? 50 : t < 69.2 ? lerp(50, 70, p(t, 64.5, 69.2)) : 70;
+        const dist = (t - 58.3) * 900;
+        carO = { x: XC + dist, y: GY, s: 1, dist: end ? (75.1 - 58.3) * 900 : dist, bounce: end ? -60 * Math.sin(p(t, 75.1, 75.7) * Math.PI) : Math.sin(t * 25) * 3, tilt: end ? -14 * Math.sin(p(t, 75.1, 75.8) * Math.PI) : 0, dents: 2 };
+        if (end) carO.x = XC + (75.1 - 58.3) * 900 + p(t, 75.1, 76) * 150;
+        cam = [XC + (Math.min(t, 75.4) - 58.3) * 900 + 200, GY - 300, .92];
+        speed = end ? 0 : Math.round(t < 66.7 ? 50 : t < 67.7 ? 60 : t < 69.2 ? 65 : 70);
+        show.youHead = true;
+        // ostrich alongside (appears 59.4), wins after the crash
+        const ox = t < 59.4 ? -2000 : t < 75.1 ? carO.x + lerp(-900, 420, p(t, 59.4, 63.5, E.out)) + Math.sin(t * 2) * 40 : XC + (75.1 - 58.3) * 900 + 120 + (t - 75.1) * 900;
+        const og = el('g', { transform: `translate(${ox},${GY - 50}) scale(-.95,.95) rotate(${Math.sin(t * 28) * 3})` }, behind); SAU.drawOstrich(pen(og, sd(t), 4));
+        if (!end) { SAU.dust(fx, carO.x - 310, GY - 10, t, 5, 1.2); SAU.speedLines(fx, ox - 200, GY - 200, t, 4, 220); }
+        if (t > 61.5 && t < 64.4) { hand(notes, ox + 40, GY - 560, 'long legs', p(t, 61.5, 61.8, E.back), 44, -4); if (t > 62.6) hand(notes, ox + 200, GY - 620, 'big eyes', p(t, 62.6, 62.9, E.back), 44, 4); if (t > 63.0) hand(notes, ox - 160, GY - 640, 'feathers', p(t, 63.0, 63.3, E.back), 44, -6); }
+        const tk = win(t, 70.2, 75.0, .3, .3);
+        if (tk > 0) { big.set('CAR  vs  DINOSAUR*', t > 74.2 ? '*technically' : ''); boil(big.g.firstChild, () => big.draw(rc, sd(t), 1020, 230), t, .125); set(big.g, { display: 'inline', transform: `translate(${W / 2},${H * .3}) rotate(-2) scale(${tk})` }); }
+        else set(big.g, { display: 'none' });
+        if (end) { const tg = el('g', {}, props); SAU.drawTermite(pen(tg, sd(t) + 7), XC + (75.1 - 58.3) * 900 + 330, GY + 6, 1.1); }
+        if (t > 76.7) { hand(notes, ox, GY - 600, 'WINNER 🏆', p(t, 76.7, 77.0, E.back), 60, -4); }
+      }
+      if (st !== 'race') set(big.g, { display: 'none' });
+
+      if (st === 'hunt') { // 85.3–109.7
+        const dist = (t - 85.3) * 700;
+        const overshoot = t > 92.8 ? p(t, 92.8, 94.6, E.out) : 0;
+        carO = { x: XC + dist, y: GY, s: 1, dist, bounce: Math.sin(t * 25) * 3, dents: 2 };
+        cam = [XC + dist + 300, GY - 300, .9];
+        show.youHead = true;
+        const herdX = XC + dist + 650;
+        for (let i = 0; i < 4; i++) {
+          const turned = t > 92.8;
+          const gx = herdX + i * 180 + (turned ? -overshoot * (1500 + i * 60) : 0), gy = GY - 40 - (turned ? overshoot * 30 : 0);
+          const gg = el('g', { transform: `translate(${gx},${gy}) scale(${turned ? -.72 : .72},.72) rotate(${Math.sin(t * 20 + i) * 4})` }, behind); SAU.drawGazelle(pen(gg, sd(t) + i, 3));
+        }
+        if (t > 92.8 && t < 95.3) { hand(notes, herdX + 100, GY - 520, 'TURN!', p(t, 92.8, 93.0, E.back), 80, -6, '#C8362E'); el('path', { d: `M ${carO.x - 200} ${GY + 20} q 300 -10 600 0`, stroke: '#3B2418', 'stroke-width': 10, fill: 'none', opacity: .4 }, fx); }
+        if (t > 95.3 && t < 100.4) { // trunk full of meat
+          const g = el('g', { transform: `translate(${carO.x - 300},${GY - 240})` }, props); const P = pen(g, sd(t) + 2); P.shape('M -60 -10 L -100 -110 L 40 -120 L 30 -10 Z', SAU.CAR.RED, 3); for (let i = 0; i < 3; i++) P.shape(`M ${-80 + i * 40} -14 q 20 -40 40 0 Z`, '#B8694A', 3); hand(notes, carO.x - 330, GY - 460, 'trunk: FULL', p(t, 97.3, 97.6, E.back), 48, -3);
+        }
+        if (t > 101.3 && t < 109.6) { for (let i = 0; i < 4; i++) { const a = ((t * 1.2 + i / 4) % 1); el('path', { d: `M ${carO.x + 320 + a * 400} ${GY - 260 - a * 30} q 30 60 0 120`, fill: 'none', stroke: B.ink, 'stroke-width': 6, opacity: 1 - a }, fx); } if (t < 105.3) hand(notes, carO.x + 100, GY - 520, 'VROOOM (very loud)', p(t, 101.3, 101.6, E.back), 46, -3); }
+        if (t > 105.4) { const g = el('g', { transform: `translate(${W / 2},${H * .36})` }, over); el('rect', { x: -360, y: -70, width: 720, height: 140, rx: 16, fill: '#120C09', opacity: .9 }, g); el('text', { 'text-anchor': 'middle', y: -14, fill: B.sand, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 26, 'letter-spacing': 4 }, g).textContent = 'WALK TO FIND FOOD'; el('text', { 'text-anchor': 'middle', y: 48, fill: '#FF7A3D', 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 60 }, g).textContent = '× 2'; }
+      }
+
+      if (st === 'house') { // 109.7–121.3 (night)
+        cam = [XC, GY - 260, 1.25]; carO = { x: XC, y: GY, s: 1, dist: 0, dents: 2, lights: true };
+        // heads / legs sticking out of the windows
+        const P = pen(front, sd(t) + 9);
+        [[-80, -230], [-40, -236], [20, -230], [70, -226], [120, -236], [-120, -214]].forEach(([x, y], i) => P.ellipse(XC + x + Math.sin(t * 6 + i) * 6, GY + y, 26, 26, i % 2 ? '#7A5038' : '#5E3A24', 2.5));
+        P.shape(`M ${XC + 220} ${GY - 210} l 90 -20 l 4 22 l -90 18 Z`, '#7A5038', 2.5); P.shape(`M ${XC - 260} ${GY - 200} l -100 -10 l -2 22 l 100 8 Z`, '#5E3A24', 2.5);
+        const g = el('g', { transform: `translate(${W / 2},${110})` }, over); el('rect', { x: -330, y: -60, width: 660, height: 120, rx: 14, fill: '#120C09', opacity: .9 }, g); el('text', { 'text-anchor': 'middle', y: 22, fill: B.bone, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 52 }, g).textContent = `SEATS ${t > 112.6 ? 5 : '?'} · PEOPLE ${t > 113.5 ? 30 : '?'}`;
+        if (t > 114.5 && t < 117.5) hand(notes, XC - 330, GY - 360, 'MY back seat!', p(t, 114.5, 114.8, E.back), 46, -6);
+        if (t > 117.6) { el('ellipse', { cx: XC, cy: GY - 170, rx: 330, ry: 170, fill: 'url(#kHeat)', opacity: p(t, 118.6, 119.2) }, fx); hand(notes, XC + 380, GY - 360, 'heater: ON', p(t, 118.6, 118.9, E.back), 52, 4, '#C8362E'); }
+        if (t > 119.6) hand(notes, XC - 60, GY - 430, 'nobody freezes', p(t, 119.6, 119.9, E.back), 48, -4);
+      }
+
+      if (st === 'cup') { // 121.3–134.5 close-up dashboard
+        cam = [W / 2, H / 2, 1]; show.car = false;
+        const P = pen(props, sd(t) + 1, 4);
+        P.shape(`M ${-W} ${H * .35} L ${W * 2} ${H * .35} L ${W * 2} ${H * 2} L ${-W} ${H * 2} Z`, '#3A3430', 5);
+        P.ellipse(W * .5, H * .62, 120, 70, '#1A1614', 5);
+        hand(notes, W * .5, H * .43, 'cup holder', p(t, 121.4, 121.7, E.back), 54, -2);
+        // staring eyes
+        for (let i = 0; i < 6; i++) { const ex = W * .15 + i * W * .14, ey = H * .2 + (i % 2) * 40; P.ellipse(ex, ey, 34, 34, '#FFF', 3); P.ellipse(ex + Math.sin(t + i) * 4, ey + 8, 12, 14, B.ink, 1); }
+        if (t > 124.7 && t < 127.7) hand(notes, W * .78, H * .42, '(days later)', p(t, 124.7, 125.0, E.back), 44, 4);
+        const ck = p(t, 127.7, 128.6, E.out), dropK = p(t, 131.6, 132.4, E.in);
+        if (ck > 0) { const cx = W * .5, cy = lerp(H * .5, H * .66, dropK); SAU.drawCup(pen(props, sd(t) + 5, 4), cx, cy, 2.2 * ck); }
+        if (t > 129.9) { const sk = p(t, 129.9, 130.2, E.back); const g = el('g', { transform: `translate(${W * .5},${H * .86}) rotate(-4) scale(${sk})` }, over); el('rect', { x: -480, y: -60, width: 960, height: 120, rx: 12, fill: B.rust, stroke: B.ink, 'stroke-width': 6 }, g); el('text', { 'text-anchor': 'middle', y: 24, fill: B.bone, 'font-family': B.fontDisplay, 'font-size': 64 }, g).textContent = 'THE FIRST CUP IN HISTORY'; }
+        if (t > 132.4) hand(notes, W * .72, H * .6, 'fits ✓', p(t, 132.4, 132.7, E.back), 64, 6);
+      }
+
+      if (st === 'manual') { // 134.5–160 open manual, pictures, wheel copies
+        show.car = t < 144.8; cam = t < 144.8 ? [W / 2, H / 2, 1] : [W * .5, GY - 260, 1]; show.cousin = t >= 144.8;
+        if (t < 144.8) {
+          show.car = false;
+          const g = el('g', { transform: `translate(${W / 2},${H * .28}) scale(1.1)` }, props); const P = pen(g, sd(t) + 3, 4);
+          SAU.drawManual(P, 560, 420);
+          if (t > 137.9 && t < 139.8) hand(notes, W * .28, H * .2, '???', p(t, 137.9, 138.2, E.back), 64, -6);
+          const rp = el('g', { transform: `translate(${W / 2 + 330},${H * .28 + 200})` }, props); const R2 = pen(rp, sd(t) + 6, 4);
+          if (t > 141.4) R2.ellipse(-140, 0, 70 * p(t, 141.4, 141.7, E.back), 70 * p(t, 141.4, 141.7, E.back), SAU.CAR.TIRE, 4);
+          if (t > 142.2) R2.shape(`M -100 -8 L ${-100 + 220 * p(t, 142.2, 142.5)} -8 L ${-100 + 220 * p(t, 142.2, 142.5)} 8 L -100 8 Z`, '#8A5A2E', 3);
+          if (t > 143.1) R2.ellipse(140, 0, 70 * p(t, 143.1, 143.4, E.back), 70 * p(t, 143.1, 143.4, E.back), SAU.CAR.TIRE, 4);
+          hand(notes, W * .5 + 330, H * .28 + 320, t < 142.2 ? 'a wheel' : t < 143.1 ? 'an axle' : 'a wheel on an axle', p(t, 141.4, 141.7, E.back), 44, 2);
+          el('text', { x: W / 2, y: H * .9, 'text-anchor': 'middle', fill: B.bone, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 34, 'letter-spacing': 4 }, over).textContent = "OWNER'S MANUAL · PAGE 1 OF 400";
+        } else {
+          // cousin pulls a wooden cart: square wheels (bump) then round
+          const round = t >= 148.4;
+          const cx = W * .35 + (t - 144.8) * (round ? 120 : 30);
+          const bump = round ? 0 : Math.abs(Math.sin(t * 6)) * -26;
+          const g = el('g', { transform: `translate(${cx},${GY + bump}) scale(1.05)` }, props); const P = pen(g, sd(t) + 8, 4);
+          P.shape('M -200 -80 L 200 -80 L 210 -180 L -210 -180 Z', '#B07A44', 4); P.stroke('M 200 -140 Q 280 -150 360 -210', '#C9A872', 4);
+          [-130, 130].forEach(x => { if (round) { const a = (t * 200) % 360; const wg = el('g', { transform: `translate(${x},-46) rotate(${a})` }, g); const W2 = pen(wg, sd(t) + x, 4); W2.ellipse(0, 0, 46, 46, '#9A6A3A', 4); W2.stroke('M -40 0 L 40 0 M 0 -40 L 0 40', '#6E4428', 3); } else { const a = Math.floor(t * 4) * 90; const wg = el('g', { transform: `translate(${x},-46) rotate(${a})` }, g); pen(wg, sd(t) + x, 4).shape('M -44 -44 L 44 -44 L 44 44 L -44 44 Z', '#9A6A3A', 4); } });
+          cousin.pose({ x: cx + 330, y: GY + 10, scale: .62, expr: round ? 'smile' : 'angry', look: [-10, 0], armL: -70, bob: Math.sin(t * 8) * 4, legL: Math.sin(t * 10) * 18, legR: -Math.sin(t * 10) * 18 }, t);
+          if (t > 146.9 && t < 148.4) hand(notes, cx, GY - 330, 'square: bonk bonk bonk', p(t, 146.9, 147.2, E.back), 46, -3);
+          if (t > 150.1) { const sk = p(t, 150.1, 150.4, E.back); const sg = el('g', { transform: `translate(${W / 2},${H * .27}) rotate(-3) scale(${sk})` }, over); el('rect', { x: -440, y: -90, width: 880, height: 180, rx: 12, fill: B.rust, stroke: B.ink, 'stroke-width': 6 }, sg); el('text', { 'text-anchor': 'middle', y: -8, fill: B.bone, 'font-family': B.fontDisplay, 'font-size': 76 }, sg).textContent = 'THE WHEEL'; el('text', { 'text-anchor': 'middle', y: 56, fill: '#FFD36B', 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 40 }, sg).textContent = t > 151.0 ? '~295,000 YEARS EARLY' : ''; }
+        }
+      }
+
+      if (st === 'trip') { // 160–188 map, then meeting
+        show.car = t >= 169.4; cam = [W / 2, GY - 300, 1];
+        if (t < 169.4) {
+          const g = el('g', {}, props); const P = pen(g, sd(t) + 2, 4);
+          P.shape(SAU.rrectPath(W * .1, H * .2, W * .8, H * .62, 26), '#E8D3A8', 5);
+          P.ellipse(W * .22, H * .56, 70, 50, '#B8834C', 3); P.ellipse(W * .78, H * .5, 70, 50, '#B8834C', 3);
+          el('text', { x: W * .22, y: H * .67, 'text-anchor': 'middle', fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 36 }, g).textContent = 'your tribe';
+          el('text', { x: W * .78, y: H * .61, 'text-anchor': 'middle', fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 36 }, g).textContent = 'next tribe';
+          const dk = p(t, 162.8, 164.6);
+          el('path', { d: `M ${W * .27} ${H * .55} Q ${W * .5} ${H * .38} ${W * .27 + (W * .46) * dk} ${H * .5}`, fill: 'none', stroke: B.rust, 'stroke-width': 8, 'stroke-dasharray': '22 16' }, g);
+          if (t > 163.5) el('text', { x: W * .5, y: H * .36, 'text-anchor': 'middle', fill: B.rust, 'font-family': B.fontDisplay, 'font-size': 52 }, g).textContent = '100 km';
+          const bars = [[165.4, 'ON FOOT', '4 DAYS', 1, '#8A6A34'], [167.6, 'BY CAR', '2 HOURS', .06, SAU.CAR.RED]];
+          bars.forEach(([a, l1, l2, frac, col], i) => { const k = p(t, a, a + .6, E.out); if (k <= 0) return; const y = H * .7 + i * 70; el('text', { x: W * .16, y: y + 12, fill: B.ink, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 32 }, g).textContent = l1; el('rect', { x: W * .3, y: y - 22, width: W * .5 * frac * k, height: 40, rx: 10, fill: col, stroke: B.ink, 'stroke-width': 4 }, g); if (t > a + (i ? 0.9 : .8)) el('text', { x: W * .3 + W * .5 * frac + 20, y: y + 12, fill: B.ink, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 36 }, g).textContent = l2; });
+        } else {
+          carO = { x: W * .32, y: GY, s: .9, dist: 0, dents: 2 }; show.youHead = true;
+          const tx = W * .78;
+          const scared = t < 172.1;
+          if (scared) { const tg = el('g', {}, props); SAU.drawAcacia(pen(tg, sd(t) + 4), tx, GY + 6, 1.05); drawTreePeople(front, sd(t), 14, tx, GY, 1.1); hand(notes, tx - 250, GY - 470, 'AAAH, a beast!', p(t, 170.2, 170.5, E.back), 46, 4); }
+          else {
+            const crowdB = el('g', {}, animals); SAU.drawCrowd(rc, sd(t) + 20, crowdB, [tx - 260, tx - 160, tx - 60, tx + 40, tx + 140], GY + 8, .8, '#6A4430');
+            const crowdA = el('g', {}, animals); SAU.drawCrowd(rc, sd(t) + 30, crowdA, [W * .52, W * .58], GY + 8, .8, '#7A5038');
+            const gifts = [[174.2, 'meat'], [174.9, 'cups'], [175.6, 'HONK']];
+            gifts.forEach(([a, txt], i) => hand(notes, W * .55 + i * 150, GY - 420 - (i % 2) * 40, txt, p(t, a, a + .25, E.back), 46, -4 + i * 4));
+            if (t > 175.6 && t < 176.6) shake = 8;
+            if (t > 177.5) { // trades
+              const tr = [[180.0, 'stone tools', 'berries'], [181.7, 'fire tricks', 'fishing tricks']];
+              tr.forEach(([a, x1, x2], i) => { const k = p(t, a, a + .5, E.out); if (k <= 0) return; const y = H * .25 + i * 110; const g = el('g', { transform: `translate(${W / 2},${y})`, opacity: k }, over); el('rect', { x: -470, y: -46, width: 940, height: 92, rx: 14, fill: B.bone, stroke: B.ink, 'stroke-width': 4 }, g); el('text', { x: -40, y: 16, 'text-anchor': 'end', fill: B.ink, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 40 }, g).textContent = x1; el('text', { x: 0, y: 18, 'text-anchor': 'middle', fill: B.rust, 'font-family': B.fontDisplay, 'font-size': 46 }, g).textContent = '⇄'; el('text', { x: 40, y: 16, fill: B.ink, 'font-family': B.fontUI, 'font-weight': 800, 'font-size': 40 }, g).textContent = x2; });
+            }
+            if (t > 183.7) hand(notes, W * .62, GY - 560, 'neighbors.', p(t, 185.1, 185.4, E.back), 60, -3);
+          }
+        }
+      }
+
+      if (st === 'year') { // 188–203.6 banner + stats
+        cam = [XC, GY - 300, 1.0]; carO = { x: XC, y: GY, s: 1, dist: 0, dents: 3 }; show.youHead = true; show.chief = show.cousin = show.grandma = true; show.crowd = true;
+        const g = el('g', { transform: `translate(${W / 2},${H * .36})`, opacity: 1 - p(t, 200.5, 200.9) }, over);
+        el('rect', { x: -470, y: -150, width: 940, height: 300, rx: 22, fill: '#120C09', opacity: .92 }, g);
+        const rows = [[189.0, 'PEOPLE', '34'], [190.5, 'DISTANCE DRIVEN', '40,000 km'], [193.4, 'TREES HIT', '3'], [194.8, 'RACES vs OSTRICH', '12'], [197.1, 'RACES WON', '0']];
+        rows.forEach(([a, l, v], i) => { const k = p(t, a, a + .25, E.out); if (k <= 0) return; const y = -100 + i * 56; el('text', { x: -430, y, fill: B.sand, 'font-family': B.fontUI, 'font-weight': 700, 'font-size': 28, 'letter-spacing': 3, opacity: k }, g).textContent = l; el('text', { x: 430, y, 'text-anchor': 'end', fill: i === 4 ? '#FF7A3D' : B.bone, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 40, opacity: k }, g).textContent = v; });
+        const bk = p(t, 200.9, 201.3, E.back);
+        if (bk > 0) { const bg2 = el('g', { transform: `translate(${W / 2},${H * .34}) rotate(-2) scale(${bk})` }, over); el('rect', { x: -620, y: -60, width: 1240, height: 110, rx: 14, fill: B.bone, stroke: B.ink, 'stroke-width': 6 }, bg2); el('text', { 'text-anchor': 'middle', y: 18, fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 52 }, bg2).textContent = 'The One Who Rides the Roaring Beast'; }
+      }
+
+      // ---------------- characters & car ----------------
+      SAU.cam(world, W, H, cam[0], cam[1], cam[2], shake, t);
+      set(carG, { display: show.car ? 'inline' : 'none' });
+      if (show.car) car.update(t, carO);
+      // You's head in the driver window
+      set(youHead, { display: show.youHead && show.car ? 'inline' : 'none' });
+      if (show.youHead && show.car) { const s = carO.s ?? 1; const by = carO.y + (carO.bounce || 0); document.getElementById('kWinP').setAttribute('transform', `translate(${carO.x},${by}) scale(${s})`); youH.pose({ x: carO.x + 74 * s, y: by - 40 * s, scale: .45 * s, expr: st === 'drive' && t >= 39.9 && t < 48.2 ? 'shock' : st === 'race' ? (t > 75.1 ? 'angry' : 'smug') : st === 'hunt' && t > 92.8 && t < 95 ? 'shock' : 'smile', look: [12, 0], head: st === 'drive' && t >= 39.9 && t < 48.2 ? -12 : 0 }, t); }
+      set(you.root, { display: show.you ? 'inline' : 'none' });
+      const tribeTree = st === 'camp' && t > 18.9;
+      [[chief, show.chief, P_CHIEF, 'chief'], [cousin, show.cousin && st !== 'manual', P_COUS, 'cousin'], [grandma, show.grandma, P_GRAN, 'grandma']].forEach(([c, on, x, nm]) => {
+        if (st === 'manual' && nm === 'cousin') { set(c.root, { display: show.cousin ? 'inline' : 'none' }); return; }
+        set(c.root, { display: on && !tribeTree ? 'inline' : 'none' }); if (!on || tribeTree) return;
+        const yx = st === 'year' ? { chief: XC - 620, cousin: XC + 520, grandma: XC - 820 }[nm] : x;
+        const offer = nm === 'chief' && st === 'camp' && t > 6.6 && t < 10.2;
+        c.pose({ x: yx, y: GY + 10, scale: .62, expr: st === 'camp' && t > 17 ? 'scared' : st === 'year' ? 'smile' : nm === 'chief' && t > 5.2 && t < 9.4 ? 'thinking' : 'neutral', look: [12, 0], armR: offer ? 80 : 0, bob: Math.sin(t * 2.4 + x) * 2.5 }, t);
+      });
+      set(tree, { display: 'inline' });
+      if (st === 'camp') boil(tree, (r, s, g) => SAU.drawAcacia(SAU.makePen(1, r, g, { seed: s + 11, sw: 3 }), treeX, GY + 6, 1.15), t, .25); else clr(tree), (tree.__seed = -1);
+      if (st === 'camp' && show.crowd) boil(crowdG, (r, s, g) => SAU.drawCrowd(r, s, g, [380, 560, 860, 960, 1500, 1580, 1700, 1820], GY + 8, .78, '#7A5038'), t, .25); else if (!(st === 'year')) { clr(crowdG); crowdG.__seed = -1; }
+      if (st === 'year') boil(crowdG, (r, s, g) => SAU.drawCrowd(r, s, g, [XC - 520, XC - 420, XC + 360, XC + 680, XC + 780], GY + 8, .78, '#7A5038'), t, .25);
+
+      // ---------------- overlays ----------------
+      set(speedo, { display: speed == null ? 'none' : 'inline', transform: `translate(${W - 240},${H - 110})` }); if (speed != null) { speedT.textContent = speed + ' km/h'; set(speedT, { fill: speed >= 60 ? '#FF7A3D' : B.bone }); }
+      FACTS.forEach(f => { const k = p(t, f.a, f.a + .35, E.back) * (1 - p(t, f.b - .3, f.b, E.in)); set(f.g, { display: k > 0 ? 'inline' : 'none', transform: `translate(40,${H - 132 + (1 - k) * 180})`, opacity: clamp(k * 2) }); });
+      const tag = t < 25.7 ? 'DAY 1' : t < 58.3 ? 'DAY 2' : t < 85.3 ? 'DAY 5' : t < 109.7 ? 'WEEK 2' : t < 134.5 ? 'WEEK 3' : t < 160 ? 'MONTH 2' : t < 188 ? 'MONTH 4' : 'YEAR 1';
+      yp.set(t < 188 ? '300,000 BC' : (t < 188.6 ? (Math.floor(t * 20) % 2 ? '300,000 BC' : '299,999 BC') : '299,999 BC'), tag);
+      const distK = t < 31.3 ? 0 : t < 58.3 ? lerp(0, 12, p(t, 31.3, 58.3)) : t < 188 ? lerp(12, 38000, p(t, 58.3, 188)) : 40000;
+      stats.set(0, t < 188 ? '30' : '34', t > 188.9 && t < 190 ? B.tech : B.bone); stats.set(1, fmt(distK) + ' km'); stats.set(2, String(t < 48.2 ? 0 : t < 75.1 ? 1 : t < 188 ? 2 : 3), (t > 48.2 && t < 49.5) ? '#FF7A3D' : B.bone);
+      set(hud, { opacity: st === 'cup' || (st === 'manual' && t < 144.8) || (st === 'trip' && t < 169.4) ? 0 : 1 });
+      set(flash, { opacity: Math.max(win(t, 48.2, 48.6, .05, .3), win(t, 17.3, 17.6, .04, .25) * .5) * .8 });
+    },
+  };
+});
+</script></body></html>

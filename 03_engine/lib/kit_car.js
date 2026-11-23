@@ -13,7 +13,7 @@
   SAU.WHEELS = [-168, 176];
   SAU.drawCarBody = function (P, o = {}) {
     const v = o.variant || 'normal';
-    const col = v === 'rock' ? '#8E7F72' : v === 'wood' ? '#B07A44' : (o.color || RED);
+    const col = v === 'rock' ? (o.color || '#8E7F72') : v === 'wood' ? '#B07A44' : (o.color || RED);
     const dark = v === 'rock' ? '#6E6258' : v === 'wood' ? '#8A5A2E' : RED_D;
     // wheel arches
     SAU.WHEELS.forEach(x => P.ellipse(x, -50, 84, 80, '#1E1612', 2));
@@ -24,8 +24,8 @@
     if (v === 'convertible') { // squashed roof bits
       P.shape('M -150 -184 L -90 -204 L 60 -200 L 160 -186 Z', dark, 3);
     } else {
-      P.shape('M -92 -268 L -34 -268 L -34 -194 L -134 -194 Z', v === 'rock' ? '#7A6E64' : GLASS, 3);
-      P.shape('M -14 -268 L 112 -268 Q 132 -266 146 -248 L 182 -194 L -14 -194 Z', v === 'rock' ? '#7A6E64' : GLASS, 3);
+      P.shape('M -92 -268 L -34 -268 L -34 -194 L -134 -194 Z', v === 'rock' && !o.color ? '#7A6E64' : GLASS, 3);
+      P.shape('M -14 -268 L 112 -268 Q 132 -266 146 -248 L 182 -194 L -14 -194 Z', v === 'rock' && !o.color ? '#7A6E64' : GLASS, 3);
       if (v !== 'rock' && v !== 'wood') P.stroke('M 10 -258 L 40 -206 M 40 -258 L 70 -206', '#FFFFFF', 3); // shine
     }
     // doors & details
@@ -112,9 +112,9 @@
     P.shape(`M ${-r * .8} -10 L ${r * .8} -10 L ${r * .8} 20 L ${-r * .8} 20 Z`, '#2B2622', 3); P.shape(`M -24 10 L 24 10 L 18 ${r * .8} L -18 ${r * .8} Z`, '#2B2622', 3);
     P.ellipse(0, 4, r * .22, r * .22, '#4A4440', 4);
     if (snake > 0) { // snake face on the rim (top), eyes + tongue
-      P.ellipse(-30, -r + 4, 16, 16, '#FFF', 2.5); P.ellipse(30, -r + 4, 16, 16, '#FFF', 2.5);
-      P.ellipse(-28, -r + 6, 6, 9, B.ink, 1); P.ellipse(32, -r + 6, 6, 9, B.ink, 1);
-      P.shape(`M -4 ${-r + 24} L -4 ${-r + 24 + 40 * snake} L -16 ${-r + 34 + 44 * snake} M 4 ${-r + 24} L 4 ${-r + 24 + 40 * snake} L 16 ${-r + 34 + 44 * snake}`, '#D23B2E', 3);
+      P.ellipse(-44, -r + 2, 30 * snake, 30 * snake, '#FFF', 3); P.ellipse(44, -r + 2, 30 * snake, 30 * snake, '#FFF', 3);
+      P.ellipse(-40, -r + 6, 10 * snake, 18 * snake, B.ink, 1); P.ellipse(48, -r + 6, 10 * snake, 18 * snake, B.ink, 1);
+      P.stroke(`M 0 ${-r + 30} L 0 ${-r + 30 + 70 * snake} M 0 ${-r + 30 + 70 * snake} L -20 ${-r + 50 + 80 * snake} M 0 ${-r + 30 + 70 * snake} L 20 ${-r + 50 + 80 * snake}`, '#D23B2E', 7);
     }
   };
   SAU.drawFuelGauge = function (P, k, r = 170) { // k: 1 = full, 0 = empty
