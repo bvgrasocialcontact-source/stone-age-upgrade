@@ -76,13 +76,18 @@ Ana kaynaklar: Kanal kitabı (https://claude.ai/artifact/WXpRa7MQMyLhuKh7qzBb7h)
 - Meme efektleri (boom, plak cızırtısı, korna, boing, cırcır böceği, ding...): YouTube Ses Kitaplığı + ElevenLabs ses efekti aracıyla kendi versiyonlarımız (Buğra'nın aboneliği)
 - Amaç: güncel/modern internet dili, ama tamamen telifsiz
 
+## EP01 SHORTS (23.11 14:05) — HAZIR
+- Araştırma (Shorts 2026): ilk 2–3 sn kaydırma oranı belirleyici; loop/yeniden izleme güçlü sinyal; cevap gelince bit, outro yok; Zack D. Films örneği (31 sn, "you" anlatımı). vidIQ bağlayıcısı önerildi (kanal verisi için), bağlanmadı → web araştırmasıyla devam.
+- Araç: 03_engine/tools/shorts.py — 2K finalden 1080×1920: bulanık arka plan + kamera penceresi (keyframe pan/zoom) + üst merak başlığı (Archivo Black, 2. satır neon) + 1–3 kelimelik büyük altyazı (vurgu kelimeleri neon). Ses = bölüm miksi (müzik+efekt dahil), -14 LUFS.
+- 3 Short: 1) "Cavemen Asked AI for Food 🔥" taşla kaynatma, 34,8 sn; 2) "The First Vote in History 🗳️" ilk oylama/recount, 26,9 sn; 3) "Caveman Asks AI About Dinosaurs 🦖" dinozor + devekuşu uzay programı, 17,6 sn (iki parçanın birleşimi, sonu başa bağlanıyor).
+- Yükleme metinleri, müzik kredisi (CC BY zorunlu), sabit yorum, İlgili video = EP01: 06_shorts/README.md. mp4'ler git-ignore (PC'de var).
+
 ## EP01 ALTYAZI (23.11 13:50)
 - Buğra: YouTube'a dosya olarak Türkçe altyazı ekleyelim → İngilizce (birebir senaryo) + Türkçe .srt hazırlandı: 04_publishing/subtitles/EP01_en.srt, EP01_tr.srt (309 satır, zamanlama hizalama json'larından, 2K final videoya göre +1 sn giriş dahil, son satır 11:47.9)
 - Türkçe başlık + açıklama (YouTube "Başlık ve açıklama" çevirisi için) + yükleme adımları: subtitles/README_yukleme.md
 - Türkçe başlık: "300.000 Yıl Önce Yapay Zekân Olsaydı Ne Olurdu?" — "A.C." → "C.S." (Claude'dan Sonra)
 - Buğra Almanca başlık + açıklama istedi → README_yukleme.md'ye eklendi ("Was wäre, wenn du vor 300.000 Jahren KI gehabt hättest?"). Almanca .srt istenmedi (teklif edildi).
 - Ek diller (İspanyolca, Portekizce, Hintçe) önerildi; Buğra henüz istemedi.
-- Shorts işi yarıda: tools/shorts.py + 06_shorts/*.json hazır, 3 Short ilk render alındı (/tmp/sh), altyazı parçalama düzeltmesi sonrası yeniden render edilecek.
 
 ## EP01 BAŞLIK + THUMBNAIL (23.11 13:10)
 - Buğra başlığı ONAYLADI: "What If You Had AI 300,000 Years Ago?"

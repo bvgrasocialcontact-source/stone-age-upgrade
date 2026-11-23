@@ -49,7 +49,7 @@ for i, c in enumerate(chunks):
     c[1] = nxt if nxt - c[3] < 0.7 else c[3] + 0.35
 
 font_c = ImageFont.truetype(FONT, 84); font_h = ImageFont.truetype(FONT, 92)
-EMPH = set(w.upper() for w in spec.get('emph', []))
+EMPH = set(re.sub(r'[^A-Z0-9,-]', '', w.upper()).strip(',') for w in spec.get('emph', []))
 def text_img(words, font, stroke, colors):
     sp = font.getlength(' '); ws = [font.getbbox(w, stroke_width=stroke) for w in words]
     tw = int(sum(b[2] - b[0] for b in ws) + sp * (len(words) - 1)) + stroke * 2 + 8
@@ -60,7 +60,7 @@ def text_img(words, font, stroke, colors):
     return im
 def cap_img(txt):
     words = txt.upper().split()
-    cols = [NEON if re.sub(r'[^A-Z0-9,]', '', w) in EMPH else BONE for w in words]
+    cols = [NEON if re.sub(r'[^A-Z0-9,-]', '', w).strip(',') in EMPH else BONE for w in words]
     im = text_img(words, font_c, 9, cols)
     if im.width > 980: im = im.resize((980, int(im.height * 980 / im.width)), Image.LANCZOS)
     return im
