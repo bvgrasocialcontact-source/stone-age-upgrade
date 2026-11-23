@@ -1,0 +1,158 @@
+<!doctype html>
+<html><head>
+<link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
+<style>html,body{margin:0;padding:0;background:#1E1612;overflow:hidden}svg{display:block}</style>
+<script src="../vendor/rough.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script>
+<script src="../lib/animals.js"></script><script src="../lib/you.js"></script><script src="../lib/kit.js"></script><script src="../lib/kit_car.js"></script>
+</head><body><script>
+// EP02 · Perde 1 — kanca (22.85 s). Zamanlar: 01_episodes/EP02_Car/02_audio/ep02_perde1.timing.json
+SAU.duration = 22.85;
+SAU.init((svg, S) => {
+  const { W, H, el, set, p, E, boil, BRAND: B, clamp, hash, lerp } = S;
+  const rc = rough.svg(svg);
+  const defs = SAU.kitDefs(svg);
+  defs.insertAdjacentHTML('beforeend', `<linearGradient id="kDay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9A35C"/><stop offset=".6" stop-color="#F2C27F"/><stop offset="1" stop-color="#F6D7A0"/></linearGradient>
+    <radialGradient id="kShine"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".95"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>`);
+  const GY = H * .86, horizon = H * .58;
+  const XY = 560, XC = 1270;
+  const win = (t, a, b, fi = .25, fo = .25) => p(t, a, a + fi, E.out) * (1 - p(t, b - fo, b, E.in));
+
+  // ================= A: savanna morning =================
+  const A = el('g', {}, svg), world = el('g', {}, A);
+  el('rect', { x: -W, y: -H, width: W * 3, height: H * 3, fill: 'url(#kDay)' }, world);
+  const bg = el('g', {}, world);
+  const carG = el('g', {}, world); const car = SAU.makeCar(carG, rc);
+  const shine = el('g', {}, world);
+  const youWrap = el('g', {}, world); const you = SAU.makeYou(youWrap, rc, Object.assign({ seed: 5 }, SAU.CAST.you));
+  const zzz = el('g', {}, world);
+  const grass = el('g', {}, world);
+  const labels = el('g', {}, world);
+  const mudTag = el('g', {}, world);
+
+  // ================= B: TODAY? =================
+  const Bg = el('g', {}, svg), city = el('g', {}, Bg), hwy = el('g', {}, Bg), statue = el('g', {}, Bg), cars = el('g', {}, Bg), ostG = el('g', {}, Bg);
+  const todayTag = el('g', {}, Bg);
+
+  // ================= overlays =================
+  el('image', { width: W, height: H, href: S.noiseURL(960, 540, .07, 5), preserveAspectRatio: 'none', opacity: .55 }, svg);
+  el('rect', { width: W, height: H, fill: 'url(#kVig)', opacity: .55 }, svg);
+  const hud = el('g', {}, svg);
+  const yp = SAU.makeYearPanel(hud, 40, 40);
+  const stats = SAU.makeStatPanel(hud, W - 500, 40, ['POPULATION', 'CARS ON EARTH', 'ROADS'], 460);
+  const stamp = SAU.makeStamp(svg, 'PROBLEMS:', 760, 200);
+  const flash = el('rect', { width: W, height: H, fill: '#FFF7E6', opacity: 0 }, svg);
+
+  const camK = [[0, XY, GY - 120, 1.7], [3.6, XY, GY - 150, 1.5], [4.6, (XY + XC) / 2, GY - 250, 1.0], [8.7, (XY + XC) / 2, GY - 250, 1.0], [9.6, XC + 270, GY - 120, 2.6], [13.2, XC + 270, GY - 120, 2.7], [13.3, (XY + XC) / 2, GY - 250, 1.0], [22.85, (XY + XC) / 2, GY - 250, 1.05]];
+  const camAt = t => { let i = 0; while (i < camK.length - 2 && t > camK[i + 1][0]) i++; const a = camK[i], b = camK[i + 1], k = p(t, a[0], b[0], E.inOut); return [lerp(a[1], b[1], k), lerp(a[2], b[2], k), lerp(a[3], b[3], k)]; };
+
+  const label = (g, x, y, txt, k, rot = -3) => { if (k <= 0) return; const gg = el('g', { transform: `translate(${x},${y}) rotate(${rot}) scale(${.6 + .4 * k})`, opacity: k }, g); el('text', { 'text-anchor': 'middle', fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 54, stroke: B.bone, 'stroke-width': 10, 'paint-order': 'stroke' }, gg).textContent = txt; };
+
+  return {
+    update(t) {
+      const inB = t >= 13.3 && t < 20.3;
+      set(A, { display: inB ? 'none' : 'inline' }); set(Bg, { display: inB ? 'inline' : 'none' });
+      // ---------- A ----------
+      if (!inB) {
+        const [cx, cy, z] = camAt(t);
+        SAU.cam(world, W, H, cx, cy, z, 0, t);
+        boil(bg, (r, s, g) => {
+          const P = SAU.makePen(1, r, g, { seed: s, sw: 3 });
+          P.shape(`M ${-W} ${horizon} Q ${W * .3} ${horizon - 60} ${W * 1.2} ${horizon - 20} Q ${W * 1.8} ${horizon - 40} ${W * 2.4} ${horizon} L ${W * 2.4} ${H * 2} L ${-W} ${H * 2} Z`, '#D9A566', 3);
+          P.shape(`M ${-W} ${horizon - 10} Q ${-200} ${horizon - 120} ${300} ${horizon - 30} L ${-W} ${horizon} Z`, '#C88C52', 3);
+          SAU.drawAcacia(P, 1750, horizon + 30, .7); SAU.drawAcacia(P, 120, horizon + 20, .5);
+          SAU.drawSavannaStrip(r, s + 3, g, -W, W * 2, GY + 6, 1);
+        }, t, .25);
+        car.update(t, { x: XC, y: GY, s: 1, dist: 0 });
+        // shine sparkles
+        while (shine.firstChild) shine.removeChild(shine.firstChild);
+        const sk = win(t, 5.0, 8.0, .2, .4) + win(t, 6.1, 7.0, .1, .3);
+        [[XC - 60, GY - 270], [XC + 150, GY - 220], [XC - 200, GY - 160], [XC + 240, GY - 130]].forEach(([x, y], i) => {
+          const k = clamp(sk) * (.5 + .5 * Math.sin(t * 9 + i * 2)); if (k <= .02) return;
+          el('path', { d: `M ${x} ${y - 40 * k} L ${x + 8 * k} ${y - 8 * k} L ${x + 40 * k} ${y} L ${x + 8 * k} ${y + 8 * k} L ${x} ${y + 40 * k} L ${x - 8 * k} ${y + 8 * k} L ${x - 40 * k} ${y} L ${x - 8 * k} ${y - 8 * k} Z`, fill: '#FFFFFF', opacity: .95 }, shine);
+        });
+        // You: lying in the grass → wakes up → stares at the car
+        const up = p(t, 1.6, 2.5, E.back);
+        set(youWrap, { transform: `rotate(${-88 * (1 - up)},${XY},${GY - 30})` });
+        const asleep = t < 1.6, look = t > 3.9 ? [14, 0] : [0, 0];
+        const ex = t < 2.6 ? 'neutral' : t < 5.0 ? 'thinking' : t < 9.0 ? 'shock' : t < 20.4 ? 'smile' : 'thinking';
+        you.pose({ x: XY, y: GY + 10, scale: .7, expr: ex, blink: asleep || (t > 2.3 && t < 2.45), look, head: t > 3.9 && t < 9 ? 6 : 0, armR: t > 20.5 ? 120 : 0, bob: Math.sin(t * 2.4) * 2 }, t);
+        while (zzz.firstChild) zzz.removeChild(zzz.firstChild);
+        if (t < 1.7) for (let i = 0; i < 3; i++) { const a = (t * .8 + i / 3) % 1; el('text', { x: XY + 120 + a * 60, y: GY - 120 - a * 120, fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 34 + a * 20, opacity: 1 - a }, zzz).textContent = 'z'; }
+        boil(grass, (r, s, g) => { const P = SAU.makePen(1, r, g, { seed: s + 50, sw: 3 }); for (let x = -W; x < W * 2; x += 26) { const h = 60 + hash(x * .37) * 90; P.stroke(`M ${x} ${GY + 40} Q ${x + 6} ${GY - h * .5} ${x + 14 + hash(x) * 10} ${GY - h}`, hash(x * .7) > .5 ? '#A9883E' : '#8A6A2E', 4); } }, t, .25);
+        set(grass, { opacity: t < 3.8 ? 1 : 1 - p(t, 3.8, 4.6) * .6 });
+        // checklist labels
+        while (labels.firstChild) labels.removeChild(labels.firstChild);
+        if (t < 9.2) {
+          label(labels, XC - 120, GY - 380, 'SHINY ✓', p(t, 6.1, 6.4, E.back), -4);
+          label(labels, XC + 170, GY - 430, 'RED ✓', p(t, 7.1, 7.4, E.back), 3);
+          label(labels, XC + 30, GY - 500, 'FOUR DOORS ✓', p(t, 8.0, 8.3, E.back), -2);
+          if (t > 8.4) label(labels, XC + 30, GY - 455, '(two are on the other side)', p(t, 8.4, 8.7, E.out) * .9, -2);
+        }
+        // mud badge close-up label + FOREVER stamp
+        while (mudTag.firstChild) mudTag.removeChild(mudTag.firstChild);
+        if (t > 9.4 && t < 13.3) {
+          const k = p(t, 9.6, 10.0, E.back);
+          const gg = el('g', { transform: `translate(${XC + 230},${GY - 210}) scale(${.5 * k})`, opacity: k }, mudTag);
+          el('text', { 'text-anchor': 'middle', fill: B.ink, 'font-family': '"Comic Relief"', 'font-weight': 700, 'font-size': 54, stroke: B.bone, 'stroke-width': 10, 'paint-order': 'stroke' }, gg).textContent = 'logo?';
+          el('path', { d: 'M 30 14 Q 60 50 86 70', fill: 'none', stroke: B.ink, 'stroke-width': 6, 'stroke-linecap': 'round' }, gg);
+          const f = p(t, 11.6, 11.85, E.back);
+          if (f > 0) { const sg = el('g', { transform: `translate(${XC + 300},${GY - 60}) rotate(-12) scale(${.42 * (2 - f)})`, opacity: clamp(f * 2) }, mudTag); el('rect', { x: -230, y: -60, width: 460, height: 120, rx: 10, fill: 'none', stroke: '#C8362E', 'stroke-width': 12 }, sg); el('text', { 'text-anchor': 'middle', y: 34, fill: '#C8362E', 'font-family': B.fontDisplay, 'font-size': 92 }, sg).textContent = 'FOREVER'; }
+        }
+        // PROBLEMS: 4 stamp
+        const sk2 = p(t, 21.45, 21.75, E.back);
+        if (sk2 > 0) { stamp.num.textContent = '4'; boil(stamp.g.firstChild, () => stamp.draw(rc, Math.floor(t / .125)), t, .125); set(stamp.g, { display: 'inline', transform: `translate(${W / 2},${H * .42}) scale(${lerp(2.2, 1, sk2)}) rotate(${-4 + (1 - sk2) * 8})`, opacity: clamp(sk2 * 3) }); }
+        else set(stamp.g, { display: 'none' });
+      } else set(stamp.g, { display: 'none' });
+
+      // ---------- B: TODAY? ----------
+      if (inB) {
+        const lt = t - 13.3, zoom = lerp(1.08, 1.0, p(lt, 0, 7, E.out));
+        set(Bg, { transform: `translate(${W / 2},${H / 2}) scale(${zoom}) translate(${-W / 2},${-H / 2})` });
+        boil(city, (r, s, g) => SAU.drawStoneCity(r, s, g, W, H, t), t, .25);
+        boil(hwy, (r, s, g) => {
+          const P = SAU.makePen(1, r, g, { seed: s, sw: 3 });
+          P.shape(`M -40 ${H * .8} L ${W + 40} ${H * .8} L ${W + 40} ${H + 40} L -40 ${H + 40} Z`, '#2E3134', 4);
+          for (let x = -40; x < W; x += 160) el('rect', { x: x + ((lt * 600) % 160), y: H * .9 - 4, width: 80, height: 8, fill: B.tech, opacity: .8, filter: 'url(#kGlow)' }, g);
+        }, t, .125);
+        boil(statue, (r, s, g) => {
+          const P = SAU.makePen(1, r, g, { seed: s, sw: 3 });
+          P.shape(SAU.rrectPath(W / 2 - 260, H * .8 - 200, 520, 200, 12), '#7C6A5C', 4);
+          const sg = el('g', { transform: `translate(${W / 2},${H * .8 - 200}) scale(.75)` }, g);
+          SAU.drawCarBody(SAU.makePen(1, r, sg, { seed: s + 9, sw: 4 }), { color: '#C8B9A8' });
+          SAU.WHEELS.forEach(x => { const wg = el('g', { transform: `translate(${x},-50)` }, sg); SAU.drawWheel(SAU.makePen(1, r, wg, { seed: s + x, sw: 3 }), 62); });
+          el('text', { x: W / 2, y: H * .8 - 80, 'text-anchor': 'middle', fill: B.bone, 'font-family': B.fontMono, 'font-weight': 700, 'font-size': 36, 'letter-spacing': 4 }, g).textContent = 'THE FIRST CAR';
+        }, t, .25);
+        while (cars.firstChild) cars.removeChild(cars.firstChild);
+        for (let i = 0; i < 4; i++) {
+          const x = ((lt * 520 + i * 560) % (W + 800)) - 400;
+          const cg = el('g', { transform: `translate(${x},${H * .93}) scale(.3)` }, cars);
+          el('path', { d: 'M -280 -64 L -282 -150 L -160 -186 L -104 -270 L 118 -290 L 222 -192 L 292 -150 L 292 -64 Z', fill: i % 2 ? '#D23B2E' : '#7C6A5C', stroke: B.ink, 'stroke-width': 8 }, cg); [-168, 176].forEach(wx => el('circle', { cx: wx, cy: -50, r: 60, fill: '#2B2622', stroke: B.ink, 'stroke-width': 8 }, cg));
+          el('path', { d: 'M 290 -150 l 260 -40 l 0 80 Z', fill: '#FFF3B0', opacity: .35 }, cg);
+        }
+        // ostrich in a racing helmet (18.6)
+        while (ostG.firstChild) ostG.removeChild(ostG.firstChild);
+        const ok = p(t, 18.4, 20.2, E.linear);
+        if (ok > 0) {
+          const og = el('g', { transform: `translate(${lerp(W + 300, -300, ok)},${H * .99}) scale(.8) rotate(${Math.sin(t * 30) * 3})` }, ostG);
+          SAU.drawOstrich(SAU.makePen(1, rc, og, { seed: Math.floor(t * 8), sw: 4 }));
+          el('path', { d: 'M -84 -470 Q -52 -506 -16 -470 L -16 -452 L -84 -452 Z', fill: '#D23B2E', stroke: B.ink, 'stroke-width': 4 }, og);
+          el('path', { d: 'M -20 -470 L -4 -462', stroke: B.tech, 'stroke-width': 6 }, og);
+          SAU.speedLines(ostG, lerp(W + 300, -300, ok) + 520, H * .99, t, 6, 300);
+        }
+        while (todayTag.firstChild) todayTag.removeChild(todayTag.firstChild);
+        const tk = p(lt, .1, .5, E.back);
+        const tg = el('g', { transform: `translate(${W / 2},${H * .17}) scale(${tk}) rotate(2)` }, todayTag);
+        el('rect', { x: -190, y: -62, width: 380, height: 112, rx: 8, fill: B.tech, stroke: B.ink, 'stroke-width': 6 }, tg);
+        el('text', { 'text-anchor': 'middle', y: 30, fill: B.ink, 'font-family': B.fontDisplay, 'font-size': 80 }, tg).textContent = 'TODAY?';
+      }
+
+      // ---------- HUD ----------
+      set(hud, { opacity: inB ? 0 : clamp(p(t, 2.0, 3.0)) });
+      yp.set('300,000 BC', 'DAY 1');
+      stats.set(0, '30'); stats.set(1, t < 5.1 ? '0' : '1', t > 5.1 && t < 6.5 ? B.tech : B.bone); stats.set(2, '0');
+      set(flash, { opacity: Math.max(win(t, 13.15, 13.55, .12, .25), win(t, 20.2, 20.55, .1, .25)) * .85 });
+    },
+  };
+});
+</script></body></html>
