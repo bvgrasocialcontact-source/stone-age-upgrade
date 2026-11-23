@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="../fonts/fonts.css"><meta charset="utf-8">
 <style>html,body{margin:0;background:transparent;overflow:hidden}svg{display:block}</style>
 <script src="../vendor/rough.js"></script>
-<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script><script src="../lib/animals.js"></script><script src="../lib/you.js"></script>
+<script src="../lib/sau.js"></script><script src="../lib/pen.js"></script><script src="../lib/characters.js"></script><script src="../lib/animals.js"></script><script src="../lib/you.js"></script><script src="../lib/kit_car.js"></script>
 </head><body><script>
 const Q = new URLSearchParams(location.search);
 const PKG = +Q.get('pkg') || 1, ASSET = Q.get('asset') || 'thumb';
@@ -169,6 +169,38 @@ SAU.init((svg, S) => {
       for (let i = 0; i < 3; i++) el('path', { d: `M 560 ${200 + i * 55} Q 940 ${150 + i * 50} ${W + 40} ${215 + i * 58}`, stroke: B.tech, 'stroke-width': 5, fill: 'none', opacity: .8, 'stroke-dasharray': '46 34', 'stroke-linecap': 'round', filter: 'url(#glowS)' }, r);
       skyline(r, 560, W + 40, 640, 8);
       r.appendChild(rc.rectangle(560, 620, 760, 140, { fill: '#2A2A2A', fillStyle: 'solid', stroke: B.ink, strokeWidth: 4, seed: 6 }));
+      svg.appendChild(rc.line(690, -10, 590, H + 10, { stroke: B.bone, strokeWidth: 22, roughness: 2.8, seed: 9 }));
+      svg.appendChild(rc.line(690, -10, 590, H + 10, { stroke: B.ink, strokeWidth: 8, roughness: 2.8, seed: 9 }));
+      tag(svg, 36, 34, '300,000 BC', 58, '#C8763A', B.bone, -3);
+      tag(svg, 900, 34, 'TODAY?', 64, B.tech, B.ink, 3);
+      tex(.07, 4); el('rect', { width: W, height: H, fill: 'url(#vg)', opacity: .5 }, svg);
+    }
+    if (ASSET === 'thumb_ep02') { // EP02 (car): Package-2 layout, B-style neon details; left = You + the red car, right = stone highway
+      defs.innerHTML += `<clipPath id="L"><path d="M 0 0 L 690 0 L 590 ${H} L 0 ${H} Z"/></clipPath><clipPath id="R"><path d="M 690 0 L ${W} 0 L ${W} ${H} L 590 ${H} Z"/></clipPath>
+        <radialGradient id="hl"><stop offset="0" stop-color="#FFF3B0" stop-opacity=".9"/><stop offset=".5" stop-color="#FFE07A" stop-opacity=".35"/><stop offset="1" stop-color="#FFE07A" stop-opacity="0"/></radialGradient>`;
+      const P = (g, seed, sw = 5) => SAU.makePen(1, rc, g, { seed, sw });
+      const l = el('g', { 'clip-path': 'url(#L)' }, svg);
+      el('rect', { width: W, height: H, fill: 'url(#sky)' }, l);
+      l.appendChild(rc.rectangle(-20, 520, 760, 260, { fill: '#D9A566', fillStyle: 'solid', stroke: B.ink, strokeWidth: 4, seed: 5 }));
+      const cg = el('g', { transform: 'translate(392,640) scale(.72)' }, l); SAU.drawCarBody(P(cg, 4, 6), { dents: 2 });
+      SAU.WHEELS.forEach((x, i) => { const wg = el('g', { transform: `translate(${x},-50)` }, cg); SAU.drawWheel(P(wg, 11 + i, 6), 62); });
+      el('circle', { cx: 392 + 292 * .72, cy: 640 - 120 * .72, r: 110, fill: 'url(#hl)' }, l);
+      you(l, 230, 1000, 1.4, { expr: 'shock', look: [10, 4], armR: 40 }, 6);
+      const r = el('g', { 'clip-path': 'url(#R)' }, svg);
+      el('rect', { width: W, height: H, fill: 'url(#night)' }, r);
+      for (let i = 0; i < 26; i++) el('circle', { cx: 600 + hash(i * 7 + 1) * 700, cy: 20 + hash(i * 11 + 2) * 300, r: 1.5 + hash(i) * 2.5, fill: B.bone, opacity: .35 + hash(i * 5) * .5 }, r);
+      skyline(r, 560, W + 40, 600, 8);
+      // flying cars with neon trails
+      [[880, 250, .2, 1], [1130, 190, .16, -1]].forEach(([x, y, sc, d], i) => {
+        el('path', { d: `M ${x - d * 60} ${y - 20} q ${-d * 120} 20 ${-d * 300} 0`, stroke: B.tech, 'stroke-width': 5, fill: 'none', 'stroke-dasharray': '36 22', 'stroke-linecap': 'round', filter: 'url(#glowS)' }, r);
+        const fg = el('g', { transform: `translate(${x},${y}) scale(${d * sc},${sc})` }, r); SAU.drawCarBody(P(fg, 30 + i, 9), { variant: 'flying', color: i ? '#3E7A9A' : '#E0A020' });
+      });
+      // stone highway (perspective) with a jam of cars + neon lane lights
+      r.appendChild(rc.rectangle(560, 600, 760, 140, { fill: '#7A6E64', fillStyle: 'solid', stroke: B.ink, strokeWidth: 4, seed: 6 }));
+      for (let x = 600; x < W + 40; x += 64) r.appendChild(rc.line(x, 600, x - 18, 740, { stroke: '#5E544C', strokeWidth: 2.5, roughness: 1.4, seed: x }));
+      r.appendChild(rc.line(560, 640, W + 20, 640, { stroke: '#5E544C', strokeWidth: 3, seed: 13 }));
+      for (let x = 600; x < W; x += 90) el('rect', { x, y: 664, width: 44, height: 7, rx: 3, fill: B.tech, filter: 'url(#glowS)' }, r);
+      ['#D23B2E', '#3E7A9A', '#E0A020', '#4E9A3E', '#7C6A5C'].forEach((c, i) => { const g2 = el('g', { transform: `translate(${700 + i * 128},${632}) scale(.19)` }, r); SAU.drawCarBody(P(g2, 40 + i, 12), { color: c }); SAU.WHEELS.forEach((x, k) => { const wg = el('g', { transform: `translate(${x},-50)` }, g2); SAU.drawWheel(P(wg, 50 + i * 2 + k, 12), 62); }); el('circle', { cx: 292, cy: -120, r: 26, fill: '#FFE07A', filter: 'url(#glow)' }, g2); });
       svg.appendChild(rc.line(690, -10, 590, H + 10, { stroke: B.bone, strokeWidth: 22, roughness: 2.8, seed: 9 }));
       svg.appendChild(rc.line(690, -10, 590, H + 10, { stroke: B.ink, strokeWidth: 8, roughness: 2.8, seed: 9 }));
       tag(svg, 36, 34, '300,000 BC', 58, '#C8763A', B.bone, -3);

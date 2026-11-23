@@ -112,4 +112,47 @@ for _ in range(14):
     s0 = rng.random() * (d - 1); i = int(s0 * SR); tb = t_(.25); fb = 2500 + 900 * np.sin(2 * np.pi * 14 * tb)
     x[i:i + len(tb)] += np.sin(2 * np.pi * np.cumsum(fb) / SR) * np.exp(-tb * 10) * .25
 save('amb_day', x, .4)
+
+# ================= EP02 car pack (synth) =================
+def engine(f, d, rough=.35):  # f: array of firing freq (Hz) per sample
+    ph = np.cumsum(f) / SR; x = np.sign(np.sin(2 * np.pi * ph)) * .5 + np.sin(2 * np.pi * ph * .5) * .6
+    x += rough * lp(rng.standard_normal(len(f)), 400) * (1 + np.sin(2 * np.pi * ph * .25))
+    return lp(x, 900)
+# engine start: starter crank (3 chugs) + catch + idle
+t = t_(.9); crank = engine(14 + 0 * t, .9, .6) * (.5 + .5 * np.sin(2 * np.pi * 4.5 * t))
+t2 = t_(1.8); f2 = 30 + 40 * np.exp(-t2 * 3) * (t2 > .05) + 8 * np.sin(2 * np.pi * 1.3 * t2)
+save('engine_start', np.concatenate([crank * .6, engine(f2, 1.8) * env(len(t2), .03, 1.8, .8)]), .7)
+# rev (vroom)
+t = t_(1.4); f = 30 + 110 * np.sin(np.pi * np.minimum(t / 1.2, 1)) ** 1.2
+save('vroom', engine(f, 1.4) * env(len(t), .05, 1.4, 1.2), .75)
+# idle loop 6 s (seamless-ish)
+t = t_(6); f = 28 + 2 * np.sin(2 * np.pi * .7 * t); save('amb_engine', engine(f, 6, .2), .45)
+# pass-by (doppler)
+t = t_(2.0); f = 70 + 30 * np.tanh((1 - t) * 4); a = 1 / (1 + ((t - 1) * 3) ** 2)
+save('passby', engine(f, 2.0) * a, .7)
+# horn: two detuned square-ish tones
+def horn(d):
+    t = t_(d); x = sum(np.sign(np.sin(2 * np.pi * fq * t)) * .5 for fq in (392, 494)); x = bp(x, 250, 3000)
+    e = np.ones(len(t)); na = int(.015 * SR); e[:na] = np.linspace(0, 1, na); e[-na:] = np.linspace(1, 0, na); return x * e
+save('honk', horn(.28), .6)
+save('honk_long', horn(1.6), .6)
+# tire skid
+t = t_(.9); save('skid', bp(rng.standard_normal(len(t)), 1800, 4200) * (1 + .3 * np.sin(2 * np.pi * 37 * t)) * env(len(t), .03, .9, 1.5), .5)
+# crash: thud + metal clank
+t = t_(.8); thud = lp(rng.standard_normal(len(t)), 180) * np.exp(-t * 9)
+clank = sum(np.sin(2 * np.pi * fq * t) * np.exp(-t * dk) for fq, dk in ((523, 6), (1180, 9), (1870, 12))) * .3
+save('crash', thud * 1.4 + clank + hp(rng.standard_normal(len(t)), 3000) * np.exp(-t * 18) * .4, .8)
+# bonk (cartoon)
+t = t_(.35); f = 260 * np.exp(-t * 6) + 90; save('bonk', np.sin(2 * np.pi * np.cumsum(f) / SR) * env(len(t), .002, .35, 6), .7)
+# steam puff
+t = t_(.6); save('steam', hp(rng.standard_normal(len(t)), 2500) * env(len(t), .01, .6, 3), .4)
+# ostrich squawk
+t = t_(.35); f = 900 + 500 * np.sin(2 * np.pi * 11 * t); save('squawk', bp(np.sign(np.sin(2 * np.pi * np.cumsum(f) / SR)), 500, 3500) * env(len(t), .01, .35, 2), .5)
+# mammoth trumpet
+t = t_(1.2); f = 330 + 60 * np.sin(np.pi * t / 1.2); x = sum(np.sin(2 * np.pi * np.cumsum(f * k) / SR) / k for k in (1, 2, 3, 4))
+save('trumpet', bp(x, 200, 3000) * env(len(t), .08, 1.2, 1.5), .6)
+# cash/ka-ching-ish (oil money) -> reuse ding; bird tweets
+t = t_(.5); f = 3200 + 1200 * np.sin(2 * np.pi * 18 * t); save('tweet', np.sin(2 * np.pi * np.cumsum(f) / SR) * (np.sin(2 * np.pi * 8 * t) > 0) * env(len(t), .01, .5, 2), .35)
+# seatbelt click
+t = t_(.12); save('click', hp(rng.standard_normal(len(t)), 2500) * np.exp(-t * 80) + np.sin(2 * np.pi * 2200 * t) * np.exp(-t * 60) * .4, .6)
 print('ok', sorted(os.listdir(out)))
